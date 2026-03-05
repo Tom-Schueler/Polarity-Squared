@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxc253gr73fso"]
+
+[ext_resource type="PackedScene" uid="uid://bjwg6v41sskkh" path="res://Prefabs/Platforms/Platform/platform.tscn" id="1_0onnd"]
+
+[node name="Rotated45Block" type="Node2D"]
+
+[node name="Platform" parent="." instance=ExtResource("1_0onnd")]
+rotation = 0.785398
+scale = Vector2(0.5, 3)

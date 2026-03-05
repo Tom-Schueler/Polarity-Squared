@@ -1,0 +1,125 @@
+[gd_scene load_steps=14 format=3 uid="uid://nuwgnw3kuyfn"]
+
+[ext_resource type="Script" path="res://Scenes/Main/UI/GameUI/gameUI.gd" id="1_ro3kg"]
+[ext_resource type="Texture2D" uid="uid://bdpno3f8yxyci" path="res://Scenes/Main/UI/GameUI/Sprites/TimerSprite.png" id="2_4cbj5"]
+[ext_resource type="Script" path="res://Scenes/Main/UI/GameUI/timer.gd" id="2_k3au2"]
+[ext_resource type="FontFile" uid="uid://dpvdgwpnrcqb5" path="res://Assets/Font/hobostd.otf" id="2_y73jq"]
+[ext_resource type="Script" path="res://Scenes/Main/UI/GameUI/deathCounter.gd" id="4_1wd0w"]
+[ext_resource type="Texture2D" uid="uid://da0iwwv6jdcon" path="res://Scenes/Main/UI/GameUI/Sprites/GearShadow.png" id="4_5bdq4"]
+[ext_resource type="Texture2D" uid="uid://c0eqackl010yq" path="res://Scenes/Main/UI/GameUI/Sprites/NewGear.png" id="4_i30j8"]
+[ext_resource type="Script" path="res://Scenes/Main/UI/GameUI/newGear.gd" id="5_5vc4f"]
+[ext_resource type="Texture2D" uid="uid://d1l5bfgs4be7k" path="res://Scenes/Main/UI/GameUI/Sprites/DeathSprite.png" id="5_8m01i"]
+[ext_resource type="Script" path="res://Scenes/Main/UI/GameUI/gear.gd" id="5_c7a4d"]
+[ext_resource type="Script" path="res://Scenes/Main/UI/GameUI/gear2.gd" id="6_m8n5k"]
+[ext_resource type="Texture2D" uid="uid://ddq18wemxk66b" path="res://Scenes/Main/UI/GameUI/Sprites/GearArrow.png" id="9_lxutx"]
+[ext_resource type="Texture2D" uid="uid://c3m47jhcyxbyi" path="res://Scenes/Main/UI/GameUI/Sprites/GearNoArrow.png" id="10_bjwef"]
+
+[node name="GameUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ro3kg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1875, 50)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_4cbj5")
+script = ExtResource("2_k3au2")
+
+[node name="Timer" type="Label" parent="Sprite2D"]
+anchors_preset = -1
+anchor_left = 1.094
+anchor_top = -0.143
+anchor_right = 1.094
+anchor_bottom = -0.143
+offset_left = -1080.06
+offset_top = -27.392
+offset_right = -410.064
+offset_bottom = 123.608
+grow_horizontal = 0
+theme_override_colors/font_shadow_color = Color(0.486275, 0.913725, 0.596078, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_y73jq")
+theme_override_font_sizes/font_size = 150
+text = "00:00:00"
+horizontal_alignment = 2
+
+[node name="DeathCounterSprite" type="Sprite2D" parent="."]
+position = Vector2(1875, 125)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_8m01i")
+script = ExtResource("4_1wd0w")
+
+[node name="DeathCounter" type="Label" parent="DeathCounterSprite"]
+anchors_preset = -1
+anchor_left = 1.094
+anchor_top = -1.185
+anchor_right = 1.094
+anchor_bottom = -1.185
+offset_left = -2143.06
+offset_top = 239.36
+offset_right = -410.064
+offset_bottom = 1506.36
+grow_horizontal = 0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_y73jq")
+theme_override_font_sizes/font_size = 150
+text = "00000"
+horizontal_alignment = 2
+
+[node name="OldGear" type="Node2D" parent="."]
+visible = false
+
+[node name="Gear1" type="Sprite2D" parent="OldGear"]
+position = Vector2(1924, 1080)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_i30j8")
+script = ExtResource("5_c7a4d")
+turningSpeed = 90
+
+[node name="Gear2" type="Sprite2D" parent="OldGear"]
+position = Vector2(0, 1080)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_i30j8")
+script = ExtResource("6_m8n5k")
+turningSpeed = 90
+
+[node name="Gear1" type="Node2D" parent="."]
+
+[node name="NewGearShadow" type="Sprite2D" parent="Gear1"]
+position = Vector2(1797, 959)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_5bdq4")
+
+[node name="NewGear" type="Sprite2D" parent="Gear1"]
+position = Vector2(1802, 961)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_i30j8")
+script = ExtResource("5_5vc4f")
+
+[node name="Gear2" type="Node2D" parent="."]
+visible = false
+
+[node name="NewGearShadow" type="Sprite2D" parent="Gear2"]
+position = Vector2(1797, 959)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("4_5bdq4")
+
+[node name="NewGear" type="Sprite2D" parent="Gear2"]
+position = Vector2(1802, 961)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_lxutx")
+script = ExtResource("5_5vc4f")
+
+[node name="NewGear2" type="Sprite2D" parent="Gear2"]
+position = Vector2(1802, 961)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("10_bjwef")
+script = ExtResource("5_c7a4d")
+turningSpeed = 45

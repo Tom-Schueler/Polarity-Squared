@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddw3qqy08ls5k"]
+
+[ext_resource type="Texture2D" uid="uid://bgxtx1ta0ow8y" path="res://Assets/Sprites/BlurredCircle.png" id="1_n2uly"]
+
+[sub_resource type="Gradient" id="Gradient_7svmv"]
+colors = PackedColorArray(1, 1, 1, 0.686275, 1, 1, 1, 0)
+
+[sub_resource type="Curve" id="Curve_akltv"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.709779, 0.681932), -0.976676, -0.976676, 0, 0, Vector2(1, 0.143664), -1.32581, 0.0, 0, 0]
+point_count = 3
+
+[node name="Splatter" type="CPUParticles2D"]
+amount = 10
+lifetime = 2.5
+explosiveness = 0.9
+texture = ExtResource("1_n2uly")
+spread = 180.0
+gravity = Vector2(0, 1960)
+initial_velocity_min = 800.0
+initial_velocity_max = 1600.0
+damping_min = 3000.0
+damping_max = 4000.0
+scale_amount_min = 0.25
+scale_amount_max = 3.0
+color = Color(0.623529, 0, 0.0431373, 1)
+color_ramp = SubResource("Gradient_7svmv")
+
+[node name="Trail" type="CPUParticles2D" parent="."]
+amount = 160
+lifetime = 10.0
+speed_scale = 2.5
+texture = ExtResource("1_n2uly")
+emission_shape = 3
+emission_rect_extents = Vector2(20, 1)
+particle_flag_align_y = true
+spread = 180.0
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+damping_min = 250.0
+damping_max = 1500.0
+scale_amount_curve = SubResource("Curve_akltv")
+color = Color(0.6, 0, 0, 0.666667)

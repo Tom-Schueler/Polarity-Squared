@@ -1,0 +1,148 @@
+[gd_scene load_steps=17 format=3 uid="uid://b721c0fs14gth"]
+
+[ext_resource type="Texture2D" uid="uid://bqp7ol8m44bln" path="res://Prefabs/Player/Animation/Sprites/head.png" id="1_sc784"]
+[ext_resource type="Texture2D" uid="uid://d1j6g1ttspbmf" path="res://Prefabs/Player/Animation/Sprites/body.png" id="2_stw7y"]
+[ext_resource type="PackedScene" uid="uid://ddw3qqy08ls5k" path="res://Prefabs/Player/Animation/bloodSplatter.tscn" id="3_0g5ux"]
+[ext_resource type="Texture2D" uid="uid://boiyrvyc8hps5" path="res://Prefabs/Player/Animation/Sprites/fistL.png" id="3_3sxdx"]
+[ext_resource type="Texture2D" uid="uid://r18x7l1w8m2n" path="res://Prefabs/Player/Animation/Sprites/fistR.png" id="4_ippcp"]
+[ext_resource type="Texture2D" uid="uid://b0eaftivyg1gn" path="res://Prefabs/Player/Animation/Sprites/legL.png" id="5_3qmea"]
+[ext_resource type="Texture2D" uid="uid://7tpt5ym55fn4" path="res://Prefabs/Player/Animation/Sprites/legR.png" id="6_3vplp"]
+[ext_resource type="Texture2D" uid="uid://djpjwfkfg4rvk" path="res://Prefabs/Player/Animation/Sprites/footL.png" id="7_bkfmn"]
+
+[sub_resource type="GDScript" id="GDScript_h67ul"]
+script/source = "extends Node2D
+
+func ExplodeVelocity(velocity) -> void:
+	for child in get_children():
+		if child is RigidBody2D:
+			var rngVelocity : Vector2 = Vector2(randf_range(-5000, 5000), randf_range(-5000, 5000))
+			child.linear_velocity = rngVelocity + velocity
+"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_743em"]
+radius = 115.434
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ps6ue"]
+radius = 46.0
+height = 120.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f0wqj"]
+radius = 14.0
+height = 112.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kdcd5"]
+radius = 18.0
+height = 84.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eswqi"]
+size = Vector2(39, 83.4232)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4e1ot"]
+size = Vector2(41.9914, 85.6422)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ujm00"]
+size = Vector2(56.3188, 20)
+
+[node name="ExplodePlayer" type="Node2D"]
+position = Vector2(5, -5)
+script = SubResource("GDScript_h67ul")
+
+[node name="Head" type="RigidBody2D" parent="."]
+collision_layer = 17
+collision_mask = 7
+
+[node name="Head" type="Sprite2D" parent="Head"]
+texture = ExtResource("1_sc784")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Head"]
+shape = SubResource("CircleShape2D_743em")
+
+[node name="GPUParticles2D" parent="Head" instance=ExtResource("3_0g5ux")]
+
+[node name="Body" type="RigidBody2D" parent="."]
+collision_layer = 17
+collision_mask = 7
+
+[node name="Body" type="Sprite2D" parent="Body"]
+texture = ExtResource("2_stw7y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
+shape = SubResource("CapsuleShape2D_ps6ue")
+
+[node name="GPUParticles2D" parent="Body" instance=ExtResource("3_0g5ux")]
+
+[node name="Arm1" type="RigidBody2D" parent="."]
+collision_layer = 17
+collision_mask = 7
+
+[node name="Arm1" type="Sprite2D" parent="Arm1"]
+position = Vector2(-7, 5)
+texture = ExtResource("3_3sxdx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arm1"]
+position = Vector2(7.99999, 2)
+rotation = 0.586972
+shape = SubResource("CapsuleShape2D_f0wqj")
+
+[node name="GPUParticles2D" parent="Arm1" instance=ExtResource("3_0g5ux")]
+
+[node name="Arm2" type="RigidBody2D" parent="."]
+collision_layer = 17
+collision_mask = 7
+
+[node name="Arm2" type="Sprite2D" parent="Arm2"]
+position = Vector2(14.5, 8)
+texture = ExtResource("4_ippcp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arm2"]
+position = Vector2(2.5, 1.00002)
+rotation = -0.805589
+shape = SubResource("CapsuleShape2D_kdcd5")
+
+[node name="GPUParticles2D" parent="Arm2" instance=ExtResource("3_0g5ux")]
+
+[node name="Leg1" type="RigidBody2D" parent="."]
+collision_layer = 17
+collision_mask = 7
+
+[node name="Leg1" type="Sprite2D" parent="Leg1"]
+position = Vector2(0.5, -2.5)
+texture = ExtResource("5_3qmea")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Leg1"]
+position = Vector2(7.5, -4.5)
+rotation = -0.553296
+shape = SubResource("RectangleShape2D_eswqi")
+
+[node name="GPUParticles2D" parent="Leg1" instance=ExtResource("3_0g5ux")]
+
+[node name="Leg2" type="RigidBody2D" parent="."]
+collision_layer = 17
+collision_mask = 7
+
+[node name="Leg2" type="Sprite2D" parent="Leg2"]
+position = Vector2(3.5, -9.5)
+texture = ExtResource("6_3vplp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Leg2"]
+position = Vector2(7.50002, -6.49997)
+rotation = 0.572559
+shape = SubResource("RectangleShape2D_4e1ot")
+
+[node name="GPUParticles2D" parent="Leg2" instance=ExtResource("3_0g5ux")]
+
+[node name="Foot1" type="RigidBody2D" parent="."]
+collision_layer = 17
+collision_mask = 7
+
+[node name="Foot1" type="Sprite2D" parent="Foot1"]
+position = Vector2(-41.5, -4)
+scale = Vector2(1.01471, 1)
+texture = ExtResource("7_bkfmn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Foot1"]
+position = Vector2(-42, -3)
+scale = Vector2(1.01471, 1)
+shape = SubResource("RectangleShape2D_ujm00")
+
+[node name="GPUParticles2D" parent="Foot1" instance=ExtResource("3_0g5ux")]

@@ -1,0 +1,280 @@
+[gd_scene load_steps=20 format=3 uid="uid://ctj4tvthn853c"]
+
+[ext_resource type="Script" path="res://Scenes/Main/UI/PauseMenu/pauseMenu.gd" id="1_hcmg0"]
+[ext_resource type="Texture2D" uid="uid://o63yuk6dc1b0" path="res://Assets/UIElements/Button.png" id="2_n0k6r"]
+[ext_resource type="Texture2D" uid="uid://c6tpeymqylhh8" path="res://Assets/UIElements/ButtonPressed.png" id="3_oovy5"]
+[ext_resource type="Texture2D" uid="uid://ba5q40vigkvjq" path="res://Assets/UIElements/PauseMenuBackground.png" id="3_tby0x"]
+[ext_resource type="Texture2D" uid="uid://bta3lgofwk7x0" path="res://Assets/UIElements/ButtonHoveredFrame0.png" id="4_tggao"]
+[ext_resource type="Texture2D" uid="uid://b3kpxr6yax51x" path="res://Assets/UIElements/ButtonHoveredFrame1.png" id="5_k2kvr"]
+[ext_resource type="Texture2D" uid="uid://drya6xvm5ktps" path="res://Assets/UIElements/ButtonHoveredFrame2.png" id="6_i67t8"]
+[ext_resource type="Texture2D" uid="uid://bjqafakfiljsh" path="res://Assets/UIElements/ButtonHoveredFrame3.png" id="7_kw0l5"]
+[ext_resource type="FontFile" uid="uid://dpvdgwpnrcqb5" path="res://Assets/Font/hobostd.otf" id="8_hb63j"]
+[ext_resource type="Script" path="res://Scenes/Main/UI/PauseMenu/Debug/debugLevel.gd" id="9_p3sdl"]
+[ext_resource type="PackedScene" uid="uid://dj6xubk14rtw8" path="res://Scenes/Main/UI/PauseMenu/Debug/levelDebugButton.tscn" id="10_inrvl"]
+[ext_resource type="Script" path="res://Scenes/Main/UI/PauseMenu/Debug/godmode.gd" id="12_jr3af"]
+[ext_resource type="Script" path="res://Scenes/Main/UI/PauseMenu/Debug/infinateStamina.gd" id="13_opq3k"]
+[ext_resource type="AudioStream" uid="uid://b5fkklq1nyp2q" path="res://Assets/Audio/UISounds.wav" id="14_qatxb"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_vurtd"]
+frames = 4
+speed_scale = 10.0
+frame_0/texture = ExtResource("4_tggao")
+frame_1/texture = ExtResource("5_k2kvr")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("6_i67t8")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("7_kw0l5")
+frame_3/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_gurjb"]
+frames = 4
+speed_scale = 10.0
+frame_0/texture = ExtResource("4_tggao")
+frame_1/texture = ExtResource("5_k2kvr")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("6_i67t8")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("7_kw0l5")
+frame_3/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_cqmlq"]
+frames = 4
+speed_scale = 10.0
+frame_0/texture = ExtResource("4_tggao")
+frame_1/texture = ExtResource("5_k2kvr")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("6_i67t8")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("7_kw0l5")
+frame_3/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_uud8s"]
+frames = 4
+speed_scale = 10.0
+frame_0/texture = ExtResource("4_tggao")
+frame_1/texture = ExtResource("5_k2kvr")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("6_i67t8")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("7_kw0l5")
+frame_3/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_383my"]
+frames = 4
+speed_scale = 10.0
+frame_0/texture = ExtResource("4_tggao")
+frame_1/texture = ExtResource("5_k2kvr")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("6_i67t8")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("7_kw0l5")
+frame_3/duration = 1.0
+
+[node name="PauseMenu" type="Control" node_paths=PackedStringArray("audioStreamPlayer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hcmg0")
+audioStreamPlayer = NodePath("AudioStreamPlayer")
+
+[node name="PauseMenuBackground" type="Sprite2D" parent="."]
+position = Vector2(470, 540)
+texture = ExtResource("3_tby0x")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+offset_left = 184.0
+offset_top = 68.0
+offset_right = 2040.0
+offset_bottom = 1058.0
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 1350
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Save" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_n0k6r")
+texture_pressed = ExtResource("3_oovy5")
+texture_hover = SubResource("AnimatedTexture_vurtd")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Save"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.992157, 0.627451, 0.141176, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("8_hb63j")
+theme_override_font_sizes/font_size = 60
+text = "Save"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Load" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_n0k6r")
+texture_pressed = ExtResource("3_oovy5")
+texture_hover = SubResource("AnimatedTexture_gurjb")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Load"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.992157, 0.627451, 0.141176, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("8_hb63j")
+theme_override_font_sizes/font_size = 60
+text = "Load
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_n0k6r")
+texture_pressed = ExtResource("3_oovy5")
+texture_hover = SubResource("AnimatedTexture_cqmlq")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.992157, 0.627451, 0.141176, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("8_hb63j")
+theme_override_font_sizes/font_size = 50
+text = "Settings
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Main Menu" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_n0k6r")
+texture_pressed = ExtResource("3_oovy5")
+texture_hover = SubResource("AnimatedTexture_uud8s")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Main Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.992157, 0.627451, 0.141176, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("8_hb63j")
+theme_override_font_sizes/font_size = 40
+text = "Main Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_n0k6r")
+texture_pressed = ExtResource("3_oovy5")
+texture_hover = SubResource("AnimatedTexture_383my")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Quit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.992157, 0.627451, 0.141176, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("8_hb63j")
+theme_override_font_sizes/font_size = 60
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(310, 600)
+layout_mode = 0
+offset_left = 941.0
+offset_top = 114.0
+offset_right = 1251.0
+offset_bottom = 714.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+visible = false
+layout_mode = 2
+script = ExtResource("9_p3sdl")
+levelButton = ExtResource("10_inrvl")
+
+[node name="Godmode" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_hb63j")
+theme_override_font_sizes/font_size = 30
+text = "Godmode"
+script = ExtResource("12_jr3af")
+
+[node name="InfinateStamina" type="CheckBox" parent="ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_hb63j")
+theme_override_font_sizes/font_size = 30
+text = "inf. stamina"
+script = ExtResource("13_opq3k")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_qatxb")
+volume_db = 6.0
+bus = &"UI"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Save" to="." method="SavePressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Load" to="." method="LoadPressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="SettingsPressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Main Menu" to="." method="MainMenuPressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="QuitPressed"]
+[connection signal="toggled" from="ScrollContainer/VBoxContainer/Godmode" to="ScrollContainer/VBoxContainer/Godmode" method="GodmodeToggled"]
+[connection signal="toggled" from="ScrollContainer/VBoxContainer/InfinateStamina" to="ScrollContainer/VBoxContainer/InfinateStamina" method="InfinateStaminaToggled"]

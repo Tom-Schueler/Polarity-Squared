@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://clk5w3bk2wec7"]
+
+[node name="audioBackground" type="AudioStreamPlayer"]
+volume_db = -6.0
+bus = &"Music"

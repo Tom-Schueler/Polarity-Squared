@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2v0t3ykc6run"]
+
+[ext_resource type="Script" path="res://Prefabs/Platforms/ChargePlatform/chargePlatform.gd" id="1_f70qx"]
+[ext_resource type="Texture2D" uid="uid://q88y22q0v4o6" path="res://Assets/TileMap/tileMap_v1.png" id="2_6i7y7"]
+[ext_resource type="AudioStream" uid="uid://olv1el3xt1ft" path="res://Assets/Audio/Samples/playerPickUp.wav" id="3_5tj3i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psv8s"]
+size = Vector2(178, 181)
+
+[node name="ChargePlatform" type="Node2D" node_paths=PackedStringArray("audioStreamPlayer")]
+script = ExtResource("1_f70qx")
+audioStreamPlayer = NodePath("AudioStreamPlayer")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_6i7y7")
+region_enabled = true
+region_rect = Rect2(2304, 2304, 256, 256)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_psv8s")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 41.089
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_5tj3i")
+volume_db = -4.0
+pitch_scale = 2.0
+bus = &"SFX"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

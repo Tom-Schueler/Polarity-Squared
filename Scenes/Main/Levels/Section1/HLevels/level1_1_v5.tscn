@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=3 uid="uid://v32bg80obvs"]
+
+[ext_resource type="PackedScene" uid="uid://5owuibn0h6rf" path="res://Prefabs/Player/player.tscn" id="1_20wtl"]
+[ext_resource type="Texture2D" uid="uid://q88y22q0v4o6" path="res://Assets/TileMap/tileMap_v1.png" id="2_heaed"]
+[ext_resource type="PackedScene" uid="uid://demnkur8y8los" path="res://Prefabs/Camera/camera.tscn" id="3_pw8a6"]
+[ext_resource type="PackedScene" uid="uid://bem34hsupieur" path="res://Prefabs/Obstacles/DeathObstacle/deathObstacle.tscn" id="4_5hdka"]
+[ext_resource type="PackedScene" uid="uid://b2v0t3ykc6run" path="res://Prefabs/Platforms/ChargePlatform/chargePlatform.tscn" id="5_88emc"]
+[ext_resource type="PackedScene" uid="uid://b8pib8c7j5s7f" path="res://Prefabs/Obstacles/laserObstacle/laserObstacle.tscn" id="6_b4qeu"]
+[ext_resource type="PackedScene" uid="uid://46vmee04fjoe" path="res://Prefabs/Obstacles/laserObstacle/key.tscn" id="7_apjbq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_unj6c"]
+texture = ExtResource("2_heaed")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -108, 30, -72, 128, 106, -128, 108)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+
+[sub_resource type="TileSet" id="TileSet_mb4da"]
+tile_size = Vector2i(256, 256)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_unj6c")
+
+[node name="Node2D3" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_20wtl")]
+position = Vector2(64, -192)
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(30, -1)
+tile_set = SubResource("TileSet_mb4da")
+format = 2
+layer_0/tile_data = PackedInt32Array(65535, 65536, 0, 131071, 65536, 1, 0, 65536, 0, 65536, 65536, 1, -65506, 65536, 0, 30, 65536, 1, -65505, 65536, 0, 31, 65536, 1, -1310721, 65536, 0, -1245185, 65536, 1, -1376256, 65536, 0, -1310720, 65536, 1, -32, 65536, 0, 65504, 65536, 1, -31, 65536, 0, 65505, 65536, 1, -33, 0, 0, -1114143, 65536, 1, -1048607, 65536, 1, -983071, 65536, 1, -1114142, 65536, 1, -983070, 65536, 1, -1114141, 65536, 1, -1048605, 65536, 1, -983069, 65536, 1, 1, 131072, 0, -65504, 131072, 0, 65534, 0, 0, 262142, 0, 2, 196609, 131072, 2, 65537, 131072, 1, 131073, 131072, 1, 262143, 65536, 2, 196608, 65536, 2, 131070, 0, 1, 196606, 0, 1, 196607, 65536, 1, 131072, 65536, 1, -65507, 0, 0, 131104, 131072, 2, 131101, 0, 2, 196575, 0, 2, 196578, 131072, 2, -30, 131072, 0, 65503, 0, 1, 131039, 0, 1, 196576, 65536, 2, 196577, 65536, 2, 131042, 131072, 1, 65506, 131072, 1, 131040, 65536, 1, 131041, 65536, 1, 65566, 65536, 1, 65567, 65536, 1, 32, 131072, 1, 65568, 131072, 1, 131102, 65536, 2, 131103, 65536, 2, 29, 0, 1, 65565, 0, 1, -1310722, 0, 0, -1376255, 131072, 0, -1179647, 131072, 2, -1114114, 0, 2, -1114113, 65536, 2, -1179648, 65536, 2, -1310719, 131072, 1, -1245183, 131072, 1, -1245186, 0, 1, -1179650, 0, 1, -1179649, 65536, 1, -1245184, 65536, 1, 1310718, 0, 1, 1376254, 0, 1, 1441790, 0, 2, 1310719, 65536, 1, 1376255, 65536, 1, 1441791, 65536, 2, 1245184, 65536, 1, 1310720, 65536, 1, 1376256, 65536, 2, 1245185, 131072, 1, 1310721, 131072, 1, 1376257, 131072, 2, 1245182, 0, 0, 1245183, 65536, 0, 1179648, 65536, 0, 1179649, 131072, 0, -458769, 65536, 1, -458768, 65536, 1, -458770, 65536, 1, -393235, 65536, 1, -327699, 65536, 1, -262163, 65536, 1, -196627, 65536, 1, -131090, 65536, 1, -131089, 65536, 1, -131088, 65536, 1, -393229, 65536, 1, -327693, 65536, 1, -262157, 65536, 1, -196621, 65536, 1, -131085, 65536, 1, -458764, 65536, 1, -458763, 65536, 1, -458762, 65536, 1, -393225, 65536, 1, -327689, 65536, 1, -262153, 65536, 1, -196617, 65536, 1, -131081, 65536, 1, -262156, 65536, 1, -262155, 65536, 1, -262154, 65536, 1, -458758, 65536, 1, -393222, 65536, 1, -327686, 65536, 1, -262150, 65536, 1, -196614, 65536, 1, -131078, 65536, 1, -393221, 65536, 1, -327684, 65536, 1, -262147, 65536, 1, -196610, 65536, 1, -458753, 65536, 1, -393217, 65536, 1, -327681, 65536, 1, -262145, 65536, 1, -196609, 65536, 1, -131073, 65536, 1, -458750, 65536, 1, -393214, 65536, 1, -327678, 65536, 1, -262142, 65536, 1, -196605, 65536, 1, -196604, 65536, 1, -196603, 65536, 1, -524285, 65536, 1, -524284, 65536, 1, -524283, 65536, 1, -458744, 65536, 1, -393208, 65536, 1, -327672, 65536, 1, -262136, 65536, 1, -196599, 65536, 1, -196598, 65536, 1, -196597, 65536, 1, -524279, 65536, 1, -524278, 65536, 1, -524277, 65536, 1, -327671, 65536, 1, -327670, 65536, 1, -524274, 65536, 1, -458738, 65536, 1, -393202, 65536, 1, -327666, 65536, 1, -262130, 65536, 1, -196593, 65536, 1, -196592, 65536, 1, -196591, 65536, 1, -458733, 65536, 1, -393197, 65536, 1, -327661, 65536, 1, -262125, 65536, 1, -524268, 65536, 1, -524267, 65536, 1, -524266, 65536, 1, -196588, 65536, 1, -196587, 65536, 1, -196586, 65536, 1, -327660, 65536, 1, -327659, 65536, 1, -524263, 65536, 1, -458727, 65536, 1, -393191, 65536, 1, -327655, 65536, 1, -262119, 65536, 1, -196583, 65536, 1, -524262, 65536, 1, -524261, 65536, 1, -458724, 65536, 1, -393188, 65536, 1, -327652, 65536, 1, -262116, 65536, 1, -196582, 65536, 1, -196581, 65536, 1)
+
+[node name="Camera" parent="." instance=ExtResource("3_pw8a6")]
+zoom = Vector2(0.055, 0.055)
+
+[node name="SpikesBottom" type="Node" parent="."]
+
+[node name="DeathObstacle13" parent="SpikesBottom" instance=ExtResource("4_5hdka")]
+position = Vector2(-4288, 11456)
+scale = Vector2(8, 8)
+
+[node name="SpikesRight" type="Node" parent="."]
+
+[node name="DeathObstacle13" parent="SpikesRight" instance=ExtResource("4_5hdka")]
+position = Vector2(-5408, 11520)
+rotation = -1.5708
+scale = Vector2(8, 8)
+
+[node name="SpikesTop" type="Node" parent="."]
+
+[node name="DeathObstacle18" parent="SpikesTop" instance=ExtResource("4_5hdka")]
+position = Vector2(-4576, 11488)
+rotation = 3.14159
+scale = Vector2(8, 8)
+
+[node name="SpikesLeft" type="Node" parent="."]
+
+[node name="DeathObstacle25" parent="SpikesLeft" instance=ExtResource("4_5hdka")]
+position = Vector2(-4928, 11456)
+rotation = 1.5708
+scale = Vector2(8, 8)
+
+[node name="ChargePlatform" parent="." instance=ExtResource("5_88emc")]
+position = Vector2(32, -4224)
+scale = Vector2(7.775, 7.775)
+
+[node name="ChargePlatform2" parent="." instance=ExtResource("5_88emc")]
+position = Vector2(-3296, 3616)
+scale = Vector2(7.775, 7.775)
+
+[node name="DoorObstacle" parent="." instance=ExtResource("6_b4qeu")]
+position = Vector2(-7520, -4224)
+
+[node name="Key" parent="DoorObstacle" instance=ExtResource("7_apjbq")]
+position = Vector2(-1088, 4352)
+
+[node name="Key2" parent="DoorObstacle" instance=ExtResource("7_apjbq")]
+position = Vector2(8288, 9216)
+
+[node name="Key3" parent="DoorObstacle" instance=ExtResource("7_apjbq")]
+position = Vector2(15616, 3776)

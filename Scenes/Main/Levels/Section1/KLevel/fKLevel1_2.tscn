@@ -1,0 +1,732 @@
+[gd_scene load_steps=11 format=4 uid="uid://yw1i4b6t4400"]
+
+[ext_resource type="Texture2D" uid="uid://cgextkq2q5gv2" path="res://Assets/Background/Background_Ver.3.png" id="1_7s3ao"]
+[ext_resource type="Texture2D" uid="uid://q88y22q0v4o6" path="res://Assets/TileMap/tileMap_v1.png" id="1_walm7"]
+[ext_resource type="Texture2D" uid="uid://cw7stvowr7ii2" path="res://Assets/TileMap/TileMap_v3.png" id="2_0gius"]
+[ext_resource type="PackedScene" uid="uid://5owuibn0h6rf" path="res://Prefabs/Player/player.tscn" id="2_kx34r"]
+[ext_resource type="PackedScene" uid="uid://demnkur8y8los" path="res://Prefabs/Camera/camera.tscn" id="3_i8j0l"]
+[ext_resource type="PackedScene" uid="uid://cyqjwkxxvuo4e" path="res://Prefabs/Zones/WinZone/win_zone.tscn" id="7_eew3a"]
+[ext_resource type="PackedScene" uid="uid://bem34hsupieur" path="res://Prefabs/Obstacles/DeathObstacle/Spikes/deathObstacle.tscn" id="8_5onga"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eqcdc"]
+texture = ExtResource("1_walm7")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -28, 0, -44, 70, -30, 128, 128, -128, 128)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+9:0/0 = 0
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+9:1/0 = 0
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -48, 128, -48, 128, 54, -128, 52)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -48, 128, -48, 128, 54, -128, 52)
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -48, 128, -48, 128, 54, -128, 52)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40, 38, 42, 38, 128, 128, -128, 128)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-78, -72, -6, -92, 68, -76, 94, -12, 70, 76, -2, 94, -78, 72, -86, -2)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-78, -72, -6, -92, 68, -76, 94, -12, 70, 76, -2, 94, -78, 72, -86, -2)
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-78, -72, -6, -92, 68, -76, 94, -12, 70, 76, -2, 94, -78, 72, -86, -2)
+0:6/0 = 0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-78, -72, -6, -92, 68, -76, 94, -12, 70, 76, -2, 94, -78, 72, -86, -2)
+0:7/0 = 0
+0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-78, -72, -6, -92, 68, -76, 94, -12, 70, 76, -2, 94, -78, 72, -86, -2)
+1:7/0 = 0
+1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:7/0 = 0
+2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40, 38, 42, 38, 128, 128, -128, 128)
+2:6/0 = 0
+2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40, 38, 42, 38, 128, 128, -128, 128)
+2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40, 38, 42, 38, 128, 128, -128, 128)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40, 38, 42, 38, 128, 128, -128, 128)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:5/0 = 0
+1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:6/0 = 0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+8:9/0 = 0
+8:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -64, 60, -56, 76, 62, -80, 64)
+9:9/0 = 0
+9:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(24, -106, 102, -34, -18, 98, -94, 26)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bvgyo"]
+texture = ExtResource("2_0gius")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+9:0/0 = 0
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+9:1/0 = 0
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:5/0 = 0
+1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+0:6/0 = 0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:6/0 = 0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:6/0 = 0
+2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+0:7/0 = 0
+0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:7/0 = 0
+1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:7/0 = 0
+2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+8:9/0 = 0
+8:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+9:9/0 = 0
+9:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+
+[sub_resource type="TileSet" id="TileSet_i5lqr"]
+tile_size = Vector2i(256, 256)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_eqcdc")
+sources/1 = SubResource("TileSetAtlasSource_bvgyo")
+
+[node name="Node2D2" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+position = Vector2(128, 1280)
+scale = Vector2(12.2461, 12.2461)
+texture = ExtResource("1_7s3ao")
+
+[node name="Win zone" parent="." instance=ExtResource("7_eew3a")]
+position = Vector2(11136, 4352)
+scale = Vector2(2, 2)
+levelName = 9.0
+
+[node name="player" parent="." instance=ExtResource("2_kx34r")]
+position = Vector2(-7680, 4608)
+airControl = 0.25
+
+[node name="Camera" parent="player" instance=ExtResource("3_i8j0l")]
+limit_left = -11780
+limit_top = -3330
+limit_right = 11910
+limit_bottom = 5250
+
+[node name="Label" type="Label" parent="."]
+offset_left = -11136.0
+offset_top = 2944.0
+offset_right = -9914.0
+offset_bottom = 3444.0
+theme_override_font_sizes/font_size = 366
+text = "Level 6"
+
+[node name="Layer0" type="TileMapLayer" parent="."]
+use_parent_material = true
+position = Vector2(0, -1)
+tile_map_data = PackedByteArray("AAAJAPP/AAABAAIAAAAIAPP/AAABAAIAAAAHAPP/AAABAAIAAAAGAPP/AAABAAIAAAAFAPP/AAABAAIAAAAEAPP/AAABAAIAAAADAPP/AAABAAIAAAACAPP/AAABAAIAAAABAPP/AAABAAIAAAAAAPP/AAABAAIAAAD///P/AAABAAIAAAD+//P/AAABAAIAAAD9//P/AAABAAIAAAD8//P/AAABAAIAAAD7//P/AAABAAIAAAD6//P/AAABAAIAAAD5//P/AAABAAIAAAD4//P/AAABAAIAAAD3//P/AAABAAIAAAD2//P/AAABAAIAAAD1//P/AAABAAIAAAD0//P/AAABAAIAAADz//P/AAABAAIAAADy//P/AAABAAIAAADx//P/AAABAAIAAADu//P/AAABAAIAAADt//P/AAABAAIAAADs//P/AAABAAIAAADr//P/AAABAAIAAADq//P/AAABAAIAAADp//P/AAABAAIAAAAKAPP/AAABAAIAAAALAPP/AAABAAIAAAAMAPP/AAABAAIAAAASAPP/AAABAAIAAAATAPP/AAABAAIAAAAUAPP/AAABAAIAAAAVAPP/AAABAAIAAAARAPP/AAABAAIAAAAQAPP/AAABAAIAAAAPAPP/AAABAAIAAAAOAPP/AAABAAIAAAANAPP/AAABAAIAAAAWAPP/AAABAAIAAADo//P/AAABAAIAAADn//P/AAABAAIAAADm//P/AAABAAIAAADl//P/AAABAAIAAADk//P/AAABAAIAAADj//P/AAABAAIAAADi//P/AAABAAIAAADh//P/AAABAAIAAADg//P/AAABAAIAAADf//P/AAABAAIAAADe//P/AAABAAIAAAAXAPP/AAABAAIAAAAYAPP/AAABAAIAAAAZAPP/AAABAAIAAAAaAPP/AAABAAIAAAAbAPP/AAABAAIAAAAcAPP/AAABAAIAAAAdAPP/AAABAAIAAAAeAPP/AAABAAIAAAAfAPP/AAABAAIAAAAgAPP/AAABAAIAAAAhAPP/AAABAAIAAAAiAPP/AAABAAIAAAAjAPP/AAABAAIAAAAkAPP/AAABAAIAAAAlAPP/AAABAAIAAAAmAPP/AAABAAIAAAAnAPP/AAABAAIAAAAoAPP/AAABAAIAAAApAPP/AAABAAIAAAAqAPP/AAABAAIAAAArAPP/AAABAAIAAAAsAPP/AAABAAIAAAAtAPT/AAAAAAEAAAAtAPX/AAAAAAEAAAAtAPb/AAAAAAEAAAAtAPf/AAAAAAEAAAAtAP3/AAAAAAEAAAAtAPz/AAAAAAEAAAAtAPv/AAAAAAEAAAAtAPr/AAAAAAEAAAAtAPn/AAAAAAEAAAAtAP7/AAAAAAEAAAAtAPj/AAAAAAEAAAAtAP//AAAAAAEAAAAtAAAAAAAAAAEAAAAtAAEAAAAAAAEAAAAtAAIAAAAAAAEAAAAtAAMAAAAAAAEAAAAtAAQAAAAAAAEAAAAtAAUAAAAAAAEAAAAtAAYAAAAAAAEAAAAtAAcAAAAAAAEAAAAtAAgAAAAAAAEAAAAtAAkAAAAAAAEAAAAtAAoAAAAAAAEAAAAtAAsAAAAAAAEAAAAtAAwAAAAAAAEAAAAtAPP/AAADAAAAAFDS/w4AAAACAAEAAADS/w8AAAACAAEAAADS/xAAAAACAAEAAADS/xEAAAACAAEAAADS/xIAAAACAAEAAAAtAA0AAAAAAAEAAAAtAA4AAAAAAAEAAAAtAA8AAAAAAAEAAAAtABAAAAAAAAEAAAAtABEAAAAAAAEAAAAtABIAAAAAAAEAAAAtABMAAAADAAAAADDT/xMAAAABAAAAAADU/xMAAAABAAAAAADV/xMAAAABAAAAAADW/xMAAAABAAAAAADX/xMAAAABAAAAAADY/xMAAAABAAAAAADZ/xMAAAABAAAAAADa/xMAAAABAAAAAADb/xMAAAABAAAAAADc/xMAAAABAAAAAADf/xMAAAABAAAAAADg/xMAAAABAAAAAADh/xMAAAABAAAAAADi/xMAAAABAAAAAADj/xMAAAABAAAAAADk/xMAAAABAAAAAADS/xMAAAADAAAAAGDe/xMAAAABAAAAAADd/xMAAAABAAAAAADT/w0AAAABAAIAAADU/w0AAAABAAIAAADV/w0AAAABAAIAAADW/w0AAAABAAIAAADX/w0AAAABAAIAAADY/w0AAAABAAIAAADZ/w0AAAABAAIAAADa/w0AAAABAAIAAADb/w0AAAABAAIAAADc/w0AAAABAAIAAADd/wwAAAACAAEAAADd/w0AAAACAAIAAADS/w0AAAADAAAAAADd/wsAAAACAAEAAADd/woAAAACAAEAAADd/wcAAAACAAEAAADd/wQAAAACAAEAAADd/wMAAAACAAEAAADd/wIAAAACAAEAAADd/wEAAAACAAEAAADd//7/AAACAAEAAADd////AAACAAEAAADd//3/AAACAAEAAADd/wAAAAACAAEAAADd//r/AAACAAEAAADd//n/AAACAAEAAADd//j/AAACAAEAAADd//f/AAACAAEAAADd//b/AAACAAEAAADd//X/AAACAAEAAADd//T/AAACAAEAAADS/wwAAAABAAEAAADT/wwAAAABAAEAAADU/wwAAAABAAEAAADV/wwAAAABAAEAAADW/wwAAAABAAEAAADX/wwAAAABAAEAAADY/wwAAAABAAEAAADZ/wwAAAABAAEAAADa/wwAAAABAAEAAADb/wwAAAABAAEAAADc/wwAAAABAAEAAADc/wsAAAABAAEAAADc/woAAAABAAEAAADc/wkAAAABAAEAAADc/wgAAAABAAEAAADc/wcAAAABAAEAAADc/wYAAAABAAEAAADc/wUAAAABAAEAAADc/wQAAAABAAEAAADc/wMAAAABAAEAAADc/wIAAAABAAEAAADc/wEAAAABAAEAAADc/wAAAAABAAEAAADc////AAABAAEAAADc//7/AAABAAEAAADc//3/AAABAAEAAADc//z/AAABAAEAAADc//v/AAABAAEAAADb//v/AAABAAEAAADb//r/AAABAAEAAADb//n/AAABAAEAAADb//j/AAABAAEAAADb//f/AAABAAEAAADb//b/AAABAAEAAADb//X/AAABAAEAAADb//T/AAABAAEAAADb//P/AAABAAEAAADc//P/AAABAAEAAADa//P/AAABAAEAAADZ//P/AAABAAEAAADY//P/AAABAAEAAADX//P/AAABAAEAAADW//P/AAABAAEAAADV//P/AAABAAEAAADV//T/AAABAAEAAADV//X/AAABAAEAAADV//b/AAABAAEAAADV//f/AAABAAEAAADV//j/AAABAAEAAADV//n/AAABAAEAAADV//r/AAABAAEAAADV//v/AAABAAEAAADV//z/AAABAAEAAADV//3/AAABAAEAAADV//7/AAABAAEAAADV////AAABAAEAAADV/wAAAAABAAEAAADV/wEAAAABAAEAAADU/wEAAAABAAEAAADU/wIAAAABAAEAAADU/wMAAAABAAEAAADU/wQAAAABAAEAAADU/wUAAAABAAEAAADU/wYAAAABAAEAAADU/wcAAAABAAEAAADU/wgAAAABAAEAAADT/wgAAAABAAEAAADT/wkAAAABAAEAAADT/woAAAABAAEAAADT/wsAAAABAAEAAADS/wsAAAABAAEAAADS/woAAAABAAEAAADS/wkAAAABAAEAAADS/wgAAAABAAEAAADS/wcAAAABAAEAAADS/wYAAAABAAEAAADS/wUAAAABAAEAAADS/wQAAAABAAEAAADT/wMAAAABAAEAAADT/wIAAAABAAEAAADT/wEAAAABAAEAAADT/wAAAAABAAEAAADT////AAABAAEAAADT//7/AAABAAEAAADT//3/AAABAAEAAADT//z/AAABAAEAAADT//v/AAABAAEAAADT//r/AAABAAEAAADT//n/AAABAAEAAADT//j/AAABAAEAAADT//f/AAABAAEAAADT//b/AAABAAEAAADT//X/AAABAAEAAADT//T/AAABAAEAAADT//P/AAABAAEAAADU//P/AAABAAEAAADS//P/AAABAAEAAADS//T/AAABAAEAAADS//X/AAABAAEAAADS//b/AAABAAEAAADS//f/AAABAAEAAADS//j/AAABAAEAAADS//n/AAABAAEAAADS//r/AAABAAEAAADS//v/AAABAAEAAADS//z/AAABAAEAAADS//3/AAABAAEAAADS//7/AAABAAEAAADS////AAABAAEAAADS/wAAAAABAAEAAADS/wEAAAABAAEAAADS/wIAAAABAAEAAADS/wMAAAABAAEAAADU//7/AAABAAEAAADU//3/AAABAAEAAADU//z/AAABAAEAAADU//v/AAABAAEAAADW//b/AAABAAEAAADW//X/AAABAAEAAADW//T/AAABAAEAAADW//f/AAABAAEAAADW//j/AAABAAEAAADV/wIAAAABAAEAAADV/wMAAAABAAEAAADV/wQAAAABAAEAAADU//r/AAABAAEAAADU//n/AAABAAEAAADU//j/AAABAAEAAADU//f/AAABAAEAAADU//b/AAABAAEAAADU////AAABAAEAAADU//X/AAABAAEAAADU//T/AAABAAEAAADU/wAAAAABAAEAAADT/wQAAAABAAEAAADT/wUAAAABAAEAAADT/wYAAAABAAEAAADT/wcAAAABAAEAAADU/woAAAABAAEAAADV/woAAAABAAEAAADW/woAAAABAAEAAADW/wsAAAABAAEAAADV/wsAAAABAAEAAADX/wsAAAABAAEAAADY/wsAAAABAAEAAADZ/wsAAAABAAEAAADa/wsAAAABAAEAAADb/wsAAAABAAEAAADb/woAAAABAAEAAADb/wkAAAABAAEAAADb/wgAAAABAAEAAADb/wcAAAABAAEAAADb/wYAAAABAAEAAADb/wUAAAABAAEAAADb/wQAAAABAAEAAADb/wMAAAABAAEAAADb/wIAAAABAAEAAADb/wEAAAABAAEAAADb/wAAAAABAAEAAADb////AAABAAEAAADb//7/AAABAAEAAADb//3/AAABAAEAAADb//z/AAABAAEAAADc//T/AAABAAEAAADc//X/AAABAAEAAADc//b/AAABAAEAAADc//f/AAABAAEAAADc//j/AAABAAEAAADc//n/AAABAAEAAADc//r/AAABAAEAAADa//X/AAABAAEAAADZ//X/AAABAAEAAADY//X/AAABAAEAAADX//X/AAABAAEAAADY//T/AAABAAEAAADZ//T/AAABAAEAAADX//T/AAABAAEAAADa//T/AAABAAEAAADZ//b/AAABAAEAAADY//f/AAABAAEAAADX//f/AAABAAEAAADX//j/AAABAAEAAADW//n/AAABAAEAAADX//b/AAABAAEAAADX//n/AAABAAEAAADX//r/AAABAAEAAADX//v/AAABAAEAAADW//v/AAABAAEAAADW//z/AAABAAEAAADY//b/AAABAAEAAADY//j/AAABAAEAAADY//n/AAABAAEAAADY//r/AAABAAEAAADZ//j/AAABAAEAAADZ//f/AAABAAEAAADZ//n/AAABAAEAAADZ//r/AAABAAEAAADZ//v/AAABAAEAAADY//v/AAABAAEAAADY//z/AAABAAEAAADY//3/AAABAAEAAADW//3/AAABAAEAAADW//7/AAABAAEAAADW////AAABAAEAAADW//r/AAABAAEAAADW/wAAAAABAAEAAADW/wEAAAABAAEAAADW/wIAAAABAAEAAADW/wMAAAABAAEAAADV/wUAAAABAAEAAADV/wYAAAABAAEAAADV/wcAAAABAAEAAADU/wkAAAABAAEAAADV/wkAAAABAAEAAADV/wgAAAABAAEAAADW/wYAAAABAAEAAADW/wUAAAABAAEAAADW/wQAAAABAAEAAADW/wcAAAABAAEAAADW/wgAAAABAAEAAADW/wkAAAABAAEAAADX/wgAAAABAAEAAADX/wcAAAABAAEAAADX/wYAAAABAAEAAADX/wUAAAABAAEAAADX/wQAAAABAAEAAADX/wMAAAABAAEAAADU/wsAAAABAAEAAADX/woAAAABAAEAAADY/wkAAAABAAEAAADY/woAAAABAAEAAADZ/woAAAABAAEAAADa/woAAAABAAEAAADa/wkAAAABAAEAAADa/wgAAAABAAEAAADZ/wcAAAABAAEAAADZ/wYAAAABAAEAAADZ/wUAAAABAAEAAADZ/wQAAAABAAEAAADZ/wMAAAABAAEAAADZ/wIAAAABAAEAAADZ/wgAAAABAAEAAADZ/wkAAAABAAEAAADa/wYAAAABAAEAAADa/wUAAAABAAEAAADa/wQAAAABAAEAAADa/wMAAAABAAEAAADa/wIAAAABAAEAAADa/wEAAAABAAEAAADa/wcAAAABAAEAAADZ/wEAAAABAAEAAADZ/wAAAAABAAEAAADY/wYAAAABAAEAAADY/wcAAAABAAEAAADY/wgAAAABAAEAAADY/wIAAAABAAEAAADY/wMAAAABAAEAAADY/wQAAAABAAEAAADY/wUAAAABAAEAAADX/wIAAAABAAEAAADY/wEAAAABAAEAAADY/wAAAAABAAEAAADY////AAABAAEAAADY//7/AAABAAEAAADX/wEAAAABAAEAAADX/wAAAAABAAEAAADX////AAABAAEAAADX//7/AAABAAEAAADX//3/AAABAAEAAADX//z/AAABAAEAAADZ//z/AAABAAEAAADZ//3/AAABAAEAAADZ//7/AAABAAEAAADZ////AAABAAEAAADa/wAAAAABAAEAAADa////AAABAAEAAADa//7/AAABAAEAAADa//3/AAABAAEAAADa//z/AAABAAEAAADa//v/AAABAAEAAADa//r/AAABAAEAAADa//n/AAABAAEAAADa//j/AAABAAEAAADa//f/AAABAAEAAADa//b/AAABAAEAAADX/wkAAAABAAEAAADd//P/AAADAAAAAADw//P/AAABAAIAAADv//P/AAABAAIAAAAlAPf/AAABAAAAAAAkAPf/AAABAAAAAAAjAPf/AAABAAAAAAAmAPf/AAABAAAAAAAnAPf/AAABAAAAAAAoAPf/AAABAAAAAAApAPf/AAACAAAAAAApAPj/AAACAAEAAAApAPn/AAACAAEAAAApAPr/AAACAAEAAAApAPv/AAACAAEAAAApAPz/AAACAAEAAAApAP3/AAACAAEAAAApAP7/AAACAAEAAAApAP//AAACAAEAAAApAAAAAAACAAEAAAApAAEAAAACAAEAAAApAAIAAAACAAEAAAApAAMAAAACAAEAAAApAAQAAAACAAEAAAApAAUAAAACAAEAAAApAAYAAAACAAEAAAApAAcAAAACAAEAAAApAAgAAAACAAEAAAApAAkAAAACAAEAAAApAAoAAAACAAEAAAApAAsAAAACAAEAAAApAAwAAAACAAEAAAApAA0AAAACAAEAAAApAA4AAAACAAEAAAApAA8AAAACAAEAAAApABAAAAACAAEAAAApABEAAAACAAEAAAApABMAAAADAAAAAGApABIAAAACAAEAAAAqABMAAAABAAAAAAArABMAAAABAAAAAAAsABMAAAABAAAAAAAiAPf/AAAAAAAAAAAiAPj/AAAAAAIAAAAjAPj/AAABAAIAAAAkAPj/AAABAAIAAAAlAPj/AAABAAIAAAAmAPj/AAABAAIAAAAnAPj/AAABAAIAAAAoAPn/AAAAAAEAAAAoAPr/AAAAAAEAAAAoAPv/AAAAAAEAAAAoAPz/AAAAAAEAAAAoAP3/AAAAAAEAAAAoAAAAAAAAAAEAAAAoAAEAAAAAAAEAAAAoAAIAAAAAAAEAAAAoAAMAAAAAAAEAAAAoAAQAAAAAAAEAAAAoAAUAAAAAAAEAAAAoAAYAAAAAAAEAAAAoAAcAAAAAAAEAAAAoAAgAAAAAAAEAAAAoAAkAAAAAAAEAAAAoAAoAAAAAAAEAAAAoAAsAAAAAAAEAAAAoAAwAAAAAAAEAAAAoAA0AAAAAAAEAAAAoAA4AAAAAAAEAAAAoAA8AAAAAAAEAAAAoABAAAAAAAAEAAAAoABEAAAAAAAEAAAAoABIAAAAAAAEAAAApABQAAAABAAIAAAAqABQAAAABAAIAAAArABQAAAABAAIAAAAsABQAAAABAAIAAAAtABQAAAABAAIAAAAuABMAAAACAAEAAAAuABIAAAACAAEAAAAuABEAAAACAAEAAAAuABAAAAACAAEAAAAuAA8AAAACAAEAAAAuAA4AAAACAAEAAAAuAA0AAAACAAEAAAAuAAwAAAACAAEAAAAuAAsAAAACAAEAAAAuAAoAAAACAAEAAAAuAAkAAAACAAEAAAAuAAgAAAACAAEAAAAuAAcAAAACAAEAAAAuAAYAAAACAAEAAAAuAAUAAAACAAEAAAAuAAQAAAACAAEAAAAuAAMAAAACAAEAAAAuAAIAAAACAAEAAAAuAAEAAAACAAEAAAAuAAAAAAACAAEAAAAuAP//AAACAAEAAAAuAP7/AAACAAEAAAAuAP3/AAACAAEAAAAuAPz/AAACAAEAAAAuAPv/AAACAAEAAAAuAPr/AAACAAEAAAAuAPn/AAACAAEAAAAuAPj/AAACAAEAAAAuAPf/AAACAAEAAAAuAPb/AAACAAEAAAAuAPX/AAACAAEAAAAuAPT/AAACAAEAAAAuAPP/AAACAAEAAAAuABQAAAACAAIAAADk/xQAAAABAAIAAADj/xQAAAABAAIAAADi/xQAAAABAAIAAADh/xQAAAABAAIAAADg/xQAAAABAAIAAADf/xQAAAABAAIAAADe/xQAAAABAAIAAADd/xQAAAABAAIAAADc/xQAAAABAAIAAADb/xQAAAABAAIAAADa/xQAAAABAAIAAADZ/xQAAAABAAIAAADY/xQAAAABAAIAAADX/xQAAAABAAIAAADW/xQAAAABAAIAAADV/xQAAAABAAIAAADU/xQAAAABAAIAAADT/xQAAAABAAIAAADS/xQAAAABAAIAAAAoAPj/AAADAAAAAFDd/wYAAAACAAEAAADd/wUAAAACAAEAAADd//z/AAACAAEAAADd//v/AAACAAEAAADl/xMAAAACAAAAAADl/xQAAAACAAIAAAAoABQAAAAAAAIAAAAoABMAAAAAAAEAAADe/wkAAAABAAIAAADf/wkAAAABAAIAAADg/wkAAAABAAIAAADh/wkAAAABAAIAAADi/wkAAAABAAIAAADj/wkAAAABAAIAAADk/wkAAAABAAIAAADl/wkAAAABAAIAAADm/wkAAAABAAIAAADn/wkAAAABAAIAAADo/wkAAAABAAIAAADp/wkAAAABAAIAAADq/wkAAAABAAIAAADr/wkAAAABAAIAAADs/wkAAAABAAIAAADt/wkAAAABAAIAAADu/wkAAAABAAIAAADv/wkAAAABAAIAAADw/wkAAAABAAIAAADx/wkAAAABAAIAAADy/wkAAAABAAIAAADz/wkAAAABAAIAAAD0/wkAAAABAAIAAAD1/wkAAAABAAIAAAD2/wkAAAABAAIAAAD3/wkAAAABAAIAAAD4/wkAAAABAAIAAAD5/wkAAAABAAIAAAD6/wkAAAABAAIAAAD7/wkAAAABAAIAAAD8/wkAAAABAAIAAAD9/wkAAAABAAIAAAD+/wkAAAABAAIAAAD//wkAAAABAAIAAAAAAAkAAAABAAIAAAABAAkAAAABAAIAAAACAAkAAAABAAIAAAADAAkAAAABAAIAAAAEAAkAAAABAAIAAAAFAAkAAAABAAIAAAAGAAkAAAABAAIAAAAHAAkAAAABAAIAAAAIAAkAAAABAAIAAAAJAAkAAAABAAIAAAAKAAkAAAABAAIAAAALAAkAAAABAAIAAAAMAAkAAAABAAIAAAANAAkAAAABAAIAAAAOAAkAAAABAAIAAAAPAAkAAAABAAIAAAAQAAkAAAABAAIAAAARAAkAAAABAAIAAAASAAkAAAABAAIAAAATAAkAAAABAAIAAAAUAAkAAAABAAIAAAAVAAkAAAABAAIAAAAWAAkAAAABAAIAAAAXAAkAAAABAAIAAAAYAAkAAAABAAIAAAAZAAkAAAABAAIAAAAaAAkAAAABAAIAAAAbAAkAAAABAAIAAAAcAAkAAAABAAIAAAAdAAkAAAACAAIAAAAdAAgAAAACAAAAAAAcAAgAAAABAAAAAAAbAAgAAAABAAAAAAAaAAgAAAABAAAAAAAZAAgAAAABAAAAAAAYAAgAAAABAAAAAAAXAAgAAAABAAAAAAAWAAgAAAABAAAAAAAVAAgAAAABAAAAAAAUAAgAAAABAAAAAAATAAgAAAABAAAAAAASAAgAAAABAAAAAAARAAgAAAABAAAAAAAQAAgAAAABAAAAAAAPAAgAAAABAAAAAAAOAAgAAAABAAAAAAANAAgAAAABAAAAAAAMAAgAAAABAAAAAAALAAgAAAABAAAAAAAKAAgAAAABAAAAAAAJAAgAAAABAAAAAAAIAAgAAAABAAAAAAAHAAgAAAABAAAAAAAGAAgAAAABAAAAAAAFAAgAAAABAAAAAAAEAAgAAAABAAAAAAADAAgAAAABAAAAAAACAAgAAAABAAAAAAABAAgAAAABAAAAAAAAAAgAAAABAAAAAAD//wgAAAABAAAAAAD+/wgAAAABAAAAAAD9/wgAAAABAAAAAAD8/wgAAAABAAAAAAD7/wgAAAABAAAAAAD6/wgAAAABAAAAAAD5/wgAAAABAAAAAAD4/wgAAAABAAAAAAD3/wgAAAABAAAAAAD2/wgAAAABAAAAAAD1/wgAAAABAAAAAAD0/wgAAAABAAAAAADz/wgAAAABAAAAAADy/wgAAAABAAAAAADx/wgAAAABAAAAAADw/wgAAAABAAAAAADv/wgAAAABAAAAAADu/wgAAAABAAAAAADt/wgAAAABAAAAAADs/wgAAAABAAAAAADr/wgAAAABAAAAAADq/wgAAAABAAAAAADp/wgAAAABAAAAAADo/wgAAAABAAAAAADn/wgAAAABAAAAAADm/wgAAAABAAAAAADl/wgAAAABAAAAAADk/wgAAAABAAAAAADj/wgAAAABAAAAAADi/wgAAAABAAAAAADh/wgAAAABAAAAAADg/wgAAAABAAAAAADf/wgAAAABAAAAAADe/wgAAAABAAAAAADd/wkAAAADAAAAAADd/wgAAAADAAAAAGAnAP//AAABAAIAAAAmAP//AAABAAIAAAAlAP//AAABAAIAAAAkAP//AAABAAIAAAAjAP//AAABAAIAAAAiAP//AAABAAIAAAAhAP//AAABAAIAAAAgAP//AAABAAIAAAAfAP//AAABAAIAAAAeAP//AAABAAIAAAAdAP//AAABAAIAAAAcAP//AAABAAIAAAAbAP//AAABAAIAAAAaAP//AAABAAIAAAAZAP//AAABAAIAAAAYAP//AAABAAIAAAAXAP//AAABAAIAAAAWAP//AAABAAIAAAAVAP//AAABAAIAAAAUAP//AAABAAIAAAATAP//AAABAAIAAAASAP//AAABAAIAAAARAP//AAABAAIAAAAQAP//AAABAAIAAAAPAP//AAABAAIAAAAOAP//AAABAAIAAAANAP//AAABAAIAAAAMAP//AAABAAIAAAALAP//AAABAAIAAAAKAP//AAABAAIAAAAJAP//AAABAAIAAAAIAP//AAABAAIAAAAHAP//AAABAAIAAAAGAP//AAABAAIAAAAFAP//AAABAAIAAAAEAP//AAABAAIAAAADAP//AAABAAIAAAACAP//AAABAAIAAAABAP//AAABAAIAAAAAAP//AAABAAIAAAD/////AAABAAIAAAD+////AAABAAIAAAD9////AAABAAIAAAD8////AAABAAIAAAD7////AAABAAIAAAD6////AAABAAIAAAD5////AAABAAIAAAD4////AAABAAIAAAD3////AAABAAIAAAD2////AAABAAIAAAD1////AAABAAIAAAD0////AAABAAIAAADz////AAABAAIAAADs////AAABAAIAAADt////AAABAAIAAADu////AAABAAIAAADv////AAABAAIAAADw////AAABAAIAAADx////AAABAAIAAADy////AAABAAIAAADr////AAABAAIAAADq////AAABAAIAAADp////AAABAAIAAADo////AAABAAIAAADn////AAABAAIAAADm////AAABAAIAAADl////AAAAAAIAAADl//7/AAAAAAAAAADm//7/AAABAAAAAADn//7/AAABAAAAAADo//7/AAABAAAAAADp//7/AAABAAAAAADq//7/AAABAAAAAADr//7/AAABAAAAAADs//7/AAABAAAAAADt//7/AAABAAAAAADu//7/AAABAAAAAADv//7/AAABAAAAAADw//7/AAABAAAAAADx//7/AAABAAAAAADy//7/AAABAAAAAADz//7/AAABAAAAAAD0//7/AAABAAAAAAD1//7/AAABAAAAAAD2//7/AAABAAAAAAD3//7/AAABAAAAAAD4//7/AAABAAAAAAD5//7/AAABAAAAAAD6//7/AAABAAAAAAD7//7/AAABAAAAAAD8//7/AAABAAAAAAD9//7/AAABAAAAAAD+//7/AAABAAAAAAD///7/AAABAAAAAAAAAP7/AAABAAAAAAABAP7/AAABAAAAAAACAP7/AAABAAAAAAADAP7/AAABAAAAAAAEAP7/AAABAAAAAAAFAP7/AAABAAAAAAAGAP7/AAABAAAAAAAHAP7/AAABAAAAAAAIAP7/AAABAAAAAAAJAP7/AAABAAAAAAAKAP7/AAABAAAAAAALAP7/AAABAAAAAAAMAP7/AAABAAAAAAANAP7/AAABAAAAAAAOAP7/AAABAAAAAAAPAP7/AAABAAAAAAAQAP7/AAABAAAAAAARAP7/AAABAAAAAAASAP7/AAABAAAAAAATAP7/AAABAAAAAAAUAP7/AAABAAAAAAAVAP7/AAABAAAAAAAWAP7/AAABAAAAAAAXAP7/AAABAAAAAAAYAP7/AAABAAAAAAAZAP7/AAABAAAAAAAaAP7/AAABAAAAAAAbAP7/AAABAAAAAAAcAP7/AAABAAAAAAAdAP7/AAABAAAAAAAeAP7/AAABAAAAAAAfAP7/AAABAAAAAAAgAP7/AAABAAAAAAAhAP7/AAABAAAAAAAiAP7/AAABAAAAAAAjAP7/AAABAAAAAAAkAP7/AAABAAAAAAAlAP7/AAABAAAAAAAmAP7/AAABAAAAAAAnAP7/AAABAAAAAAA=")
+tile_set = SubResource("TileSet_i5lqr")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="DeathObstacle3" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-2560, 6144)
+
+[node name="DeathObstacle4" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-2304, 6144)
+
+[node name="DeathObstacle5" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-2048, 6144)
+
+[node name="DeathObstacle6" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-1792, 6144)
+
+[node name="DeathObstacle7" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-1536, 6144)
+
+[node name="DeathObstacle8" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-1280, 6144)
+
+[node name="DeathObstacle9" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-1024, 6144)
+
+[node name="DeathObstacle10" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-768, 6144)
+
+[node name="DeathObstacle11" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-512, 6144)
+
+[node name="DeathObstacle12" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-256, 6144)
+
+[node name="DeathObstacle13" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(0, 6144)
+
+[node name="DeathObstacle14" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(256, 6144)
+
+[node name="DeathObstacle15" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(512, 6144)
+
+[node name="DeathObstacle16" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(768, 6144)
+
+[node name="DeathObstacle17" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(1024, 6144)
+
+[node name="DeathObstacle18" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(1280, 6144)
+
+[node name="DeathObstacle19" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-6656, 6144)
+
+[node name="DeathObstacle20" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-6400, 6144)
+
+[node name="DeathObstacle21" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-6144, 6144)
+
+[node name="DeathObstacle22" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-5888, 6144)
+
+[node name="DeathObstacle23" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-5632, 6144)
+
+[node name="DeathObstacle24" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-5376, 6144)
+
+[node name="DeathObstacle25" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-5120, 6144)
+
+[node name="DeathObstacle26" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-4864, 6144)
+
+[node name="DeathObstacle27" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-4608, 6144)
+
+[node name="DeathObstacle28" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-4352, 6144)
+
+[node name="DeathObstacle29" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-4096, 6144)
+
+[node name="DeathObstacle30" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-3840, 6144)
+
+[node name="DeathObstacle31" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-3584, 6144)
+
+[node name="DeathObstacle32" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-3328, 6144)
+
+[node name="DeathObstacle33" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-3072, 6144)
+
+[node name="DeathObstacle34" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-2816, 6144)
+
+[node name="DeathObstacle35" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(5632, 6144)
+
+[node name="DeathObstacle36" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(5888, 6144)
+
+[node name="DeathObstacle37" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(6144, 6144)
+
+[node name="DeathObstacle38" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(6400, 6144)
+
+[node name="DeathObstacle39" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(6656, 6144)
+
+[node name="DeathObstacle40" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(6912, 6144)
+
+[node name="DeathObstacle41" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(7168, 6144)
+
+[node name="DeathObstacle42" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(7424, 6144)
+
+[node name="DeathObstacle43" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(7680, 6144)
+
+[node name="DeathObstacle44" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(7936, 6144)
+
+[node name="DeathObstacle45" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(8192, 6144)
+
+[node name="DeathObstacle46" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(8448, 6144)
+
+[node name="DeathObstacle47" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(8704, 6144)
+
+[node name="DeathObstacle48" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(8960, 6144)
+
+[node name="DeathObstacle49" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(9216, 6144)
+
+[node name="DeathObstacle50" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(9472, 6144)
+
+[node name="DeathObstacle71" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(9728, 6144)
+
+[node name="DeathObstacle73" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(10240, 6144)
+
+[node name="DeathObstacle72" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(9984, 6144)
+
+[node name="DeathObstacle51" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(1536, 6144)
+
+[node name="DeathObstacle52" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(1792, 6144)
+
+[node name="DeathObstacle53" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(2048, 6144)
+
+[node name="DeathObstacle54" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(2304, 6144)
+
+[node name="DeathObstacle55" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(2560, 6144)
+
+[node name="DeathObstacle56" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(2816, 6144)
+
+[node name="DeathObstacle57" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(3072, 6144)
+
+[node name="DeathObstacle58" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(3328, 6144)
+
+[node name="DeathObstacle59" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(3584, 6144)
+
+[node name="DeathObstacle60" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(3840, 6144)
+
+[node name="DeathObstacle61" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(4096, 6144)
+
+[node name="DeathObstacle62" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(4352, 6144)
+
+[node name="DeathObstacle63" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(4608, 6144)
+
+[node name="DeathObstacle64" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(4864, 6144)
+
+[node name="DeathObstacle65" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(5120, 6144)
+
+[node name="DeathObstacle66" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(5376, 6144)
+
+[node name="DeathObstacle78" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-4736, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle79" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-4480, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle80" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-4224, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle81" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-3968, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle82" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-3712, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle83" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-3456, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle84" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-3200, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle85" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-2944, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle86" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-2688, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle87" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-2432, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle88" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-2176, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle89" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-1920, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle90" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-1664, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle91" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-1408, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle92" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-1152, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle93" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-896, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle94" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-8576, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle95" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-8320, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle96" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-8064, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle97" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-7808, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle98" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-7552, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle99" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-7296, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle100" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-7040, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle101" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-6784, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle102" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-6528, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle103" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-6272, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle104" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-6016, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle105" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-5760, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle106" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-5504, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle107" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-5248, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle108" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-4992, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle109" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-640, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle110" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-384, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle111" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-128, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle112" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(128, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle113" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(384, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle114" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(640, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle115" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(896, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle116" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(1152, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle117" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(1408, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle118" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(1664, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle119" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(1920, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle120" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(2176, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle121" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(2432, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle122" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(2688, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle123" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(2944, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle124" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(3200, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle125" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(3456, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle126" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(3712, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle127" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(3968, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle128" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(4224, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle129" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(4480, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle130" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(4736, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle131" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(4992, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle132" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(5248, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle133" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(5504, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle134" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(5760, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle135" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(6016, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle136" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(6272, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle137" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(6528, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle138" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(6784, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle139" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(7040, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle140" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(7296, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle141" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(7552, 2688)
+rotation = -3.14159
+
+[node name="DeathObstacle67" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(10368, 6272)
+rotation = -1.5708
+
+[node name="DeathObstacle68" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(10368, 6016)
+rotation = -1.5708
+
+[node name="DeathObstacle69" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(10368, 5760)
+rotation = -1.5708
+
+[node name="DeathObstacle70" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(10368, 5504)
+rotation = -1.5708
+
+[node name="DeathObstacle74" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-6784, 6272)
+rotation = 1.5708
+
+[node name="DeathObstacle75" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-6784, 6016)
+rotation = 1.5708
+
+[node name="DeathObstacle76" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-6784, 5760)
+rotation = 1.5708
+
+[node name="DeathObstacle77" parent="Node" instance=ExtResource("8_5onga")]
+position = Vector2(-6784, 5504)
+rotation = 1.5708

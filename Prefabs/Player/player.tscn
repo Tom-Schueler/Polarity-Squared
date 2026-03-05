@@ -1,0 +1,151 @@
+[gd_scene load_steps=25 format=3 uid="uid://5owuibn0h6rf"]
+
+[ext_resource type="Script" path="res://Prefabs/Player/player.gd" id="1_kpkfc"]
+[ext_resource type="Script" path="res://Utilities/FSM/finiteStateMachine.gd" id="3_lalf7"]
+[ext_resource type="Script" path="res://Prefabs/Player/States/playerDeadState.gd" id="5_yrsxk"]
+[ext_resource type="Script" path="res://Prefabs/Player/States/playerFallingState.gd" id="6_3q6ts"]
+[ext_resource type="Script" path="res://Prefabs/Player/States/playerIdleState.gd" id="7_mcww4"]
+[ext_resource type="Script" path="res://Prefabs/Player/States/playerJumpingState.gd" id="8_oy2ro"]
+[ext_resource type="Script" path="res://Prefabs/Player/States/playerOnWallState.gd" id="9_1btsa"]
+[ext_resource type="Script" path="res://Prefabs/Player/States/playerMovingState.gd" id="9_tdwtu"]
+[ext_resource type="Script" path="res://Prefabs/Player/States/playerChangeGravityState.gd" id="9_xv7xw"]
+[ext_resource type="PackedScene" uid="uid://bvv4crxojlpgg" path="res://Prefabs/Player/Animation/mainHeroSprite.tscn" id="10_nvxer"]
+[ext_resource type="PackedScene" uid="uid://xsvna78wmr0m" path="res://Scenes/Main/UI/StaminaBar/gravityStaminaBar.tscn" id="10_xbliw"]
+[ext_resource type="Script" path="res://Prefabs/Player/crushDetector.gd" id="11_yjwht"]
+[ext_resource type="PackedScene" uid="uid://ddfdpmtwvo7vk" path="res://Assets/Audio/audioComponent/audioBetweenBG.tscn" id="13_86pow"]
+[ext_resource type="AudioStream" uid="uid://4itnwfqmy7tb" path="res://Prefabs/Player/Audio/playerRunningv2802.wav" id="14_l7gqb"]
+[ext_resource type="PackedScene" uid="uid://img3afqoounw" path="res://Assets/Audio/audioComponent/audioForeground.tscn" id="15_m55bk"]
+[ext_resource type="AudioStream" uid="uid://dkrd6y4yxptad" path="res://Assets/Audio/ChangeGravityWithGearsC.wav" id="16_1obkn"]
+[ext_resource type="PackedScene" uid="uid://vqywle40c6wu" path="res://Assets/Audio/audioComponent/audioBetweenFG.tscn" id="17_xnshe"]
+[ext_resource type="AudioStream" uid="uid://dfukqji6i87ft" path="res://Prefabs/Player/Audio/playerJumpingv2802.wav" id="18_610v5"]
+[ext_resource type="AudioStream" uid="uid://bot7lcmshf2fm" path="res://Prefabs/Player/Audio/playerLandingv2802.wav" id="19_1wp0g"]
+[ext_resource type="AudioStream" uid="uid://do31742soogd5" path="res://Prefabs/Player/Audio/playerSpikeSawDeathv2802.wav" id="20_ggtsx"]
+[ext_resource type="AudioStream" uid="uid://d2o4gngnpg0ix" path="res://Prefabs/Player/Audio/ElectrcutionD.wav" id="21_61der"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h5j0e"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jfjqo"]
+radius = 117.5
+height = 425.38
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4edya"]
+radius = 89.0
+height = 298.0
+
+[node name="player" type="CharacterBody2D" node_paths=PackedStringArray("cast") groups=["Player"]]
+position = Vector2(0, 15)
+collision_layer = 7
+collision_mask = 5
+script = ExtResource("1_kpkfc")
+acceleration = 50000.0
+speed = 2000.0
+jumpHeight = 1750.0
+gravity = 4000.0
+terminalVelocity = 4000.0
+fallSpeedMultiplier = 1.5
+airControl = 0.3
+coyoteTime = 0.05
+hangTime = 0.95
+variableJumpHeight = 0.2
+gravityStamina = 100.0
+gravityStaminaCost = 30.0
+staminaLoseRate = 45.0
+jumpMargin = 200.0
+timeUntilDance = 4.0
+cast = NodePath("ShapeCast2D")
+
+[node name="FiniteStateMachine" type="Node" parent="." node_paths=PackedStringArray("initialState", "animations")]
+script = ExtResource("3_lalf7")
+initialState = NodePath("Idle")
+animations = NodePath("../Animation")
+
+[node name="Dead" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("audioStreamPlayerElectrefied", "audioStreamPlayerImpaled", "audioStreamPlayerDismembered")]
+script = ExtResource("5_yrsxk")
+audioStreamPlayerElectrefied = NodePath("../../SFX_PlayerDeathElectro")
+audioStreamPlayerImpaled = NodePath("../../SFX_PlayerDeathSpikeSaw")
+audioStreamPlayerDismembered = NodePath("../../SFX_PlayerDeathSpikeSaw")
+
+[node name="Falling" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("audioStreamPlayer")]
+script = ExtResource("6_3q6ts")
+audioStreamPlayer = NodePath("../../SFX_PlayerLanding")
+
+[node name="Idle" type="Node" parent="FiniteStateMachine"]
+script = ExtResource("7_mcww4")
+
+[node name="Jumping" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("audioStreamPlayer")]
+script = ExtResource("8_oy2ro")
+audioStreamPlayer = NodePath("../../SFX_PlayerJumping")
+
+[node name="Moving" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("audioStreamPlayer")]
+script = ExtResource("9_tdwtu")
+audioStreamPlayer = NodePath("../../SFX_PlayerRunning")
+
+[node name="ChangeGravity" type="Node" parent="FiniteStateMachine" node_paths=PackedStringArray("audioStreamPlayer")]
+script = ExtResource("9_xv7xw")
+audioStreamPlayer = NodePath("../../SFX_PlayerChangeGravity")
+
+[node name="OnWall" type="Node" parent="FiniteStateMachine"]
+script = ExtResource("9_1btsa")
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Animation" parent="." instance=ExtResource("10_nvxer")]
+z_index = 1
+
+[node name="GravityStaminaBar" parent="." instance=ExtResource("10_xbliw")]
+offset_left = -180.0
+offset_top = -353.0
+offset_right = 120.0
+offset_bottom = 97.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+position = Vector2(0, 252)
+scale = Vector2(10.61, 1)
+shape = SubResource("RectangleShape2D_h5j0e")
+target_position = Vector2(0, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Player"]]
+position = Vector2(0, 7)
+shape = SubResource("CapsuleShape2D_jfjqo")
+one_way_collision_margin = 0.0
+
+[node name="CrushDetector" type="Area2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(0, 7)
+script = ExtResource("11_yjwht")
+player = NodePath("..")
+causeOfDeath = "Dismembered"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrushDetector"]
+shape = SubResource("CapsuleShape2D_4edya")
+
+[node name="SFX_PlayerRunning" parent="." instance=ExtResource("13_86pow")]
+stream = ExtResource("14_l7gqb")
+volume_db = 14.0
+pitch_scale = 1.4
+
+[node name="SFX_PlayerChangeGravity" parent="." instance=ExtResource("15_m55bk")]
+stream = ExtResource("16_1obkn")
+volume_db = 12.0
+
+[node name="SFX_PlayerJumping" parent="." instance=ExtResource("17_xnshe")]
+stream = ExtResource("18_610v5")
+volume_db = 8.0
+pitch_scale = 1.4
+
+[node name="SFX_PlayerLanding" parent="." instance=ExtResource("17_xnshe")]
+stream = ExtResource("19_1wp0g")
+volume_db = 8.0
+pitch_scale = 1.2
+
+[node name="SFX_PlayerDeathSpikeSaw" parent="." instance=ExtResource("17_xnshe")]
+stream = ExtResource("20_ggtsx")
+volume_db = 8.0
+
+[node name="SFX_PlayerDeathElectro" parent="." instance=ExtResource("17_xnshe")]
+stream = ExtResource("21_61der")
+volume_db = 8.0
+
+[connection signal="body_entered" from="CrushDetector" to="CrushDetector" method="OnBodyEntered"]
+[connection signal="body_exited" from="CrushDetector" to="CrushDetector" method="OnBodyExited"]

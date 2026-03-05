@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfrel2huof6jd"]
+
+[ext_resource type="PackedScene" uid="uid://8opais2u4rhd" path="res://Prefabs/Obstacles/DeathObstacle/Laser/ConnectorObstacle.tscn" id="1_eangp"]
+[ext_resource type="PackedScene" uid="uid://c8lgtpblh4bto" path="res://Prefabs/Obstacles/DeathObstacle/Laser/teslaObstacle.tscn" id="2_bvepg"]
+
+[node name="LaserCornerStraight" type="Node2D"]
+
+[node name="laserObstacle" parent="." instance=ExtResource("1_eangp")]
+position = Vector2(-3, 2)
+
+[node name="laserObstacle2" parent="." instance=ExtResource("2_bvepg")]
+position = Vector2(0, -257)
+
+[node name="laserObstacle3" parent="." instance=ExtResource("2_bvepg")]
+position = Vector2(-3, 264)
+rotation = 3.14159

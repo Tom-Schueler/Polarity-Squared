@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://clgewrmnd1l8j"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
+volume_db = 4.0
+max_distance = 1225.0
+bus = &"SFX"

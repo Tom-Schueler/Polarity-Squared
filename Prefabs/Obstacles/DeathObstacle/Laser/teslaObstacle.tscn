@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=3 uid="uid://c8lgtpblh4bto"]
+
+[ext_resource type="Script" path="res://Prefabs/Obstacles/DeathObstacle/Laser/laserObstacle.gd" id="1_3p86x"]
+[ext_resource type="Texture2D" uid="uid://fku8rlnreek7" path="res://Assets/TileMap/TM_section1.png" id="2_njxn0"]
+[ext_resource type="AudioStream" uid="uid://cqgv5rl7hxgm1" path="res://Prefabs/Obstacles/DeathObstacle/Laser/Audio/ObstacleElectrcitySFX.wav" id="3_qomw2"]
+
+[sub_resource type="Animation" id="Animation_gikcr"]
+resource_name = "EnergyOn"
+length = 0.200007
+loop_mode = 1
+step = 0.0666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [34, 44, 54]
+}
+
+[sub_resource type="Animation" id="Animation_oyl8x"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [34]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4ifxa"]
+_data = {
+"EnergyOn": SubResource("Animation_gikcr"),
+"RESET": SubResource("Animation_oyl8x")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wmud"]
+size = Vector2(173, 253)
+
+[node name="laserObstacle" type="Node2D" node_paths=PackedStringArray("audioStreamPlayer")]
+script = ExtResource("1_3p86x")
+audioStreamPlayer = NodePath("AudioStreamPlayer2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_njxn0")
+hframes = 10
+vframes = 10
+frame = 34
+region_enabled = true
+region_rect = Rect2(0, 0, 2560, 2560)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_4ifxa")
+}
+autoplay = "EnergyOn"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_8wmud")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_qomw2")
+volume_db = 1.0
+max_distance = 3000.0
+bus = &"SFX"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

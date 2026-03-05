@@ -1,0 +1,147 @@
+[gd_scene load_steps=14 format=3 uid="uid://kqe74xt7iqv8"]
+
+[ext_resource type="Script" path="res://Scenes/Main/UI/Credits/credits.gd" id="1_npffr"]
+[ext_resource type="Texture2D" uid="uid://o63yuk6dc1b0" path="res://Assets/UIElements/Button.png" id="2_g4of5"]
+[ext_resource type="Texture2D" uid="uid://bapxsyhl74r7u" path="res://Assets/UIElements/CreditsBackgroundTest.png" id="3_i2714"]
+[ext_resource type="Texture2D" uid="uid://c6tpeymqylhh8" path="res://Assets/UIElements/ButtonPressed.png" id="3_n0sg7"]
+[ext_resource type="Texture2D" uid="uid://bta3lgofwk7x0" path="res://Assets/UIElements/ButtonHoveredFrame0.png" id="4_f0xi1"]
+[ext_resource type="Texture2D" uid="uid://b3kpxr6yax51x" path="res://Assets/UIElements/ButtonHoveredFrame1.png" id="5_4tofd"]
+[ext_resource type="Texture2D" uid="uid://drya6xvm5ktps" path="res://Assets/UIElements/ButtonHoveredFrame2.png" id="6_a45xm"]
+[ext_resource type="Texture2D" uid="uid://bjqafakfiljsh" path="res://Assets/UIElements/ButtonHoveredFrame3.png" id="7_wg0wl"]
+[ext_resource type="FontFile" uid="uid://dpvdgwpnrcqb5" path="res://Assets/Font/hobostd.otf" id="8_5oste"]
+[ext_resource type="Texture2D" uid="uid://mkcoygv4nh2k" path="res://Assets/UIElements/OhMyGod.png" id="9_3cett"]
+[ext_resource type="AudioStream" uid="uid://b5fkklq1nyp2q" path="res://Assets/Audio/UISounds.wav" id="12_5mj8u"]
+[ext_resource type="Texture2D" uid="uid://dlkujgb1qh700" path="res://Assets/UIElements/Logo v3.png" id="12_kn83x"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_5qtge"]
+frames = 4
+speed_scale = 10.0
+frame_0/texture = ExtResource("4_f0xi1")
+frame_1/texture = ExtResource("5_4tofd")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("6_a45xm")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("7_wg0wl")
+frame_3/duration = 1.0
+
+[node name="Credits" type="Control" node_paths=PackedStringArray("audioStreamPlayer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_npffr")
+audioStreamPlayer = NodePath("AudioStreamPlayer")
+
+[node name="CreditsBackground" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+texture = ExtResource("3_i2714")
+
+[node name="OhMyGod" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.0980392)
+position = Vector2(621, 787)
+scale = Vector2(0.409482, 0.409482)
+texture = ExtResource("9_3cett")
+
+[node name="Back" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 49.0
+offset_top = -161.0
+offset_right = 505.0
+offset_bottom = -33.0
+grow_vertical = 0
+texture_normal = ExtResource("2_g4of5")
+texture_pressed = ExtResource("3_n0sg7")
+texture_hover = SubResource("AnimatedTexture_5qtge")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Back"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.458824, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("8_5oste")
+theme_override_font_sizes/font_size = 38
+text = "Main Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 333.0
+offset_right = 1245.0
+offset_bottom = 389.0
+theme_override_colors/font_color = Color(0.992157, 0.627451, 0.141176, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 10
+theme_override_constants/shadow_outline_size = 20
+theme_override_fonts/font = ExtResource("8_5oste")
+theme_override_font_sizes/font_size = 55
+text = "Developed and created by"
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 610.0
+offset_top = 431.0
+offset_right = 1343.0
+offset_bottom = 818.0
+theme_override_colors/font_color = Color(0.992157, 0.627451, 0.141176, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("8_5oste")
+theme_override_font_sizes/font_size = 35
+text = "Shady - Producer, Sound Designer,  QA Tester
+Kieran - Sound Designer, Level Designer
+Harun - Lead Level Designer
+
+Tom - Programmer
+Patric - Programmer, Vision Keeper
+
+Max - Lead Artist, 2D artist, 2D Animator
+Robin - 2D Artist, Concept Artist
+Robert - 2D Artist, UI/UX Designer, QA Tester"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_5mj8u")
+volume_db = 6.0
+bus = &"UI"
+
+[node name="LogoV3" type="Sprite2D" parent="."]
+position = Vector2(960, 239)
+scale = Vector2(0.464, 0.464)
+texture = ExtResource("12_kn83x")
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 604.0
+offset_top = 927.0
+offset_right = 1319.0
+offset_bottom = 978.0
+theme_override_colors/font_color = Color(0.992157, 0.8, 0.141176, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("8_5oste")
+theme_override_font_sizes/font_size = 50
+text = "Thank you for playing our game"
+
+[connection signal="pressed" from="Back" to="." method="BackPressed"]

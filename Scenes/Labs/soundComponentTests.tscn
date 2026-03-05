@@ -1,0 +1,124 @@
+[gd_scene load_steps=7 format=3 uid="uid://eha2244y6xfc"]
+
+[ext_resource type="AudioStream" uid="uid://b4hccmletbcv5" path="res://Prefabs/Zones/WinZone/Audio/gateOpeningv2802.wav" id="3_e7qsn"]
+[ext_resource type="PackedScene" uid="uid://ddfdpmtwvo7vk" path="res://Assets/Audio/audioComponent/audioBetweenBG.tscn" id="4_xrdk7"]
+[ext_resource type="PackedScene" uid="uid://dnv38vhroks33" path="res://Assets/Audio/audioComponent/audioMiddle.tscn" id="5_3r4i0"]
+[ext_resource type="PackedScene" uid="uid://vqywle40c6wu" path="res://Assets/Audio/audioComponent/audioBetweenFG.tscn" id="6_t546j"]
+[ext_resource type="PackedScene" uid="uid://img3afqoounw" path="res://Assets/Audio/audioComponent/audioForeground.tscn" id="7_vyfu7"]
+[ext_resource type="PackedScene" uid="uid://clk5w3bk2wec7" path="res://Assets/Audio/audioComponent/audioBackground.tscn" id="8_4gggu"]
+
+[node name="SoundsComponentsetting" type="Node2D"]
+
+[node name="000" type="AudioStreamPlayer" parent="."]
+volume_db = -6.0
+bus = &"Music"
+
+[node name="Ambient_Cryo" type="AudioStreamPlayer" parent="000"]
+volume_db = -6.0
+bus = &"Music"
+
+[node name="Ambient_Equipe" type="AudioStreamPlayer" parent="000"]
+volume_db = -6.0
+bus = &"Music"
+
+[node name="Ambient_A" type="AudioStreamPlayer" parent="000"]
+volume_db = -6.0
+bus = &"Music"
+
+[node name="001" type="AudioStreamPlayer" parent="."]
+volume_db = -4.0
+bus = &"SFX"
+
+[node name="playerRunningsfx" type="AudioStreamPlayer" parent="001"]
+volume_db = -4.0
+bus = &"SFX"
+
+[node name="002" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
+
+[node name="gameMusicA" type="AudioStreamPlayer" parent="002"]
+bus = &"Music"
+
+[node name="gameMusicB" type="AudioStreamPlayer" parent="002"]
+bus = &"Music"
+
+[node name="sawSFX" type="AudioStreamPlayer" parent="002"]
+bus = &"Music"
+
+[node name="spikeSFX" type="AudioStreamPlayer" parent="002"]
+bus = &"Music"
+
+[node name="003" type="AudioStreamPlayer" parent="."]
+volume_db = 4.0
+bus = &"SFX"
+
+[node name="collapsingPlatformSFX" type="AudioStreamPlayer" parent="003"]
+volume_db = 4.0
+bus = &"SFX"
+
+[node name="switchingPlatformSFX" type="AudioStreamPlayer" parent="003"]
+volume_db = 4.0
+bus = &"SFX"
+
+[node name="disappearingPlatformSFX" type="AudioStreamPlayer" parent="003"]
+volume_db = 4.0
+bus = &"SFX"
+
+[node name="landingSFX" type="AudioStreamPlayer" parent="003"]
+volume_db = 4.0
+bus = &"SFX"
+
+[node name="runningSFX" type="AudioStreamPlayer" parent="003"]
+volume_db = 4.0
+bus = &"SFX"
+
+[node name="jumpingSFX" type="AudioStreamPlayer" parent="003"]
+volume_db = 4.0
+bus = &"SFX"
+
+[node name="deathSawSpikeSFX" type="AudioStreamPlayer" parent="003"]
+volume_db = 4.0
+bus = &"SFX"
+
+[node name="deathGeneral" type="AudioStreamPlayer" parent="003"]
+volume_db = 4.0
+bus = &"SFX"
+
+[node name="deathElectricution" type="AudioStreamPlayer" parent="003"]
+volume_db = 4.0
+bus = &"SFX"
+
+[node name="gateOpeningSFX" type="AudioStreamPlayer" parent="003"]
+stream = ExtResource("3_e7qsn")
+volume_db = 4.0
+bus = &"SFX"
+
+[node name="004" type="AudioStreamPlayer" parent="."]
+volume_db = 6.0
+bus = &"SFX"
+
+[node name="switchGravityA" type="AudioStreamPlayer" parent="004"]
+volume_db = 6.0
+bus = &"SFX"
+
+[node name="switchGravityA2" type="AudioStreamPlayer" parent="004"]
+volume_db = 6.0
+bus = &"SFX"
+
+[node name="checkPointSFX" type="AudioStreamPlayer" parent="004"]
+volume_db = 6.0
+bus = &"SFX"
+
+[node name="checkPointSFX2" type="AudioStreamPlayer" parent="004"]
+volume_db = 6.0
+bus = &"SFX"
+
+[node name="audioBetweenBG" parent="." instance=ExtResource("4_xrdk7")]
+
+[node name="audioMiddle" parent="." instance=ExtResource("5_3r4i0")]
+
+[node name="audioBetweenFG" parent="." instance=ExtResource("6_t546j")]
+
+[node name="audioForeground" parent="." instance=ExtResource("7_vyfu7")]
+
+[node name="audioBackground" parent="." instance=ExtResource("8_4gggu")]

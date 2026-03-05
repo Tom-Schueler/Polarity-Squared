@@ -1,0 +1,140 @@
+[gd_scene load_steps=11 format=3 uid="uid://b7qkkxjfccj0y"]
+
+[ext_resource type="Script" path="res://Prefabs/Platforms/SwitchingPlatform/switchingPlatform.gd" id="1_fyanp"]
+[ext_resource type="Texture2D" uid="uid://cf4j8qcsd8kg5" path="res://Prefabs/Platforms/SwitchingPlatform/SwitchingBlock.png" id="2_tjim3"]
+[ext_resource type="PackedScene" uid="uid://clgewrmnd1l8j" path="res://Assets/Audio/audioComponent/audioBetweenFGPlatforms.tscn" id="3_h7mu2"]
+[ext_resource type="AudioStream" uid="uid://dc25shgbh06kv" path="res://Prefabs/Platforms/SwitchingPlatform/switchOpening.wav" id="4_t10qy"]
+[ext_resource type="AudioStream" uid="uid://bj8l6d0j3xg0p" path="res://Prefabs/Platforms/SwitchingPlatform/switchClosing.wav" id="5_jpoyd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nnn6d"]
+size = Vector2(248, 248)
+
+[sub_resource type="Animation" id="Animation_myt0a"]
+resource_name = "Close"
+length = 0.26667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MiddlePart:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [7, 6, 5, 4, 3, 2, 1, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, false, false, true, true, true, true, true]
+}
+
+[sub_resource type="Animation" id="Animation_g0cxx"]
+resource_name = "Open"
+length = 0.26667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MiddlePart:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, true, true, true, true, false, false, false]
+}
+
+[sub_resource type="Animation" id="Animation_taj5y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MiddlePart:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c60r8"]
+_data = {
+"Close": SubResource("Animation_myt0a"),
+"Open": SubResource("Animation_g0cxx"),
+"RESET": SubResource("Animation_taj5y")
+}
+
+[node name="switchingPlatform" type="StaticBody2D"]
+script = ExtResource("1_fyanp")
+
+[node name="MiddlePart" type="Sprite2D" parent="."]
+texture = ExtResource("2_tjim3")
+vframes = 8
+region_enabled = true
+region_rect = Rect2(0, 0, 256, 2048)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nnn6d")
+disabled = true
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.1
+
+[node name="Offset" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_c60r8")
+}
+
+[node name="Opener" parent="." instance=ExtResource("3_h7mu2")]
+stream = ExtResource("4_t10qy")
+max_distance = 2900.0
+attenuation = 0.125
+
+[node name="Closer" parent="." instance=ExtResource("3_h7mu2")]
+stream = ExtResource("5_jpoyd")
+volume_db = 8.0
+max_distance = 2900.0
+attenuation = 0.125
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Offset" to="." method="_on_offset_timeout"]

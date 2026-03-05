@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgf4jyiot6fk"]
+
+[ext_resource type="Texture2D" uid="uid://taanq6vmx8jj" path="res://Assets/Sprites/Square.png" id="1_eng42"]
+[ext_resource type="Script" path="res://Prefabs/Platforms/CollapsingPlatform/particleEffect.gd" id="2_3h063"]
+
+[sub_resource type="Gradient" id="Gradient_21onv"]
+offsets = PackedFloat32Array(0, 0.797753, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_tujh4"]
+colors = PackedColorArray(0.140447, 0.140447, 0.140447, 1, 0.598533, 0.607842, 0.60555, 1)
+
+[node name="CPUParticles2D" type="CPUParticles2D"]
+emitting = false
+amount = 100
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("1_eng42")
+emission_shape = 3
+emission_rect_extents = Vector2(128, 1)
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 1960)
+initial_velocity_min = 600.0
+initial_velocity_max = 1200.0
+scale_amount_min = 0.5
+scale_amount_max = 1.5
+color_ramp = SubResource("Gradient_21onv")
+color_initial_ramp = SubResource("Gradient_tujh4")
+script = ExtResource("2_3h063")

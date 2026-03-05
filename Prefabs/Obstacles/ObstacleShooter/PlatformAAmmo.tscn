@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://byag4tr8ql1o3"]
+
+[ext_resource type="PackedScene" uid="uid://cj6e5geht36fy" path="res://Prefabs/Platforms/MovingPlatform/movingPlatform.tscn" id="1_y837a"]
+[ext_resource type="PackedScene" uid="uid://b2v0t3ykc6run" path="res://Prefabs/Platforms/ChargePlatform/chargePlatform.tscn" id="2_8mw6l"]
+[ext_resource type="PackedScene" uid="uid://bem34hsupieur" path="res://Prefabs/Obstacles/DeathObstacle/Spikes/deathObstacle.tscn" id="3_14p2e"]
+[ext_resource type="PackedScene" uid="uid://bml4lhbetv0rw" path="res://Prefabs/Platforms/point.tscn" id="4_pk0wf"]
+
+[node name="PlatformAAmmo" type="Node2D"]
+
+[node name="MovingPlatform2" parent="." instance=ExtResource("1_y837a")]
+startDelay = 5.0
+curve = null
+
+[node name="ChargePlatform" parent="MovingPlatform2" instance=ExtResource("2_8mw6l")]
+position = Vector2(0, 256)
+scale = Vector2(1, 1)
+reappearTimer = 1.0
+
+[node name="DeathObstacle191" parent="MovingPlatform2" instance=ExtResource("3_14p2e")]
+position = Vector2(-512, 0)
+rotation = -1.5708
+
+[node name="ChargePlatform2" parent="MovingPlatform2" instance=ExtResource("2_8mw6l")]
+position = Vector2(0, -256)
+scale = Vector2(1, 1)
+reappearTimer = 1.0
+
+[node name="Point" parent="MovingPlatform2" instance=ExtResource("4_pk0wf")]
+
+[node name="Point2" parent="MovingPlatform2" instance=ExtResource("4_pk0wf")]
+position = Vector2(-13056, 0)
+
+[node name="Point3" parent="MovingPlatform2" instance=ExtResource("4_pk0wf")]
+position = Vector2(-13056, -2068)
+
+[node name="Point4" parent="MovingPlatform2" instance=ExtResource("4_pk0wf")]
+position = Vector2(756, -2072)
+
+[node name="Point5" parent="MovingPlatform2" instance=ExtResource("4_pk0wf")]
+position = Vector2(756, -4624)

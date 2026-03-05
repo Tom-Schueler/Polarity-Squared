@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dcqbd64viswge"]
+
+[ext_resource type="Texture2D" uid="uid://bkootagkm18qb" path="res://Assets/UIElements/Tutorial/TutorialArrowV1.png" id="1_sesyx"]
+
+[node name="Arow" type="Sprite2D"]
+texture = ExtResource("1_sesyx")

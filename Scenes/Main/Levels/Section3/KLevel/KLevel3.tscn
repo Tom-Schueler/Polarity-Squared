@@ -1,0 +1,1891 @@
+[gd_scene load_steps=14 format=4 uid="uid://dme0tu3mmsydw"]
+
+[ext_resource type="PackedScene" uid="uid://5owuibn0h6rf" path="res://Prefabs/Player/player.tscn" id="1_gujet"]
+[ext_resource type="Texture2D" uid="uid://cpwouqs8n4mcq" path="res://Assets/Background/BG_section3.png" id="1_nu5ew"]
+[ext_resource type="Script" path="res://Utilities/Tools/assetReplacementTool.gd" id="1_wi2jx"]
+[ext_resource type="PackedScene" uid="uid://demnkur8y8los" path="res://Prefabs/Camera/camera.tscn" id="2_s7nmd"]
+[ext_resource type="PackedScene" uid="uid://crdnjf0bn0bc7" path="res://Prefabs/Platforms/InvisiblePlatform/invisiblePlatform.tscn" id="4_d675w"]
+[ext_resource type="PackedScene" uid="uid://bem34hsupieur" path="res://Prefabs/Obstacles/DeathObstacle/Spikes/deathObstacle.tscn" id="5_np0rf"]
+[ext_resource type="PackedScene" uid="uid://b4ir1b0dwfctt" path="res://Prefabs/Obstacles/MovingReappearingDeathObstacle/movingReappearingDeathObstacle.tscn" id="6_1nxn2"]
+[ext_resource type="PackedScene" uid="uid://bml4lhbetv0rw" path="res://Prefabs/Platforms/point.tscn" id="7_ncsi2"]
+[ext_resource type="Texture2D" uid="uid://b4f6li24x3wy8" path="res://Assets/TileMap/TM_section3.png" id="7_q1a0u"]
+[ext_resource type="PackedScene" uid="uid://cyqjwkxxvuo4e" path="res://Prefabs/Zones/WinZone/win_zone.tscn" id="9_arl1v"]
+[ext_resource type="PackedScene" uid="uid://b2v0t3ykc6run" path="res://Prefabs/Platforms/ChargePlatform/chargePlatform.tscn" id="10_7qfq3"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_unj6c"]
+texture = ExtResource("7_q1a0u")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -108, 30, -72, 128, 106, -128, 108)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+4:0/0 = 0
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+7:1/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+2:8/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+6:4/0 = 0
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+5:4/0 = 0
+5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+5:5/0 = 0
+5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+
+[sub_resource type="TileSet" id="TileSet_mb4da"]
+tile_size = Vector2i(256, 256)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_unj6c")
+
+[node name="Node2D4" type="Node2D"]
+script = ExtResource("1_wi2jx")
+section = 2
+
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(0, 128)
+scale = Vector2(7.42037, 7.42037)
+texture = ExtResource("1_nu5ew")
+
+[node name="player" parent="." instance=ExtResource("1_gujet")]
+position = Vector2(-1024, 2048)
+
+[node name="IB(12)" type="Node" parent="."]
+
+[node name="Platform2" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-1408, 2432)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-1152, 2432)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform3" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-896, 2432)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform4" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-640, 2432)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform5" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-384, 2432)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform6" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-128, 2432)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform7" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(128, 2432)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform8" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(384, 2432)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform9" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(640, 2432)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform10" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(896, 2432)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform11" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(1152, 2432)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform12" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(1408, 2432)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform13" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(1664, 2432)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform14" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(1920, 2432)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform15" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(2176, 2432)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform16" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(2432, 2432)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform17" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(2688, 2432)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform18" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(2944, 2432)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform19" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(3200, 2432)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform20" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(3456, 2432)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform21" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(3712, 2432)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform22" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(3968, 2432)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform23" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(4224, 2432)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform24" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(4480, 2432)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform61" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-1920, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform62" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-1664, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform63" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-1408, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform64" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-1152, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform65" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-896, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform66" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-640, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform67" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-384, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform68" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-128, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform69" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(128, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform70" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(384, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform71" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(640, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform72" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(896, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform73" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(1152, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform74" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(1408, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform75" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(1664, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform76" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(1920, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform77" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(2176, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform25" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-1920, 2432)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform26" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-1664, 2432)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform27" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-2432, 2432)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform28" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-2176, 2432)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform29" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(5248, 1408)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform30" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-2688, 2432)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform55" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(4736, 1408)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform56" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(4992, 1408)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform31" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(4224, 1408)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform32" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(4480, 1408)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform33" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(3712, 1408)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform34" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(3968, 1408)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform37" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-3712, 1664)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform38" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-4224, 1664)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform39" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-3968, 1664)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform40" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-4736, 1664)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform41" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-4480, 1664)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform57" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-2688, 1664)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform58" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-3200, 1664)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform59" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-2944, 1664)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform60" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-3456, 1664)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform96" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-3328, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform97" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-3584, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform98" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-3072, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform42" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-4992, 1664)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform91" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-4736, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform92" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-4480, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform93" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-5248, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform94" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-4992, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform95" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-5504, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform43" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(3200, 896)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform44" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(3200, 1152)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform47" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-896, 1408)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform48" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-640, 1408)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform49" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-1408, 1408)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform50" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-1152, 1408)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform51" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-1664, 1408)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform52" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-1664, 1664)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform53" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-1664, 1920)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform45" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-2688, 1920)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform46" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-2688, 2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform54" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-1664, 2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform35" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(3200, 1408)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform36" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(3456, 1408)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform78" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(4480, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform79" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(3968, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform80" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(4224, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform99" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(5248, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform100" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(4736, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform101" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(4992, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform87" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(1536, 1536)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform88" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(1024, 1536)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform89" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(1280, 1536)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform90" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(5504, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform81" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(3456, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform82" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(3712, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform83" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(2944, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform84" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(3200, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform85" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(2432, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform86" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(2688, 128)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform102" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-5504, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform103" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-3200, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform104" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-3712, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform105" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-3456, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform106" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-2944, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform107" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-2688, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform108" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-4224, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform109" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-3968, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform110" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-4736, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform111" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-4480, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform112" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-5248, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform113" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-4992, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform114" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-2432, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform115" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-128, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform116" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-640, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform117" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-384, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform118" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(128, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform119" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(384, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform120" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-1152, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform121" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-896, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform122" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-1664, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform123" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-1408, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform124" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-2176, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform125" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-1920, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform141" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(3712, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform142" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(3200, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform143" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(3456, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform144" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(3968, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform145" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(4224, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform146" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(2688, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform147" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(2944, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform148" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(2176, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform149" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(2432, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform150" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(1664, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform151" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(1920, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform152" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(4480, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform153" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(5248, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform154" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(5504, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform155" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(4736, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform156" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(4992, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform157" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-384, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform158" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-896, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform159" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-640, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform160" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-128, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform161" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(128, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform162" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-1408, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform163" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-1152, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform164" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-1920, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform165" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-1664, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform166" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-2432, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform167" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-2176, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform168" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(384, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform169" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(1152, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform170" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(1408, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform171" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(640, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform172" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(896, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform178" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-4480, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform179" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-4224, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform180" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-4992, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform181" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-4736, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform182" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-5504, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform183" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-5248, -2176)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform184" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-2944, -2944)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform185" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-2688, -2944)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform186" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-3456, -2944)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform187" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-3200, -2944)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform188" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-3968, -2944)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform189" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(-3712, -2944)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform126" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(640, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform127" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(2944, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform128" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(2432, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform129" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(2688, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform130" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(3200, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform131" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(3456, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform138" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(4992, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform139" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(5248, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform140" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(5504, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform132" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(1920, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform133" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(2176, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform134" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(1408, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform135" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(1664, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform136" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(896, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="Platform137" parent="IB(12)" instance=ExtResource("4_d675w")]
+position = Vector2(1152, -1024)
+scale = Vector2(8, 8)
+visibilityDuration = 15.0
+
+[node name="DB(6)" type="Node" parent="."]
+
+[node name="DeathObstacle2" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-5248, 2944)
+
+[node name="DeathObstacle3" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-4992, 2944)
+
+[node name="DeathObstacle4" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-4736, 2944)
+
+[node name="DeathObstacle5" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-4480, 2944)
+
+[node name="DeathObstacle6" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-4224, 2944)
+
+[node name="DeathObstacle7" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-3968, 2944)
+
+[node name="DeathObstacle8" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-3712, 2944)
+
+[node name="DeathObstacle9" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-3456, 2944)
+
+[node name="DeathObstacle10" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-3200, 2944)
+
+[node name="DeathObstacle11" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-2944, 2944)
+
+[node name="DeathObstacle12" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-2688, 2944)
+
+[node name="DeathObstacle13" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-2432, 2944)
+
+[node name="DeathObstacle14" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-2176, 2944)
+
+[node name="DeathObstacle15" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-1920, 2944)
+
+[node name="DeathObstacle16" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-1664, 2944)
+
+[node name="DeathObstacle17" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-1408, 2944)
+
+[node name="DeathObstacle18" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-1152, 2944)
+
+[node name="DeathObstacle19" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-896, 2944)
+
+[node name="DeathObstacle20" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-640, 2944)
+
+[node name="DeathObstacle21" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-384, 2944)
+
+[node name="DeathObstacle22" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-128, 2944)
+
+[node name="DeathObstacle23" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(128, 2944)
+
+[node name="DeathObstacle24" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(384, 2944)
+
+[node name="DeathObstacle25" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(640, 2944)
+
+[node name="DeathObstacle26" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(896, 2944)
+
+[node name="DeathObstacle27" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(1152, 2944)
+
+[node name="DeathObstacle28" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(1408, 2944)
+
+[node name="DeathObstacle29" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(1664, 2944)
+
+[node name="DeathObstacle30" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(1920, 2944)
+
+[node name="DeathObstacle31" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(2176, 2944)
+
+[node name="DeathObstacle32" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(2432, 2944)
+
+[node name="DeathObstacle33" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(2688, 2944)
+
+[node name="DeathObstacle34" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(2944, 2944)
+
+[node name="DeathObstacle35" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(3200, 2944)
+
+[node name="DeathObstacle36" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(3456, 2944)
+
+[node name="DeathObstacle37" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(3712, 2944)
+
+[node name="DeathObstacle38" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(3968, 2944)
+
+[node name="DeathObstacle39" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(4224, 2944)
+
+[node name="DeathObstacle40" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(4480, 2944)
+
+[node name="DeathObstacle41" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(4736, 2944)
+
+[node name="DeathObstacle42" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(4992, 2944)
+
+[node name="DeathObstacle43" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(5248, 2944)
+
+[node name="DeathObstacle89" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-5504, -2688)
+rotation = 1.5708
+
+[node name="DeathObstacle90" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-5504, -2432)
+rotation = 1.5708
+
+[node name="DeathObstacle91" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-5504, -2176)
+rotation = 1.5708
+
+[node name="DeathObstacle92" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-5504, -1920)
+rotation = 1.5708
+
+[node name="DeathObstacle93" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-5504, -1664)
+rotation = 1.5708
+
+[node name="DeathObstacle94" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-5504, -1408)
+rotation = 1.5708
+
+[node name="DeathObstacle95" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-5504, -1152)
+rotation = 1.5708
+
+[node name="DeathObstacle96" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-5504, -896)
+rotation = 1.5708
+
+[node name="DeathObstacle97" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-5504, -640)
+rotation = 1.5708
+
+[node name="DeathObstacle98" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-5504, -384)
+rotation = 1.5708
+
+[node name="DeathObstacle99" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-5504, -128)
+rotation = 1.5708
+
+[node name="DeathObstacle100" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-5504, 128)
+rotation = 1.5708
+
+[node name="DeathObstacle101" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-5504, 384)
+rotation = 1.5708
+
+[node name="DeathObstacle102" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-5504, 640)
+rotation = 1.5708
+
+[node name="DeathObstacle103" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-5504, 896)
+rotation = 1.5708
+
+[node name="DeathObstacle104" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-5504, 1152)
+rotation = 1.5708
+
+[node name="DeathObstacle105" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-5504, 1408)
+rotation = 1.5708
+
+[node name="DeathObstacle106" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-5504, 1664)
+rotation = 1.5708
+
+[node name="DeathObstacle107" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-5504, 1920)
+rotation = 1.5708
+
+[node name="DeathObstacle108" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-5504, 2176)
+rotation = 1.5708
+
+[node name="DeathObstacle109" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-5504, 2432)
+rotation = 1.5708
+
+[node name="DeathObstacle110" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-5504, 2688)
+rotation = 1.5708
+
+[node name="DeathObstacle111" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(5504, -2688)
+rotation = -1.5708
+
+[node name="DeathObstacle112" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(5504, -2432)
+rotation = -1.5708
+
+[node name="DeathObstacle113" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(5504, -2176)
+rotation = -1.5708
+
+[node name="DeathObstacle114" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(5504, -1920)
+rotation = -1.5708
+
+[node name="DeathObstacle115" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(5504, -1664)
+rotation = -1.5708
+
+[node name="DeathObstacle116" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(5504, -1408)
+rotation = -1.5708
+
+[node name="DeathObstacle117" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(5504, -1152)
+rotation = -1.5708
+
+[node name="DeathObstacle118" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(5504, -896)
+rotation = -1.5708
+
+[node name="DeathObstacle119" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(5504, -640)
+rotation = -1.5708
+
+[node name="DeathObstacle120" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(5504, -384)
+rotation = -1.5708
+
+[node name="DeathObstacle121" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(5504, -128)
+rotation = -1.5708
+
+[node name="DeathObstacle122" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(5504, 128)
+rotation = -1.5708
+
+[node name="DeathObstacle123" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(5504, 384)
+rotation = -1.5708
+
+[node name="DeathObstacle124" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(5504, 640)
+rotation = -1.5708
+
+[node name="DeathObstacle125" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(5504, 896)
+rotation = -1.5708
+
+[node name="DeathObstacle126" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(5504, 1152)
+rotation = -1.5708
+
+[node name="DeathObstacle127" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(5504, 1408)
+rotation = -1.5708
+
+[node name="DeathObstacle128" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(5504, 1664)
+rotation = -1.5708
+
+[node name="DeathObstacle129" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(5504, 1920)
+rotation = -1.5708
+
+[node name="DeathObstacle130" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(5504, 2176)
+rotation = -1.5708
+
+[node name="DeathObstacle131" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(5504, 2432)
+rotation = -1.5708
+
+[node name="DeathObstacle132" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(5504, 2688)
+rotation = -1.5708
+
+[node name="DeathObstacle46" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-5248, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle47" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-4992, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle48" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-4736, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle49" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-4480, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle50" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-4224, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle51" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-3968, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle52" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-3712, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle53" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-3456, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle54" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-3200, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle55" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-2944, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle56" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-2688, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle57" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-2432, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle58" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-2176, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle59" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-1920, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle60" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-1664, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle61" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-1408, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle62" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-1152, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle63" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-896, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle64" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-640, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle65" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-384, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle66" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(-128, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle67" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(128, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle68" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(384, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle69" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(640, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle70" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(896, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle71" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(1152, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle72" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(1408, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle73" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(1664, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle74" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(1920, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle75" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(2176, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle76" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(2432, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle77" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(2688, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle78" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(2944, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle79" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(3200, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle80" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(3456, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle81" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(3712, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle82" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(3968, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle83" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(4224, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle84" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(4480, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle85" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(4736, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle86" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(4992, -2944)
+rotation = -3.14159
+
+[node name="DeathObstacle87" parent="DB(6)" instance=ExtResource("5_np0rf")]
+position = Vector2(5248, -2944)
+rotation = -3.14159
+
+[node name="RAMDB(10)" type="Node" parent="."]
+
+[node name="MovingReappearingDeathObstacle" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(-1024, -256)
+scale = Vector2(8, 8)
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle" instance=ExtResource("7_ncsi2")]
+position = Vector2(0, 80)
+
+[node name="MovingReappearingDeathObstacle2" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(-768, -128)
+scale = Vector2(8, 8)
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle2" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle2" instance=ExtResource("7_ncsi2")]
+position = Vector2(0, 80)
+
+[node name="MovingReappearingDeathObstacle3" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(-512, 0)
+scale = Vector2(8, 8)
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle3" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle3" instance=ExtResource("7_ncsi2")]
+position = Vector2(0, 80)
+
+[node name="MovingReappearingDeathObstacle4" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(-256, 128)
+scale = Vector2(8, 8)
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle4" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle4" instance=ExtResource("7_ncsi2")]
+position = Vector2(0, 80)
+
+[node name="MovingReappearingDeathObstacle5" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(0, 128)
+scale = Vector2(8, 8)
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle5" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle5" instance=ExtResource("7_ncsi2")]
+position = Vector2(0, 80)
+
+[node name="MovingReappearingDeathObstacle6" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(256, 128)
+scale = Vector2(8, 8)
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle6" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle6" instance=ExtResource("7_ncsi2")]
+position = Vector2(0, 80)
+
+[node name="MovingReappearingDeathObstacle7" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(512, 0)
+scale = Vector2(8, 8)
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle7" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle7" instance=ExtResource("7_ncsi2")]
+position = Vector2(0, 80)
+
+[node name="MovingReappearingDeathObstacle8" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(768, -128)
+scale = Vector2(8, 8)
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle8" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle8" instance=ExtResource("7_ncsi2")]
+position = Vector2(0, 80)
+
+[node name="MovingReappearingDeathObstacle9" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(1024, -256)
+scale = Vector2(8, 8)
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle9" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle9" instance=ExtResource("7_ncsi2")]
+position = Vector2(0, 80)
+
+[node name="MovingReappearingDeathObstacle10" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(1024, -512)
+rotation = -3.14159
+scale = Vector2(8, 8)
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle10" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle10" instance=ExtResource("7_ncsi2")]
+position = Vector2(0, 80)
+
+[node name="MovingReappearingDeathObstacle11" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(768, -384)
+rotation = -3.14159
+scale = Vector2(8, 8)
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle11" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle11" instance=ExtResource("7_ncsi2")]
+position = Vector2(0, 80)
+
+[node name="MovingReappearingDeathObstacle12" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(512, -256)
+rotation = -3.14159
+scale = Vector2(8, 8)
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle12" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle12" instance=ExtResource("7_ncsi2")]
+position = Vector2(0, 80)
+
+[node name="MovingReappearingDeathObstacle13" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(256, -128)
+rotation = -3.14159
+scale = Vector2(8, 8)
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle13" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle13" instance=ExtResource("7_ncsi2")]
+position = Vector2(0, 80)
+
+[node name="MovingReappearingDeathObstacle14" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(0, -128)
+rotation = -3.14159
+scale = Vector2(8, 8)
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle14" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle14" instance=ExtResource("7_ncsi2")]
+position = Vector2(0, 80)
+
+[node name="MovingReappearingDeathObstacle27" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(-3072, -1792)
+rotation = -3.14159
+scale = Vector2(8, 8)
+speed = 1000.0
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle27" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle27" instance=ExtResource("7_ncsi2")]
+position = Vector2(15.9993, -288)
+
+[node name="MovingReappearingDeathObstacle28" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(-3584, -1792)
+rotation = -3.14159
+scale = Vector2(8, 8)
+speed = 1000.0
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle28" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle28" instance=ExtResource("7_ncsi2")]
+position = Vector2(-16.0007, -288)
+
+[node name="MovingReappearingDeathObstacle29" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(-3328, -1920)
+rotation = -3.14159
+scale = Vector2(8, 8)
+speed = 1000.0
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle29" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle29" instance=ExtResource("7_ncsi2")]
+position = Vector2(-0.000719324, -288)
+
+[node name="MovingReappearingDeathObstacle30" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(4352, -1664)
+rotation = -3.14159
+scale = Vector2(8, 8)
+speed = 1000.0
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle30" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle30" instance=ExtResource("7_ncsi2")]
+position = Vector2(15.9993, -288)
+
+[node name="MovingReappearingDeathObstacle31" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(3840, -1664)
+rotation = -3.14159
+scale = Vector2(8, 8)
+speed = 1000.0
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle31" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle31" instance=ExtResource("7_ncsi2")]
+position = Vector2(-16.0007, -288)
+
+[node name="MovingReappearingDeathObstacle32" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(4096, -1792)
+rotation = -3.14159
+scale = Vector2(8, 8)
+speed = 1000.0
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle32" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle32" instance=ExtResource("7_ncsi2")]
+position = Vector2(-0.000719324, -288)
+
+[node name="MovingReappearingDeathObstacle15" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(-256, -128)
+rotation = -3.14159
+scale = Vector2(8, 8)
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle15" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle15" instance=ExtResource("7_ncsi2")]
+position = Vector2(0, 80)
+
+[node name="MovingReappearingDeathObstacle16" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(-512, -256)
+rotation = -3.14159
+scale = Vector2(8, 8)
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle16" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle16" instance=ExtResource("7_ncsi2")]
+position = Vector2(0, 80)
+
+[node name="MovingReappearingDeathObstacle17" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(-768, -384)
+rotation = -3.14159
+scale = Vector2(8, 8)
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle17" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle17" instance=ExtResource("7_ncsi2")]
+position = Vector2(0, 80)
+
+[node name="MovingReappearingDeathObstacle18" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(-1024, -512)
+rotation = -3.14159
+scale = Vector2(8, 8)
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle18" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle18" instance=ExtResource("7_ncsi2")]
+position = Vector2(0, 80)
+
+[node name="MovingReappearingDeathObstacle19" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(-896, -1280)
+rotation = -3.14159
+scale = Vector2(8, 8)
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle19" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle19" instance=ExtResource("7_ncsi2")]
+position = Vector2(4.19629e-06, 32)
+
+[node name="MovingReappearingDeathObstacle20" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(896, -1280)
+rotation = -3.14159
+scale = Vector2(8, 8)
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle20" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle20" instance=ExtResource("7_ncsi2")]
+position = Vector2(4.19629e-06, 32)
+
+[node name="MovingReappearingDeathObstacle21" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(640, -1664)
+rotation = -3.14159
+scale = Vector2(8, 8)
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle21" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle21" instance=ExtResource("7_ncsi2")]
+position = Vector2(4.19629e-06, 32)
+
+[node name="MovingReappearingDeathObstacle22" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(896, -1664)
+rotation = -3.14159
+scale = Vector2(8, 8)
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle22" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle22" instance=ExtResource("7_ncsi2")]
+position = Vector2(4.19629e-06, 32)
+
+[node name="MovingReappearingDeathObstacle23" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(1152, -1664)
+rotation = -3.14159
+scale = Vector2(8, 8)
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle23" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle23" instance=ExtResource("7_ncsi2")]
+position = Vector2(4.19629e-06, 32)
+
+[node name="MovingReappearingDeathObstacle24" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(-896, -1664)
+rotation = -3.14159
+scale = Vector2(8, 8)
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle24" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle24" instance=ExtResource("7_ncsi2")]
+position = Vector2(4.19629e-06, 32)
+
+[node name="MovingReappearingDeathObstacle25" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(-640, -1664)
+rotation = -3.14159
+scale = Vector2(8, 8)
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle25" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle25" instance=ExtResource("7_ncsi2")]
+position = Vector2(4.19629e-06, 32)
+
+[node name="MovingReappearingDeathObstacle26" parent="RAMDB(10)" instance=ExtResource("6_1nxn2")]
+position = Vector2(-1152, -1664)
+rotation = -3.14159
+scale = Vector2(8, 8)
+
+[node name="Point" parent="RAMDB(10)/MovingReappearingDeathObstacle26" instance=ExtResource("7_ncsi2")]
+
+[node name="Point2" parent="RAMDB(10)/MovingReappearingDeathObstacle26" instance=ExtResource("7_ncsi2")]
+position = Vector2(4.19629e-06, 32)
+
+[node name="Layer0" type="TileMapLayer" parent="."]
+use_parent_material = true
+position = Vector2(0, -1)
+tile_map_data = PackedByteArray("AADq/wwAAAABAAAAAADr/wwAAAABAAAAAADs/wwAAAAFAAIAAADt/wwAAAABAAAAAADu/wwAAAABAAAAAADv/wwAAAABAAAAAADw/wwAAAABAAAAAADx/wwAAAABAAAAAADy/wwAAAABAAAAAADz/wwAAAABAAAAAAD0/wwAAAABAAAAAAD1/wwAAAAFAAIAAAD2/wwAAAABAAAAAAD3/wwAAAABAAAAAAD4/wwAAAABAAAAAAD5/wwAAAAFAAIAAAD7/wwAAAABAAAAAAD8/wwAAAABAAAAAAD9/wwAAAABAAAAAAD+/wwAAAABAAAAAAD//wwAAAABAAAAAAAAAAwAAAABAAAAAAABAAwAAAABAAAAAAACAAwAAAABAAAAAAADAAwAAAABAAAAAAAEAAwAAAABAAAAAAAFAAwAAAABAAAAAAAGAAwAAAABAAAAAAAHAAwAAAABAAAAAAAIAAwAAAABAAAAAAAJAAwAAAABAAAAAAAKAAwAAAABAAAAAAALAAwAAAABAAAAAAAMAAwAAAABAAAAAAAOAAwAAAABAAAAAAAPAAwAAAABAAAAAAAQAAwAAAABAAAAAAARAAwAAAAFAAIAAAASAAwAAAABAAAAAAATAAwAAAABAAAAAAAUAAwAAAABAAAAAAAVAAwAAAABAAAAAAAWAAsAAAAAAAEAAAAWAAoAAAAAAAEAAAAWAAkAAAAFAAIAAGAWAAgAAAAAAAEAAAAWAAcAAAAAAAEAAAAWAAYAAAAAAAEAAAAWAAUAAAAFAAIAAGAWAAQAAAAAAAEAAAAWAAMAAAAFAAIAAGAWAAIAAAAAAAEAAAAWAAEAAAAAAAEAAAAWAAAAAAAFAAIAAGAWAP//AAAAAAEAAAAWAP7/AAAAAAEAAAAWAP3/AAAAAAEAAAAWAPz/AAAFAAIAAGAWAPv/AAAFAAIAAGAWAPr/AAAAAAEAAAAWAPn/AAAAAAEAAAAWAPj/AAAAAAEAAAAWAPf/AAAFAAIAAGAWAPb/AAAAAAEAAAAWAPX/AAAAAAEAAAAWAPT/AAAAAAEAAAAVAPP/AAABAAIAAAAUAPP/AAABAAIAAAATAPP/AAABAAIAAAASAPP/AAABAAIAAAARAPP/AAABAAIAAAAQAPP/AAABAAIAAAAPAPP/AAABAAIAAAAOAPP/AAABAAIAAAANAPP/AAABAAIAAAAMAPP/AAABAAIAAAALAPP/AAABAAIAAAAKAPP/AAABAAIAAAAJAPP/AAABAAIAAAAIAPP/AAABAAIAAAAHAPP/AAABAAIAAAAGAPP/AAABAAIAAAAFAPP/AAABAAIAAAAEAPP/AAABAAIAAAADAPP/AAABAAIAAAACAPP/AAABAAIAAAABAPP/AAABAAIAAAAAAPP/AAABAAIAAAD///P/AAABAAIAAAD+//P/AAABAAIAAAD9//P/AAABAAIAAAD8//P/AAABAAIAAAD7//P/AAABAAIAAAD6//P/AAABAAIAAAD5//P/AAABAAIAAAD4//P/AAABAAIAAAD3//P/AAABAAIAAAD2//P/AAABAAIAAAD1//P/AAAFAAIAADD0//P/AAABAAIAAADz//P/AAABAAIAAADy//P/AAABAAIAAADx//P/AAABAAIAAADw//P/AAAFAAIAADDv//P/AAABAAIAAADu//P/AAABAAIAAADt//P/AAABAAIAAADs//P/AAABAAIAAADr//P/AAABAAIAAADq//P/AAABAAIAAADp//T/AAACAAEAAADp//X/AAACAAEAAADp//b/AAACAAEAAADp//f/AAAFAAIAAFDp//j/AAACAAEAAADp//n/AAACAAEAAADp//r/AAACAAEAAADp//v/AAAFAAIAAFDp//z/AAAFAAIAAFDp//3/AAACAAEAAADp//7/AAACAAEAAADp////AAACAAEAAADp/wAAAAAFAAIAAFDp/wEAAAACAAEAAADp/wIAAAACAAEAAADp/wMAAAACAAEAAADp/wQAAAACAAEAAADp/wYAAAAFAAIAAFDp/wcAAAACAAEAAADp/wgAAAACAAEAAADp/wkAAAACAAEAAADp/woAAAACAAEAAADp/wsAAAACAAEAAAAWAPP/AAADAAAAAFDp//P/AAADAAAAAADp/wwAAAADAAAAAGAWAAwAAAADAAAAADDo//L/AAABAAEAAADo//H/AAABAAEAAADp//H/AAABAAEAAADq//H/AAABAAEAAADr//H/AAABAAEAAADs//H/AAABAAEAAADt//H/AAABAAEAAADu//H/AAABAAEAAADv//H/AAABAAEAAADw//H/AAABAAEAAADx//H/AAABAAEAAADy//H/AAABAAEAAADz//H/AAABAAEAAAD0//H/AAABAAEAAAD1//H/AAABAAEAAAD2//H/AAABAAEAAAD3//H/AAABAAEAAAD4//H/AAABAAEAAAD5//H/AAAFAAUAAAD6//H/AAABAAEAAAD7//H/AAABAAEAAAD8//H/AAABAAEAAAD9//H/AAAGAAQAAAD+//H/AAABAAEAAAD///H/AAABAAEAAAAAAPH/AAABAAEAAAABAPH/AAABAAEAAAACAPH/AAABAAEAAAADAPH/AAABAAEAAAAEAPH/AAABAAEAAAAFAPH/AAABAAEAAAAGAPH/AAABAAEAAAAHAPH/AAABAAEAAAAIAPH/AAABAAEAAAAJAPH/AAABAAEAAAAKAPH/AAABAAEAAAALAPH/AAABAAEAAAAMAPH/AAABAAEAAAANAPH/AAABAAEAAAAOAPH/AAABAAEAAAAPAPH/AAABAAEAAAAQAPH/AAABAAEAAAARAPH/AAABAAEAAAASAPH/AAABAAEAAAATAPH/AAABAAEAAAAUAPH/AAABAAEAAAAVAPH/AAABAAEAAAAWAPH/AAABAAEAAAAXAPH/AAABAAEAAAAYAPH/AAABAAEAAAAYAPL/AAABAAEAAAAZAPL/AAABAAEAAAAZAPH/AAABAAEAAAAZAPP/AAABAAEAAAAZAPT/AAABAAEAAAAZAPX/AAABAAEAAAAaAPX/AAABAAEAAAAaAPb/AAABAAEAAAAaAPf/AAABAAEAAAAaAPj/AAABAAEAAAAaAPn/AAABAAEAAAAaAPr/AAABAAEAAAAaAPv/AAABAAEAAAAZAPr/AAABAAEAAAAZAPn/AAAGAAQAAAAZAPj/AAABAAEAAAAZAPf/AAABAAEAAAAZAPb/AAABAAEAAAAZAPv/AAABAAEAAAAZAPz/AAABAAEAAAAZAP3/AAAFAAUAAAAZAP7/AAABAAEAAAAZAP//AAABAAEAAAAZAAAAAAABAAEAAAAZAAEAAAABAAEAAAAZAAIAAAABAAEAAAAZAAMAAAABAAEAAAAZAAQAAAABAAEAAAAZAAUAAAABAAEAAAAZAAYAAAABAAEAAAAZAAcAAAABAAEAAAAZAAgAAAABAAEAAAAaAPT/AAABAAEAAAAaAPP/AAABAAEAAAAaAPL/AAABAAEAAAAaAPH/AAABAAEAAAAaAPz/AAABAAEAAAAaAP3/AAABAAEAAAAaAP7/AAABAAEAAAAaAP//AAABAAEAAAAaAAAAAAABAAEAAAAaAAEAAAABAAEAAAAaAAIAAAAGAAQAAAAaAAMAAAABAAEAAAAaAAQAAAABAAEAAAAaAAUAAAABAAEAAAAaAAYAAAABAAEAAAAZAAkAAAABAAEAAAAaAAcAAAABAAEAAAAaAAgAAAABAAEAAAAaAAkAAAABAAEAAAAaAAoAAAABAAEAAAAaAAsAAAABAAEAAAAaAAwAAAABAAEAAAAaAA0AAAABAAEAAAAaAA4AAAABAAEAAAAZAA4AAAABAAEAAAAYAA4AAAABAAEAAAAXAA4AAAABAAEAAAAWAA4AAAABAAEAAAAVAA4AAAABAAEAAAAUAA4AAAABAAEAAAATAA4AAAABAAEAAAASAA4AAAABAAEAAAARAA4AAAABAAEAAAAQAA4AAAABAAEAAAAPAA4AAAABAAEAAAAOAA4AAAABAAEAAAANAA4AAAABAAEAAAAMAA4AAAABAAEAAAALAA4AAAABAAEAAAAKAA4AAAABAAEAAAAJAA4AAAABAAEAAAAIAA4AAAAGAAQAAAAHAA4AAAABAAEAAAAGAA4AAAABAAEAAAAFAA4AAAABAAEAAAAEAA4AAAABAAEAAAADAA4AAAABAAEAAAACAA4AAAABAAEAAAABAA4AAAABAAEAAAAAAA4AAAABAAEAAAD//w4AAAABAAEAAAD+/w4AAAABAAEAAAD9/w4AAAABAAEAAAD8/w4AAAABAAEAAAD3/w4AAAABAAEAAAD2/w4AAAABAAEAAAD1/w4AAAABAAEAAADs/w4AAAABAAEAAADr/w4AAAABAAEAAADq/w4AAAABAAEAAADp/w4AAAABAAEAAADo/w4AAAABAAEAAADn/w4AAAABAAEAAADm/w4AAAABAAEAAADl/w4AAAABAAEAAADl/w0AAAABAAEAAADl/wwAAAABAAEAAADl/wsAAAABAAEAAADl/woAAAABAAEAAADl/wkAAAABAAEAAADl/wgAAAABAAEAAADl/wcAAAABAAEAAADl/wYAAAABAAEAAADl/wUAAAABAAEAAADl/wQAAAABAAEAAADl/wMAAAABAAEAAADl/wIAAAABAAEAAADl/wEAAAABAAEAAADl/wAAAAABAAEAAADl////AAABAAEAAADl//7/AAABAAEAAADl//3/AAABAAEAAADl//z/AAABAAEAAADm//v/AAABAAEAAADm//r/AAABAAEAAADm//n/AAABAAEAAADm//j/AAAFAAUAAADm//f/AAABAAEAAADm//b/AAABAAEAAADm//X/AAABAAEAAADm//T/AAABAAEAAADm//P/AAABAAEAAADm//L/AAABAAEAAADm//H/AAABAAEAAADl//H/AAABAAEAAADl//L/AAABAAEAAADl//P/AAABAAEAAADl//T/AAABAAEAAADl//X/AAABAAEAAADl//b/AAABAAEAAADl//f/AAABAAEAAADl//j/AAABAAEAAADl//n/AAABAAEAAADl//r/AAABAAEAAADl//v/AAABAAEAAADn//T/AAABAAEAAADn//P/AAABAAEAAADn//L/AAABAAEAAADn//H/AAABAAEAAADn//X/AAABAAEAAADn//b/AAABAAEAAADn//f/AAABAAEAAADm//z/AAABAAEAAADm//3/AAABAAEAAADm//7/AAABAAEAAADm////AAABAAEAAADm/wAAAAABAAEAAADm/wEAAAABAAEAAADn//j/AAABAAEAAADn//n/AAABAAEAAADn//r/AAABAAEAAADn//v/AAABAAEAAADo//X/AAABAAEAAADo//T/AAABAAEAAADo//P/AAABAAEAAADo//b/AAABAAEAAADo//f/AAABAAEAAADo//j/AAABAAEAAADo//n/AAABAAEAAADn//z/AAABAAEAAADn//3/AAAGAAQAAADn//7/AAABAAEAAADm/wIAAAABAAEAAADm/wMAAAABAAEAAADn////AAABAAEAAADn/wAAAAABAAEAAADn/wEAAAAGAAQAAADn/wIAAAABAAEAAADo/wIAAAABAAEAAADo/wEAAAABAAEAAADo/wAAAAABAAEAAADo////AAABAAEAAADo//7/AAABAAEAAADo//3/AAABAAEAAADo//z/AAABAAEAAADo//v/AAABAAEAAADo//r/AAABAAEAAADn/wMAAAABAAEAAADn/wQAAAABAAEAAADn/wUAAAABAAEAAADn/wYAAAABAAEAAADn/wcAAAABAAEAAADm/wgAAAABAAEAAADm/wkAAAABAAEAAADm/woAAAABAAEAAADm/wsAAAABAAEAAADm/wwAAAABAAEAAADm/wcAAAABAAEAAADm/wYAAAABAAEAAADm/wUAAAAGAAQAAADm/wQAAAABAAEAAADn/wgAAAAFAAUAAADo/wMAAAAFAAUAAADo/wQAAAABAAEAAADo/wUAAAABAAEAAADo/wYAAAABAAEAAADo/wcAAAABAAEAAADo/wgAAAABAAEAAADo/wkAAAABAAEAAADn/wkAAAABAAEAAADn/woAAAABAAEAAADn/wsAAAABAAEAAADn/wwAAAABAAEAAADm/w0AAAABAAEAAADn/w0AAAAGAAQAAADo/w0AAAABAAEAAADp/w0AAAABAAEAAADq/w0AAAABAAEAAADr/w0AAAABAAEAAADs/w0AAAABAAEAAADt/w0AAAABAAEAAADu/w0AAAABAAEAAADv/w0AAAABAAEAAADw/w0AAAABAAEAAADx/w0AAAABAAEAAADy/w0AAAABAAEAAADz/w0AAAABAAEAAAD0/w0AAAABAAEAAAD1/w0AAAABAAEAAAD2/w0AAAABAAEAAAD3/w0AAAABAAEAAAD4/w0AAAABAAEAAAD4/w4AAAABAAEAAAD5/w4AAAABAAEAAAD6/w4AAAABAAEAAAD7/w4AAAABAAEAAAAJAA0AAAABAAEAAAAKAA0AAAABAAEAAAALAA0AAAABAAEAAAAMAA0AAAABAAEAAAANAA0AAAABAAEAAAD5/w0AAAABAAEAAAD6/w0AAAABAAEAAAD7/w0AAAABAAEAAAD8/w0AAAABAAEAAAD9/w0AAAABAAEAAAD+/w0AAAAFAAUAAAD//w0AAAABAAEAAAAAAA0AAAABAAEAAAABAA0AAAABAAEAAAACAA0AAAAGAAQAAAADAA0AAAABAAEAAAAEAA0AAAABAAEAAAAFAA0AAAABAAEAAAAGAA0AAAABAAEAAAAHAA0AAAABAAEAAAAIAA0AAAABAAEAAAAOAA0AAAABAAEAAAAPAA0AAAABAAEAAAAQAA0AAAABAAEAAAARAA0AAAABAAEAAAASAA0AAAAGAAQAAAATAA0AAAABAAEAAAAUAA0AAAABAAEAAAAVAA0AAAABAAEAAAAWAA0AAAABAAEAAAAXAA0AAAABAAEAAAAYAA0AAAABAAEAAAAZAA0AAAABAAEAAAAYAAwAAAABAAEAAAAXAAwAAAABAAEAAAAXAAsAAAABAAEAAAAXAAoAAAABAAEAAAAXAAkAAAABAAEAAAAXAAgAAAABAAEAAAAXAAcAAAABAAEAAAAXAAYAAAABAAEAAAAXAAUAAAABAAEAAAAXAAQAAAABAAEAAAAYAAMAAAABAAEAAAAYAAIAAAABAAEAAAAYAAEAAAABAAEAAAAYAAAAAAABAAEAAAAYAP//AAABAAEAAAAYAP7/AAABAAEAAAAYAP3/AAABAAEAAAAYAPz/AAABAAEAAAAYAPP/AAABAAEAAAAXAPL/AAABAAEAAAAXAPP/AAABAAEAAAAXAPT/AAABAAEAAAAXAPX/AAABAAEAAAAXAPb/AAABAAEAAAAXAPf/AAABAAEAAAAXAPj/AAABAAEAAAAXAPn/AAABAAEAAAAXAPr/AAABAAEAAAAXAPv/AAABAAEAAAAXAPz/AAABAAEAAAAXAP3/AAABAAEAAAAXAP7/AAABAAEAAAAXAP//AAABAAEAAAAXAAAAAAABAAEAAAAXAAEAAAABAAEAAAAXAAIAAAABAAEAAAAXAAMAAAABAAEAAAAYAPv/AAABAAEAAAAYAPr/AAABAAEAAAAYAPn/AAABAAEAAAAYAPj/AAABAAEAAAAYAPf/AAABAAEAAAAYAPb/AAABAAEAAAAYAPX/AAABAAEAAAAYAPT/AAAFAAUAAAAYAAQAAAABAAEAAAAYAAUAAAABAAEAAAAYAAYAAAAFAAUAAAAYAAcAAAABAAEAAAAYAAgAAAABAAEAAAAYAAkAAAABAAEAAAAYAAoAAAABAAEAAAAYAAsAAAAGAAQAAAAZAAoAAAABAAEAAAAZAAsAAAABAAEAAAAZAAwAAAABAAEAAADo/wsAAAABAAEAAADo/wwAAAABAAEAAADp//L/AAABAAEAAADq//L/AAABAAEAAADr//L/AAABAAEAAADs//L/AAABAAEAAADt//L/AAAFAAUAAADu//L/AAABAAEAAADv//L/AAABAAEAAADw//L/AAABAAEAAADx//L/AAABAAEAAADy//L/AAABAAEAAADz//L/AAABAAEAAAD0//L/AAABAAEAAAD1//L/AAABAAEAAAD3//L/AAABAAEAAAD4//L/AAABAAEAAAD5//L/AAABAAEAAAD6//L/AAABAAEAAAD7//L/AAABAAEAAAD8//L/AAABAAEAAAD9//L/AAABAAEAAAD+//L/AAABAAEAAAD///L/AAABAAEAAAAAAPL/AAABAAEAAAABAPL/AAABAAEAAAACAPL/AAABAAEAAAADAPL/AAABAAEAAAAEAPL/AAABAAEAAAAFAPL/AAAFAAUAAAAGAPL/AAAFAAUAAAAHAPL/AAABAAEAAAAIAPL/AAABAAEAAAAJAPL/AAABAAEAAAAKAPL/AAABAAEAAAALAPL/AAABAAEAAAAMAPL/AAABAAEAAAANAPL/AAABAAEAAAAOAPL/AAABAAEAAAAPAPL/AAABAAEAAAAQAPL/AAABAAEAAAARAPL/AAAGAAQAAAASAPL/AAABAAEAAAATAPL/AAABAAEAAAAUAPL/AAABAAEAAAAVAPL/AAABAAEAAAAWAPL/AAABAAEAAAD2//L/AAABAAEAAADl//D/AAABAAEAAADm//D/AAABAAEAAADn//D/AAABAAEAAADo//D/AAAGAAQAAADp//D/AAABAAEAAADq//D/AAABAAEAAADr//D/AAABAAEAAADs//D/AAABAAEAAADt//D/AAABAAEAAADu//D/AAABAAEAAADv//D/AAABAAEAAADw//D/AAABAAEAAADx//D/AAABAAEAAADy//D/AAABAAEAAADz//D/AAABAAEAAAD0//D/AAABAAEAAAD1//D/AAABAAEAAAD2//D/AAABAAEAAAD3//D/AAABAAEAAAD4//D/AAABAAEAAAD5//D/AAABAAEAAAD6//D/AAABAAEAAAD7//D/AAABAAEAAAD8//D/AAABAAEAAAD9//D/AAABAAEAAAD+//D/AAABAAEAAAD///D/AAABAAEAAAAAAPD/AAABAAEAAAABAPD/AAABAAEAAAACAPD/AAABAAEAAAADAPD/AAABAAEAAAAEAPD/AAABAAEAAAAFAPD/AAABAAEAAAAGAPD/AAABAAEAAAAHAPD/AAABAAEAAAAIAPD/AAABAAEAAAAJAPD/AAABAAEAAAAKAPD/AAABAAEAAAALAPD/AAABAAEAAAAMAPD/AAABAAEAAAANAPD/AAABAAEAAAAOAPD/AAABAAEAAAAPAPD/AAABAAEAAAAQAPD/AAABAAEAAAARAPD/AAABAAEAAAASAPD/AAABAAEAAAATAPD/AAABAAEAAAAUAPD/AAABAAEAAAAVAPD/AAABAAEAAAAWAPD/AAABAAEAAAAXAPD/AAABAAEAAAAYAPD/AAABAAEAAAAZAPD/AAABAAEAAAAaAPD/AAABAAEAAAAaAA8AAAABAAEAAAAZAA8AAAABAAEAAAAYAA8AAAABAAEAAAAXAA8AAAABAAEAAAAWAA8AAAABAAEAAAAVAA8AAAABAAEAAAAUAA8AAAABAAEAAAATAA8AAAABAAEAAAASAA8AAAABAAEAAAARAA8AAAABAAEAAAAQAA8AAAABAAEAAAAPAA8AAAABAAEAAAAOAA8AAAABAAEAAAANAA8AAAABAAEAAAAMAA8AAAABAAEAAAALAA8AAAABAAEAAAAKAA8AAAABAAEAAAAJAA8AAAABAAEAAAAIAA8AAAABAAEAAAAHAA8AAAABAAEAAAAGAA8AAAABAAEAAAAFAA8AAAABAAEAAAAEAA8AAAABAAEAAAADAA8AAAABAAEAAAACAA8AAAABAAEAAAABAA8AAAABAAEAAAAAAA8AAAABAAEAAAD//w8AAAABAAEAAAD+/w8AAAABAAEAAAD9/w8AAAABAAEAAAD8/w8AAAABAAEAAAD7/w8AAAABAAEAAAD6/w8AAAABAAEAAAD5/w8AAAABAAEAAAD4/w8AAAABAAEAAAD3/w8AAAABAAEAAAD2/w8AAAABAAEAAAD1/w8AAAABAAEAAAD0/w8AAAABAAEAAADz/w8AAAABAAEAAADy/w8AAAABAAEAAADx/w8AAAABAAEAAADw/w8AAAABAAEAAADv/w8AAAABAAEAAADu/w8AAAABAAEAAADt/w8AAAABAAEAAADs/w8AAAABAAEAAADr/w8AAAABAAEAAADq/w8AAAABAAEAAADp/w8AAAABAAEAAADo/w8AAAABAAEAAADn/w8AAAABAAEAAADm/w8AAAABAAEAAADl/w8AAAABAAEAAADq//T/AAAHAAMAAAAVAPT/AAAHAAMAAFAVAAsAAAAHAAMAADDq/wsAAAAHAAMAAGDo/woAAAABAAEAAADp/wUAAAACAAEAAAD6/wwAAAABAAAAAAANAAwAAAABAAAAAADt/w4AAAABAAEAAADu/w4AAAAFAAUAAADv/w4AAAABAAEAAADw/w4AAAABAAEAAADx/w4AAAABAAEAAADy/w4AAAABAAEAAADz/w4AAAABAAEAAAD0/w4AAAABAAEAAAA=")
+tile_set = SubResource("TileSet_mb4da")
+
+[node name="Win zone" parent="." instance=ExtResource("9_arl1v")]
+position = Vector2(64, -2688)
+levelName = 9.0
+
+[node name="Node" type="Node" parent="."]
+
+[node name="ChargePlatform" parent="Node" instance=ExtResource("10_7qfq3")]
+position = Vector2(-128, 1792)
+rotation = -0.889143
+
+[node name="ChargePlatform2" parent="Node" instance=ExtResource("10_7qfq3")]
+position = Vector2(-1152, 768)
+rotation = 0.815031
+
+[node name="ChargePlatform15" parent="Node" instance=ExtResource("10_7qfq3")]
+position = Vector2(-1152, 768)
+rotation = 0.711055
+
+[node name="ChargePlatform16" parent="Node" instance=ExtResource("10_7qfq3")]
+position = Vector2(-2432, 768)
+rotation = 5.45301
+
+[node name="ChargePlatform3" parent="Node" instance=ExtResource("10_7qfq3")]
+position = Vector2(-2432, -512)
+rotation = 0.752001
+
+[node name="ChargePlatform4" parent="Node" instance=ExtResource("10_7qfq3")]
+position = Vector2(-6.10352e-05, -384)
+rotation = 0.765147
+
+[node name="ChargePlatform6" parent="Node" instance=ExtResource("10_7qfq3")]
+position = Vector2(3840, -512)
+rotation = -0.770856
+
+[node name="ChargePlatform7" parent="Node" instance=ExtResource("10_7qfq3")]
+position = Vector2(3584, -1664)
+rotation = 0.773105
+
+[node name="ChargePlatform8" parent="Node" instance=ExtResource("10_7qfq3")]
+position = Vector2(256, -1664)
+rotation = 0.778896
+
+[node name="ChargePlatform11" parent="Node" instance=ExtResource("10_7qfq3")]
+position = Vector2(-2688, -1536)
+rotation = -0.714463
+
+[node name="ChargePlatform12" parent="Node" instance=ExtResource("10_7qfq3")]
+position = Vector2(-2560, -2560)
+rotation = 0.718762
+
+[node name="ChargePlatform14" parent="Node" instance=ExtResource("10_7qfq3")]
+position = Vector2(-384, -2560)
+rotation = 0.773296
+
+[node name="Camera" parent="." instance=ExtResource("2_s7nmd")]
+zoom = Vector2(0.14, 0.14)
+shakeStrength = 2000.0

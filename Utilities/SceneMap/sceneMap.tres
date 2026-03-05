@@ -1,0 +1,32 @@
+[gd_resource type="Resource" script_class="SceneMap" load_steps=2 format=3 uid="uid://cgdk4htmynrb6"]
+
+[ext_resource type="Script" path="res://Utilities/SceneMap/sceneMap.gd" id="1_1aye4"]
+
+[resource]
+script = ExtResource("1_1aye4")
+sceneMap = {
+"1": "res://Scenes/Main/Levels/Section1/HLevels/level1_T.tscn",
+"10": "res://Scenes/Main/Levels/Section3/KLevel/KLevel3_3.tscn",
+"11": "res://Scenes/Main/Levels/Section3/HLevels/level3_3.tscn",
+"12": "res://Scenes/Main/Levels/Section2/KLevel/KLevel 2_2.tscn",
+"13": "res://Scenes/Main/Levels/Section4/HLevel/level4_2.tscn",
+"14": "res://Scenes/Main/Levels/Section3/HLevels/level3_1.tscn",
+"15": "res://Scenes/Main/Levels/Section3/HLevels/level3_2_v2.tscn",
+"2": "res://Scenes/Main/Levels/Section1/HLevels/level1_1_v2.tscn",
+"3": "res://Scenes/Main/Levels/Section1/HLevels/level1_3_v1.tscn",
+"4": "res://Scenes/Main/Levels/Section1/HLevels/level1_1_v7.tscn",
+"5": "res://Scenes/Main/Levels/Section1/KLevel/KLevel1_3 (2).tscn",
+"6": "res://Scenes/Main/Levels/Section3/KLevel/Klevel3_1.tscn",
+"7": "res://Scenes/Main/Levels/Section2/HLevels/level2_2.tscn",
+"8": "res://Scenes/Main/Levels/Section2/HLevels/level2_1_v2.tscn",
+"9": "res://Scenes/Main/Levels/Section1/KLevel/KLevel1_1.tscn",
+"99": "res://Scenes/Labs/testScenePatric.tscn",
+"Credits": "res://Scenes/Main/UI/Credits/credits.tscn",
+"GameUI": "res://Scenes/Main/UI/GameUI/gameUI.tscn",
+"Intro": "res://Scenes/Main/UI/Intro/intro.tscn",
+"MainMenu": "res://Scenes/Main/UI/MainMenu/mainMenu.tscn",
+"NewGame": "res://Scenes/Main/UI/NewGame/newGame.tscn",
+"PauseMenu": "res://Scenes/Main/UI/PauseMenu/pauseMenu.tscn",
+"Saves": "res://Scenes/Main/UI/SavegamesMenu/savegames.tscn",
+"Settings": "res://Scenes/Main/UI/Settings/settings.tscn"
+}

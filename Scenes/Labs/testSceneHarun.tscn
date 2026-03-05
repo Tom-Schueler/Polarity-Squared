@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=4 uid="uid://b412y3s8iwico"]
+
+[ext_resource type="Texture2D" uid="uid://clvnq0gsmh442" path="res://Assets/TileMap/shapes.png" id="1_4t55c"]
+[ext_resource type="PackedScene" uid="uid://cj6e5geht36fy" path="res://Prefabs/Platforms/MovingPlatform/movingPlatform.tscn" id="2_4ys8q"]
+[ext_resource type="PackedScene" uid="uid://bml4lhbetv0rw" path="res://Prefabs/Platforms/point.tscn" id="3_0euo2"]
+[ext_resource type="PackedScene" uid="uid://5owuibn0h6rf" path="res://Prefabs/Player/player.tscn" id="4_2tfxo"]
+[ext_resource type="PackedScene" uid="uid://demnkur8y8los" path="res://Prefabs/Camera/camera.tscn" id="5_c0f5k"]
+[ext_resource type="PackedScene" uid="uid://b2v0t3ykc6run" path="res://Prefabs/Platforms/ChargePlatform/chargePlatform.tscn" id="6_4ha16"]
+[ext_resource type="PackedScene" uid="uid://bo2w2pxo4n557" path="res://Prefabs/Platforms/EscalatorPlatform/escalatorPlatform.tscn" id="7_mikf0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ohpmi"]
+texture = ExtResource("1_4t55c")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -16, 16, 16, -16, 16)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -0.25, 16, 16, -16, 16)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 5, 0, 16, 16, -16, 16, -5, 0)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 0, -16, 0.25)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 0, -16, 0.25, 0.25, -16, 0)
+
+[sub_resource type="TileSet" id="TileSet_cybt2"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_ohpmi")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD6/wcAAAABAAAAAAD7/wcAAAABAAAAAAD8/wcAAAABAAAAAAD9/wcAAAABAAAAAAD+/wcAAAABAAAAAAD//wcAAAABAAAAAAADAAcAAAABAAAAAAAEAAcAAAABAAAAAAAIAPr/AAABAAAAAAAHAPr/AAABAAAAAAAGAPr/AAABAAAAAAAFAPr/AAABAAAAAAAEAPr/AAABAAAAAAADAPr/AAABAAAAAAACAPr/AAABAAAAAAABAPr/AAABAAAAAAAAAPr/AAABAAAAAAD///r/AAABAAAAAAD+//r/AAABAAAAAAD9//r/AAABAAAAAAD8//r/AAABAAAAAAD7//r/AAABAAAAAAD6//r/AAABAAAAAAD5//r/AAABAAAAAAD4//r/AAABAAAAAAD3//r/AAABAAAAAAD2//r/AAABAAAAAAD2//v/AAABAAAAAAD2//z/AAABAAAAAAD2//3/AAABAAAAAAD2//7/AAABAAAAAAD2////AAABAAAAAAD2/wAAAAABAAAAAAD2/wEAAAABAAAAAAD2/wIAAAABAAAAAAD2/wMAAAABAAAAAAD2/wUAAAABAAAAAAD2/wYAAAABAAAAAAD2/wQAAAABAAAAAAD2/wcAAAABAAAAAAD3/wcAAAABAAAAAAD4/wcAAAABAAAAAAD5/wcAAAABAAAAAAALAPr/AAABAAAAAAAKAPr/AAABAAAAAAAJAPr/AAABAAAAAAAFAAUAAAABAAAAAAAGAAUAAAABAAAAAAAHAAUAAAABAAAAAAAIAAUAAAABAAAAAAAJAAUAAAABAAAAAAAKAAUAAAABAAAAAAALAAUAAAABAAAAAAAMAAUAAAABAAAAAAANAAUAAAABAAAAAAAOAAUAAAABAAAAAAAPAAUAAAABAAAAAAAQAAUAAAABAAAAAAARAAUAAAABAAAAAAASAAUAAAABAAAAAAATAAUAAAABAAAAAAAUAAUAAAABAAAAAAAVAAUAAAABAAAAAAAWAAUAAAABAAAAAAAXAAUAAAABAAAAAAAYAAUAAAABAAAAAAAZAAUAAAABAAAAAAAaAAUAAAABAAAAAAAbAAUAAAABAAAAAAAcAAUAAAABAAAAAAAdAAUAAAABAAAAAAAeAAUAAAABAAAAAAAfAAcAAAABAAAAAAAgAAcAAAABAAAAAAAhAAcAAAABAAAAAAAiAAcAAAABAAAAAAAiAAYAAAABAAAAAAAiAAUAAAABAAAAAAAiAAQAAAABAAAAAAAiAAMAAAABAAAAAAAiAAIAAAABAAAAAAAiAAEAAAABAAAAAAAiAAAAAAABAAAAAAAiAP//AAABAAAAAAAiAP7/AAABAAAAAAAiAP3/AAABAAAAAAAiAPz/AAABAAAAAAAiAPv/AAABAAAAAAAiAPr/AAABAAAAAAAhAPr/AAABAAAAAAAgAPr/AAABAAAAAAAfAPr/AAABAAAAAAAeAPr/AAABAAAAAAAdAPr/AAABAAAAAAAcAPr/AAABAAAAAAAbAPr/AAABAAAAAAAaAPr/AAABAAAAAAAZAPr/AAABAAAAAAAYAPr/AAABAAAAAAAXAPr/AAABAAAAAAAWAPr/AAABAAAAAAAVAPr/AAABAAAAAAAUAPr/AAABAAAAAAATAPr/AAABAAAAAAASAPr/AAABAAAAAAARAPr/AAABAAAAAAAQAPr/AAABAAAAAAAPAPr/AAABAAAAAAAOAPr/AAABAAAAAAANAPr/AAABAAAAAAAMAPr/AAABAAAAAAA=")
+tile_set = SubResource("TileSet_cybt2")
+
+[node name="MovingPlatform" parent="." instance=ExtResource("2_4ys8q")]
+
+[node name="Point" parent="MovingPlatform" instance=ExtResource("3_0euo2")]
+position = Vector2(19, 241)
+
+[node name="Point2" parent="MovingPlatform" instance=ExtResource("3_0euo2")]
+position = Vector2(93, 241)
+
+[node name="Point3" parent="MovingPlatform" instance=ExtResource("3_0euo2")]
+position = Vector2(157, 173)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_2tfxo")]
+position = Vector2(-104, 166)
+scale = Vector2(0.2, 0.2)
+levelDirection = 1
+speed = 500.0
+acceleration = 400000.0
+jump_velocity = 800.0
+coyoteTime = 1.0
+gravityStamina = 5.0
+
+[node name="Camera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_c0f5k")]
+player = NodePath("../CharacterBody2D")
+reactiveness = 10.0
+shakeStrength = 20.0
+shakeDuration = 0.1
+
+[node name="ChargePlatform" parent="." instance=ExtResource("6_4ha16")]
+position = Vector2(-206, 204)
+
+[node name="ChargePlatform2" parent="." instance=ExtResource("6_4ha16")]
+position = Vector2(-181, -120)
+
+[node name="EscalatorPlatform5" parent="." instance=ExtResource("7_mikf0")]
+position = Vector2(569, 142)
+scale = Vector2(23.935, 1)
+speedBoost = 10.0

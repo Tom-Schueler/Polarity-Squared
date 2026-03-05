@@ -1,0 +1,96 @@
+[gd_scene load_steps=8 format=3 uid="uid://bldpqxt53lbb0"]
+
+[ext_resource type="PackedScene" uid="uid://bjwg6v41sskkh" path="res://Prefabs/Platforms/Platform/platform.tscn" id="2_5y5m2"]
+[ext_resource type="PackedScene" uid="uid://5owuibn0h6rf" path="res://Prefabs/Player/player.tscn" id="2_ixp7t"]
+[ext_resource type="PackedScene" uid="uid://bslfv11gl53at" path="res://Prefabs/Classes/lenghyPlatform.tscn" id="4_lgsp8"]
+[ext_resource type="PackedScene" uid="uid://bebycb1pxw27s" path="res://Prefabs/Classes/deadlyBlockLines.tscn" id="5_jdnqj"]
+[ext_resource type="PackedScene" uid="uid://cmgaqupfiit6b" path="res://Prefabs/Obstacles/ObstacleShooter/obstacleShooter.tscn" id="6_pydoa"]
+[ext_resource type="PackedScene" uid="uid://cyqjwkxxvuo4e" path="res://Prefabs/Zones/WinZone/win_zone.tscn" id="6_wk8a5"]
+[ext_resource type="PackedScene" uid="uid://sq4waelhlpja" path="res://Scenes/Main/Test/level002.tscn" id="7_cfyq8"]
+
+[node name="Level001" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("2_ixp7t")]
+position = Vector2(41, 1036)
+speed = 500.0
+acceleration = 2000.0
+terminalVelocity = 1000.0
+jump_velocity = 400.0
+
+[node name="Walls" type="Node2D" parent="."]
+position = Vector2(-267, 571)
+scale = Vector2(1, 5)
+
+[node name="Platform12" parent="Walls" instance=ExtResource("2_5y5m2")]
+position = Vector2(268, -17.8)
+scale = Vector2(1, 8)
+
+[node name="Platform13" parent="Walls" instance=ExtResource("2_5y5m2")]
+position = Vector2(2184, -9.60001)
+scale = Vector2(1, 8)
+
+[node name="Platform14" parent="Walls" instance=ExtResource("2_5y5m2")]
+position = Vector2(1183, 101)
+scale = Vector2(75, 0.2)
+
+[node name="Platform15" parent="Walls" instance=ExtResource("2_5y5m2")]
+position = Vector2(769, -114.4)
+scale = Vector2(75, 0.2)
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Platform7" parent="Platforms" instance=ExtResource("2_5y5m2")]
+position = Vector2(-267, 571)
+scale = Vector2(1, 5)
+
+[node name="Platform8" parent="Platforms" instance=ExtResource("2_5y5m2")]
+position = Vector2(714, 966)
+scale = Vector2(20, 10)
+
+[node name="Platform9" parent="Platforms" instance=ExtResource("2_5y5m2")]
+position = Vector2(-431, 589)
+scale = Vector2(1, 12)
+
+[node name="Platform10" parent="Platforms" instance=ExtResource("2_5y5m2")]
+position = Vector2(-514, 595)
+scale = Vector2(1, 15)
+
+[node name="Platform11" parent="Platforms" instance=ExtResource("2_5y5m2")]
+position = Vector2(-587, 596)
+scale = Vector2(1, 17)
+
+[node name="Platform12" parent="Platforms" instance=ExtResource("2_5y5m2")]
+position = Vector2(472, 145)
+rotation = 1.5708
+scale = Vector2(20, 40)
+
+[node name="Platform13" parent="Platforms" instance=ExtResource("2_5y5m2")]
+position = Vector2(1169, 65)
+rotation = -0.785398
+scale = Vector2(20, 15)
+
+[node name="ObstacleShooter" parent="." instance=ExtResource("6_pydoa")]
+position = Vector2(1146, 446)
+obstacleToShoot = ExtResource("4_lgsp8")
+speedOfObstacle = 150.0
+moveDirection = Vector2(1, -1)
+
+[node name="DeadlyBlockLines" parent="." instance=ExtResource("5_jdnqj")]
+position = Vector2(1540, 1042)
+
+[node name="DeadlyBlockLines2" parent="." instance=ExtResource("5_jdnqj")]
+position = Vector2(1705, 1041)
+
+[node name="DeadlyBlockLines3" parent="." instance=ExtResource("5_jdnqj")]
+position = Vector2(1835, 1042)
+
+[node name="ObstacleShooter2" parent="." instance=ExtResource("6_pydoa")]
+position = Vector2(1824, 13)
+obstacleToShoot = ExtResource("4_lgsp8")
+amountOfInstantiatedObjects = 8
+moveDirection = Vector2(0, 1)
+
+[node name="Win zone" parent="." instance=ExtResource("6_wk8a5")]
+position = Vector2(1621, 35)
+scale = Vector2(1, 0.275)
+nextLevel = ExtResource("7_cfyq8")

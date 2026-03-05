@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8pib8c7j5s7f"]
+
+[ext_resource type="Texture2D" uid="uid://q88y22q0v4o6" path="res://Assets/TileMap/tileMap_v1.png" id="1_l1xhw"]
+[ext_resource type="Script" path="res://Prefabs/Obstacles/DeathObstacle/Laser/laserObstacle.gd" id="1_qmc20"]
+[ext_resource type="AudioStream" uid="uid://cqgv5rl7hxgm1" path="res://Prefabs/Obstacles/DeathObstacle/Laser/Audio/ObstacleElectrcitySFX.wav" id="3_e3fsy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wmud"]
+size = Vector2(256, 32)
+
+[sub_resource type="Animation" id="Animation_uo8es"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_135fx"]
+resource_name = "current"
+length = 0.300003
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s6khl"]
+_data = {
+"RESET": SubResource("Animation_uo8es"),
+"current": SubResource("Animation_135fx")
+}
+
+[node name="laserObstacle" type="Node2D" node_paths=PackedStringArray("audioStreamPlayer")]
+script = ExtResource("1_qmc20")
+audioStreamPlayer = NodePath("AudioStreamPlayer2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_l1xhw")
+vframes = 3
+region_enabled = true
+region_rect = Rect2(768, 768, 256, 768)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_8wmud")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_s6khl")
+}
+autoplay = "current"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_e3fsy")
+volume_db = -2.0
+max_distance = 3000.0
+bus = &"SFX"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,657 @@
+<<<<<<< working copy
+[gd_scene load_steps=87 format=4 uid="uid://car8aoe0f05kb"]
+=======
+[gd_scene load_steps=60 format=4 uid="uid://car8aoe0f05kb"]
+>>>>>>> merge rev
+
+[ext_resource type="Texture2D" uid="uid://clvnq0gsmh442" path="res://Assets/TileMap/shapes.png" id="1_nxx5b"]
+[ext_resource type="PackedScene" uid="uid://5owuibn0h6rf" path="res://Prefabs/Player/player.tscn" id="4_t2gnl"]
+[ext_resource type="PackedScene" uid="uid://demnkur8y8los" path="res://Prefabs/Camera/camera.tscn" id="5_25f7d"]
+[ext_resource type="PackedScene" uid="uid://b2v0t3ykc6run" path="res://Prefabs/Platforms/ChargePlatform/chargePlatform.tscn" id="6_eecb0"]
+[ext_resource type="PackedScene" uid="uid://bo2w2pxo4n557" path="res://Prefabs/Platforms/EscalatorPlatform/escalatorPlatform.tscn" id="7_hwhr7"]
+[ext_resource type="PackedScene" uid="uid://b8pib8c7j5s7f" path="res://Prefabs/Obstacles/DeathObstacle/Laser/laserObstacle.tscn" id="7_x13ei"]
+[ext_resource type="PackedScene" uid="uid://46vmee04fjoe" path="res://Prefabs/Obstacles/(OLD) DoorObstacle/key.tscn" id="8_1fj6q"]
+[ext_resource type="PackedScene" uid="uid://cj6e5geht36fy" path="res://Prefabs/Platforms/MovingPlatform/movingPlatform.tscn" id="9_eymcn"]
+[ext_resource type="PackedScene" uid="uid://bml4lhbetv0rw" path="res://Prefabs/Platforms/point.tscn" id="10_1tgtf"]
+[ext_resource type="PackedScene" uid="uid://2uvav6xspqd1" path="res://Prefabs/Tilemap/Tilemap.tscn" id="11_d83gr"]
+[ext_resource type="PackedScene" uid="uid://d4g6h6x8hw0p2" path="res://Prefabs/Platforms/CollapsingPlatform/collapsingPlatform1x1.tscn" id="11_ywfgk"]
+[ext_resource type="PackedScene" uid="uid://delt8j1hjwtwq" path="res://Prefabs/Platforms/InvisiblePlatform/invisiblePlatformTrigger.tscn" id="12_p8bn0"]
+[ext_resource type="TileSet" uid="uid://n6it8rs0hdsc" path="res://Prefabs/Tilemap/TilemapResource.tres" id="13_dxaq6"]
+[ext_resource type="PackedScene" uid="uid://o0n4wm4v7oka" path="res://Prefabs/Platforms/CollapsingPlatform/collapsingPlatform3x1.tscn" id="14_7tet8"]
+<<<<<<< working copy
+[ext_resource type="PackedScene" uid="uid://bw5ljouq8a5jk" path="res://Prefabs/Obstacles/MovingDeathObstacle/movingDeathObstacle.tscn" id="15_8f1c0"]
+=======
+[ext_resource type="PackedScene" uid="uid://b7qkkxjfccj0y" path="res://Prefabs/Platforms/SwitchingPlatform/switchingPlatform.tscn" id="15_gej5x"]
+>>>>>>> merge rev
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ohpmi"]
+texture = ExtResource("1_nxx5b")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -16, 16, 16, -16, 16)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -0.25, 16, 16, -16, 16)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 5, 0, 16, 16, -16, 16, -5, 0)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 0, -16, 0.25)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 0, -16, 0.25, 0.25, -16, 0)
+
+[sub_resource type="TileSet" id="TileSet_cybt2"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_ohpmi")
+
+[sub_resource type="Curve" id="Curve_tgktu"]
+_data = [Vector2(0, 0.694716), 0.0, -3.04359, 0, 1, Vector2(0.196429, 0.096869), 0.0, 0.0, 0, 0, Vector2(0.515306, 1), 0.0, 0.0, 0, 0, Vector2(0.515316, 0), 0.0, 0.0, 0, 0, Vector2(0.688776, 1), 0.0, 0.0, 0, 0, Vector2(0.785714, 0), 0.0, 0.0, 0, 0, Vector2(0.931122, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.637476), -5.26332, 0.0, 1, 0]
+point_count = 8
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrb23"]
+size = Vector2(200, 507)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bfvva"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vu7vo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tirad"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_esl6e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_datao"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4b824"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8nwv0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oykkx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_askhb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aay6w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g71pm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l375p"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hxglm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wyvyn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6fwsg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6jugh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54tvl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4vn0u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2poo2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfgk5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sr8gd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ccuoc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i71hm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rjrow"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uty4l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yydsr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uy1lf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_owi6w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tjmcv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c1pho"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7a11"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hx0hp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dlh82"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifj1b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wqi8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6unay"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vamyi"]
+
+<<<<<<< working copy
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bxdkt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_68uo7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rqnxf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ej0y4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_64d32"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mknfk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mpqng"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7tr7n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wqljb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n1scf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_23rtd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y7fsu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k2q8t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k3114"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5740k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgiqk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3ju00"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2utgk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4yppq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfhnv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lf55g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ff8w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5bui5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_775wo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_smvtv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qrc7v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ykdql"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mgt1s"]
+=======
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aguon"]
+>>>>>>> merge rev
+
+[sub_resource type="Environment" id="Environment_tu4rb"]
+glow_enabled = true
+volumetric_fog_density = 0.2645
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_8gqoi"]
+
+[node name="Node2D2" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD6/wcAAAABAAAAAAD7/wcAAAABAAAAAAD8/wcAAAABAAAAAAD9/wcAAAABAAAAAAD+/wcAAAABAAAAAAD//wcAAAABAAAAAAAGAPr/AAABAAAAAAAFAPr/AAABAAAAAAAEAPr/AAABAAAAAAADAPr/AAABAAAAAAACAPr/AAABAAAAAAABAPr/AAABAAAAAAAAAPr/AAABAAAAAAD9//r/AAABAAAAAAD8//r/AAABAAAAAAD7//r/AAABAAAAAAD6//r/AAABAAAAAAD5//r/AAABAAAAAAD4//r/AAABAAAAAAD3//r/AAABAAAAAAD2//r/AAABAAAAAAD2/wcAAAABAAAAAAD3/wcAAAABAAAAAAD4/wcAAAABAAAAAAD5/wcAAAABAAAAAAAFAAUAAAABAAAAAAAGAAUAAAABAAAAAAAKAAUAAAABAAAAAAAQAAcAAAABAAAAAAAQAAYAAAABAAAAAAAQAAUAAAABAAAAAAAQAAQAAAABAAAAAAAQAAMAAAABAAAAAAAQAAIAAAABAAAAAAAQAAEAAAABAAAAAAAQAAAAAAABAAAAAAAQAP//AAABAAAAAAAQAP7/AAABAAAAAAARAP7/AAABAAAAAAARAP//AAABAAAAAAARAAAAAAABAAAAAAARAAEAAAABAAAAAAARAAIAAAABAAAAAAARAAcAAAABAAAAAAARAAYAAAABAAAAAAARAAUAAAABAAAAAAARAAQAAAABAAAAAAARAAMAAAABAAAAAAAZAP7/AAABAAAAAAAZAP//AAABAAAAAAAZAAAAAAABAAAAAAAZAAEAAAABAAAAAAAZAAIAAAABAAAAAAAZAAMAAAABAAAAAAAZAAQAAAABAAAAAAAZAAUAAAABAAAAAAAZAAYAAAABAAAAAAAZAAcAAAABAAAAAAASAAMAAAABAAAAAAATAAMAAAABAAAAAAAUAAMAAAABAAAAAAAVAAMAAAABAAAAAAAWAAMAAAABAAAAAAAXAAMAAAABAAAAAAAYAAMAAAABAAAAAAAaAP7/AAABAAAAAAAaAP//AAABAAAAAAAaAAAAAAABAAAAAAAaAAEAAAABAAAAAAAaAAIAAAABAAAAAAAaAAMAAAABAAAAAAAaAAQAAAABAAAAAAAaAAUAAAABAAAAAAAaAAYAAAABAAAAAAAaAAcAAAABAAAAAAAEAAUAAAABAAAAAAADAAUAAAABAAAAAAACAAUAAAABAAAAAAALAAUAAAABAAAAAAAMAAUAAAABAAAAAAANAAUAAAABAAAAAAAJAAUAAAABAAAAAAAIAAUAAAABAAAAAAAHAAUAAAABAAAAAAAGAAEAAAABAAAAAAAGAAAAAAABAAAAAAAGAP//AAABAAAAAAAGAP7/AAABAAAAAAAGAP3/AAABAAAAAAAGAPz/AAABAAAAAAAGAPv/AAABAAAAAAAGAPn/AAABAAAAAAAGAPj/AAABAAAAAAAHAPj/AAABAAAAAAAIAPj/AAABAAAAAAAJAPj/AAABAAAAAAAKAPj/AAABAAAAAAALAPj/AAABAAAAAAAMAPj/AAABAAAAAAANAPj/AAABAAAAAAAOAPj/AAABAAAAAAAPAPj/AAABAAAAAAAQAPj/AAABAAAAAAARAPj/AAABAAAAAAASAPj/AAABAAAAAAATAPj/AAABAAAAAAAUAPj/AAABAAAAAAAVAPj/AAABAAAAAAAYAPj/AAABAAAAAAAZAPj/AAABAAAAAAAaAPj/AAABAAAAAAAaAPn/AAABAAAAAAAZAPn/AAABAAAAAAAYAPn/AAABAAAAAAAVAPn/AAABAAAAAAAUAPn/AAABAAAAAAAkAP7/AAABAAAAAAAkAP//AAABAAAAAAAkAAAAAAABAAAAAAAlAAAAAAABAAAAAAAlAP//AAABAAAAAAAlAP7/AAABAAAAAAAgAPf/AAABAAAAAAAfAPf/AAABAAAAAAAeAPf/AAABAAAAAAAdAPf/AAABAAAAAAAcAPf/AAABAAAAAAAbAPf/AAABAAAAAAAbAPj/AAABAAAAAAAcAPj/AAABAAAAAAAdAPj/AAABAAAAAAAeAPj/AAABAAAAAAAfAPj/AAABAAAAAAAgAPj/AAABAAAAAAAhAAUAAAABAAAAAAAHAAEAAAABAAAAAAAIAAEAAAABAAAAAAANAP3/AAABAAAAAAANAPz/AAABAAAAAAAMAPz/AAABAAAAAAAMAP3/AAABAAAAAAALAP3/AAABAAAAAAAKAP3/AAABAAAAAAAJAP3/AAABAAAAAAAJAPz/AAABAAAAAAAKAPz/AAABAAAAAAALAPz/AAABAAAAAAAJAAEAAAABAAAAAAAiAPz/AAABAAAAAAAiAP3/AAABAAAAAAAlAAEAAAABAAAAAAAkAAEAAAABAAAAAAAkAAIAAAABAAAAAAAlAAIAAAABAAAAAAAlAPn/AAABAAAAAAAkAPn/AAABAAAAAAAkAPr/AAABAAAAAAAlAPr/AAABAAAAAAD1/wcAAAABAAAAAAD0/wcAAAABAAAAAADz/wcAAAABAAAAAADy/wcAAAABAAAAAADx/wcAAAABAAAAAADw/wcAAAABAAAAAADv/wcAAAABAAAAAADu/wcAAAABAAAAAADt/wcAAAABAAAAAADs/wcAAAABAAAAAADr/wcAAAABAAAAAADq/wcAAAABAAAAAADl/wcAAAABAAAAAADk/wcAAAABAAAAAADj/wcAAAABAAAAAADi/wcAAAABAAAAAADh/wcAAAABAAAAAADg/wcAAAABAAAAAADf/wcAAAABAAAAAADe/wcAAAABAAAAAADd/wcAAAABAAAAAADc/wcAAAABAAAAAADb/wcAAAABAAAAAADa/wcAAAABAAAAAADZ/wcAAAABAAAAAADZ//3/AAABAAAAAADZ//z/AAABAAAAAADa//r/AAABAAAAAADb//r/AAABAAAAAADc//r/AAABAAAAAADd//r/AAABAAAAAADe//r/AAABAAAAAADf//r/AAABAAAAAADg//r/AAABAAAAAADh//r/AAABAAAAAADi//r/AAABAAAAAADj//r/AAABAAAAAADk//r/AAABAAAAAADl//r/AAABAAAAAADm//r/AAABAAAAAADn//r/AAABAAAAAADo//r/AAABAAAAAADp//r/AAABAAAAAADq//r/AAABAAAAAADr//r/AAABAAAAAADz//r/AAABAAAAAAD0//r/AAABAAAAAAD1//r/AAABAAAAAADs//3/AAABAAAAAADx//3/AAABAAAAAADd/wUAAAABAAAAAADe/wUAAAABAAAAAADf/wUAAAABAAAAAADY/wcAAAABAAAAAADX/wcAAAABAAAAAADW/wcAAAABAAAAAADV/wcAAAABAAAAAADU/wcAAAABAAAAAADT/wcAAAABAAAAAADS/wcAAAABAAAAAADR/wcAAAABAAAAAADQ/wcAAAABAAAAAADP/wcAAAABAAAAAADO/wcAAAABAAAAAADN/wcAAAABAAAAAADM/wcAAAABAAAAAADL/wcAAAABAAAAAADZ////AAABAAAAAADZ/wEAAAABAAAAAADK/wcAAAABAAAAAADJ/wcAAAABAAAAAADI/wcAAAABAAAAAADH/wcAAAABAAAAAADG/wcAAAABAAAAAADF/wcAAAABAAAAAADE/wcAAAABAAAAAADD/wcAAAABAAAAAAC8/wMAAAABAAAAAAC8/wIAAAABAAAAAAC8/wEAAAABAAAAAAC8/wAAAAABAAAAAAC8////AAABAAAAAAC8//7/AAABAAAAAAC8//3/AAABAAAAAAC8//z/AAABAAAAAAC8//v/AAABAAAAAAC8//r/AAABAAAAAADD//X/AAABAAAAAADE//X/AAABAAAAAADF//X/AAABAAAAAADG//X/AAABAAAAAADH//X/AAABAAAAAADI//X/AAABAAAAAADJ//X/AAABAAAAAADK//X/AAABAAAAAADL//X/AAABAAAAAADM//X/AAABAAAAAADN//X/AAABAAAAAADO//X/AAABAAAAAADP//X/AAABAAAAAADQ//X/AAABAAAAAADR//X/AAABAAAAAADK/wYAAAABAAAAAADK/wUAAAABAAAAAADK/wQAAAABAAAAAADK/wMAAAABAAAAAADK/wIAAAABAAAAAADK/wEAAAABAAAAAADK/wAAAAABAAAAAADK////AAABAAAAAADK//7/AAABAAAAAADK//3/AAABAAAAAADK//z/AAABAAAAAADJ//z/AAABAAAAAADJ//3/AAABAAAAAADJ//7/AAABAAAAAADJ////AAABAAAAAADJ/wAAAAABAAAAAADJ/wEAAAABAAAAAADJ/wIAAAABAAAAAADJ/wMAAAABAAAAAADJ/wQAAAABAAAAAADJ/wUAAAABAAAAAADJ/wYAAAABAAAAAADJ//b/AAABAAAAAADK//b/AAABAAAAAADU//T/AAABAAAAAADU//P/AAABAAAAAADU//L/AAABAAAAAADU//H/AAABAAAAAADU//D/AAABAAAAAADU/+//AAABAAAAAADU/+7/AAABAAAAAADU/+3/AAABAAAAAADU/+z/AAABAAAAAADT/+z/AAABAAAAAADS/+z/AAABAAAAAADR/+z/AAABAAAAAADQ/+z/AAABAAAAAADP/+z/AAABAAAAAADO/+z/AAABAAAAAADN/+z/AAABAAAAAADM/+z/AAABAAAAAADL/+z/AAABAAAAAADK/+z/AAABAAAAAADJ/+z/AAABAAAAAADG//D/AAABAAAAAADG//H/AAABAAAAAADG//L/AAABAAAAAADG//P/AAABAAAAAADG//T/AAABAAAAAADM/+3/AAABAAAAAADM/+7/AAABAAAAAADM/+//AAABAAAAAADN/+//AAABAAAAAADN/+7/AAABAAAAAADN/+3/AAABAAAAAADT//P/AAABAAAAAADS//P/AAABAAAAAADR//P/AAABAAAAAADQ//P/AAABAAAAAADP//P/AAABAAAAAADP//T/AAABAAAAAADM//T/AAABAAAAAADL//T/AAABAAAAAADK//T/AAABAAAAAADJ//T/AAABAAAAAADI//T/AAABAAAAAADH//T/AAABAAAAAADS/+3/AAABAAAAAADS/+7/AAABAAAAAADT/+7/AAABAAAAAADT/+3/AAABAAAAAADI/+3/AAABAAAAAADI/+7/AAABAAAAAADI/+//AAABAAAAAADI//D/AAABAAAAAADH//D/AAABAAAAAADI/+z/AAABAAAAAAC8/wQAAAABAAAAAAC8//n/AAABAAAAAAC8//j/AAABAAAAAAC8//f/AAABAAAAAAC8//b/AAABAAAAAAC8//X/AAABAAAAAAC9//X/AAABAAAAAAC+//X/AAABAAAAAAC///X/AAABAAAAAADA//X/AAABAAAAAADB//X/AAABAAAAAADC//X/AAABAAAAAADC/wcAAAABAAAAAADB/wcAAAABAAAAAADA/wcAAAABAAAAAAC//wcAAAABAAAAAAC+/wcAAAABAAAAAAC9/wcAAAABAAAAAAC8/wcAAAABAAAAAAC8/wYAAAABAAAAAAC8/wUAAAABAAAAAADS//X/AAABAAAAAADT//X/AAABAAAAAADU//X/AAABAAAAAADV//X/AAABAAAAAADW//X/AAABAAAAAADX//X/AAABAAAAAADY//X/AAABAAAAAADZ//X/AAABAAAAAADZ//b/AAABAAAAAADZ//f/AAABAAAAAADZ//j/AAABAAAAAADZ//n/AAABAAAAAADZ//r/AAABAAAAAADZ//v/AAABAAAAAADk//3/AAABAAAAAADk//z/AAABAAAAAADk//v/AAABAAAAAADl//z/AAABAAAAAADl//3/AAABAAAAAADl//v/AAABAAAAAADp//v/AAABAAAAAADq//v/AAABAAAAAAAo/8P/AAABAAAAAAAp/8P/AAABAAAAAAAq/8P/AAABAAAAAAAq/8L/AAABAAAAAAAr/8L/AAABAAAAAAAs/8L/AAABAAAAAAAt/8L/AAABAAAAAAAu/8L/AAABAAAAAAAv/8L/AAABAAAAAAAw/8L/AAABAAAAAAAx/8L/AAABAAAAAAAy/8L/AAABAAAAAAAz/8L/AAABAAAAAAA0/8L/AAABAAAAAAA1/8L/AAABAAAAAAA2/8L/AAABAAAAAAA3/8L/AAABAAAAAAA4/8L/AAABAAAAAAA5/8L/AAABAAAAAAA6/8L/AAABAAAAAAA7/8P/AAABAAAAAAA8/8P/AAABAAAAAAA9/8P/AAABAAAAAAA+/8P/AAABAAAAAAA//8P/AAABAAAAAABA/8P/AAABAAAAAABB/8P/AAABAAAAAABC/8P/AAABAAAAAABD/8P/AAABAAAAAABE/8P/AAABAAAAAABF/8P/AAABAAAAAABG/8L/AAABAAAAAABH/8L/AAABAAAAAABI/8L/AAABAAAAAABI/8P/AAABAAAAAABI/8T/AAABAAAAAABI/8X/AAABAAAAAABI/8b/AAABAAAAAABI/8f/AAABAAAAAABI/8j/AAABAAAAAABI/8n/AAABAAAAAABI/8r/AAABAAAAAABI/8v/AAABAAAAAABI/8z/AAABAAAAAABI/83/AAABAAAAAABJ/87/AAABAAAAAABJ/8//AAABAAAAAABJ/9D/AAABAAAAAABJ/9H/AAABAAAAAABJ/9L/AAABAAAAAABJ/9P/AAABAAAAAABJ/9T/AAABAAAAAABJ/9X/AAABAAAAAABJ/9b/AAABAAAAAABJ/9f/AAABAAAAAABJ/9j/AAABAAAAAABJ/9n/AAABAAAAAABI/9n/AAABAAAAAABH/9j/AAABAAAAAABG/9j/AAABAAAAAABF/9j/AAABAAAAAABE/9j/AAABAAAAAABD/9f/AAABAAAAAABC/9f/AAABAAAAAABB/9f/AAABAAAAAABA/9f/AAABAAAAAAA//9f/AAABAAAAAAA+/9f/AAABAAAAAAA9/9f/AAABAAAAAAA8/9f/AAABAAAAAAA7/9f/AAABAAAAAAA6/9f/AAABAAAAAAA5/9f/AAABAAAAAAA4/9f/AAABAAAAAAA3/9f/AAABAAAAAAA2/9f/AAABAAAAAAA1/9f/AAABAAAAAAA0/9f/AAABAAAAAAAz/9f/AAABAAAAAAAy/9f/AAABAAAAAAAx/9f/AAABAAAAAAAw/9f/AAABAAAAAAAv/9f/AAABAAAAAAAu/9f/AAABAAAAAAAt/9f/AAABAAAAAAAs/9f/AAABAAAAAAAr/9f/AAABAAAAAAAq/9f/AAABAAAAAAAp/9f/AAABAAAAAAAo/9f/AAABAAAAAAAn/9f/AAABAAAAAAAn/9j/AAABAAAAAAAm/9j/AAABAAAAAAAm/9f/AAABAAAAAAAn/9b/AAABAAAAAAAn/9X/AAABAAAAAAAn/9T/AAABAAAAAAAn/9P/AAABAAAAAAAn/9L/AAABAAAAAAAn/9H/AAABAAAAAAAn/9D/AAABAAAAAAAn/8//AAABAAAAAAAn/87/AAABAAAAAAAn/83/AAABAAAAAAAm/8z/AAABAAAAAAAm/8v/AAABAAAAAAAm/8r/AAABAAAAAAAm/8n/AAABAAAAAAAm/8j/AAABAAAAAAAm/8f/AAABAAAAAAAm/8b/AAABAAAAAAAm/8X/AAABAAAAAAAm/8T/AAABAAAAAAAm/8P/AAABAAAAAAAs/8P/AAABAAAAAAAs/8T/AAABAAAAAAAs/8X/AAABAAAAAAAs/8b/AAABAAAAAAAs/8f/AAABAAAAAAAs/8j/AAABAAAAAAAs/8n/AAABAAAAAAAs/8r/AAABAAAAAAAw/8P/AAABAAAAAAAw/8T/AAABAAAAAAAw/8X/AAABAAAAAAAw/8b/AAABAAAAAAAw/8f/AAABAAAAAAAw/8j/AAABAAAAAAA4/8P/AAABAAAAAAA4/8T/AAABAAAAAAA4/8X/AAABAAAAAAA7/9b/AAABAAAAAAA7/9X/AAABAAAAAAA7/9T/AAABAAAAAAA7/9P/AAABAAAAAABY/9n/AAABAAAAAABZ/9n/AAABAAAAAABa/9n/AAABAAAAAABb/9n/AAABAAAAAABc/9n/AAABAAAAAABd/9n/AAABAAAAAABe/9n/AAABAAAAAABf/9n/AAABAAAAAABg/9n/AAABAAAAAABh/9n/AAABAAAAAABi/9n/AAABAAAAAABj/9n/AAABAAAAAABk/9n/AAABAAAAAABl/9n/AAABAAAAAABm/9n/AAABAAAAAABn/9n/AAABAAAAAABo/9n/AAABAAAAAABp/9n/AAABAAAAAABq/9n/AAABAAAAAABr/9n/AAABAAAAAABs/9n/AAABAAAAAABt/9n/AAABAAAAAABu/9n/AAABAAAAAABv/9n/AAABAAAAAABw/9n/AAABAAAAAABx/9n/AAABAAAAAABy/9n/AAABAAAAAABz/9n/AAABAAAAAAB0/9n/AAABAAAAAAB1/9n/AAABAAAAAAB2/9n/AAABAAAAAAB3/9r/AAABAAAAAAB4/9r/AAABAAAAAAB5/9r/AAABAAAAAAB6/9r/AAABAAAAAAB7/9r/AAABAAAAAAB8/9r/AAABAAAAAAB9/9r/AAABAAAAAAB+/9r/AAABAAAAAAB+/9n/AAABAAAAAAB//9n/AAABAAAAAACA/9n/AAABAAAAAACB/9n/AAABAAAAAACC/9n/AAABAAAAAACD/9n/AAABAAAAAACE/9n/AAABAAAAAACF/9n/AAABAAAAAACT/9r/AAABAAAAAACU/9r/AAABAAAAAACV/9r/AAABAAAAAACW/9r/AAABAAAAAACX/9r/AAABAAAAAACY/9r/AAABAAAAAACZ/9r/AAABAAAAAACa/9r/AAABAAAAAACb/9r/AAABAAAAAACc/9r/AAABAAAAAACd/9r/AAABAAAAAACe/9r/AAABAAAAAACf/9r/AAABAAAAAACg/9r/AAABAAAAAACh/9r/AAABAAAAAACi/9r/AAABAAAAAACj/9r/AAABAAAAAACk/9r/AAABAAAAAACl/9r/AAABAAAAAACm/9r/AAABAAAAAACn/9r/AAABAAAAAACo/9r/AAABAAAAAACp/9r/AAABAAAAAACq/9r/AAABAAAAAACr/9r/AAABAAAAAACs/9r/AAABAAAAAACt/9r/AAABAAAAAACu/9r/AAABAAAAAACv/9r/AAABAAAAAACw/9r/AAABAAAAAACx/9r/AAABAAAAAACy/9r/AAABAAAAAACz/9r/AAABAAAAAAC0/9r/AAABAAAAAAC1/9r/AAABAAAAAAC2/9r/AAABAAAAAAC3/9r/AAABAAAAAAC4/9r/AAABAAAAAAC5/9r/AAABAAAAAAC6/9r/AAABAAAAAAC7/9r/AAABAAAAAAC8/9r/AAABAAAAAAC9/9r/AAABAAAAAAC+/9r/AAABAAAAAAC//9r/AAABAAAAAADA/9r/AAABAAAAAADB/9r/AAABAAAAAADC/9r/AAABAAAAAADD/9r/AAABAAAAAADE/9r/AAABAAAAAADF/9r/AAABAAAAAADG/9r/AAABAAAAAADH/9r/AAABAAAAAADI/9r/AAABAAAAAADJ/9r/AAABAAAAAADK/9r/AAABAAAAAADL/9r/AAABAAAAAADM/9v/AAABAAAAAADN/9v/AAABAAAAAADO/9v/AAABAAAAAADP/9v/AAABAAAAAADQ/9v/AAABAAAAAADR/9v/AAABAAAAAADS/9v/AAABAAAAAADT/9v/AAABAAAAAADU/9v/AAABAAAAAADV/9v/AAABAAAAAADW/9v/AAABAAAAAADX/9v/AAABAAAAAADY/9v/AAABAAAAAADZ/9v/AAABAAAAAADa/9v/AAABAAAAAADb/9v/AAABAAAAAADc/9v/AAABAAAAAADd/9v/AAABAAAAAADe/9v/AAABAAAAAADf/9v/AAABAAAAAADg/9v/AAABAAAAAADh/9v/AAABAAAAAADi/9v/AAABAAAAAADj/9v/AAABAAAAAABt/9L/AAABAAAAAABt/9H/AAABAAAAAABt/9D/AAABAAAAAABt/8//AAABAAAAAABt/87/AAABAAAAAABt/83/AAABAAAAAABt/8z/AAABAAAAAABt/8v/AAABAAAAAABt/8r/AAABAAAAAABt/8n/AAABAAAAAABu/8n/AAABAAAAAABv/8n/AAABAAAAAABw/8n/AAABAAAAAABw/8r/AAABAAAAAABw/8v/AAABAAAAAABw/8z/AAABAAAAAABw/83/AAABAAAAAABw/87/AAABAAAAAABw/8//AAABAAAAAABw/9D/AAABAAAAAABw/9H/AAABAAAAAABw/9L/AAABAAAAAACT/9b/AAABAAAAAACT/9X/AAABAAAAAACT/9T/AAABAAAAAACT/9P/AAABAAAAAACT/9L/AAABAAAAAACT/9H/AAABAAAAAACT/9D/AAABAAAAAACT/8//AAABAAAAAACS/87/AAABAAAAAACS/83/AAABAAAAAACS/8z/AAABAAAAAACR/8v/AAABAAAAAACR/8r/AAABAAAAAACo/9D/AAABAAAAAACo/9H/AAABAAAAAACo/9L/AAABAAAAAACo/9P/AAABAAAAAACr/9b/AAABAAAAAACs/9b/AAABAAAAAACt/9b/AAABAAAAAACu/9b/AAABAAAAAACv/9b/AAABAAAAAACw/9b/AAABAAAAAACx/9b/AAABAAAAAACx/9X/AAABAAAAAACx/9T/AAABAAAAAACx/9P/AAABAAAAAACx/9L/AAABAAAAAACx/9H/AAABAAAAAACx/9D/AAABAAAAAACx/8//AAABAAAAAACx/87/AAABAAAAAACx/83/AAABAAAAAACo/9T/AAABAAAAAACo/9X/AAABAAAAAACo/9b/AAABAAAAAACp/9b/AAABAAAAAACq/9b/AAABAAAAAACo/8//AAABAAAAAACo/87/AAABAAAAAACo/83/AAABAAAAAAA=")
+tile_set = SubResource("TileSet_cybt2")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_t2gnl")]
+position = Vector2(16, 1312)
+fallSpeedMultiplier = 1.0
+airControl = 3.0
+
+[node name="Camera" parent="CharacterBody2D" instance=ExtResource("5_25f7d")]
+limit_left = -8120
+limit_top = -1920
+limit_right = 5200
+limit_bottom = 6535
+position_smoothing_speed = 10.0
+drag_left_margin = 1.0
+drag_top_margin = 1.0
+editor_draw_drag_margin = true
+
+[node name="Obstacles" type="Node2D" parent="."]
+
+[node name="EscalatorPlatform" parent="Obstacles" instance=ExtResource("7_hwhr7")]
+position = Vector2(-1370, 138)
+scale = Vector2(6.495, 3.615)
+moveDirection = 1
+speed = 20000.0
+forceQuitGravity = true
+
+[node name="EscalatorPlatform3" parent="Obstacles" instance=ExtResource("7_hwhr7")]
+position = Vector2(-323, -310)
+scale = Vector2(6.495, 3.615)
+moveDirection = 1
+speed = 20000.0
+forceQuitGravity = true
+zeroGravity = true
+
+[node name="EscalatorPlatform2" parent="Obstacles" instance=ExtResource("7_hwhr7")]
+position = Vector2(-216, -100)
+scale = Vector2(3.615, 3.615)
+speed = 600.0
+forceQuitGravity = true
+
+[node name="ChargePlatform" parent="Obstacles" instance=ExtResource("6_eecb0")]
+position = Vector2(91, -135)
+
+[node name="DoorObstacle" parent="Obstacles" instance=ExtResource("7_x13ei")]
+position = Vector2(216, 103)
+scale = Vector2(0.21, 0.575)
+
+[node name="Key" parent="Obstacles/DoorObstacle" instance=ExtResource("8_1fj6q")]
+position = Vector2(-2033.33, -12.1739)
+scale = Vector2(0.642857, 0.234783)
+
+[node name="Key2" parent="Obstacles/DoorObstacle" instance=ExtResource("8_1fj6q")]
+position = Vector2(-1790.48, 107.826)
+scale = Vector2(0.642857, 0.234783)
+
+[node name="Key5" parent="Obstacles/DoorObstacle" instance=ExtResource("8_1fj6q")]
+position = Vector2(-2428.57, 74.7826)
+scale = Vector2(0.642857, 0.234783)
+
+[node name="MovingPlatform" parent="." instance=ExtResource("9_eymcn")]
+position = Vector2(-544, -32)
+scale = Vector2(0.2, 0.2)
+speed = 2000.0
+curve = SubResource("Curve_tgktu")
+
+[node name="Point" parent="MovingPlatform" instance=ExtResource("10_1tgtf")]
+position = Vector2(0, -2240)
+
+[node name="Point2" parent="MovingPlatform" instance=ExtResource("10_1tgtf")]
+position = Vector2(0.00012207, 640)
+
+[node name="CollapsingPlatform" parent="." instance=ExtResource("11_ywfgk")]
+position = Vector2(-2195, -334)
+shouldRespawn = true
+
+[node name="TileMapLayer2" parent="." instance=ExtResource("11_d83gr")]
+tile_map_data = PackedByteArray("AAADAAcAAAAAAAAAAAAEAAQAAAAAAAEAAAAEAAMAAAAAAAEAAAAEAAIAAAADAAAAABADAAIAAAABAAIAAAACAAIAAAABAAIAAAABAAIAAAABAAIAAAAAAAIAAAABAAIAAAD//wIAAAABAAIAAAD+/wIAAAABAAIAAAD9/wIAAAABAAIAAAD8/wIAAAABAAIAAAD7/wIAAAABAAIAAAD6/wIAAAABAAIAAAABAAkAAAABAAAAAAACAAkAAAADAAAAADACAAgAAAAAAAAAAAADAAgAAAADAAAAADD5/wIAAAABAAIAAAD4/wIAAAABAAIAAAD3/wIAAAABAAIAAAD2/wIAAAABAAIAAAD1/wIAAAABAAIAAAD0/wIAAAABAAIAAADz/wIAAAADAAAAAAAAAAkAAAABAAEAAAD//wkAAAABAAEAAAD+/wkAAAABAAEAAAD9/wkAAAABAAEAAAAEAAcAAAADAAAAADA=")
+
+[node name="MovingPlatform2" parent="." instance=ExtResource("9_eymcn")]
+position = Vector2(-2346, 1531)
+speed = 300.0
+pauseBetweenPoints = 10.0
+
+[node name="Point" parent="MovingPlatform2" instance=ExtResource("10_1tgtf")]
+position = Vector2(13, -19)
+
+[node name="Point2" parent="MovingPlatform2" instance=ExtResource("10_1tgtf")]
+position = Vector2(-20, 1671)
+
+[node name="InvisiblePlatformTrigger" parent="." node_paths=PackedStringArray("collider", "tileMapLayer") instance=ExtResource("12_p8bn0")]
+<<<<<<< working copy
+collider = NodePath("@CollisionShape2D@67523")
+tileMapLayer = NodePath("@TileMapLayer@67524")
+=======
+collider = NodePath("@CollisionShape2D@38362")
+tileMapLayer = NodePath("@TileMapLayer@38363")
+>>>>>>> merge rev
+
+[node name="@CollisionShape2D@51170" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+position = Vector2(1074, 1531)
+shape = SubResource("RectangleShape2D_mrb23")
+
+[node name="@TileMapLayer@51171" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+tile_map_data = PackedByteArray("AAAEAAUAAAAAAAEAAAAEAAYAAAAAAAEAAAAFAAUAAAABAAEAAAAFAAYAAAABAAEAAAAGAAIAAAABAAEAAAAGAAMAAAABAAEAAAAGAAQAAAABAAEAAAAGAAUAAAABAAEAAAAGAAYAAAABAAEAAAAGAAcAAAABAAEAAAAGAAgAAAABAAEAAAAGAAkAAAABAAEAAAAGAAoAAAABAAEAAAAGAAsAAAABAAEAAAAGAAwAAAABAAEAAAAHAAIAAAABAAEAAAAHAAMAAAABAAEAAAAHAAQAAAABAAEAAAAHAAUAAAABAAEAAAAHAAYAAAABAAEAAAAHAAcAAAABAAEAAAAHAAgAAAABAAEAAAAHAAkAAAABAAEAAAAHAAoAAAABAAEAAAAHAAsAAAABAAEAAAAHAAwAAAABAAEAAAAIAAIAAAABAAEAAAAIAAMAAAABAAEAAAAIAAQAAAABAAEAAAAIAAUAAAABAAEAAAAIAAYAAAABAAEAAAAIAAcAAAABAAEAAAAIAAgAAAABAAEAAAAIAAkAAAABAAEAAAAIAAoAAAABAAEAAAAIAAsAAAABAAEAAAAIAAwAAAABAAEAAAAJAAIAAAABAAEAAAAJAAMAAAABAAEAAAAJAAQAAAABAAEAAAAJAAUAAAABAAEAAAAJAAYAAAABAAEAAAAJAAcAAAABAAEAAAAJAAgAAAABAAEAAAAJAAkAAAABAAEAAAAJAAoAAAABAAEAAAAJAAsAAAABAAEAAAAJAAwAAAABAAEAAAAKAAIAAAABAAEAAAAKAAMAAAABAAEAAAAKAAQAAAABAAEAAAAKAAUAAAABAAEAAAAKAAYAAAABAAEAAAAKAAcAAAABAAEAAAAKAAgAAAABAAEAAAAKAAkAAAABAAEAAAAKAAoAAAABAAEAAAAKAAsAAAABAAEAAAAKAAwAAAABAAEAAAALAAIAAAABAAEAAAALAAMAAAABAAEAAAALAAQAAAABAAEAAAALAAUAAAABAAEAAAALAAYAAAABAAEAAAALAAcAAAABAAEAAAALAAgAAAABAAEAAAALAAkAAAABAAEAAAALAAoAAAABAAEAAAALAAsAAAABAAEAAAALAAwAAAABAAEAAAAMAAIAAAABAAEAAAAMAAMAAAABAAEAAAAMAAQAAAABAAEAAAAMAAUAAAABAAEAAAAMAAYAAAABAAEAAAAMAAcAAAABAAEAAAAMAAgAAAABAAEAAAAMAAkAAAABAAEAAAAMAAoAAAABAAEAAAAMAAsAAAABAAEAAAAMAAwAAAABAAEAAAANAAIAAAABAAEAAAANAAMAAAABAAEAAAANAAQAAAABAAEAAAANAAUAAAABAAEAAAANAAYAAAABAAEAAAANAAcAAAABAAEAAAANAAgAAAABAAEAAAANAAkAAAABAAEAAAANAAoAAAABAAEAAAANAAsAAAABAAEAAAANAAwAAAABAAEAAAAOAAIAAAABAAEAAAAOAAMAAAABAAEAAAAOAAQAAAABAAEAAAAOAAUAAAABAAEAAAAOAAYAAAABAAEAAAAOAAcAAAABAAEAAAAOAAgAAAABAAEAAAAOAAkAAAABAAEAAAAOAAoAAAABAAEAAAAOAAsAAAABAAEAAAAOAAwAAAABAAEAAAAPAAIAAAABAAEAAAAPAAMAAAABAAEAAAAPAAQAAAABAAEAAAAPAAUAAAABAAEAAAAPAAYAAAABAAEAAAAPAAcAAAABAAEAAAAPAAgAAAABAAEAAAAPAAkAAAABAAEAAAAPAAoAAAABAAEAAAAPAAsAAAABAAEAAAAPAAwAAAABAAEAAAAQAAIAAAABAAEAAAAQAAMAAAABAAEAAAAQAAQAAAABAAEAAAAQAAUAAAABAAEAAAAQAAYAAAABAAEAAAAQAAcAAAABAAEAAAAQAAgAAAABAAEAAAAQAAkAAAABAAEAAAAQAAoAAAABAAEAAAAQAAsAAAABAAEAAAAQAAwAAAABAAEAAAARAAIAAAABAAEAAAARAAMAAAABAAEAAAARAAQAAAABAAEAAAARAAUAAAABAAEAAAARAAYAAAABAAEAAAARAAcAAAABAAEAAAARAAgAAAABAAEAAAARAAkAAAABAAEAAAARAAoAAAABAAEAAAARAAsAAAABAAEAAAARAAwAAAABAAEAAAASAAIAAAABAAEAAAASAAMAAAABAAEAAAASAAQAAAABAAEAAAASAAUAAAABAAEAAAASAAYAAAABAAEAAAASAAcAAAABAAEAAAASAAgAAAABAAEAAAASAAkAAAABAAEAAAASAAoAAAABAAEAAAASAAsAAAABAAEAAAASAAwAAAABAAEAAAATAAIAAAABAAEAAAATAAMAAAABAAEAAAATAAQAAAABAAEAAAATAAUAAAABAAEAAAATAAYAAAABAAEAAAATAAcAAAABAAEAAAATAAgAAAABAAEAAAATAAkAAAABAAEAAAATAAoAAAABAAEAAAATAAsAAAABAAEAAAATAAwAAAABAAEAAAA=")
+
+[node name="@CollisionShape2D@71445" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_bfvva")
+
+[node name="@TileMapLayer@71446" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@71452" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_vu7vo")
+
+[node name="@TileMapLayer@71453" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@74169" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_tirad")
+
+[node name="@TileMapLayer@74170" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@74176" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_esl6e")
+
+[node name="@TileMapLayer@74177" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@19317" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_datao")
+
+[node name="@TileMapLayer@19318" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@29454" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_4b824")
+
+[node name="@TileMapLayer@29455" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@62173" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_8nwv0")
+
+[node name="@TileMapLayer@62174" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@62180" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_oykkx")
+
+[node name="@TileMapLayer@62181" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@68704" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_askhb")
+
+[node name="@TileMapLayer@68705" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@68711" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_aay6w")
+
+[node name="@TileMapLayer@68712" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@72517" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_g71pm")
+
+[node name="@TileMapLayer@72518" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@72524" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_l375p")
+
+[node name="@TileMapLayer@72525" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@75439" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_hxglm")
+
+[node name="@TileMapLayer@75440" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@75446" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_wyvyn")
+
+[node name="@TileMapLayer@75447" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@130306" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_6fwsg")
+
+[node name="@TileMapLayer@130307" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@130313" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_6jugh")
+
+[node name="@TileMapLayer@130314" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@178901" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_54tvl")
+
+[node name="@TileMapLayer@178902" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@178908" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_4vn0u")
+
+[node name="@TileMapLayer@178909" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@226633" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_2poo2")
+
+[node name="@TileMapLayer@226634" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@226640" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_nfgk5")
+
+[node name="@TileMapLayer@226641" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@236057" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_sr8gd")
+
+[node name="@TileMapLayer@236058" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@236064" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_ccuoc")
+
+[node name="@TileMapLayer@236065" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@240618" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_i71hm")
+
+[node name="@TileMapLayer@240619" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@240625" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_rjrow")
+
+[node name="@TileMapLayer@240626" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@244358" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_uty4l")
+
+[node name="@TileMapLayer@244359" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@244365" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_yydsr")
+
+[node name="@TileMapLayer@244366" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@246257" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_uy1lf")
+
+[node name="@TileMapLayer@246258" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@246264" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_owi6w")
+
+[node name="@TileMapLayer@246265" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@248741" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_tjmcv")
+
+[node name="@TileMapLayer@248742" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@248748" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_c1pho")
+
+[node name="@TileMapLayer@248749" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@251431" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_q7a11")
+
+[node name="@TileMapLayer@251432" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@251438" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_hx0hp")
+
+[node name="@TileMapLayer@251439" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@253331" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_dlh82")
+
+[node name="@TileMapLayer@253332" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@253338" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_ifj1b")
+
+[node name="@TileMapLayer@253339" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@254177" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_7wqi8")
+
+[node name="@TileMapLayer@254178" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@254967" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_6unay")
+
+[node name="@TileMapLayer@254968" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@255944" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_vamyi")
+
+[node name="@TileMapLayer@255945" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+<<<<<<< working copy
+[node name="@CollisionShape2D@17450" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_bxdkt")
+
+[node name="@TileMapLayer@17451" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@17452" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_68uo7")
+
+[node name="@TileMapLayer@17453" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@25430" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_rqnxf")
+
+[node name="@TileMapLayer@25431" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@31225" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_ej0y4")
+
+[node name="@TileMapLayer@31226" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@31232" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_64d32")
+
+[node name="@TileMapLayer@31233" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@17439" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_mknfk")
+
+[node name="@TileMapLayer@17440" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@18296" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_mpqng")
+
+[node name="@TileMapLayer@18297" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@18303" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_7tr7n")
+
+[node name="@TileMapLayer@18304" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@33460" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_wqljb")
+
+[node name="@TileMapLayer@33461" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@33467" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_n1scf")
+
+[node name="@TileMapLayer@33468" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@36756" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_23rtd")
+
+[node name="@TileMapLayer@36757" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@36763" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_y7fsu")
+
+[node name="@TileMapLayer@36764" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@38007" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_k2q8t")
+
+[node name="@TileMapLayer@38008" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@38014" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_k3114")
+
+[node name="@TileMapLayer@38015" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@45681" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_5740k")
+
+[node name="@TileMapLayer@45682" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@45688" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_rgiqk")
+
+[node name="@TileMapLayer@45689" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@48443" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_3ju00")
+
+[node name="@TileMapLayer@48444" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@56990" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_2utgk")
+
+[node name="@TileMapLayer@56991" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@56997" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_4yppq")
+
+[node name="@TileMapLayer@56998" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@60359" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_hfhnv")
+
+[node name="@TileMapLayer@60360" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@60366" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_lf55g")
+
+[node name="@TileMapLayer@60367" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@65193" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_0ff8w")
+
+[node name="@TileMapLayer@65194" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@65200" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_5bui5")
+
+[node name="@TileMapLayer@65201" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@65726" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_775wo")
+
+[node name="@TileMapLayer@65727" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@66196" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_smvtv")
+
+[node name="@TileMapLayer@66197" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@66666" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_qrc7v")
+
+[node name="@TileMapLayer@66667" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@67516" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_ykdql")
+
+[node name="@TileMapLayer@67517" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+
+[node name="@CollisionShape2D@67523" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_mgt1s")
+
+[node name="@TileMapLayer@67524" type="TileMapLayer" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+=======
+[node name="@CollisionShape2D@38362" type="CollisionShape2D" parent="InvisiblePlatformTrigger"]
+shape = SubResource("RectangleShape2D_aguon")
+
+[node name="@TileMapLayer@38363" type="TileMapLayer" parent="InvisiblePlatformTrigger" instance=ExtResource("11_d83gr")]
+>>>>>>> merge rev
+tile_set = ExtResource("13_dxaq6")
+
+[node name="CollapsingPlatform2" parent="." instance=ExtResource("14_7tet8")]
+position = Vector2(-320, 2012)
+collapseTimerInSeconds = 4.0
+shakeStrength = 30.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_tu4rb")
+camera_attributes = SubResource("CameraAttributesPractical_8gqoi")
+
+<<<<<<< working copy
+[node name="DeathObstacle" parent="." instance=ExtResource("15_8f1c0")]
+position = Vector2(-581, 1522)
+scale = Vector2(1, 1)
+pauseBetweenPoints = 0.0
+=======
+[node name="switchingPlatform" parent="." instance=ExtResource("15_gej5x")]
+position = Vector2(-285, 2083)
+scale = Vector2(1, 1)
+>>>>>>> merge rev

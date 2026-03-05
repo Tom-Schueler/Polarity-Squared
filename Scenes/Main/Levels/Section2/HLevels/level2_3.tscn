@@ -1,0 +1,399 @@
+[gd_scene load_steps=10 format=3 uid="uid://yneapi8uua6h"]
+
+[ext_resource type="PackedScene" uid="uid://5owuibn0h6rf" path="res://Prefabs/Player/player.tscn" id="1_sxnlw"]
+[ext_resource type="PackedScene" uid="uid://demnkur8y8los" path="res://Prefabs/Camera/camera.tscn" id="2_ahvpp"]
+[ext_resource type="Texture2D" uid="uid://q88y22q0v4o6" path="res://Assets/TileMap/tileMap_v1.png" id="3_i1flk"]
+[ext_resource type="PackedScene" uid="uid://bem34hsupieur" path="res://Prefabs/Obstacles/DeathObstacle/Spikes/deathObstacle.tscn" id="4_ayp45"]
+[ext_resource type="PackedScene" uid="uid://b2v0t3ykc6run" path="res://Prefabs/Platforms/ChargePlatform/chargePlatform.tscn" id="5_slss6"]
+[ext_resource type="PackedScene" uid="uid://cj6e5geht36fy" path="res://Prefabs/Platforms/MovingPlatform/movingPlatform.tscn" id="6_qookm"]
+[ext_resource type="PackedScene" uid="uid://bml4lhbetv0rw" path="res://Prefabs/Platforms/point.tscn" id="7_dddpw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_unj6c"]
+texture = ExtResource("3_i1flk")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:1/0 = 0
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -108, 30, -72, 128, 106, -128, 108)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+
+[sub_resource type="TileSet" id="TileSet_mb4da"]
+tile_size = Vector2i(256, 256)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_unj6c")
+
+[node name="Node2D3" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_sxnlw")]
+position = Vector2(32, -1504)
+
+[node name="Camera2" parent="player" instance=ExtResource("2_ahvpp")]
+position = Vector2(0, -64)
+limit_left = -9445
+limit_top = -41740
+limit_right = 9535
+limit_bottom = -1055
+position_smoothing_speed = 2.0
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(30, -1)
+tile_set = SubResource("TileSet_mb4da")
+format = 2
+layer_0/tile_data = PackedInt32Array(-2031640, 65536, 2, -1966104, 65536, 2, -2031639, 65536, 2, -1966103, 65536, 2, -2031638, 65536, 2, -1966102, 65536, 2, -2031637, 65536, 2, -1966101, 65536, 2, -2031636, 65536, 2, -1966100, 65536, 2, -2031635, 65536, 2, -1966099, 65536, 2, -2031634, 65536, 2, -1966098, 65536, 2, -2031633, 65536, 2, -1966097, 65536, 2, -2031632, 65536, 2, -1966096, 65536, 2, -2031631, 65536, 2, -1966095, 65536, 2, -2031630, 65536, 2, -1966094, 65536, 2, -2031629, 65536, 2, -1966093, 65536, 2, -2031628, 65536, 2, -1966092, 65536, 2, -2031627, 65536, 2, -1966091, 65536, 2, -2031626, 65536, 2, -1966090, 65536, 2, -2031625, 65536, 2, -1966089, 65536, 2, -2031624, 65536, 2, -1966088, 65536, 2, -2031623, 65536, 2, -1966087, 65536, 2, -2031622, 65536, 2, -1966086, 65536, 2, -2031621, 65536, 2, -1966085, 65536, 2, -2031620, 65536, 2, -1966084, 65536, 2, -2031619, 65536, 2, -1966083, 65536, 2, -2031618, 65536, 2, -1966082, 65536, 2, -2031617, 65536, 2, -1966081, 65536, 2, -2097152, 65536, 2, -2031616, 65536, 2, -2097151, 131072, 1, -2031615, 65536, 2, -2097144, 0, 1, -2031608, 65536, 2, -2097143, 65536, 2, -2031607, 65536, 2, -2097142, 65536, 2, -2031606, 65536, 2, -2097141, 65536, 2, -2031605, 65536, 2, -2097140, 65536, 2, -2031604, 65536, 2, -2097139, 65536, 2, -2031603, 65536, 2, -2097138, 65536, 2, -2031602, 65536, 2, -2097137, 65536, 2, -2031601, 65536, 2, -2097136, 65536, 2, -2031600, 65536, 2, -2097135, 65536, 2, -2031599, 65536, 2, -2097134, 65536, 2, -2031598, 65536, 2, -2097133, 65536, 2, -2031597, 65536, 2, -2097132, 65536, 2, -2031596, 65536, 2, -2097131, 65536, 2, -2031595, 65536, 2, -2097130, 65536, 2, -2031594, 65536, 2, -262159, 65536, 0, -262158, 65536, 0, -262157, 65536, 0, -262156, 65536, 0, -262155, 65536, 0, -262154, 65536, 0, -262153, 65536, 0, -262152, 65536, 0, -262151, 65536, 0, -262150, 65536, 0, -262149, 65536, 0, -262148, 65536, 0, -262147, 65536, 0, -262146, 65536, 0, -262145, 65536, 0, -327680, 65536, 0, -327679, 65536, 0, -327678, 65536, 0, -327677, 65536, 0, -327676, 65536, 0, -327675, 65536, 0, -327674, 65536, 0, -327673, 65536, 0, -327672, 65536, 0, -327671, 65536, 0, -327670, 65536, 0, -327669, 65536, 0, -327668, 65536, 0, -327667, 65536, 0, -327666, 65536, 0, -327665, 65536, 0, -327664, 65536, 0, -327663, 65536, 0, -327662, 65536, 0, -2359295, 131072, 1, -2293759, 131072, 1, -2228223, 131072, 1, -2162687, 131072, 1, -2359288, 0, 1, -2293752, 0, 1, -2228216, 0, 1, -2162680, 0, 1, -2359296, 65536, 1, -2293761, 65536, 1, -2293762, 65536, 1, -2293763, 65536, 1, -2293764, 65536, 1, -2293765, 65536, 1, -2293766, 65536, 1, -2293767, 65536, 1, -2293768, 65536, 1, -2293769, 65536, 1, -2293770, 65536, 1, -2293771, 65536, 1, -2293772, 65536, 1, -2293773, 65536, 1, -2293774, 65536, 1, -2293775, 65536, 1, -2293776, 65536, 1, -2293777, 65536, 1, -2293778, 65536, 1, -2293779, 65536, 1, -2293780, 65536, 1, -2293781, 65536, 1, -2293782, 65536, 1, -2293783, 65536, 1)
+
+[node name="SpikesBottom" type="Node" parent="."]
+
+[node name="DeathObstacle181" parent="SpikesBottom" instance=ExtResource("4_ayp45")]
+position = Vector2(1696, 2144)
+
+[node name="SpikesRight" type="Node" parent="."]
+
+[node name="DeathObstacle138" parent="SpikesRight" instance=ExtResource("4_ayp45")]
+position = Vector2(1472, 1440)
+rotation = -1.5708
+
+[node name="DeathObstacle139" parent="SpikesRight" instance=ExtResource("4_ayp45")]
+position = Vector2(1952, -7808)
+rotation = -1.5708
+
+[node name="DeathObstacle140" parent="SpikesRight" instance=ExtResource("4_ayp45")]
+position = Vector2(1952, -8064)
+rotation = -1.5708
+
+[node name="DeathObstacle141" parent="SpikesRight" instance=ExtResource("4_ayp45")]
+position = Vector2(1952, -8320)
+rotation = -1.5708
+
+[node name="DeathObstacle142" parent="SpikesRight" instance=ExtResource("4_ayp45")]
+position = Vector2(1952, -8576)
+rotation = -1.5708
+
+[node name="DeathObstacle143" parent="SpikesRight" instance=ExtResource("4_ayp45")]
+position = Vector2(1952, -8832)
+rotation = -1.5708
+
+[node name="DeathObstacle144" parent="SpikesRight" instance=ExtResource("4_ayp45")]
+position = Vector2(1952, -9088)
+rotation = -1.5708
+
+[node name="DeathObstacle145" parent="SpikesRight" instance=ExtResource("4_ayp45")]
+position = Vector2(1952, -9344)
+rotation = -1.5708
+
+[node name="DeathObstacle146" parent="SpikesRight" instance=ExtResource("4_ayp45")]
+position = Vector2(1952, -9600)
+rotation = -1.5708
+
+[node name="DeathObstacle147" parent="SpikesRight" instance=ExtResource("4_ayp45")]
+position = Vector2(1952, -9856)
+rotation = -1.5708
+
+[node name="DeathObstacle148" parent="SpikesRight" instance=ExtResource("4_ayp45")]
+position = Vector2(1952, -10112)
+rotation = -1.5708
+
+[node name="DeathObstacle149" parent="SpikesRight" instance=ExtResource("4_ayp45")]
+position = Vector2(1952, -10368)
+rotation = -1.5708
+
+[node name="DeathObstacle150" parent="SpikesRight" instance=ExtResource("4_ayp45")]
+position = Vector2(1952, -10624)
+rotation = -1.5708
+
+[node name="DeathObstacle151" parent="SpikesRight" instance=ExtResource("4_ayp45")]
+position = Vector2(1952, -10880)
+rotation = -1.5708
+
+[node name="SpikesTop" type="Node" parent="."]
+
+[node name="DeathObstacle157" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(480, 1344)
+rotation = 3.14159
+
+[node name="DeathObstacle158" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(-2912, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle159" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(-2656, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle160" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(-2400, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle161" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(-2144, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle162" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(-1888, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle163" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(-1632, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle164" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(-1376, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle165" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(-1120, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle166" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(-864, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle167" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(-608, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle178" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(-1632, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle179" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(-1376, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle180" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(-1120, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle181" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(-864, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle182" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(-608, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle183" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(-352, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle184" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(-96, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle185" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(160, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle186" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(416, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle187" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(-352, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle188" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(-96, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle189" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(160, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle190" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(416, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle194" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(2208, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle195" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(2464, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle196" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(2720, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle201" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(2976, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle203" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(3232, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle204" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(3488, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle205" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(3744, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle206" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(4000, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle168" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(-5472, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle169" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(-5216, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle170" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(-4960, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle171" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(-4704, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle172" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(-4448, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle173" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(-4192, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle174" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(-3936, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle175" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(-3680, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle176" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(-3424, -7552)
+rotation = 3.14159
+
+[node name="DeathObstacle177" parent="SpikesTop" instance=ExtResource("4_ayp45")]
+position = Vector2(-3168, -7552)
+rotation = 3.14159
+
+[node name="SpikesLeft" type="Node" parent="."]
+
+[node name="DeathObstacle129" parent="SpikesLeft" instance=ExtResource("4_ayp45")]
+position = Vector2(1088, 1568)
+rotation = 1.5708
+
+[node name="DeathObstacle130" parent="SpikesLeft" instance=ExtResource("4_ayp45")]
+position = Vector2(672, -7808)
+rotation = 1.5708
+
+[node name="DeathObstacle131" parent="SpikesLeft" instance=ExtResource("4_ayp45")]
+position = Vector2(672, -8064)
+rotation = 1.5708
+
+[node name="DeathObstacle132" parent="SpikesLeft" instance=ExtResource("4_ayp45")]
+position = Vector2(672, -8320)
+rotation = 1.5708
+
+[node name="DeathObstacle133" parent="SpikesLeft" instance=ExtResource("4_ayp45")]
+position = Vector2(672, -8576)
+rotation = 1.5708
+
+[node name="DeathObstacle134" parent="SpikesLeft" instance=ExtResource("4_ayp45")]
+position = Vector2(672, -8832)
+rotation = 1.5708
+
+[node name="DeathObstacle135" parent="SpikesLeft" instance=ExtResource("4_ayp45")]
+position = Vector2(672, -9088)
+rotation = 1.5708
+
+[node name="DeathObstacle136" parent="SpikesLeft" instance=ExtResource("4_ayp45")]
+position = Vector2(672, -9344)
+rotation = 1.5708
+
+[node name="DeathObstacle137" parent="SpikesLeft" instance=ExtResource("4_ayp45")]
+position = Vector2(672, -9600)
+rotation = 1.5708
+
+[node name="DeathObstacle138" parent="SpikesLeft" instance=ExtResource("4_ayp45")]
+position = Vector2(672, -9856)
+rotation = 1.5708
+
+[node name="DeathObstacle139" parent="SpikesLeft" instance=ExtResource("4_ayp45")]
+position = Vector2(672, -10112)
+rotation = 1.5708
+
+[node name="DeathObstacle140" parent="SpikesLeft" instance=ExtResource("4_ayp45")]
+position = Vector2(672, -10368)
+rotation = 1.5708
+
+[node name="DeathObstacle141" parent="SpikesLeft" instance=ExtResource("4_ayp45")]
+position = Vector2(672, -10624)
+rotation = 1.5708
+
+[node name="DeathObstacle142" parent="SpikesLeft" instance=ExtResource("4_ayp45")]
+position = Vector2(672, -10880)
+rotation = 1.5708
+
+[node name="ChargePlatforms" type="Node2D" parent="."]
+position = Vector2(64, -64)
+scale = Vector2(7.775, 7.775)
+
+[node name="ChargePlatform" parent="ChargePlatforms" instance=ExtResource("5_slss6")]
+position = Vector2(518.585, 300.45)
+
+[node name="MovingPlatform" parent="." instance=ExtResource("6_qookm")]
+position = Vector2(-1248, -6016)
+speed = 1400.0
+pauseBetweenPoints = 0.0
+
+[node name="Point" parent="MovingPlatform" instance=ExtResource("7_dddpw")]
+
+[node name="Point2" parent="MovingPlatform" instance=ExtResource("7_dddpw")]
+position = Vector2(2688, 0)
+
+[node name="DeathObstacle154" parent="MovingPlatform" instance=ExtResource("4_ayp45")]
+position = Vector2(256, 256)
+rotation = 3.14159
+
+[node name="DeathObstacle156" parent="MovingPlatform" instance=ExtResource("4_ayp45")]
+position = Vector2(0, 256)
+rotation = 3.14159
+
+[node name="DeathObstacle155" parent="MovingPlatform" instance=ExtResource("4_ayp45")]
+position = Vector2(-256, 256)
+rotation = 3.14159
+
+[node name="MovingPlatform2" parent="." instance=ExtResource("6_qookm")]
+position = Vector2(672, -12672)
+pauseBetweenPoints = 0.0
+
+[node name="Point" parent="MovingPlatform2" instance=ExtResource("7_dddpw")]
+
+[node name="Point2" parent="MovingPlatform2" instance=ExtResource("7_dddpw")]
+position = Vector2(1408, 0)
+
+[node name="DeathObstacle154" parent="MovingPlatform2" instance=ExtResource("4_ayp45")]
+position = Vector2(256, 256)
+rotation = 3.14159
+
+[node name="DeathObstacle156" parent="MovingPlatform2" instance=ExtResource("4_ayp45")]
+position = Vector2(0, 256)
+rotation = 3.14159
+
+[node name="DeathObstacle155" parent="MovingPlatform2" instance=ExtResource("4_ayp45")]
+position = Vector2(-256, 256)
+rotation = 3.14159

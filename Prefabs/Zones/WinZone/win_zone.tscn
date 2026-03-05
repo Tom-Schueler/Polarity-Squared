@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyqjwkxxvuo4e"]
+
+[ext_resource type="Script" path="res://Prefabs/Zones/WinZone/win_zone.gd" id="1_owh86"]
+[ext_resource type="PackedScene" uid="uid://ctx2kvyevcg14" path="res://Prefabs/Zones/WinZone/Door.tscn" id="2_6deqf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aa1a0"]
+size = Vector2(168, 354)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n8thg"]
+size = Vector2(341.333, 469.333)
+
+[node name="Win zone" type="Area2D"]
+scale = Vector2(1.5, 1.5)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_owh86")
+
+[node name="Door" parent="." instance=ExtResource("2_6deqf")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 78)
+shape = SubResource("RectangleShape2D_aa1a0")
+
+[node name="OpenArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OpenArea"]
+position = Vector2(0, 64)
+shape = SubResource("RectangleShape2D_n8thg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="OpenArea" to="." method="_on_open_area_body_entered"]

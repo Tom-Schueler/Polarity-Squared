@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://delt8j1hjwtwq"]
+
+[ext_resource type="Script" path="res://Prefabs/Platforms/InvisiblePlatform/invisiblePlatformTrigger.gd" id="1_apri2"]
+[ext_resource type="PackedScene" uid="uid://2uvav6xspqd1" path="res://Prefabs/Tilemap/Tilemap.tscn" id="2_7w43h"]
+[ext_resource type="TileSet" uid="uid://n6it8rs0hdsc" path="res://Prefabs/Tilemap/TilemapResource.tres" id="3_5tv67"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_723dq"]
+
+[node name="InvisiblePlatformTrigger" type="Area2D" node_paths=PackedStringArray("collider", "tileMapLayer")]
+script = ExtResource("1_apri2")
+collider = NodePath("Trigger Area")
+tileMapLayer = NodePath("TileMapLayer")
+
+[node name="Trigger Area" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_723dq")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." instance=ExtResource("2_7w43h")]
+tile_set = ExtResource("3_5tv67")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

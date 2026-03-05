@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://o0n4wm4v7oka"]
+
+[ext_resource type="Script" path="res://Prefabs/Platforms/CollapsingPlatform/collapsingPlatform.gd" id="1_ef8h4"]
+[ext_resource type="Texture2D" uid="uid://q88y22q0v4o6" path="res://Assets/TileMap/tileMap_v1.png" id="2_s6je2"]
+[ext_resource type="PackedScene" uid="uid://vqywle40c6wu" path="res://Assets/Audio/audioComponent/audioBetweenFG.tscn" id="3_p6iyu"]
+[ext_resource type="AudioStream" uid="uid://b4dpnuxtfjih2" path="res://Assets/Audio/CollapsingSFXv0803 .wav" id="4_pm21b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1i5qq"]
+size = Vector2(768, 256)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_47uqr"]
+size = Vector2(776, 264)
+
+[node name="CollapsingPlatform" type="StaticBody2D"]
+position = Vector2(642, 378)
+script = ExtResource("1_ef8h4")
+respawnTimerInSeconds = 1.0
+shakeStrength = 10.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_s6je2")
+region_enabled = true
+region_rect = Rect2(2048, 512, 256, 256)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(256, 0)
+texture = ExtResource("2_s6je2")
+region_enabled = true
+region_rect = Rect2(2304, 512, 256, 256)
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(-256, 0)
+texture = ExtResource("2_s6je2")
+region_enabled = true
+region_rect = Rect2(1792, 512, 256, 256)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_1i5qq")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_47uqr")
+
+[node name="RespawnTimer" type="Timer" parent="Area2D/CollisionShape2D"]
+
+[node name="RespawnTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="CollapseTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="SFX_collapsing" parent="." instance=ExtResource("3_p6iyu")]
+stream = ExtResource("4_pm21b")
+volume_db = 6.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="RespawnTimer" to="." method="_on_respawn_timer_timeout"]
+[connection signal="timeout" from="CollapseTimer" to="." method="_on_collapse_timer_timeout"]

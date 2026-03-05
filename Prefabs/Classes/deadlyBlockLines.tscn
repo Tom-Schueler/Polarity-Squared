@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://bebycb1pxw27s"]
+
+[ext_resource type="PackedScene" uid="uid://bem34hsupieur" path="res://Prefabs/Obstacles/DeathObstacle/Spikes/deathObstacle.tscn" id="1_4q36g"]
+
+[node name="DeadlyBlockLines" type="Node2D"]
+
+[node name="DeathObstacle" parent="." instance=ExtResource("1_4q36g")]
+position = Vector2(1, 0)
+
+[node name="DeathObstacle2" parent="." instance=ExtResource("1_4q36g")]
+position = Vector2(34, 0)
+
+[node name="DeathObstacle3" parent="." instance=ExtResource("1_4q36g")]
+position = Vector2(66, 0)
+
+[node name="DeathObstacle4" parent="." instance=ExtResource("1_4q36g")]
+position = Vector2(-31, 0)
+
+[node name="DeathObstacle5" parent="." instance=ExtResource("1_4q36g")]
+position = Vector2(-62, 1)

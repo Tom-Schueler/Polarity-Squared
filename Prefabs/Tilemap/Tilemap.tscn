@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://2uvav6xspqd1"]
+
+[ext_resource type="TileSet" uid="uid://n6it8rs0hdsc" path="res://Prefabs/Tilemap/TilemapResource.tres" id="1_irt0i"]
+
+[node name="TileMapLayer" type="TileMapLayer"]
+tile_set = ExtResource("1_irt0i")

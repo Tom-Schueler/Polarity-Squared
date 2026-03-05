@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj6xubk14rtw8"]
+
+[ext_resource type="Script" path="res://Scenes/Main/UI/PauseMenu/Debug/level.gd" id="1_ryn10"]
+[ext_resource type="FontFile" uid="uid://dpvdgwpnrcqb5" path="res://Assets/Font/hobostd.otf" id="1_sx7vc"]
+
+[node name="level" type="Button"]
+custom_minimum_size = Vector2(300, 100)
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_fonts/font = ExtResource("1_sx7vc")
+theme_override_font_sizes/font_size = 30
+script = ExtResource("1_ryn10")
+
+[connection signal="pressed" from="." to="." method="SelfPressed"]

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bslfv11gl53at"]
+
+[ext_resource type="PackedScene" uid="uid://bjwg6v41sskkh" path="res://Prefabs/Platforms/Platform/platform.tscn" id="1_y1ydc"]
+
+[node name="LenghyPlatform" type="Node2D"]
+
+[node name="Platform" parent="." instance=ExtResource("1_y1ydc")]
+position = Vector2(-1, 0)
+scale = Vector2(4, 1)

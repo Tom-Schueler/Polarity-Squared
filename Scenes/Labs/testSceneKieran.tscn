@@ -1,0 +1,80 @@
+[gd_scene load_steps=11 format=3 uid="uid://dhbfq6dfc2sgi"]
+
+[ext_resource type="Texture2D" uid="uid://clvnq0gsmh442" path="res://Assets/TileMap/shapes.png" id="1_aaa4a"]
+[ext_resource type="PackedScene" uid="uid://cj6e5geht36fy" path="res://Prefabs/Platforms/MovingPlatform/movingPlatform.tscn" id="2_b8wvw"]
+[ext_resource type="PackedScene" uid="uid://bml4lhbetv0rw" path="res://Prefabs/Platforms/point.tscn" id="3_xpcif"]
+[ext_resource type="PackedScene" uid="uid://5owuibn0h6rf" path="res://Prefabs/Player/player.tscn" id="4_ks52s"]
+[ext_resource type="PackedScene" uid="uid://d4g6h6x8hw0p2" path="res://Prefabs/Platforms/CollapsingPlatform/collapsingPlatform1x1.tscn" id="5_u3bvn"]
+[ext_resource type="PackedScene" uid="uid://bw5ljouq8a5jk" path="res://Prefabs/Obstacles/MovingDeathObstacle/movingDeathObstacle.tscn" id="6_eu855"]
+[ext_resource type="PackedScene" uid="uid://cmgaqupfiit6b" path="res://Prefabs/Obstacles/ObstacleShooter/obstacleShooter.tscn" id="7_036f6"]
+[ext_resource type="PackedScene" uid="uid://bem34hsupieur" path="res://Prefabs/Obstacles/DeathObstacle/deathObstacle.tscn" id="8_43ir4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ohpmi"]
+texture = ExtResource("1_aaa4a")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -16, 16, 16, -16, 16)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0, -0.25, 16, 16, -16, 16)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 5, 0, 16, 16, -16, 16, -5, 0)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 0, -16, 0.25)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 0, -16, 0.25, 0.25, -16, 0)
+
+[sub_resource type="TileSet" id="TileSet_cybt2"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_ohpmi")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_cybt2")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="MovingPlatform" parent="." instance=ExtResource("2_b8wvw")]
+startOver = true
+
+[node name="Point" parent="MovingPlatform" instance=ExtResource("3_xpcif")]
+position = Vector2(19, 241)
+
+[node name="Point2" parent="MovingPlatform" instance=ExtResource("3_xpcif")]
+position = Vector2(93, 241)
+
+[node name="player" parent="." instance=ExtResource("4_ks52s")]
+speed = 500.0
+acceleration = 2000.0
+terminalVelocity = 1000.0
+coyoteTime = 0.2
+
+[node name="MovingPlatform2" parent="." instance=ExtResource("2_b8wvw")]
+
+[node name="Point" parent="MovingPlatform2" instance=ExtResource("3_xpcif")]
+position = Vector2(-4, 92)
+
+[node name="Point2" parent="MovingPlatform2" instance=ExtResource("3_xpcif")]
+position = Vector2(115, 89)
+
+[node name="Point3" parent="MovingPlatform2" instance=ExtResource("3_xpcif")]
+position = Vector2(167, 142)
+
+[node name="CollapsingPlatform" parent="." instance=ExtResource("5_u3bvn")]
+position = Vector2(274, 242)
+
+[node name="DeathObstacle" parent="." instance=ExtResource("6_eu855")]
+position = Vector2(454, 74)
+scale = Vector2(9.31, 9.31)
+
+[node name="ObstacleShooter" parent="." instance=ExtResource("7_036f6")]
+position = Vector2(-126, 181)
+scale = Vector2(10.405, 10.405)
+obstacleToShoot = ExtResource("8_43ir4")
+speedOfObstacle = 5000.0
+moveDirection = Vector2(0.705, -1)

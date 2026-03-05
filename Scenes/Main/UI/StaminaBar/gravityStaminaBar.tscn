@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://xsvna78wmr0m"]
+
+[ext_resource type="Script" path="res://Scenes/Main/UI/StaminaBar/gravityStaminaBar.gd" id="1_hs8qx"]
+[ext_resource type="Texture2D" uid="uid://iqss0mpp1tuo" path="res://Assets/UIElements/StaminaBarEmpty.png" id="2_s41ha"]
+[ext_resource type="Texture2D" uid="uid://20hjsen00d25" path="res://Assets/UIElements/StaminaBarFill.png" id="3_pswnp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lrsux"]
+texture = ExtResource("2_s41ha")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xr3om"]
+texture = ExtResource("3_pswnp")
+axis_stretch_horizontal = 1
+
+[node name="GravityStaminaBar" type="Control"]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 350.0
+offset_bottom = 60.0
+script = ExtResource("1_hs8qx")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(300, 30)
+layout_mode = 0
+offset_top = -100.0
+offset_right = 350.0
+theme_override_styles/background = SubResource("StyleBoxTexture_lrsux")
+theme_override_styles/fill = SubResource("StyleBoxTexture_xr3om")
+value = 100.0
+show_percentage = false

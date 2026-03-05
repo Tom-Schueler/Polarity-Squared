@@ -1,0 +1,352 @@
+[gd_scene load_steps=19 format=3 uid="uid://ba6wt6pfsx7fw"]
+
+[ext_resource type="Script" path="res://Scenes/Main/UI/MainMenu/mainMenu.gd" id="1_h846r"]
+[ext_resource type="Texture2D" uid="uid://o63yuk6dc1b0" path="res://Assets/UIElements/Button.png" id="2_fuivi"]
+[ext_resource type="Texture2D" uid="uid://c6tpeymqylhh8" path="res://Assets/UIElements/ButtonPressed.png" id="3_5xilw"]
+[ext_resource type="Texture2D" uid="uid://bta3lgofwk7x0" path="res://Assets/UIElements/ButtonHoveredFrame0.png" id="4_743gg"]
+[ext_resource type="Texture2D" uid="uid://b3kpxr6yax51x" path="res://Assets/UIElements/ButtonHoveredFrame1.png" id="5_lu0mx"]
+[ext_resource type="Texture2D" uid="uid://drya6xvm5ktps" path="res://Assets/UIElements/ButtonHoveredFrame2.png" id="6_1rtg8"]
+[ext_resource type="Texture2D" uid="uid://bjqafakfiljsh" path="res://Assets/UIElements/ButtonHoveredFrame3.png" id="7_pb00p"]
+[ext_resource type="FontFile" uid="uid://dpvdgwpnrcqb5" path="res://Assets/Font/hobostd.otf" id="8_bp2rp"]
+[ext_resource type="Texture2D" uid="uid://dlkujgb1qh700" path="res://Assets/UIElements/Logo v3.png" id="10_phtae"]
+[ext_resource type="AudioStream" uid="uid://b5fkklq1nyp2q" path="res://Assets/Audio/UISounds.wav" id="10_ypr40"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_3m7fk"]
+frames = 4
+speed_scale = 10.0
+frame_0/texture = ExtResource("4_743gg")
+frame_1/texture = ExtResource("5_lu0mx")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("6_1rtg8")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("7_pb00p")
+frame_3/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_j0kc8"]
+frames = 4
+speed_scale = 10.0
+frame_0/texture = ExtResource("4_743gg")
+frame_1/texture = ExtResource("5_lu0mx")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("6_1rtg8")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("7_pb00p")
+frame_3/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_tnw5g"]
+frames = 4
+speed_scale = 10.0
+frame_0/texture = ExtResource("4_743gg")
+frame_1/texture = ExtResource("5_lu0mx")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("6_1rtg8")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("7_pb00p")
+frame_3/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_ccc1s"]
+frames = 4
+speed_scale = 10.0
+frame_0/texture = ExtResource("4_743gg")
+frame_1/texture = ExtResource("5_lu0mx")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("6_1rtg8")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("7_pb00p")
+frame_3/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_06xnf"]
+frames = 4
+speed_scale = 10.0
+frame_0/texture = ExtResource("4_743gg")
+frame_1/texture = ExtResource("5_lu0mx")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("6_1rtg8")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("7_pb00p")
+frame_3/duration = 1.0
+
+[sub_resource type="Animation" id="Animation_b6q1d"]
+resource_name = "Logo"
+loop_mode = 1
+step = 0.0166667
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(428, -0.25, 0, 0.25, 0, 428, -0.25, 0, 0.25, 0, 428, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(129, -0.25, 0, 0.25, 0, 113, -0.25, 0, 0.25, 0, 129, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5, 1)
+}
+
+[sub_resource type="Animation" id="Animation_3pwxk"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(428, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(157, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_gtxrr"]
+_data = {
+"Logo": SubResource("Animation_b6q1d"),
+"RESET": SubResource("Animation_3pwxk")
+}
+
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("audioStreamPlayer")]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_h846r")
+audioStreamPlayer = NodePath("AudioStreamPlayer")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+texture_filter = 4
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 129.0
+offset_top = 203.0
+offset_right = 65.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 1350
+theme_override_constants/margin_bottom = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="QuickLoad" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+texture_filter = 4
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_fuivi")
+texture_pressed = ExtResource("3_5xilw")
+texture_hover = SubResource("AnimatedTexture_3m7fk")
+texture_disabled = ExtResource("3_5xilw")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/QuickLoad"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.992157, 0.627451, 0.141176, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("8_bp2rp")
+theme_override_font_sizes/font_size = 40
+text = "Quick load"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Load" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+texture_filter = 4
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_fuivi")
+texture_pressed = ExtResource("3_5xilw")
+texture_hover = SubResource("AnimatedTexture_j0kc8")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Load"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.992157, 0.627451, 0.141176, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("8_bp2rp")
+theme_override_font_sizes/font_size = 50
+text = "PLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Settings" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+texture_filter = 4
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_fuivi")
+texture_pressed = ExtResource("3_5xilw")
+texture_hover = SubResource("AnimatedTexture_tnw5g")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Settings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.992157, 0.627451, 0.141176, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("8_bp2rp")
+theme_override_font_sizes/font_size = 50
+text = "Settings
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credits" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+texture_filter = 4
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_fuivi")
+texture_pressed = ExtResource("3_5xilw")
+texture_hover = SubResource("AnimatedTexture_ccc1s")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.992157, 0.627451, 0.141176, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("8_bp2rp")
+theme_override_font_sizes/font_size = 50
+text = "Credits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quit" type="TextureButton" parent="MarginContainer/VBoxContainer"]
+texture_filter = 4
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("2_fuivi")
+texture_pressed = ExtResource("3_5xilw")
+texture_hover = SubResource("AnimatedTexture_06xnf")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Quit"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.992157, 0.627451, 0.141176, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("8_bp2rp")
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_ypr40")
+volume_db = 6.0
+bus = &"UI"
+
+[node name="LogoV3" type="Sprite2D" parent="."]
+texture_filter = 4
+texture_repeat = 2
+position = Vector2(428, 157)
+scale = Vector2(0.636, 0.636)
+texture = ExtResource("10_phtae")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LogoV3"]
+libraries = {
+"": SubResource("AnimationLibrary_gtxrr")
+}
+autoplay = "Logo"
+speed_scale = 0.5
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/QuickLoad" to="." method="QuickLoadPressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Load" to="." method="LoadPressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Settings" to="." method="SettingsPressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Credits" to="." method="CreditsPressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="QuitPressed"]

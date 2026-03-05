@@ -1,0 +1,98 @@
+[gd_scene load_steps=8 format=3 uid="uid://bem34hsupieur"]
+
+[ext_resource type="Script" path="res://Prefabs/Obstacles/DeathObstacle/Spikes/deathObstacle.gd" id="1_c8cj7"]
+[ext_resource type="Texture2D" uid="uid://q88y22q0v4o6" path="res://Assets/TileMap/tileMap_v1.png" id="2_u4ejo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oqela"]
+size = Vector2(585, 1339)
+
+[sub_resource type="Animation" id="Animation_xcaut"]
+resource_name = "Extend"
+length = 0.200003
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [2, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_sb63d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+
+[sub_resource type="Animation" id="Animation_ai6kv"]
+resource_name = "Retract"
+length = 0.200003
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5e07d"]
+_data = {
+"Extend": SubResource("Animation_xcaut"),
+"RESET": SubResource("Animation_sb63d"),
+"Retract": SubResource("Animation_ai6kv")
+}
+
+[node name="DeathObstacle" type="Node2D"]
+script = ExtResource("1_c8cj7")
+causeOfDeath = "Impaled"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_u4ejo")
+vframes = 3
+frame = 2
+region_enabled = true
+region_rect = Rect2(1024, 0, 254, 768)
+
+[node name="DeathArea" type="Area2D" parent="."]
+collision_layer = 3
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="DeathArea"]
+polygon = PackedVector2Array(-124, 124, 124, 124, 68, 68, 63, -18, 0, -56, -63, -18, -65, 66)
+
+[node name="ExtendArea" type="Area2D" parent="."]
+visible = false
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExtendArea"]
+position = Vector2(0.5, -543.5)
+shape = SubResource("RectangleShape2D_oqela")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5e07d")
+}
+autoplay = "RESET"
+
+[connection signal="body_entered" from="DeathArea" to="." method="_on_death_area_body_entered"]
+[connection signal="body_entered" from="DeathArea" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="ExtendArea" to="." method="_on_extend_area_body_entered"]
+[connection signal="body_exited" from="ExtendArea" to="." method="_on_extend_area_body_exited"]

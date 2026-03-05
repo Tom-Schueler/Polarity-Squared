@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo2w2pxo4n557"]
+
+[ext_resource type="Texture2D" uid="uid://clvnq0gsmh442" path="res://Assets/TileMap/shapes.png" id="1_6xnpa"]
+[ext_resource type="Script" path="res://Prefabs/Platforms/EscalatorPlatform/escalatorPlatform.gd" id="1_22mrg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_evnq3"]
+size = Vector2(32, 32)
+
+[node name="EscalatorPlatform" type="Area2D"]
+script = ExtResource("1_22mrg")
+moveDirection = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_6xnpa")
+region_enabled = true
+region_rect = Rect2(32, 0, 32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_evnq3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

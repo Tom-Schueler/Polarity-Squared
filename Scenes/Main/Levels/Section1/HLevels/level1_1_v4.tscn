@@ -1,0 +1,1899 @@
+[gd_scene load_steps=11 format=3 uid="uid://buhtwgkw2b2ge"]
+
+[ext_resource type="PackedScene" uid="uid://5owuibn0h6rf" path="res://Prefabs/Player/player.tscn" id="1_1hd4j"]
+[ext_resource type="Texture2D" uid="uid://q88y22q0v4o6" path="res://Assets/TileMap/tileMap_v1.png" id="2_rrhy3"]
+[ext_resource type="PackedScene" uid="uid://demnkur8y8los" path="res://Prefabs/Camera/camera.tscn" id="3_bkss2"]
+[ext_resource type="PackedScene" uid="uid://bem34hsupieur" path="res://Prefabs/Obstacles/DeathObstacle/Spikes/deathObstacle.tscn" id="4_igi23"]
+[ext_resource type="Texture2D" uid="uid://cw7stvowr7ii2" path="res://Assets/TileMap/TileMap_v3.png" id="4_y27sv"]
+[ext_resource type="PackedScene" uid="uid://b2v0t3ykc6run" path="res://Prefabs/Platforms/ChargePlatform/chargePlatform.tscn" id="5_ijf8p"]
+[ext_resource type="PackedScene" uid="uid://b8pib8c7j5s7f" path="res://Prefabs/Obstacles/DeathObstacle/Laser/laserObstacle.tscn" id="6_pr5k5"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_okifx"]
+texture = ExtResource("2_rrhy3")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -28, 0, -44, 70, -30, 128, 128, -128, 128)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+9:0/0 = 0
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+9:1/0 = 0
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -48, 128, -48, 128, 54, -128, 52)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -48, 128, -48, 128, 54, -128, 52)
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -48, 128, -48, 128, 54, -128, 52)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40, 38, 42, 38, 128, 128, -128, 128)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-78, -72, -6, -92, 68, -76, 94, -12, 70, 76, -2, 94, -78, 72, -86, -2)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-78, -72, -6, -92, 68, -76, 94, -12, 70, 76, -2, 94, -78, 72, -86, -2)
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-78, -72, -6, -92, 68, -76, 94, -12, 70, 76, -2, 94, -78, 72, -86, -2)
+0:6/0 = 0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-78, -72, -6, -92, 68, -76, 94, -12, 70, 76, -2, 94, -78, 72, -86, -2)
+0:7/0 = 0
+0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-78, -72, -6, -92, 68, -76, 94, -12, 70, 76, -2, 94, -78, 72, -86, -2)
+1:7/0 = 0
+1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:7/0 = 0
+2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40, 38, 42, 38, 128, 128, -128, 128)
+2:6/0 = 0
+2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40, 38, 42, 38, 128, 128, -128, 128)
+2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40, 38, 42, 38, 128, 128, -128, 128)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-40, 38, 42, 38, 128, 128, -128, 128)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:5/0 = 0
+1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:6/0 = 0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+8:9/0 = 0
+8:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-60, -64, 60, -56, 76, 62, -80, 64)
+9:9/0 = 0
+9:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(24, -106, 102, -34, -18, 98, -94, 26)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f4f0s"]
+texture = ExtResource("4_y27sv")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+9:0/0 = 0
+9:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+9:1/0 = 0
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:5/0 = 0
+1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+0:6/0 = 0
+0:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:6/0 = 0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:6/0 = 0
+2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+0:7/0 = 0
+0:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:7/0 = 0
+1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:7/0 = 0
+2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+8:9/0 = 0
+8:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+9:9/0 = 0
+9:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+
+[sub_resource type="TileSet" id="TileSet_vf4af"]
+tile_size = Vector2i(256, 256)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_okifx")
+sources/1 = SubResource("TileSetAtlasSource_f4f0s")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_1hd4j")]
+position = Vector2(8960, -3776)
+
+[node name="Camera" parent="player" instance=ExtResource("3_bkss2")]
+zoom = Vector2(0.145, 0.145)
+limit_left = -17530
+limit_top = -7325
+limit_right = 10130
+limit_bottom = 5340
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(30, -1)
+tile_set = SubResource("TileSet_vf4af")
+format = 2
+layer_0/tile_data = PackedInt32Array(-917472, 0, 0, -851936, 0, 2, -917471, 65536, 0, -851935, 65536, 2, -917470, 65536, 0, -851934, 65536, 2, -917469, 65536, 0, -851933, 65536, 2, -917468, 65536, 0, -851932, 65536, 2, -917467, 196608, 805306368, -851931, 65536, 2, -1507291, 0, 0, -1441755, 0, 1, -1376219, 0, 1, -1310683, 0, 1, -1245147, 0, 1, -1179611, 0, 1, -1114075, 0, 1, -1048539, 0, 1, -983003, 0, 1, -1507290, 65536, 0, -1441754, 65536, 1, -1376218, 65536, 1, -1310682, 65536, 1, -1245146, 65536, 1, -1179610, 65536, 1, -1114074, 65536, 1, -1048538, 65536, 1, -983002, 65536, 1, -917466, 65536, 1, -851930, 65536, 2, -1507289, 131072, 0, -1441753, 131072, 1, -1376217, 131072, 1, -1310681, 131072, 1, -1245145, 131072, 1, -1179609, 131072, 1, -1114073, 131072, 1, -1048537, 131072, 1, -983001, 131072, 1, -917465, 131072, 1, -851929, 131072, 2, -1572837, 0, 1, -1507301, 0, 1, -1441765, 0, 1, -1376229, 0, 1, -1310693, 0, 1, -1245157, 0, 2, -1572836, 131072, 1, -1507300, 131072, 1, -1441764, 131072, 1, -1376228, 131072, 1, -1310692, 131072, 1, -1245156, 131072, 2, -1769445, 0, 1, -1703909, 0, 1, -1638373, 0, 1, -1769444, 131072, 1, -1703908, 131072, 1, -1638372, 131072, 1, -1966058, 0, 1, -1900522, 0, 1, -1834986, 0, 1, -1769450, 0, 1, -1703914, 0, 1, -1638378, 0, 1, -1572842, 0, 1, -1507306, 0, 1, -1441770, 0, 1, -1376234, 0, 1, -1310698, 0, 1, -1245162, 0, 1, -1179626, 0, 1, -1114090, 0, 2, -1966057, 131072, 1, -1900521, 131072, 1, -1834985, 131072, 1, -1769449, 131072, 1, -1703913, 131072, 1, -1638377, 131072, 1, -1572841, 131072, 1, -1507305, 131072, 1, -1441769, 131072, 1, -1376233, 131072, 1, -1310697, 131072, 1, -1245161, 131072, 1, -1179625, 131072, 1, -1114089, 131072, 2, -2031599, 0, 1, -1966063, 0, 1, -1900527, 0, 1, -1834991, 0, 1, -1769455, 0, 1, -1703919, 0, 1, -1638383, 0, 1, -1572847, 0, 1, -1507311, 0, 1, -1441775, 0, 1, -1376239, 0, 1, -1310703, 0, 1, -1245167, 0, 1, -1179631, 0, 1, -1114095, 0, 1, -1048559, 0, 1, -983023, 0, 2, -2031598, 131072, 1, -1966062, 131072, 1, -1900526, 131072, 1, -1834990, 131072, 1, -1769454, 131072, 1, -1703918, 131072, 1, -1638382, 131072, 1, -1572846, 131072, 1, -1507310, 131072, 1, -1441774, 131072, 1, -1376238, 131072, 1, -1310702, 131072, 1, -1245166, 131072, 1, -1179630, 131072, 1, -1114094, 131072, 1, -1048558, 131072, 1, -983022, 131072, 2, -2162676, 0, 1, -2097140, 0, 1, -2031604, 0, 1, -1966068, 0, 1, -1900532, 0, 1, -1834996, 0, 1, -1769460, 0, 1, -1703924, 0, 1, -1638388, 0, 1, -1572852, 0, 1, -1507316, 0, 1, -1441780, 0, 1, -1376244, 0, 1, -1310708, 0, 1, -1245172, 0, 1, -1179636, 0, 1, -1114100, 0, 1, -1048564, 0, 1, -983028, 0, 1, -917492, 0, 1, -851956, 0, 2, -2162675, 131072, 1, -2097139, 131072, 1, -2031603, 131072, 1, -1966067, 131072, 1, -1900531, 131072, 1, -1834995, 131072, 1, -1769459, 131072, 1, -1703923, 131072, 1, -1638387, 131072, 1, -1572851, 131072, 1, -1507315, 131072, 1, -1441779, 131072, 1, -1376243, 131072, 1, -1310707, 131072, 1, -1245171, 131072, 1, -1179635, 131072, 1, -1114099, 131072, 1, -1048563, 131072, 1, -983027, 131072, 1, -917491, 131072, 1, -851955, 131072, 2, -2293753, 0, 1, -2228217, 0, 1, -2162681, 0, 1, -2097145, 0, 1, -2031609, 0, 1, -1966073, 0, 1, -1900537, 0, 1, -1835001, 0, 1, -1769465, 0, 1, -1703929, 0, 1, -1638393, 0, 1, -1572857, 0, 1, -1507321, 0, 1, -1441785, 0, 1, -1376249, 0, 1, -1310713, 0, 1, -1245177, 0, 1, -1179641, 0, 1, -1114105, 0, 1, -1048569, 0, 1, -983033, 0, 1, -917497, 0, 1, -851961, 0, 1, -786425, 0, 1, -2293752, 131072, 1, -2228216, 131072, 1, -2162680, 131072, 1, -2097144, 131072, 1, -2031608, 131072, 1, -1966072, 131072, 1, -1900536, 131072, 1, -1835000, 131072, 1, -1769464, 131072, 1, -1703928, 131072, 1, -1638392, 131072, 1, -1572856, 131072, 1, -1507320, 131072, 1, -1441784, 131072, 1, -1376248, 131072, 1, -1310712, 131072, 1, -1245176, 131072, 1, -1179640, 131072, 1, -1114104, 131072, 1, -1048568, 131072, 1, -983032, 131072, 1, -917496, 131072, 1, -851960, 131072, 1, -786424, 131072, 1, -720889, 0, 2, -720888, 131072, 2, -2162686, 0, 1, -2097150, 0, 1, -2031614, 0, 1, -1966078, 0, 1, -1900542, 0, 1, -1835006, 0, 1, -1769470, 0, 1, -1703934, 0, 1, -1638398, 0, 1, -1572862, 0, 1, -1507326, 0, 1, -1441790, 0, 1, -1376254, 0, 1, -1310718, 0, 1, -1245182, 0, 1, -1179646, 0, 1, -1114110, 0, 1, -1048574, 0, 1, -983038, 0, 1, -917502, 0, 1, -851966, 0, 1, -786430, 0, 1, -720894, 0, 1, -655358, 0, 1, -589822, 0, 2, -2162685, 131072, 1, -2097149, 131072, 1, -2031613, 131072, 1, -1966077, 131072, 1, -1900541, 131072, 1, -1835005, 131072, 1, -1769469, 131072, 1, -1703933, 131072, 1, -1638397, 131072, 1, -1572861, 131072, 1, -1507325, 131072, 1, -1441789, 131072, 1, -1376253, 131072, 1, -1310717, 131072, 1, -1245181, 131072, 1, -1179645, 131072, 1, -1114109, 131072, 1, -1048573, 131072, 1, -983037, 131072, 1, -917501, 131072, 1, -851965, 131072, 1, -786429, 131072, 1, -720893, 131072, 1, -655357, 131072, 1, -589821, 131072, 2, -2097155, 0, 1, -2031619, 0, 1, -1966083, 0, 1, -1900547, 0, 1, -1835011, 0, 1, -1769475, 0, 1, -1703939, 0, 1, -1638403, 0, 1, -1572867, 0, 1, -1507331, 0, 1, -1441795, 0, 1, -1376259, 0, 1, -1310723, 0, 1, -1245187, 0, 1, -1179651, 0, 1, -1114115, 0, 1, -1048579, 0, 1, -983043, 0, 1, -917507, 0, 1, -851971, 0, 1, -786435, 0, 1, -720899, 0, 1, -655363, 0, 1, -589827, 0, 1, -524291, 0, 1, -458755, 0, 1, -393219, 0, 2, -2097154, 131072, 1, -2031618, 131072, 1, -1966082, 131072, 1, -1900546, 131072, 1, -1835010, 131072, 1, -1769474, 131072, 1, -1703938, 131072, 1, -1638402, 131072, 1, -1572866, 131072, 1, -1507330, 131072, 1, -1441794, 131072, 1, -1376258, 131072, 1, -1310722, 131072, 1, -1245186, 131072, 1, -1179650, 131072, 1, -1114114, 131072, 1, -1048578, 131072, 1, -983042, 131072, 1, -917506, 131072, 1, -851970, 131072, 1, -786434, 131072, 1, -720898, 131072, 1, -655362, 131072, 1, -589826, 131072, 1, -524290, 131072, 1, -458754, 131072, 1, -393218, 131072, 2, -1835016, 0, 1, -1769480, 0, 1, -1703944, 0, 1, -1638408, 0, 1, -1572872, 0, 1, -1507336, 0, 1, -1441800, 0, 1, -1376264, 0, 1, -1310728, 0, 1, -1245192, 0, 1, -1179656, 0, 1, -1114120, 0, 1, -1048584, 0, 1, -983048, 0, 1, -917512, 0, 1, -851976, 0, 1, -786440, 0, 1, -720904, 0, 1, -655368, 0, 1, -589832, 0, 1, -524296, 0, 1, -458760, 0, 1, -393224, 0, 1, -327688, 0, 1, -262152, 0, 2, -1835015, 131072, 1, -1769479, 131072, 1, -1703943, 131072, 1, -1638407, 131072, 1, -1572871, 131072, 1, -1507335, 131072, 1, -1441799, 131072, 1, -1376263, 131072, 1, -1310727, 131072, 1, -1245191, 131072, 1, -1179655, 131072, 1, -1114119, 131072, 1, -1048583, 131072, 1, -983047, 131072, 1, -917511, 131072, 1, -851975, 131072, 1, -786439, 131072, 1, -720903, 131072, 1, -655367, 131072, 1, -589831, 131072, 1, -524295, 131072, 1, -458759, 131072, 1, -393223, 131072, 1, -327687, 131072, 1, -262151, 131072, 2, -458773, 65536, 0, -393237, 65536, 1, -327701, 65536, 1, -262165, 65536, 2, -458772, 131072, 0, -393236, 131072, 1, -327700, 131072, 1, -262164, 131072, 2, -22, 0, 0, 65514, 0, 1, 131050, 0, 1, -21, 65536, 0, 65515, 65536, 1, 131051, 65536, 1, -20, 131072, 0, 65516, 131072, 1, 131052, 131072, 1, -458774, 0, 0, -393238, 0, 1, -327702, 0, 1, -262166, 0, 2, 196586, 0, 2, 196587, 65536, 2, 196588, 131072, 2, 1114076, 0, 0, 1179612, 0, 2, 1114077, 65536, 0, 1179613, 65536, 2, 1114078, 65536, 0, 1179614, 65536, 2, 1114079, 65536, 0, 1179615, 65536, 2, 1114080, 65536, 0, 1179616, 65536, 2, 1114081, 65536, 0, 1179617, 65536, 2, 1114082, 131072, 0, 1179618, 131072, 2, -1900516, 131072, 1, -1834980, 131072, 1, -2097134, 131072, 1, -2228221, 131072, 1, -2162690, 131072, 1, -2031623, 131072, 1, -1966087, 131072, 1, -1900551, 131072, 1, -1966088, 0, 1, -1900552, 0, 1, -2162691, 0, 1, -2228222, 0, 1, -2031624, 0, 1, -2097135, 0, 1, -1900517, 0, 1, -1834981, 0, 1, -1310748, 65536, 0, -1245212, 65536, 1, -1179676, 65536, 1, -1114140, 65536, 1, -1048604, 65536, 1, -983068, 65536, 2, -1310747, 65536, 0, -1245211, 65536, 1, -1179675, 65536, 1, -1114139, 65536, 1, -1048603, 65536, 1, -983067, 65536, 2, -1310746, 65536, 0, -1245210, 65536, 1, -1179674, 65536, 1, -1114138, 65536, 1, -1048602, 65536, 1, -983066, 65536, 2, -1310745, 65536, 0, -1245209, 65536, 1, -1179673, 65536, 1, -1114137, 65536, 1, -1048601, 65536, 1, -983065, 65536, 2, -1310744, 131072, 0, -1245208, 131072, 1, -1179672, 131072, 1, -1114136, 131072, 1, -1048600, 131072, 1, -983064, 131072, 2, -1310749, 0, 0, -1245213, 0, 1, -1179677, 0, 1, -1114141, 0, 1, -1048605, 0, 1, -983069, 0, 2, -917546, 0, 1, -852010, 0, 1, -786474, 0, 1, -720938, 0, 1, -655402, 0, 1, -589866, 0, 1, -524330, 0, 1, -458794, 0, 1, -196650, 0, 1, -131114, 0, 1, -65578, 0, 1, -42, 0, 1, 65494, 0, 1, 131030, 0, 1, 196566, 0, 1, 262102, 0, 1, 327638, 0, 1, -983082, 0, 1, -1048623, 65536, 2, 393170, 65536, 0, -131124, 65536, 0, -65588, 196608, 1342177280, -52, 0, 1, 65484, 0, 1, 131020, 0, 1, 196556, 0, 1, 262092, 0, 1, 327628, 0, 1, 393164, 0, 1, 393165, 196608, 1610612736, 393166, 65536, 0, 393167, 65536, 0, 393168, 65536, 0, 393169, 65536, 0, 393171, 65536, 0, 393172, 65536, 0, 393173, 65536, 0, 393174, 196608, 805306368, -1048628, 0, 1, -983092, 0, 1, -917556, 0, 1, -852020, 0, 1, -786484, 0, 1, -720948, 0, 1, -655412, 0, 1, -589876, 196608, 805306368, -524340, 65536, 2, -1048627, 196608, 0, -1048626, 65536, 2, -1048625, 65536, 2, -1048624, 65536, 2, -1048622, 65536, 2, -1048621, 65536, 2, -1048620, 65536, 2, -1048619, 65536, 2, -1048618, 196608, 1342177280, -393258, 0, 1, -327722, 0, 1, -262186, 0, 1, -393264, 65536, 1, -262192, 65536, 1, -393263, 65536, 1, -262191, 65536, 1, -393262, 65536, 1, -327726, 65536, 1, -262190, 65536, 1, -131136, 0, 0, -131135, 65536, 0, -131134, 65536, 0, -131133, 65536, 0, -131132, 65536, 0, -131131, 65536, 0, -131130, 65536, 0, -131129, 65536, 0, -131128, 65536, 0, -131127, 65536, 0, -131126, 65536, 0, -131125, 65536, 0, -524352, 0, 2, -524351, 65536, 2, -524350, 65536, 2, -524349, 65536, 2, -524348, 65536, 2, -524347, 65536, 2, -524346, 65536, 2, -524345, 65536, 2, -524344, 65536, 2, -524343, 65536, 2, -524342, 65536, 2, -524341, 65536, 2, -327728, 65536, 1, -589888, 0, 0, -589887, 65536, 0, -589886, 65536, 0, -589885, 65536, 0, -589884, 65536, 0, -589883, 65536, 0, -589882, 65536, 0, -589881, 65536, 0, -589880, 65536, 0, -589879, 65536, 0, -589878, 65536, 0, -589877, 65536, 0, -65600, 0, 2, -65599, 65536, 2, -65598, 65536, 2, -65597, 65536, 2, -65596, 65536, 2, -65595, 65536, 2, -65594, 65536, 2, -65593, 65536, 2, -65592, 65536, 2, -65591, 65536, 2, -65590, 65536, 2, -65589, 65536, 2, 458700, 0, 2, 458701, 65536, 2, 458702, 65536, 2, 458703, 65536, 2, 458704, 65536, 2, 458705, 65536, 2, 458706, 65536, 2, 458707, 65536, 2, 458708, 65536, 2, 458709, 65536, 2, 458710, 65536, 2, 458711, 131072, 2, -1114153, 131072, 0, -1048617, 131072, 1, -983081, 131072, 1, -917545, 131072, 1, -852009, 131072, 1, -786473, 131072, 1, -720937, 131072, 1, -655401, 131072, 1, -589865, 131072, 1, -524329, 131072, 1, -458793, 131072, 1, -393257, 131072, 1, -327721, 131072, 1, -262185, 131072, 1, -196649, 131072, 1, -131113, 131072, 1, -65577, 131072, 1, -41, 131072, 1, 65495, 131072, 1, 131031, 131072, 1, 196567, 131072, 1, 262103, 131072, 1, 327639, 131072, 1, 393175, 131072, 1, -1114164, 0, 0, -1114163, 65536, 0, -1114162, 65536, 0, -1114161, 65536, 0, -1114160, 65536, 0, -1114159, 65536, 0, -1114158, 65536, 0, -1114157, 65536, 0, -1114156, 65536, 0, -1114155, 65536, 0, -1114154, 65536, 0, -983091, 131072, 1, -917555, 131072, 1, -852019, 131072, 1, -786483, 131072, 1, -720947, 131072, 1, -655411, 131072, 1, -589875, 131072, 1, -524339, 131072, 2, -131123, 131072, 0, -65587, 131072, 1, -51, 131072, 1, 65485, 131072, 1, 131021, 131072, 1, 196557, 131072, 1, 262093, 131072, 1, 327629, 131072, 1, 524282, 65536, 1, 589817, 65536, 1, 655353, 65536, 1, 720889, 65536, 1, 524283, 65536, 1, 589821, 65536, 1, 655357, 65536, 1, 720893, 65536, 1, 524286, 65536, 1, 524287, 65536, 1, 655358, 65536, 1, 786430, 65536, 1, 786431, 65536, 1, 786426, 65536, 1, 786427, 65536, 1, 458753, 65536, 1, 524289, 65536, 1, 589825, 65536, 1, 655361, 65536, 1, 720898, 65536, 1, 720899, 65536, 1, 524293, 65536, 1, 589829, 65536, 1, 655365, 65536, 1, 720902, 65536, 1, 720903, 65536, 1, 589830, 65536, 1, 458758, 65536, 1, 458759, 65536, 1, 458761, 65536, 1, 524297, 65536, 1, 589833, 65536, 1, 655369, 65536, 1, 720905, 65536, 1, 720906, 65536, 1, 458762, 65536, 1, 524299, 65536, 1, 589835, 65536, 1, 655371, 65536, 1, 524279, 65536, 1, 589815, 65536, 1, 655351, 65536, 1, 720887, 65536, 1, 786423, 65536, 1, 720886, 65536, 1, 655349, 65536, 1, 589812, 65536, 1, 524275, 65536, 1, 589811, 65536, 1, 655347, 65536, 1, 720883, 65536, 1, 786419, 65536, 1, 589809, 65536, 1, 655345, 65536, 1, 720881, 65536, 1, 786417, 65536, 1, 524272, 65536, 1, 589807, 65536, 1, 655343, 65536, 1, 720879, 65536, 1, 786415, 65536, 1, 655344, 65536, 1, 524269, 65536, 1, 524268, 65536, 1, 589803, 65536, 1, 655339, 65536, 1, 720875, 65536, 1, 786412, 65536, 1, 786413, 65536, 1)
+
+[node name="SpikesBottom" type="Node" parent="."]
+
+[node name="DeathObstacle13" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-8320, 3968)
+
+[node name="DeathObstacle14" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-16224, -2688)
+
+[node name="DeathObstacle15" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-15968, -2688)
+
+[node name="DeathObstacle16" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-15712, -2688)
+
+[node name="DeathObstacle17" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-15456, -2688)
+
+[node name="DeathObstacle18" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-15200, -2688)
+
+[node name="DeathObstacle19" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-14944, -2688)
+
+[node name="DeathObstacle20" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-14688, -2688)
+
+[node name="DeathObstacle21" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-14432, -2688)
+
+[node name="DeathObstacle22" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-14176, -2688)
+
+[node name="DeathObstacle23" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-13920, -2688)
+
+[node name="DeathObstacle24" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-13664, -2688)
+
+[node name="DeathObstacle38" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-13152, -4736)
+
+[node name="DeathObstacle39" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-12896, -4736)
+
+[node name="DeathObstacle40" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-12640, -4736)
+
+[node name="DeathObstacle41" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-12384, -4736)
+
+[node name="DeathObstacle42" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-12128, -4736)
+
+[node name="DeathObstacle43" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-11872, -4736)
+
+[node name="DeathObstacle44" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-11616, -4736)
+
+[node name="DeathObstacle45" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-11360, -4736)
+
+[node name="DeathObstacle46" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-11104, -4736)
+
+[node name="DeathObstacle47" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-10848, -4736)
+
+[node name="DeathObstacle50" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-12640, 1152)
+
+[node name="DeathObstacle51" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-12384, 1152)
+
+[node name="DeathObstacle52" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-12128, 1152)
+
+[node name="DeathObstacle53" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-11872, 1152)
+
+[node name="DeathObstacle54" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-11616, 1152)
+
+[node name="DeathObstacle55" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-11360, 1152)
+
+[node name="DeathObstacle56" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-11104, 1152)
+
+[node name="DeathObstacle57" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-10848, 1152)
+
+[node name="DeathObstacle48" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-10592, -4736)
+
+[node name="DeathObstacle49" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-10336, -4736)
+
+[node name="DeathObstacle60" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-19776, 5792)
+
+[node name="DeathObstacle61" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-19520, 5792)
+
+[node name="DeathObstacle62" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-19264, 5792)
+
+[node name="DeathObstacle63" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-19008, 5792)
+
+[node name="DeathObstacle64" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-18752, 5792)
+
+[node name="DeathObstacle65" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-18496, 5792)
+
+[node name="DeathObstacle66" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-18240, 5792)
+
+[node name="DeathObstacle67" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, 5792)
+
+[node name="DeathObstacle68" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-17728, 5792)
+
+[node name="DeathObstacle69" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-17472, 5792)
+
+[node name="DeathObstacle70" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-17216, 5792)
+
+[node name="DeathObstacle71" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-16960, 5792)
+
+[node name="DeathObstacle72" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-16704, 5792)
+
+[node name="DeathObstacle73" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-16448, 5792)
+
+[node name="DeathObstacle74" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-16192, 5792)
+
+[node name="DeathObstacle75" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-15936, 5792)
+
+[node name="DeathObstacle76" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-15680, 5792)
+
+[node name="DeathObstacle77" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-15424, 5792)
+
+[node name="DeathObstacle78" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-15168, 5792)
+
+[node name="DeathObstacle79" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-14912, 5792)
+
+[node name="DeathObstacle80" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-14656, 5792)
+
+[node name="DeathObstacle81" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-14400, 5792)
+
+[node name="DeathObstacle82" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-14144, 5792)
+
+[node name="DeathObstacle83" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-13888, 5792)
+
+[node name="DeathObstacle84" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-13632, 5792)
+
+[node name="DeathObstacle85" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-13376, 5792)
+
+[node name="DeathObstacle86" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-13120, 5792)
+
+[node name="DeathObstacle87" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-12864, 5792)
+
+[node name="DeathObstacle88" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-12608, 5792)
+
+[node name="DeathObstacle89" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-12352, 5792)
+
+[node name="DeathObstacle90" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-12096, 5792)
+
+[node name="DeathObstacle91" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-11840, 5792)
+
+[node name="DeathObstacle92" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-11584, 5792)
+
+[node name="DeathObstacle93" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-11328, 5792)
+
+[node name="DeathObstacle94" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-11072, 5792)
+
+[node name="DeathObstacle95" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-10816, 5792)
+
+[node name="DeathObstacle96" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-10560, 5760)
+
+[node name="DeathObstacle97" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-10304, 5760)
+
+[node name="DeathObstacle98" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-10048, 5760)
+
+[node name="DeathObstacle99" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-9792, 5760)
+
+[node name="DeathObstacle100" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-9536, 5760)
+
+[node name="DeathObstacle101" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-9280, 5760)
+
+[node name="DeathObstacle102" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-9024, 5760)
+
+[node name="DeathObstacle103" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-8768, 5760)
+
+[node name="DeathObstacle104" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-8512, 5760)
+
+[node name="DeathObstacle105" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-8256, 5760)
+
+[node name="DeathObstacle106" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-8000, 5760)
+
+[node name="DeathObstacle107" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-7744, 5760)
+
+[node name="DeathObstacle108" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-7488, 5760)
+
+[node name="DeathObstacle109" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-7232, 5760)
+
+[node name="DeathObstacle110" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-6976, 5760)
+
+[node name="DeathObstacle111" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-6720, 5760)
+
+[node name="DeathObstacle112" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-6464, 5760)
+
+[node name="DeathObstacle113" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-6208, 5760)
+
+[node name="DeathObstacle114" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-5952, 5760)
+
+[node name="DeathObstacle115" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-5696, 5760)
+
+[node name="DeathObstacle116" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-5440, 5760)
+
+[node name="DeathObstacle117" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-5184, 5760)
+
+[node name="DeathObstacle118" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-4928, 5760)
+
+[node name="DeathObstacle119" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-4672, 5760)
+
+[node name="DeathObstacle120" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-4416, 5760)
+
+[node name="DeathObstacle121" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-4160, 5760)
+
+[node name="DeathObstacle122" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-3904, 5760)
+
+[node name="DeathObstacle123" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-3648, 5760)
+
+[node name="DeathObstacle124" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-3392, 5760)
+
+[node name="DeathObstacle125" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-3136, 5760)
+
+[node name="DeathObstacle126" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-2880, 5760)
+
+[node name="DeathObstacle127" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-2624, 5760)
+
+[node name="DeathObstacle128" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-2368, 5760)
+
+[node name="DeathObstacle129" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-2112, 5760)
+
+[node name="DeathObstacle130" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-1856, 5760)
+
+[node name="DeathObstacle131" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-1600, 5760)
+
+[node name="DeathObstacle132" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-1344, 5792)
+
+[node name="DeathObstacle133" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-1088, 5792)
+
+[node name="DeathObstacle134" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-832, 5792)
+
+[node name="DeathObstacle135" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-576, 5792)
+
+[node name="DeathObstacle136" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-320, 5792)
+
+[node name="DeathObstacle137" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-64, 5792)
+
+[node name="DeathObstacle138" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(192, 5792)
+
+[node name="DeathObstacle139" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(448, 5792)
+
+[node name="DeathObstacle140" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(704, 5792)
+
+[node name="DeathObstacle141" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(960, 5792)
+
+[node name="DeathObstacle142" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(1216, 5792)
+
+[node name="DeathObstacle143" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(1472, 5792)
+
+[node name="DeathObstacle144" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(1728, 5792)
+
+[node name="DeathObstacle145" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(1984, 5792)
+
+[node name="DeathObstacle146" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(2240, 5792)
+
+[node name="DeathObstacle147" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(2496, 5792)
+
+[node name="DeathObstacle148" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(2752, 5792)
+
+[node name="DeathObstacle149" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(3008, 5792)
+
+[node name="DeathObstacle150" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(3264, 5792)
+
+[node name="DeathObstacle151" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(3520, 5792)
+
+[node name="DeathObstacle152" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(3776, 5792)
+
+[node name="DeathObstacle153" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(4032, 5792)
+
+[node name="DeathObstacle154" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(4288, 5792)
+
+[node name="DeathObstacle155" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(4544, 5792)
+
+[node name="DeathObstacle156" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(4800, 5792)
+
+[node name="DeathObstacle157" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(5056, 5792)
+
+[node name="DeathObstacle158" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(5312, 5792)
+
+[node name="DeathObstacle159" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(5568, 5792)
+
+[node name="DeathObstacle160" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(5824, 5792)
+
+[node name="DeathObstacle161" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(6080, 5792)
+
+[node name="DeathObstacle162" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(6336, 5792)
+
+[node name="DeathObstacle163" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(6592, 5792)
+
+[node name="DeathObstacle164" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(6848, 5792)
+
+[node name="DeathObstacle165" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(7104, 5792)
+
+[node name="DeathObstacle166" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(7360, 5792)
+
+[node name="DeathObstacle167" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(7616, 5792)
+
+[node name="DeathObstacle168" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(7872, 5760)
+
+[node name="DeathObstacle169" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(8128, 5760)
+
+[node name="DeathObstacle170" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(8384, 5760)
+
+[node name="DeathObstacle171" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(8640, 5760)
+
+[node name="DeathObstacle172" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(8896, 5760)
+
+[node name="DeathObstacle173" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(9152, 5760)
+
+[node name="DeathObstacle174" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(9408, 5760)
+
+[node name="DeathObstacle175" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(9664, 5760)
+
+[node name="DeathObstacle176" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(9920, 5760)
+
+[node name="DeathObstacle177" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(10176, 5760)
+
+[node name="DeathObstacle178" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(10432, 5760)
+
+[node name="DeathObstacle179" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(10688, 5760)
+
+[node name="DeathObstacle180" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(10944, 5760)
+
+[node name="DeathObstacle181" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(11200, 5760)
+
+[node name="DeathObstacle182" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(11456, 5760)
+
+[node name="DeathObstacle183" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(11712, 5760)
+
+[node name="DeathObstacle184" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(11968, 5760)
+
+[node name="DeathObstacle185" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(12224, 5760)
+
+[node name="DeathObstacle186" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(12480, 5760)
+
+[node name="DeathObstacle187" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(12736, 5760)
+
+[node name="DeathObstacle188" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(12992, 5760)
+
+[node name="DeathObstacle189" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(13248, 5760)
+
+[node name="DeathObstacle190" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(13504, 5760)
+
+[node name="DeathObstacle191" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(13760, 5760)
+
+[node name="DeathObstacle192" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(14016, 5760)
+
+[node name="DeathObstacle193" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(14272, 5760)
+
+[node name="DeathObstacle194" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(14528, 5760)
+
+[node name="DeathObstacle195" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(14784, 5760)
+
+[node name="DeathObstacle196" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(15040, 5760)
+
+[node name="DeathObstacle197" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(15296, 5760)
+
+[node name="DeathObstacle198" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(15552, 5760)
+
+[node name="DeathObstacle199" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(15808, 5760)
+
+[node name="DeathObstacle200" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(16064, 5760)
+
+[node name="DeathObstacle201" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(16320, 5760)
+
+[node name="DeathObstacle202" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(16576, 5760)
+
+[node name="DeathObstacle203" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(16832, 5760)
+
+[node name="DeathObstacle25" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-13408, -2688)
+
+[node name="DeathObstacle26" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-16224, -896)
+
+[node name="DeathObstacle27" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-15968, -896)
+
+[node name="DeathObstacle28" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-15712, -896)
+
+[node name="DeathObstacle29" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-15456, -896)
+
+[node name="DeathObstacle30" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-15200, -896)
+
+[node name="DeathObstacle31" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-14944, -896)
+
+[node name="DeathObstacle32" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-14688, -896)
+
+[node name="DeathObstacle33" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-14432, -896)
+
+[node name="DeathObstacle34" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-14176, -896)
+
+[node name="DeathObstacle35" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-13920, -896)
+
+[node name="DeathObstacle36" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-13664, -896)
+
+[node name="DeathObstacle37" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-13408, -896)
+
+[node name="DeathObstacle58" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-13152, -896)
+
+[node name="DeathObstacle59" parent="SpikesBottom" instance=ExtResource("4_igi23")]
+position = Vector2(-12896, -896)
+
+[node name="SpikesRight" type="Node" parent="."]
+
+[node name="DeathObstacle13" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(-5728, 640)
+rotation = -1.5708
+
+[node name="DeathObstacle14" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(-5728, 384)
+rotation = -1.5708
+
+[node name="DeathObstacle15" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(-5728, 128)
+rotation = -1.5708
+
+[node name="DeathObstacle16" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(-5728, -128)
+rotation = -1.5708
+
+[node name="DeathObstacle17" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(-5728, -1152)
+rotation = -1.5708
+
+[node name="DeathObstacle18" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(-5728, -1408)
+rotation = -1.5708
+
+[node name="DeathObstacle19" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(-5728, -1664)
+rotation = -1.5708
+
+[node name="DeathObstacle20" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(-5728, -1920)
+rotation = -1.5708
+
+[node name="DeathObstacle21" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(10912, -6848)
+rotation = -1.5708
+
+[node name="DeathObstacle22" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(10912, -7104)
+rotation = -1.5708
+
+[node name="DeathObstacle23" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(10912, -7360)
+rotation = -1.5708
+
+[node name="DeathObstacle24" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(10912, -7616)
+rotation = -1.5708
+
+[node name="DeathObstacle25" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(10944, -5792)
+rotation = -1.5708
+
+[node name="DeathObstacle26" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(10944, -6048)
+rotation = -1.5708
+
+[node name="DeathObstacle27" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(10944, -6304)
+rotation = -1.5708
+
+[node name="DeathObstacle28" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(10944, -6560)
+rotation = -1.5708
+
+[node name="DeathObstacle29" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(10944, -4704)
+rotation = -1.5708
+
+[node name="DeathObstacle30" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(10944, -4960)
+rotation = -1.5708
+
+[node name="DeathObstacle31" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(10944, -5216)
+rotation = -1.5708
+
+[node name="DeathObstacle32" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(10944, -5472)
+rotation = -1.5708
+
+[node name="DeathObstacle33" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(10976, -3648)
+rotation = -1.5708
+
+[node name="DeathObstacle34" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(10976, -3904)
+rotation = -1.5708
+
+[node name="DeathObstacle35" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(10976, -4160)
+rotation = -1.5708
+
+[node name="DeathObstacle36" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(10976, -4416)
+rotation = -1.5708
+
+[node name="DeathObstacle37" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11040, -2560)
+rotation = -1.5708
+
+[node name="DeathObstacle38" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11040, -2816)
+rotation = -1.5708
+
+[node name="DeathObstacle39" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11040, -3072)
+rotation = -1.5708
+
+[node name="DeathObstacle40" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11040, -3328)
+rotation = -1.5708
+
+[node name="DeathObstacle41" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11072, -1504)
+rotation = -1.5708
+
+[node name="DeathObstacle42" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11072, -1760)
+rotation = -1.5708
+
+[node name="DeathObstacle43" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11072, -2016)
+rotation = -1.5708
+
+[node name="DeathObstacle44" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11072, -2272)
+rotation = -1.5708
+
+[node name="DeathObstacle45" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11104, -384)
+rotation = -1.5708
+
+[node name="DeathObstacle46" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11104, -640)
+rotation = -1.5708
+
+[node name="DeathObstacle47" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11104, -896)
+rotation = -1.5708
+
+[node name="DeathObstacle48" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11104, -1152)
+rotation = -1.5708
+
+[node name="DeathObstacle49" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11136, 672)
+rotation = -1.5708
+
+[node name="DeathObstacle50" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11136, 416)
+rotation = -1.5708
+
+[node name="DeathObstacle51" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11136, 160)
+rotation = -1.5708
+
+[node name="DeathObstacle52" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11136, -96)
+rotation = -1.5708
+
+[node name="DeathObstacle53" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11136, 1760)
+rotation = -1.5708
+
+[node name="DeathObstacle54" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11136, 1504)
+rotation = -1.5708
+
+[node name="DeathObstacle55" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11136, 1248)
+rotation = -1.5708
+
+[node name="DeathObstacle56" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11136, 992)
+rotation = -1.5708
+
+[node name="DeathObstacle57" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11168, 2816)
+rotation = -1.5708
+
+[node name="DeathObstacle58" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11168, 2560)
+rotation = -1.5708
+
+[node name="DeathObstacle59" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11168, 2304)
+rotation = -1.5708
+
+[node name="DeathObstacle60" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11168, 2048)
+rotation = -1.5708
+
+[node name="DeathObstacle61" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11232, 3904)
+rotation = -1.5708
+
+[node name="DeathObstacle62" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11232, 3648)
+rotation = -1.5708
+
+[node name="DeathObstacle63" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11232, 3392)
+rotation = -1.5708
+
+[node name="DeathObstacle64" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11232, 3136)
+rotation = -1.5708
+
+[node name="DeathObstacle65" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11264, 4960)
+rotation = -1.5708
+
+[node name="DeathObstacle66" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11264, 4704)
+rotation = -1.5708
+
+[node name="DeathObstacle67" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11264, 4448)
+rotation = -1.5708
+
+[node name="DeathObstacle68" parent="SpikesRight" instance=ExtResource("4_igi23")]
+position = Vector2(11264, 4192)
+rotation = -1.5708
+
+[node name="SpikesTop" type="Node" parent="."]
+
+[node name="DeathObstacle18" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-17632, -8096)
+rotation = 3.14159
+
+[node name="DeathObstacle19" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-17344, -8096)
+rotation = 3.14159
+
+[node name="DeathObstacle20" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-17056, -8096)
+rotation = 3.14159
+
+[node name="DeathObstacle21" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-16224, -8096)
+rotation = 3.14159
+
+[node name="DeathObstacle22" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-16768, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle23" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-16480, -8096)
+rotation = 3.14159
+
+[node name="DeathObstacle24" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-16000, -8096)
+rotation = 3.14159
+
+[node name="DeathObstacle25" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-15712, -8096)
+rotation = 3.14159
+
+[node name="DeathObstacle26" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-15424, -8096)
+rotation = 3.14159
+
+[node name="DeathObstacle27" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-14592, -8096)
+rotation = 3.14159
+
+[node name="DeathObstacle28" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-15136, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle29" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-14848, -8096)
+rotation = 3.14159
+
+[node name="DeathObstacle30" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-14240, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle31" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-13952, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle32" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-13664, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle33" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-12832, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle34" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-13376, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle35" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-13088, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle36" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-12608, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle37" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-12320, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle38" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-12032, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle39" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-11200, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle40" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-11744, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle41" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-11456, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle42" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-10912, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle43" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-10624, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle44" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-10336, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle45" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-9504, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle46" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-10048, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle47" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-9760, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle48" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-9280, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle49" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-8992, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle50" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-8704, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle51" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-7872, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle52" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-8416, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle53" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-8128, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle54" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-7520, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle55" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-7232, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle56" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-6944, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle57" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-6112, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle58" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-6656, -8000)
+rotation = 3.14159
+
+[node name="DeathObstacle59" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-6368, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle60" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-5888, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle61" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-5600, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle62" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-5312, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle63" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-4480, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle64" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-5024, -8000)
+rotation = 3.14159
+
+[node name="DeathObstacle65" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-4736, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle66" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-4128, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle67" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-3840, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle68" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-3552, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle69" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-2720, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle70" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-3264, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle71" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-2976, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle72" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-2496, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle73" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-2208, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle74" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-1920, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle75" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-1088, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle76" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-1632, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle77" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-1344, -8064)
+rotation = 3.14159
+
+[node name="DeathObstacle78" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-736, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle79" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-448, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle80" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(-160, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle81" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(672, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle82" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(128, -8000)
+rotation = 3.14159
+
+[node name="DeathObstacle83" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(416, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle84" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(896, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle85" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(1184, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle86" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(1472, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle87" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(2304, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle88" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(1760, -8000)
+rotation = 3.14159
+
+[node name="DeathObstacle89" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(2048, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle90" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(2592, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle91" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(2880, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle92" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(3168, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle93" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(4000, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle94" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(3456, -8000)
+rotation = 3.14159
+
+[node name="DeathObstacle95" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(3744, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle96" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(4224, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle97" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(4512, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle98" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(4800, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle99" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(5632, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle100" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(5088, -8000)
+rotation = 3.14159
+
+[node name="DeathObstacle101" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(5376, -8032)
+rotation = 3.14159
+
+[node name="DeathObstacle102" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(5984, -8000)
+rotation = 3.14159
+
+[node name="DeathObstacle103" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(6272, -8000)
+rotation = 3.14159
+
+[node name="DeathObstacle104" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(6560, -8000)
+rotation = 3.14159
+
+[node name="DeathObstacle105" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(7392, -8000)
+rotation = 3.14159
+
+[node name="DeathObstacle106" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(6848, -7968)
+rotation = 3.14159
+
+[node name="DeathObstacle107" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(7136, -8000)
+rotation = 3.14159
+
+[node name="DeathObstacle108" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(7616, -8000)
+rotation = 3.14159
+
+[node name="DeathObstacle109" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(7904, -8000)
+rotation = 3.14159
+
+[node name="DeathObstacle110" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(8192, -8000)
+rotation = 3.14159
+
+[node name="DeathObstacle111" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(9024, -8000)
+rotation = 3.14159
+
+[node name="DeathObstacle112" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(8480, -7968)
+rotation = 3.14159
+
+[node name="DeathObstacle113" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(8768, -8000)
+rotation = 3.14159
+
+[node name="DeathObstacle114" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(9856, -7968)
+rotation = 3.14159
+
+[node name="DeathObstacle115" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(9312, -7936)
+rotation = 3.14159
+
+[node name="DeathObstacle116" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(9600, -7968)
+rotation = 3.14159
+
+[node name="DeathObstacle117" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(10080, -7968)
+rotation = 3.14159
+
+[node name="DeathObstacle118" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(10368, -7968)
+rotation = 3.14159
+
+[node name="DeathObstacle119" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(10656, -7968)
+rotation = 3.14159
+
+[node name="DeathObstacle120" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(11488, -7968)
+rotation = 3.14159
+
+[node name="DeathObstacle121" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(10944, -7936)
+rotation = 3.14159
+
+[node name="DeathObstacle122" parent="SpikesTop" instance=ExtResource("4_igi23")]
+position = Vector2(11232, -7968)
+rotation = 3.14159
+
+[node name="SpikesLeft" type="Node" parent="."]
+
+[node name="DeathObstacle18" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-4704, -128)
+rotation = 1.5708
+
+[node name="DeathObstacle19" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-4704, 128)
+rotation = 1.5708
+
+[node name="DeathObstacle20" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-4704, 384)
+rotation = 1.5708
+
+[node name="DeathObstacle25" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-4704, 640)
+rotation = 1.5708
+
+[node name="DeathObstacle21" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-4704, -1152)
+rotation = 1.5708
+
+[node name="DeathObstacle22" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-4704, -1408)
+rotation = 1.5708
+
+[node name="DeathObstacle23" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-4704, -1664)
+rotation = 1.5708
+
+[node name="DeathObstacle24" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-4704, -1920)
+rotation = 1.5708
+
+[node name="DeathObstacle26" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17888, -7040)
+rotation = 1.5708
+
+[node name="DeathObstacle27" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17888, -7296)
+rotation = 1.5708
+
+[node name="DeathObstacle28" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17888, -7552)
+rotation = 1.5708
+
+[node name="DeathObstacle29" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17888, -7808)
+rotation = 1.5708
+
+[node name="DeathObstacle30" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17920, -5952)
+rotation = 1.5708
+
+[node name="DeathObstacle31" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17920, -6208)
+rotation = 1.5708
+
+[node name="DeathObstacle32" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17920, -6464)
+rotation = 1.5708
+
+[node name="DeathObstacle33" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17920, -6720)
+rotation = 1.5708
+
+[node name="DeathObstacle34" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17888, -7040)
+rotation = 1.5708
+
+[node name="DeathObstacle35" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17888, -7296)
+rotation = 1.5708
+
+[node name="DeathObstacle36" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17888, -7552)
+rotation = 1.5708
+
+[node name="DeathObstacle37" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17888, -7808)
+rotation = 1.5708
+
+[node name="DeathObstacle38" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17920, -5952)
+rotation = 1.5708
+
+[node name="DeathObstacle39" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17920, -6208)
+rotation = 1.5708
+
+[node name="DeathObstacle40" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17920, -6464)
+rotation = 1.5708
+
+[node name="DeathObstacle41" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17920, -6720)
+rotation = 1.5708
+
+[node name="DeathObstacle42" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17952, -4832)
+rotation = 1.5708
+
+[node name="DeathObstacle43" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17952, -5088)
+rotation = 1.5708
+
+[node name="DeathObstacle44" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17952, -5344)
+rotation = 1.5708
+
+[node name="DeathObstacle45" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17952, -5600)
+rotation = 1.5708
+
+[node name="DeathObstacle46" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, -3744)
+rotation = 1.5708
+
+[node name="DeathObstacle47" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, -4000)
+rotation = 1.5708
+
+[node name="DeathObstacle48" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, -4256)
+rotation = 1.5708
+
+[node name="DeathObstacle49" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, -4512)
+rotation = 1.5708
+
+[node name="DeathObstacle50" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17952, -4832)
+rotation = 1.5708
+
+[node name="DeathObstacle51" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17952, -5088)
+rotation = 1.5708
+
+[node name="DeathObstacle52" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17952, -5344)
+rotation = 1.5708
+
+[node name="DeathObstacle53" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17952, -5600)
+rotation = 1.5708
+
+[node name="DeathObstacle54" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, -3744)
+rotation = 1.5708
+
+[node name="DeathObstacle55" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, -4000)
+rotation = 1.5708
+
+[node name="DeathObstacle56" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, -4256)
+rotation = 1.5708
+
+[node name="DeathObstacle57" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, -4512)
+rotation = 1.5708
+
+[node name="DeathObstacle58" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17952, -2656)
+rotation = 1.5708
+
+[node name="DeathObstacle59" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17952, -2912)
+rotation = 1.5708
+
+[node name="DeathObstacle60" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17952, -3168)
+rotation = 1.5708
+
+[node name="DeathObstacle61" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17952, -3424)
+rotation = 1.5708
+
+[node name="DeathObstacle62" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, -1568)
+rotation = 1.5708
+
+[node name="DeathObstacle63" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, -1824)
+rotation = 1.5708
+
+[node name="DeathObstacle64" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, -2080)
+rotation = 1.5708
+
+[node name="DeathObstacle65" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, -2336)
+rotation = 1.5708
+
+[node name="DeathObstacle66" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17952, -2656)
+rotation = 1.5708
+
+[node name="DeathObstacle67" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17952, -2912)
+rotation = 1.5708
+
+[node name="DeathObstacle68" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17952, -3168)
+rotation = 1.5708
+
+[node name="DeathObstacle69" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17952, -3424)
+rotation = 1.5708
+
+[node name="DeathObstacle70" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, -1568)
+rotation = 1.5708
+
+[node name="DeathObstacle71" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, -1824)
+rotation = 1.5708
+
+[node name="DeathObstacle72" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, -2080)
+rotation = 1.5708
+
+[node name="DeathObstacle73" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, -2336)
+rotation = 1.5708
+
+[node name="DeathObstacle74" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17952, -512)
+rotation = 1.5708
+
+[node name="DeathObstacle75" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17952, -768)
+rotation = 1.5708
+
+[node name="DeathObstacle76" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17952, -1024)
+rotation = 1.5708
+
+[node name="DeathObstacle77" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17952, -1280)
+rotation = 1.5708
+
+[node name="DeathObstacle78" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, 576)
+rotation = 1.5708
+
+[node name="DeathObstacle79" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, 320)
+rotation = 1.5708
+
+[node name="DeathObstacle80" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, 64)
+rotation = 1.5708
+
+[node name="DeathObstacle81" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, -192)
+rotation = 1.5708
+
+[node name="DeathObstacle82" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17952, -512)
+rotation = 1.5708
+
+[node name="DeathObstacle83" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17952, -768)
+rotation = 1.5708
+
+[node name="DeathObstacle84" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17952, -1024)
+rotation = 1.5708
+
+[node name="DeathObstacle85" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17952, -1280)
+rotation = 1.5708
+
+[node name="DeathObstacle86" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, 576)
+rotation = 1.5708
+
+[node name="DeathObstacle87" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, 320)
+rotation = 1.5708
+
+[node name="DeathObstacle88" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, 64)
+rotation = 1.5708
+
+[node name="DeathObstacle89" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, -192)
+rotation = 1.5708
+
+[node name="DeathObstacle90" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, 1664)
+rotation = 1.5708
+
+[node name="DeathObstacle91" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, 1408)
+rotation = 1.5708
+
+[node name="DeathObstacle92" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, 1152)
+rotation = 1.5708
+
+[node name="DeathObstacle93" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, 896)
+rotation = 1.5708
+
+[node name="DeathObstacle94" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-18016, 2752)
+rotation = 1.5708
+
+[node name="DeathObstacle95" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-18016, 2496)
+rotation = 1.5708
+
+[node name="DeathObstacle96" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-18016, 2240)
+rotation = 1.5708
+
+[node name="DeathObstacle97" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-18016, 1984)
+rotation = 1.5708
+
+[node name="DeathObstacle98" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, 1664)
+rotation = 1.5708
+
+[node name="DeathObstacle99" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, 1408)
+rotation = 1.5708
+
+[node name="DeathObstacle100" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, 1152)
+rotation = 1.5708
+
+[node name="DeathObstacle101" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-17984, 896)
+rotation = 1.5708
+
+[node name="DeathObstacle102" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-18016, 2752)
+rotation = 1.5708
+
+[node name="DeathObstacle103" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-18016, 2496)
+rotation = 1.5708
+
+[node name="DeathObstacle104" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-18016, 2240)
+rotation = 1.5708
+
+[node name="DeathObstacle105" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-18016, 1984)
+rotation = 1.5708
+
+[node name="DeathObstacle106" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-18016, 3872)
+rotation = 1.5708
+
+[node name="DeathObstacle107" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-18016, 3616)
+rotation = 1.5708
+
+[node name="DeathObstacle108" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-18016, 3360)
+rotation = 1.5708
+
+[node name="DeathObstacle109" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-18016, 3104)
+rotation = 1.5708
+
+[node name="DeathObstacle110" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-18048, 4960)
+rotation = 1.5708
+
+[node name="DeathObstacle111" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-18048, 4704)
+rotation = 1.5708
+
+[node name="DeathObstacle112" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-18048, 4448)
+rotation = 1.5708
+
+[node name="DeathObstacle113" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-18048, 4192)
+rotation = 1.5708
+
+[node name="DeathObstacle114" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-18016, 3872)
+rotation = 1.5708
+
+[node name="DeathObstacle115" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-18016, 3616)
+rotation = 1.5708
+
+[node name="DeathObstacle116" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-18016, 3360)
+rotation = 1.5708
+
+[node name="DeathObstacle117" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-18016, 3104)
+rotation = 1.5708
+
+[node name="DeathObstacle118" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-18048, 4960)
+rotation = 1.5708
+
+[node name="DeathObstacle119" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-18048, 4704)
+rotation = 1.5708
+
+[node name="DeathObstacle122" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-18048, 5536)
+rotation = 1.5708
+
+[node name="DeathObstacle123" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-18048, 5280)
+rotation = 1.5708
+
+[node name="DeathObstacle124" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-18048, 5536)
+rotation = 1.5708
+
+[node name="DeathObstacle125" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-18048, 5280)
+rotation = 1.5708
+
+[node name="DeathObstacle120" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-18048, 4448)
+rotation = 1.5708
+
+[node name="DeathObstacle121" parent="SpikesLeft" instance=ExtResource("4_igi23")]
+position = Vector2(-18048, 4192)
+rotation = 1.5708
+
+[node name="ChargePlatforms" type="Node2D" parent="."]
+position = Vector2(30, -1)
+
+[node name="ChargePlatform" parent="ChargePlatforms" instance=ExtResource("5_ijf8p")]
+position = Vector2(4578, -3359)
+
+[node name="ChargePlatform2" parent="ChargePlatforms" instance=ExtResource("5_ijf8p")]
+position = Vector2(738, -1823)
+
+[node name="ChargePlatform5" parent="ChargePlatforms" instance=ExtResource("5_ijf8p")]
+position = Vector2(-11678, 2081)
+
+[node name="ChargePlatform7" parent="ChargePlatforms" instance=ExtResource("5_ijf8p")]
+position = Vector2(-14942, -31)
+
+[node name="ChargePlatform3" parent="ChargePlatforms" instance=ExtResource("5_ijf8p")]
+position = Vector2(-5246, -575)
+
+[node name="DoorObstacle" parent="." instance=ExtResource("6_pr5k5")]
+position = Vector2(-11872, -1408)

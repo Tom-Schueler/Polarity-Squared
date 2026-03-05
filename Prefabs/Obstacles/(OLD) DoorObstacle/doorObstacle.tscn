@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://ce52tvyp17k3g"]
+
+[ext_resource type="Script" path="res://Prefabs/Obstacles/(OLD) DoorObstacle/doorObstacle.gd" id="1_ffpt8"]
+[ext_resource type="Texture2D" uid="uid://q88y22q0v4o6" path="res://Assets/TileMap/tileMap_v1.png" id="1_l1xhw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8wmud"]
+size = Vector2(256, 256)
+
+[node name="laserObstacle" type="StaticBody2D"]
+script = ExtResource("1_ffpt8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_l1xhw")
+region_enabled = true
+region_rect = Rect2(768, 512, 256, 256)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8wmud")

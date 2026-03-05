@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dw3nj2hnayn1r"]
+
+[ext_resource type="Script" path="res://Prefabs/Checkpoint/checkpoint.gd" id="1_thwha"]
+[ext_resource type="PackedScene" uid="uid://img3afqoounw" path="res://Assets/Audio/audioComponent/audioForeground.tscn" id="3_40fhx"]
+[ext_resource type="PackedScene" uid="uid://bb2vywb774fox" path="res://Prefabs/Checkpoint/Sprites/checkPointZoneS2.tscn" id="3_macpx"]
+[ext_resource type="AudioStream" uid="uid://buqht7m70gql3" path="res://Prefabs/Checkpoint/Audio/CheckpointAv2802.wav" id="3_yqd5b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x3mvj"]
+size = Vector2(200, 224)
+
+[node name="Checkpoint" type="Area2D" node_paths=PackedStringArray("sprite", "audioStreamPlayer")]
+script = ExtResource("1_thwha")
+checkpointIdentifier = 1
+sprite = NodePath("Node2D")
+audioStreamPlayer = NodePath("SFX_Activation")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_x3mvj")
+
+[node name="SFX_Activation" parent="." instance=ExtResource("3_40fhx")]
+stream = ExtResource("3_yqd5b")
+volume_db = 4.0
+pitch_scale = 1.5
+
+[node name="Node2D" parent="." instance=ExtResource("3_macpx")]
+
+[connection signal="body_entered" from="." to="." method="OnBodyEntered"]

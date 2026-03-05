@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://c7jws5p5ebd7f"]
+
+[ext_resource type="Script" path="res://Scenes/Main/game.gd" id="1_0bsjx"]
+[ext_resource type="Resource" uid="uid://cgdk4htmynrb6" path="res://Utilities/SceneMap/sceneMap.tres" id="2_c0cob"]
+[ext_resource type="Shader" path="res://Scenes/Main/Misc/backgroundBlur.gdshader" id="3_sqe8m"]
+[ext_resource type="Script" path="res://Scenes/Main/Misc/backgroundBlur.gd" id="4_x0jbx"]
+[ext_resource type="AudioStream" uid="uid://pe0711hn4h5m" path="res://Assets/Audio/Music/8-bit-219384.wav" id="5_htlyi"]
+[ext_resource type="Script" path="res://Scenes/Main/Misc/menuMusic.gd" id="6_p4f4k"]
+[ext_resource type="PackedScene" uid="uid://b2mvx07wc16vl" path="res://Scenes/Main/UI/Settings/settings.tscn" id="7_6ub2h"]
+[ext_resource type="PackedScene" uid="uid://d2bpnxflhwffb" path="res://Scenes/Main/UI/MainMenu/mainMenuBackground.tscn" id="8_7qnp0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wju7w"]
+shader = ExtResource("3_sqe8m")
+shader_parameter/amount = 1.5
+
+[node name="Game" type="Node" node_paths=PackedStringArray("world", "gui")]
+process_mode = 3
+script = ExtResource("1_0bsjx")
+world = NodePath("World")
+gui = NodePath("CanvasLayer/GUI")
+firstScene = "Intro"
+sceneMap = ExtResource("2_c0cob")
+
+[node name="World" type="Node2D" parent="."]
+process_mode = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+visible = false
+material = SubResource("ShaderMaterial_wju7w")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_x0jbx")
+
+[node name="GUI" type="Control" parent="CanvasLayer"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_htlyi")
+volume_db = -12.0
+bus = &"Music"
+script = ExtResource("6_p4f4k")
+
+[node name="Settings" parent="." instance=ExtResource("7_6ub2h")]
+unique_name_in_owner = true
+
+[node name="Background" parent="." instance=ExtResource("8_7qnp0")]
+position = Vector2(960, 540)

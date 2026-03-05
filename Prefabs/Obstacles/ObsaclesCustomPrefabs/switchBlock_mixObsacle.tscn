@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdujwincr6b18"]
+
+[ext_resource type="PackedScene" uid="uid://b7qkkxjfccj0y" path="res://Prefabs/Platforms/SwitchingPlatform/switchingPlatform3x1.tscn" id="1_jw2ln"]
+[ext_resource type="PackedScene" uid="uid://bem34hsupieur" path="res://Prefabs/Obstacles/DeathObstacle/Spikes/deathObstacle.tscn" id="2_uy868"]
+
+[node name="SwitchBlockMixObsacle" type="Node2D"]
+
+[node name="switchingPlatform131" parent="." instance=ExtResource("1_jw2ln")]
+position = Vector2(-128, 0)
+scale = Vector2(1, 1)
+reappearTimer = 1.0
+timeOffset = 1.0
+
+[node name="DeathObstacle163" parent="switchingPlatform131" instance=ExtResource("2_uy868")]
+position = Vector2(0, 256)
+rotation = 3.14159
+
+[node name="switchingPlatform132" parent="." instance=ExtResource("1_jw2ln")]
+position = Vector2(-384, 0)
+scale = Vector2(1, 1)
+reappearTimer = 1.0
+timeOffset = 1.0
+
+[node name="DeathObstacle163" parent="switchingPlatform132" instance=ExtResource("2_uy868")]
+position = Vector2(0, 256)
+rotation = 3.14159
+
+[node name="switchingPlatform133" parent="." instance=ExtResource("1_jw2ln")]
+position = Vector2(128, 0)
+scale = Vector2(1, 1)
+reappearTimer = 1.0
+timeOffset = 1.0
+
+[node name="DeathObstacle163" parent="switchingPlatform133" instance=ExtResource("2_uy868")]
+position = Vector2(0, 256)
+rotation = 3.14159
+
+[node name="switchingPlatform134" parent="." instance=ExtResource("1_jw2ln")]
+position = Vector2(384, 0)
+scale = Vector2(1, 1)
+reappearTimer = 1.0
+timeOffset = 1.0
+
+[node name="DeathObstacle163" parent="switchingPlatform134" instance=ExtResource("2_uy868")]
+position = Vector2(0, 256)
+rotation = 3.14159

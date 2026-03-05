@@ -1,0 +1,959 @@
+[gd_scene load_steps=57 format=3 uid="uid://b2mvx07wc16vl"]
+
+[ext_resource type="Script" path="res://Scenes/Main/UI/Settings/settings.gd" id="1_fi7j8"]
+[ext_resource type="Resource" uid="uid://d0pyg1oc4irqf" path="res://Utilities/SettingsMeta/defaultSettings.tres" id="2_8wn85"]
+[ext_resource type="Script" path="res://Scenes/Main/UI/Settings/GeneralSettings/resolution.gd" id="3_l04wi"]
+[ext_resource type="Texture2D" uid="uid://c6tpeymqylhh8" path="res://Assets/UIElements/ButtonPressed.png" id="4_xqugw"]
+[ext_resource type="Script" path="res://Scenes/Main/UI/Settings/GeneralSettings/toggleFullscreen.gd" id="4_yb6s6"]
+[ext_resource type="Texture2D" uid="uid://bta3lgofwk7x0" path="res://Assets/UIElements/ButtonHoveredFrame0.png" id="5_g1qsj"]
+[ext_resource type="Texture2D" uid="uid://dcll72cnb081k" path="res://Assets/UIElements/CheckboxCheckedv2.png" id="5_ncuw2"]
+[ext_resource type="Script" path="res://Scenes/Main/UI/Settings/tabContainer.gd" id="5_son7y"]
+[ext_resource type="Texture2D" uid="uid://c778mj3aki788" path="res://Assets/UIElements/ControlPanelBackground.png" id="5_tmn54"]
+[ext_resource type="Script" path="res://Scenes/Main/UI/Settings/GeneralSettings/toggleBorderless.gd" id="5_un1e4"]
+[ext_resource type="Texture2D" uid="uid://cihk06f3cdjc4" path="res://Assets/UIElements/PopupBakgroundV4.png" id="5_vp2rx"]
+[ext_resource type="Script" path="res://Scenes/Main/UI/Settings/GeneralSettings/toggleScreenshake.gd" id="6_2m0x3"]
+[ext_resource type="Texture2D" uid="uid://b3kpxr6yax51x" path="res://Assets/UIElements/ButtonHoveredFrame1.png" id="6_5rqy5"]
+[ext_resource type="Texture2D" uid="uid://ce6q2yr6avg30" path="res://Assets/UIElements/CheckboxUncheckedv2.png" id="6_pa1gx"]
+[ext_resource type="Script" path="res://Scenes/Main/UI/Settings/SoundSettings/master.gd" id="7_1on26"]
+[ext_resource type="Texture2D" uid="uid://drya6xvm5ktps" path="res://Assets/UIElements/ButtonHoveredFrame2.png" id="7_3hf87"]
+[ext_resource type="PackedScene" uid="uid://bun61tp7k3ue7" path="res://Scenes/Main/UI/Settings/Keybinds/keyButton.tscn" id="7_c8yo5"]
+[ext_resource type="Script" path="res://Scenes/Main/UI/Settings/SoundSettings/muteMaster.gd" id="8_18n18"]
+[ext_resource type="FontFile" uid="uid://dpvdgwpnrcqb5" path="res://Assets/Font/hobostd.otf" id="8_bb3ji"]
+[ext_resource type="Texture2D" uid="uid://dx3l8077rq0f2" path="res://Assets/UIElements/SliderGear.png" id="8_kbm56"]
+[ext_resource type="Texture2D" uid="uid://bjqafakfiljsh" path="res://Assets/UIElements/ButtonHoveredFrame3.png" id="8_m73t8"]
+[ext_resource type="Texture2D" uid="uid://bvrvwdbil8qo0" path="res://Assets/UIElements/SliderBackground.png" id="8_wduyn"]
+[ext_resource type="Texture2D" uid="uid://doet8pnus5ahr" path="res://Assets/UIElements/SliderBackgroundFilledWithOutline.png" id="9_3xnvp"]
+[ext_resource type="Script" path="res://Scenes/Main/UI/Settings/SoundSettings/music.gd" id="9_qsg52"]
+[ext_resource type="Script" path="res://Scenes/Main/UI/Settings/SoundSettings/muteMusic.gd" id="10_bykrq"]
+[ext_resource type="Script" path="res://Scenes/Main/UI/Settings/SoundSettings/sfx.gd" id="11_yac7t"]
+[ext_resource type="Script" path="res://Scenes/Main/UI/Settings/GeneralSettings/toggleDebugMode.gd" id="12_adpdn"]
+[ext_resource type="Script" path="res://Scenes/Main/UI/Settings/GeneralSettings/toggleTimer.gd" id="12_g3mej"]
+[ext_resource type="Script" path="res://Scenes/Main/UI/Settings/SoundSettings/muteSFX.gd" id="12_s8if2"]
+[ext_resource type="Script" path="res://Scenes/Main/UI/Settings/SoundSettings/ui.gd" id="13_m0rb5"]
+[ext_resource type="Script" path="res://Scenes/Main/UI/Settings/SoundSettings/muteUI.gd" id="14_ijxth"]
+[ext_resource type="Script" path="res://Scenes/Main/UI/Settings/GeneralSettings/respawnTimer.gd" id="17_ifnx7"]
+[ext_resource type="Texture2D" uid="uid://vshen0lrk3we" path="res://Assets/UIElements/ButtonSmall.png" id="30_ekmpr"]
+[ext_resource type="AudioStream" uid="uid://b5fkklq1nyp2q" path="res://Assets/Audio/UISounds.wav" id="33_ppppw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nf4jr"]
+content_margin_top = 95.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_linqw"]
+texture = ExtResource("5_tmn54")
+texture_margin_left = 25.0
+texture_margin_right = 25.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b7pb5"]
+texture = ExtResource("5_tmn54")
+texture_margin_left = 25.0
+texture_margin_top = 10.0
+texture_margin_right = 25.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sjnrf"]
+texture = ExtResource("5_tmn54")
+texture_margin_left = 25.0
+texture_margin_right = 25.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_deb58"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_du6il"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vbufm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vthor"]
+texture = ExtResource("8_wduyn")
+texture_margin_top = 69.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3irhp"]
+texture = ExtResource("9_3xnvp")
+axis_stretch_horizontal = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_niwt3"]
+texture = ExtResource("9_3xnvp")
+axis_stretch_horizontal = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rcnew"]
+texture = ExtResource("8_wduyn")
+texture_margin_top = 69.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5hcr5"]
+texture = ExtResource("9_3xnvp")
+axis_stretch_horizontal = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jppdy"]
+texture = ExtResource("9_3xnvp")
+axis_stretch_horizontal = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xsywp"]
+texture = ExtResource("8_wduyn")
+texture_margin_top = 69.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ai3w2"]
+texture = ExtResource("9_3xnvp")
+axis_stretch_horizontal = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tyluy"]
+texture = ExtResource("9_3xnvp")
+axis_stretch_horizontal = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_omyck"]
+texture = ExtResource("8_wduyn")
+texture_margin_top = 69.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_i71fr"]
+texture = ExtResource("9_3xnvp")
+axis_stretch_horizontal = 1
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e2jpa"]
+texture = ExtResource("9_3xnvp")
+axis_stretch_horizontal = 1
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_l5lyb"]
+frames = 4
+speed_scale = 10.0
+frame_0/texture = ExtResource("5_g1qsj")
+frame_1/texture = ExtResource("6_5rqy5")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("7_3hf87")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("8_m73t8")
+frame_3/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_akpx3"]
+frames = 4
+speed_scale = 10.0
+frame_0/texture = ExtResource("5_g1qsj")
+frame_1/texture = ExtResource("6_5rqy5")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("7_3hf87")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("8_m73t8")
+frame_3/duration = 1.0
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_f82nc"]
+frames = 4
+speed_scale = 10.0
+frame_0/texture = ExtResource("5_g1qsj")
+frame_1/texture = ExtResource("6_5rqy5")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("7_3hf87")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("8_m73t8")
+frame_3/duration = 1.0
+
+[node name="Settings" type="Control" node_paths=PackedStringArray("audioStreamPlayer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fi7j8")
+defaultSettings = ExtResource("2_8wn85")
+audioStreamPlayer = NodePath("AudioStreamPlayer")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 14.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="CenterContainer" node_paths=PackedStringArray("audioStreamPlayer")]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_colors/font_unselected_color = Color(0.811879, 0.499188, 0.0255796, 1)
+theme_override_colors/font_hovered_color = Color(0.999039, 0.802217, 0.602743, 1)
+theme_override_colors/font_selected_color = Color(0.992157, 0.627451, 0.141176, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 85
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nf4jr")
+theme_override_styles/tab_selected = SubResource("StyleBoxTexture_linqw")
+theme_override_styles/tab_hovered = SubResource("StyleBoxTexture_b7pb5")
+theme_override_styles/tab_unselected = SubResource("StyleBoxTexture_sjnrf")
+tab_alignment = 1
+current_tab = 0
+script = ExtResource("5_son7y")
+audioStreamPlayer = NodePath("../../AudioStreamPlayer")
+
+[node name="PopupBakgroundV4" type="Sprite2D" parent="CenterContainer/TabContainer"]
+position = Vector2(600, 526)
+texture = ExtResource("5_vp2rx")
+
+[node name="General" type="VBoxContainer" parent="CenterContainer/TabContainer"]
+custom_minimum_size = Vector2(1200, 980)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 35
+metadata/_tab_index = 0
+
+[node name="Section1" type="PanelContainer" parent="CenterContainer/TabContainer/General"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_deb58")
+
+[node name="Label" type="Label" parent="CenterContainer/TabContainer/General/Section1"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.992157, 0.627451, 0.141176, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 35
+text = "Resolution"
+
+[node name="Resolution" type="OptionButton" parent="CenterContainer/TabContainer/General" groups=["setting"]]
+layout_mode = 2
+theme_override_colors/font_disabled_color = Color(0.992157, 0.713726, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_hover_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 30
+selected = 0
+allow_reselect = true
+item_count = 7
+popup/item_0/text = "1920 x 1080"
+popup/item_1/text = "1366 × 768"
+popup/item_1/id = 1
+popup/item_2/text = "2560 × 1440"
+popup/item_2/id = 2
+popup/item_3/text = "3840 × 2160"
+popup/item_3/id = 3
+popup/item_4/text = "1440 × 900"
+popup/item_4/id = 4
+popup/item_5/text = " 1280 × 1024"
+popup/item_5/id = 5
+popup/item_6/text = "1152 x 648"
+popup/item_6/id = 6
+script = ExtResource("3_l04wi")
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/TabContainer/General"]
+layout_mode = 2
+columns = 2
+
+[node name="ToggleFullscreen" type="CheckBox" parent="CenterContainer/TabContainer/General/GridContainer" groups=["setting"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_hover_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 30
+theme_override_icons/checked = ExtResource("5_ncuw2")
+theme_override_icons/unchecked = ExtResource("6_pa1gx")
+text = "Fullscreen"
+script = ExtResource("4_yb6s6")
+
+[node name="ToggleBorderless" type="CheckBox" parent="CenterContainer/TabContainer/General/GridContainer" groups=["setting"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_hover_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 30
+theme_override_icons/checked = ExtResource("5_ncuw2")
+theme_override_icons/unchecked = ExtResource("6_pa1gx")
+text = "Borderless"
+script = ExtResource("5_un1e4")
+
+[node name="Section2" type="PanelContainer" parent="CenterContainer/TabContainer/General"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_du6il")
+
+[node name="Label" type="Label" parent="CenterContainer/TabContainer/General/Section2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.992157, 0.627451, 0.141176, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 35
+text = "Effects"
+
+[node name="ToggleScreenShake" type="CheckBox" parent="CenterContainer/TabContainer/General" groups=["setting"]]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_hover_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 30
+theme_override_icons/checked = ExtResource("5_ncuw2")
+theme_override_icons/unchecked = ExtResource("6_pa1gx")
+text = "Screenshake"
+script = ExtResource("6_2m0x3")
+
+[node name="Section3" type="PanelContainer" parent="CenterContainer/TabContainer/General"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vbufm")
+
+[node name="Label" type="Label" parent="CenterContainer/TabContainer/General/Section3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.992157, 0.627451, 0.141176, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 35
+text = "Other"
+
+[node name="GridContainer2" type="GridContainer" parent="CenterContainer/TabContainer/General"]
+layout_mode = 2
+theme_override_constants/v_separation = 35
+columns = 2
+
+[node name="ToggleTimer" type="CheckBox" parent="CenterContainer/TabContainer/General/GridContainer2" groups=["setting"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_hover_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 30
+theme_override_icons/checked = ExtResource("5_ncuw2")
+theme_override_icons/unchecked = ExtResource("6_pa1gx")
+text = "Show Level Timer"
+script = ExtResource("12_g3mej")
+
+[node name="ToggleDebugMode" type="CheckBox" parent="CenterContainer/TabContainer/General/GridContainer2" groups=["setting"]]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_hover_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 30
+theme_override_icons/checked = ExtResource("5_ncuw2")
+theme_override_icons/unchecked = ExtResource("6_pa1gx")
+text = "Enable Debug Mode"
+script = ExtResource("12_adpdn")
+
+[node name="GridContainer3" type="GridContainer" parent="CenterContainer/TabContainer/General"]
+layout_mode = 2
+columns = 3
+
+[node name="Label" type="Label" parent="CenterContainer/TabContainer/General/GridContainer3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.992157, 0.627451, 0.141176, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 35
+text = "Respawn Timer"
+
+[node name="RespwanTimer" type="HSlider" parent="CenterContainer/TabContainer/General/GridContainer3" node_paths=PackedStringArray("valueGUI") groups=["setting"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_icons/grabber = ExtResource("8_kbm56")
+theme_override_icons/grabber_highlight = ExtResource("8_kbm56")
+theme_override_styles/slider = SubResource("StyleBoxTexture_vthor")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_3irhp")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_niwt3")
+min_value = 0.5
+max_value = 3.0
+step = 0.01
+value = 3.0
+script = ExtResource("17_ifnx7")
+valueGUI = NodePath("../Label2")
+
+[node name="Label2" type="Label" parent="CenterContainer/TabContainer/General/GridContainer3"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.992157, 0.627451, 0.141176, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 35
+text = "3.00 sec"
+
+[node name="Keys" type="VBoxContainer" parent="CenterContainer/TabContainer"]
+visible = false
+custom_minimum_size = Vector2(1200, 980)
+layout_mode = 2
+theme_override_constants/separation = 0
+metadata/_tab_index = 1
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/TabContainer/Keys"]
+layout_mode = 2
+theme_override_constants/v_separation = 17
+columns = 2
+
+[node name="MoveUp" type="Label" parent="CenterContainer/TabContainer/Keys/GridContainer"]
+custom_minimum_size = Vector2(700, 50)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 50
+text = "Move Up"
+
+[node name="KeyMoveUp" parent="CenterContainer/TabContainer/Keys/GridContainer" groups=["setting"] instance=ExtResource("7_c8yo5")]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_hover_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 50
+actionKey = "Up"
+
+[node name="MoveLeft" type="Label" parent="CenterContainer/TabContainer/Keys/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 50
+text = "Move Left"
+
+[node name="KeyMoveLeft" parent="CenterContainer/TabContainer/Keys/GridContainer" groups=["setting"] instance=ExtResource("7_c8yo5")]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_hover_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 50
+actionKey = "Left"
+
+[node name="MoveDown" type="Label" parent="CenterContainer/TabContainer/Keys/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 50
+text = "Move Down"
+
+[node name="KeyMoveDown" parent="CenterContainer/TabContainer/Keys/GridContainer" groups=["setting"] instance=ExtResource("7_c8yo5")]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_hover_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 50
+actionKey = "Down"
+
+[node name="MoveRight" type="Label" parent="CenterContainer/TabContainer/Keys/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 50
+text = "Move Right"
+
+[node name="KeyMoveRight" parent="CenterContainer/TabContainer/Keys/GridContainer" groups=["setting"] instance=ExtResource("7_c8yo5")]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_hover_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 50
+actionKey = "Right"
+
+[node name="GravitationUp" type="Label" parent="CenterContainer/TabContainer/Keys/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 50
+text = "Grav Up"
+
+[node name="KeyGravitationUp" parent="CenterContainer/TabContainer/Keys/GridContainer" groups=["setting"] instance=ExtResource("7_c8yo5")]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_hover_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 50
+actionKey = "GravityUp"
+
+[node name="GravitationLeft" type="Label" parent="CenterContainer/TabContainer/Keys/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 50
+text = "Grav Left"
+
+[node name="KeyGravitationLeft" parent="CenterContainer/TabContainer/Keys/GridContainer" groups=["setting"] instance=ExtResource("7_c8yo5")]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_hover_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 50
+actionKey = "GravityLeft"
+
+[node name="GravitationDown" type="Label" parent="CenterContainer/TabContainer/Keys/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 50
+text = "Grav Down"
+
+[node name="KeyGravitationDown" parent="CenterContainer/TabContainer/Keys/GridContainer" groups=["setting"] instance=ExtResource("7_c8yo5")]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_hover_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 50
+actionKey = "GravityDown"
+
+[node name="GravitationRight" type="Label" parent="CenterContainer/TabContainer/Keys/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 50
+text = "Grav Right"
+
+[node name="KeyGravitationRight" parent="CenterContainer/TabContainer/Keys/GridContainer" groups=["setting"] instance=ExtResource("7_c8yo5")]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_hover_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 50
+actionKey = "GravityRight"
+
+[node name="Jump" type="Label" parent="CenterContainer/TabContainer/Keys/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 50
+text = "Jump
+"
+
+[node name="KeyJump" parent="CenterContainer/TabContainer/Keys/GridContainer" groups=["setting"] instance=ExtResource("7_c8yo5")]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_hover_pressed_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_hover_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 50
+actionKey = "Jump"
+
+[node name="Sound" type="VBoxContainer" parent="CenterContainer/TabContainer"]
+visible = false
+custom_minimum_size = Vector2(1200, 980)
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="Info" type="PanelContainer" parent="CenterContainer/TabContainer/Sound"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/TabContainer/Sound/Info"]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.819608, 0.588235, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 30
+text = "Sound Settings"
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer/TabContainer/Sound"]
+layout_mode = 2
+theme_override_constants/v_separation = 25
+columns = 4
+
+[node name="MasterLabel" type="Label" parent="CenterContainer/TabContainer/Sound/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 65
+text = "Master"
+
+[node name="Master" type="HSlider" parent="CenterContainer/TabContainer/Sound/GridContainer" node_paths=PackedStringArray("valueGUI") groups=["setting"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_icons/grabber = ExtResource("8_kbm56")
+theme_override_icons/grabber_highlight = ExtResource("8_kbm56")
+theme_override_styles/slider = SubResource("StyleBoxTexture_vthor")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_3irhp")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_niwt3")
+max_value = 1.0
+step = 0.01
+value = 1.0
+script = ExtResource("7_1on26")
+valueGUI = NodePath("../MasterVolume")
+
+[node name="MasterVolume" type="Label" parent="CenterContainer/TabContainer/Sound/GridContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 30
+text = "100"
+
+[node name="MuteMaster" type="CheckBox" parent="CenterContainer/TabContainer/Sound/GridContainer" groups=["setting"]]
+layout_mode = 2
+size_flags_vertical = 3
+button_pressed = true
+script = ExtResource("8_18n18")
+
+[node name="MusicLabel" type="Label" parent="CenterContainer/TabContainer/Sound/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 65
+text = "Music"
+
+[node name="Music" type="HSlider" parent="CenterContainer/TabContainer/Sound/GridContainer" node_paths=PackedStringArray("valueGUI") groups=["setting"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_icons/grabber = ExtResource("8_kbm56")
+theme_override_icons/grabber_highlight = ExtResource("8_kbm56")
+theme_override_styles/slider = SubResource("StyleBoxTexture_rcnew")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_5hcr5")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_jppdy")
+max_value = 1.0
+step = 0.01
+value = 1.0
+script = ExtResource("9_qsg52")
+valueGUI = NodePath("../MusicVolume")
+
+[node name="MusicVolume" type="Label" parent="CenterContainer/TabContainer/Sound/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 30
+text = "100"
+
+[node name="MuteMusic" type="CheckBox" parent="CenterContainer/TabContainer/Sound/GridContainer" groups=["setting"]]
+layout_mode = 2
+size_flags_vertical = 3
+button_pressed = true
+script = ExtResource("10_bykrq")
+
+[node name="SFXLabel" type="Label" parent="CenterContainer/TabContainer/Sound/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 65
+text = "SFX"
+
+[node name="SFX" type="HSlider" parent="CenterContainer/TabContainer/Sound/GridContainer" node_paths=PackedStringArray("valueGUI") groups=["setting"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_icons/grabber = ExtResource("8_kbm56")
+theme_override_icons/grabber_highlight = ExtResource("8_kbm56")
+theme_override_styles/slider = SubResource("StyleBoxTexture_xsywp")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_ai3w2")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_tyluy")
+max_value = 1.0
+step = 0.01
+value = 1.0
+script = ExtResource("11_yac7t")
+valueGUI = NodePath("../SFXVolume")
+
+[node name="SFXVolume" type="Label" parent="CenterContainer/TabContainer/Sound/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 30
+text = "100"
+
+[node name="MuteSFX" type="CheckBox" parent="CenterContainer/TabContainer/Sound/GridContainer" groups=["setting"]]
+layout_mode = 2
+size_flags_vertical = 3
+button_pressed = true
+script = ExtResource("12_s8if2")
+
+[node name="UILabel" type="Label" parent="CenterContainer/TabContainer/Sound/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 65
+text = "UI"
+
+[node name="UI" type="HSlider" parent="CenterContainer/TabContainer/Sound/GridContainer" node_paths=PackedStringArray("valueGUI") groups=["setting"]]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_icons/grabber = ExtResource("8_kbm56")
+theme_override_icons/grabber_highlight = ExtResource("8_kbm56")
+theme_override_styles/slider = SubResource("StyleBoxTexture_omyck")
+theme_override_styles/grabber_area = SubResource("StyleBoxTexture_i71fr")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxTexture_e2jpa")
+max_value = 1.0
+step = 0.01
+value = 1.0
+script = ExtResource("13_m0rb5")
+valueGUI = NodePath("../UIVolume")
+
+[node name="UIVolume" type="Label" parent="CenterContainer/TabContainer/Sound/GridContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.992157, 0.592157, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 30
+text = "100"
+
+[node name="MuteUI" type="CheckBox" parent="CenterContainer/TabContainer/Sound/GridContainer" groups=["setting"]]
+layout_mode = 2
+size_flags_vertical = 3
+button_pressed = true
+script = ExtResource("14_ijxth")
+
+[node name="Back" type="PanelContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 525.0
+offset_top = -177.0
+offset_right = 810.0
+offset_bottom = -97.0
+grow_vertical = 0
+
+[node name="Back" type="TextureButton" parent="Back"]
+layout_mode = 2
+texture_normal = ExtResource("30_ekmpr")
+texture_pressed = ExtResource("4_xqugw")
+texture_hover = SubResource("AnimatedTexture_l5lyb")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Back/Back"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.992157, 0.627451, 0.141176, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 35
+text = "Back"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Save" type="PanelContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -795.0
+offset_top = -173.0
+offset_right = -510.0
+offset_bottom = -93.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Save" type="TextureButton" parent="Save"]
+layout_mode = 2
+texture_normal = ExtResource("30_ekmpr")
+texture_pressed = ExtResource("4_xqugw")
+texture_hover = SubResource("AnimatedTexture_akpx3")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Save/Save"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.992157, 0.627451, 0.141176, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 35
+text = "Save"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Default" type="PanelContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -135.0
+offset_top = -173.0
+offset_right = 150.0
+offset_bottom = -93.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Default" type="TextureButton" parent="Default"]
+layout_mode = 2
+texture_normal = ExtResource("30_ekmpr")
+texture_pressed = ExtResource("4_xqugw")
+texture_hover = SubResource("AnimatedTexture_f82nc")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Default/Default"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.992157, 0.627451, 0.141176, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("8_bb3ji")
+theme_override_font_sizes/font_size = 35
+text = "Default"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Overlay" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("33_ppppw")
+volume_db = 6.0
+bus = &"UI"
+
+[connection signal="tab_clicked" from="CenterContainer/TabContainer" to="CenterContainer/TabContainer" method="TabClicked"]
+[connection signal="item_selected" from="CenterContainer/TabContainer/General/Resolution" to="CenterContainer/TabContainer/General/Resolution" method="ScreenSizeSelected"]
+[connection signal="toggled" from="CenterContainer/TabContainer/General/GridContainer/ToggleFullscreen" to="CenterContainer/TabContainer/General/GridContainer/ToggleFullscreen" method="FullScreenToggled"]
+[connection signal="toggled" from="CenterContainer/TabContainer/General/GridContainer/ToggleBorderless" to="CenterContainer/TabContainer/General/GridContainer/ToggleBorderless" method="BorderlessToggled"]
+[connection signal="toggled" from="CenterContainer/TabContainer/General/ToggleScreenShake" to="CenterContainer/TabContainer/General/ToggleScreenShake" method="ScreenshakeToggled"]
+[connection signal="toggled" from="CenterContainer/TabContainer/General/GridContainer2/ToggleTimer" to="CenterContainer/TabContainer/General/GridContainer2/ToggleTimer" method="TimerToggled"]
+[connection signal="toggled" from="CenterContainer/TabContainer/General/GridContainer2/ToggleDebugMode" to="CenterContainer/TabContainer/General/GridContainer2/ToggleDebugMode" method="DbugModeToggled"]
+[connection signal="value_changed" from="CenterContainer/TabContainer/General/GridContainer3/RespwanTimer" to="CenterContainer/TabContainer/General/GridContainer3/RespwanTimer" method="RespawnTimer"]
+[connection signal="value_changed" from="CenterContainer/TabContainer/Sound/GridContainer/Master" to="CenterContainer/TabContainer/Sound/GridContainer/Master" method="MasterVolume"]
+[connection signal="toggled" from="CenterContainer/TabContainer/Sound/GridContainer/MuteMaster" to="CenterContainer/TabContainer/Sound/GridContainer/MuteMaster" method="MuteMaster"]
+[connection signal="value_changed" from="CenterContainer/TabContainer/Sound/GridContainer/Music" to="CenterContainer/TabContainer/Sound/GridContainer/Music" method="MusicVolume"]
+[connection signal="toggled" from="CenterContainer/TabContainer/Sound/GridContainer/MuteMusic" to="CenterContainer/TabContainer/Sound/GridContainer/MuteMusic" method="MuteMusic"]
+[connection signal="value_changed" from="CenterContainer/TabContainer/Sound/GridContainer/SFX" to="CenterContainer/TabContainer/Sound/GridContainer/SFX" method="SFXVolume"]
+[connection signal="toggled" from="CenterContainer/TabContainer/Sound/GridContainer/MuteSFX" to="CenterContainer/TabContainer/Sound/GridContainer/MuteSFX" method="MuteSFX"]
+[connection signal="value_changed" from="CenterContainer/TabContainer/Sound/GridContainer/UI" to="CenterContainer/TabContainer/Sound/GridContainer/UI" method="UIVolume"]
+[connection signal="toggled" from="CenterContainer/TabContainer/Sound/GridContainer/MuteUI" to="CenterContainer/TabContainer/Sound/GridContainer/MuteUI" method="MuteUI"]
+[connection signal="pressed" from="Back/Back" to="." method="BackPressed"]
+[connection signal="pressed" from="Save/Save" to="." method="SaveSettings"]
+[connection signal="pressed" from="Default/Default" to="." method="LoadSettings"]

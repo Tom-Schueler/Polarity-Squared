@@ -1,0 +1,74 @@
+[gd_scene load_steps=8 format=3 uid="uid://c6ok5m6lsdk1d"]
+
+[ext_resource type="Script" path="res://Prefabs/Obstacles/DeathObstacle/Saws/sawObstacle.gd" id="1_wjlxr"]
+[ext_resource type="Texture2D" uid="uid://q88y22q0v4o6" path="res://Assets/TileMap/tileMap_v1.png" id="2_b5vtu"]
+[ext_resource type="PackedScene" uid="uid://clgewrmnd1l8j" path="res://Assets/Audio/audioComponent/audioBetweenFGPlatforms.tscn" id="3_j0i7h"]
+[ext_resource type="AudioStream" uid="uid://cu32820vu050x" path="res://Prefabs/Obstacles/DeathObstacle/Saws/Audio/SawSFX.wav" id="4_qv5ed"]
+
+[sub_resource type="Animation" id="Animation_uo8es"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_135fx"]
+resource_name = "current"
+length = 0.400003
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [1, 2, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s6khl"]
+_data = {
+"RESET": SubResource("Animation_uo8es"),
+"current": SubResource("Animation_135fx")
+}
+
+[node name="sawObstacleBig" type="Node2D" node_paths=PackedStringArray("audioStreamPlayer")]
+script = ExtResource("1_wjlxr")
+causeOfDeath = "Dismembered"
+audioStreamPlayer = NodePath("AudioStreamPlayer2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_b5vtu")
+vframes = 5
+region_enabled = true
+region_rect = Rect2(512, 770, 256, 1280)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(79, 127, 62, 97, 39, 74, -1, 61, -41, 73, -65, 95, -76, 127)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_s6khl")
+}
+autoplay = "current"
+
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("3_j0i7h")]
+stream = ExtResource("4_qv5ed")
+volume_db = 14.0
+max_distance = 3000.0
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

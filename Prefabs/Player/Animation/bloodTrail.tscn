@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://b82h8tpahgqu7"]
+
+[ext_resource type="Texture2D" uid="uid://bgxtx1ta0ow8y" path="res://Assets/Sprites/BlurredCircle.png" id="1_fuf37"]
+
+[sub_resource type="Curve" id="Curve_akltv"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.709779, 0.681932), -0.976676, -0.976676, 0, 0, Vector2(1, 0.143664), -1.32581, 0.0, 0, 0]
+point_count = 3
+
+[node name="Trail" type="CPUParticles2D"]
+amount = 320
+lifetime = 10.0
+speed_scale = 2.5
+texture = ExtResource("1_fuf37")
+emission_shape = 3
+emission_rect_extents = Vector2(20, 1)
+particle_flag_align_y = true
+spread = 180.0
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+damping_min = 500.0
+damping_max = 2000.0
+scale_amount_curve = SubResource("Curve_akltv")
+color = Color(0.6, 0, 0, 0.666667)

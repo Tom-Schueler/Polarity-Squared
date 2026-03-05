@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=4 uid="uid://ux0nk8fdxpyk"]
+
+[ext_resource type="Script" path="res://Utilities/Tools/assetReplacementTool.gd" id="1_rlg0k"]
+[ext_resource type="PackedScene" uid="uid://5owuibn0h6rf" path="res://Prefabs/Player/player.tscn" id="2_x626u"]
+[ext_resource type="PackedScene" uid="uid://demnkur8y8los" path="res://Prefabs/Camera/camera.tscn" id="3_vrv7t"]
+[ext_resource type="PackedScene" uid="uid://cj6e5geht36fy" path="res://Prefabs/Platforms/MovingPlatform/movingPlatform.tscn" id="8_nf1k7"]
+[ext_resource type="PackedScene" uid="uid://2uvav6xspqd1" path="res://Prefabs/Tilemap/Tilemap.tscn" id="11_lkk2c"]
+
+[node name="Node2D2" type="Node2D"]
+script = ExtResource("1_rlg0k")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_x626u")]
+position = Vector2(16, 1312)
+fallSpeedMultiplier = 1.0
+airControl = 3.0
+
+[node name="Camera" parent="CharacterBody2D" instance=ExtResource("3_vrv7t")]
+zoom = Vector2(0.2, 0.2)
+limit_left = -8120
+limit_top = -1920
+limit_right = 5200
+limit_bottom = 6535
+position_smoothing_speed = 10.0
+drag_left_margin = 1.0
+drag_top_margin = 1.0
+editor_draw_drag_margin = true
+
+[node name="TileMapLayer2" parent="." instance=ExtResource("11_lkk2c")]
+tile_map_data = PackedByteArray("AAADAAcAAAAAAAAAAAAEAAQAAAAAAAEAAAAEAAMAAAAAAAEAAAAEAAIAAAADAAAAABADAAIAAAABAAIAAAACAAIAAAABAAIAAAABAAIAAAABAAIAAAAAAAIAAAABAAIAAAD//wIAAAABAAIAAAD+/wIAAAABAAIAAAD9/wIAAAABAAIAAAD8/wIAAAABAAIAAAD7/wIAAAABAAIAAAD6/wIAAAABAAIAAAABAAkAAAABAAAAAAACAAkAAAADAAAAADACAAgAAAAAAAAAAAADAAgAAAADAAAAADD5/wIAAAABAAIAAAD4/wIAAAABAAIAAAD3/wIAAAABAAIAAAD2/wIAAAABAAIAAAD1/wIAAAABAAIAAAD0/wIAAAABAAIAAADz/wIAAAADAAAAAAAAAAkAAAABAAEAAAD//wkAAAABAAEAAAD+/wkAAAABAAEAAAD9/wkAAAABAAEAAAAEAAcAAAADAAAAADA=")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="MovingPlatform" parent="Node2D" instance=ExtResource("8_nf1k7")]
+position = Vector2(-4064, 3632)
+
+[node name="MovingPlatform2" parent="Node2D" instance=ExtResource("8_nf1k7")]
+position = Vector2(-2544, 2192)
+
+[node name="MovingPlatform3" parent="Node2D" instance=ExtResource("8_nf1k7")]
+position = Vector2(-640, 3856)
+
+[node name="MovingPlatform4" parent="Node2D" instance=ExtResource("8_nf1k7")]
+position = Vector2(928, 3440)
+
+[node name="MovingPlatform5" parent="Node2D" instance=ExtResource("8_nf1k7")]
+position = Vector2(-4768, 2560)

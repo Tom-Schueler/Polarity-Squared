@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=4 uid="uid://crfkrma6ahdoa"]
+
+[ext_resource type="PackedScene" uid="uid://5owuibn0h6rf" path="res://Prefabs/Player/player.tscn" id="2_cnb6i"]
+[ext_resource type="PackedScene" uid="uid://demnkur8y8los" path="res://Prefabs/Camera/camera.tscn" id="2_yecrr"]
+[ext_resource type="PackedScene" uid="uid://2uvav6xspqd1" path="res://Prefabs/Tilemap/Tilemap.tscn" id="5_ekl02"]
+
+[node name="Node2D2" type="Node2D"]
+
+[node name="Camera" parent="." instance=ExtResource("2_yecrr")]
+
+[node name="TileMapLayer" parent="." instance=ExtResource("5_ekl02")]
+tile_map_data = PackedByteArray("AAAEAAYAAAABAAEAAAAEAAcAAAABAAEAAAAFAAcAAAABAAEAAAAFAAYAAAABAAEAAADu/wUAAAABAAEAAADu/wYAAAABAAEAAADv/wYAAAABAAEAAADv/wUAAAABAAEAAADv//b/AAABAAEAAADv//f/AAABAAEAAADw//f/AAABAAEAAADw//b/AAABAAEAAAAOAPf/AAABAAEAAAAOAPj/AAABAAEAAAAPAPj/AAABAAEAAAAPAPf/AAABAAEAAAABAAsAAAABAAEAAAACAAsAAAABAAEAAAADAAsAAAABAAEAAAAEAAsAAAABAAEAAAAFAAsAAAABAAEAAAAGAAsAAAABAAEAAAAHAAsAAAABAAEAAAAIAAsAAAABAAEAAADr/wsAAAABAAEAAADs/wsAAAABAAEAAADt/wsAAAABAAEAAADu/wsAAAABAAEAAADv/wsAAAABAAEAAADw/wsAAAABAAEAAADx/wsAAAABAAEAAADy/wsAAAABAAEAAADs//r/AAABAAEAAADt//r/AAABAAEAAADu//r/AAABAAEAAADv//r/AAABAAEAAADw//r/AAABAAEAAADx//r/AAABAAEAAADy//r/AAABAAEAAADz//r/AAABAAEAAAAKAPz/AAABAAEAAAALAPz/AAABAAEAAAAMAPz/AAABAAEAAAANAPz/AAABAAEAAAAOAPz/AAABAAEAAAAPAPz/AAABAAEAAAAQAPz/AAABAAEAAAARAPz/AAABAAEAAAASAPz/AAABAAEAAAA=")
+
+[node name="player" parent="." instance=ExtResource("2_cnb6i")]
+position = Vector2(3818, -2636)

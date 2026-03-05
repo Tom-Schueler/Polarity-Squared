@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://46vmee04fjoe"]
+
+[ext_resource type="Script" path="res://Prefabs/Obstacles/(OLD) DoorObstacle/key.gd" id="1_rx1b3"]
+[ext_resource type="Texture2D" uid="uid://q88y22q0v4o6" path="res://Assets/TileMap/tileMap_v1.png" id="2_olrth"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dxo07"]
+size = Vector2(256, 256)
+
+[node name="Key" type="Area2D" groups=["Key"]]
+script = ExtResource("1_rx1b3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_olrth")
+region_enabled = true
+region_rect = Rect2(768, 256, 256, 256)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_dxo07")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

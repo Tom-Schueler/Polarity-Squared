@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://bml4lhbetv0rw"]
+
+[node name="Point" type="Node2D" groups=["Point"]]

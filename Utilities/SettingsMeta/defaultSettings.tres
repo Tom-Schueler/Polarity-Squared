@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="SettingMetaData" load_steps=2 format=3 uid="uid://d0pyg1oc4irqf"]
+
+[ext_resource type="Script" path="res://Utilities/SettingsMeta/settingMetaData.gd" id="1_w85c7"]
+
+[resource]
+script = ExtResource("1_w85c7")
+resolution = 0
+fullscreen = false
+borderless = false
+screenshake = true
+debugMode = false
+timerEnabled = true
+respawnTimer = 0.75
+inputSettingsMap = {
+"": 0,
+"Down": 83,
+"GravityDown": 4194322,
+"GravityLeft": 4194319,
+"GravityRight": 4194321,
+"GravityUp": 4194320,
+"Jump": 32,
+"Left": 65,
+"Right": 68,
+"Up": 87
+}
+masterVolume = 0.5
+musicVolume = 0.5
+sfxVolume = 0.5
+uiVolume = 0.5
+masterMute = true
+musicMute = true
+sfxMute = true
+uiMute = true

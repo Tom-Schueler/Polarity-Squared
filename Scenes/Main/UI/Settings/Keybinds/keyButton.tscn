@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bun61tp7k3ue7"]
+
+[ext_resource type="Script" path="res://Scenes/Main/UI/Settings/Keybinds/keyButton.gd" id="1_jhbfm"]
+
+[node name="KeyButton" type="Button"]
+offset_right = 8.0
+offset_bottom = 8.0
+script = ExtResource("1_jhbfm")
+
+[connection signal="pressed" from="." to="." method="SelfPressed"]

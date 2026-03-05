@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4ir1b0dwfctt"]
+
+[ext_resource type="Script" path="res://Prefabs/Obstacles/MovingReappearingDeathObstacle/movingReappearingDeathObstacle.gd" id="1_durms"]
+[ext_resource type="Texture2D" uid="uid://clvnq0gsmh442" path="res://Assets/TileMap/shapes.png" id="2_7ixit"]
+[ext_resource type="PackedScene" uid="uid://clgewrmnd1l8j" path="res://Assets/Audio/audioComponent/audioBetweenFGPlatforms.tscn" id="3_aoxik"]
+
+[node name="MovingReappearingDeathObstacle" type="Node2D"]
+script = ExtResource("1_durms")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.556863, 0, 0, 1)
+texture = ExtResource("2_7ixit")
+region_enabled = true
+region_rect = Rect2(64, 0, 32, 32)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-17, 16, 17, 16, 1, -16, -1, -16)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("3_aoxik")]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

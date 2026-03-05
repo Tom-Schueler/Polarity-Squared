@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://dnv38vhroks33"]
+
+[node name="audioMiddle" type="AudioStreamPlayer"]
+bus = &"Music"

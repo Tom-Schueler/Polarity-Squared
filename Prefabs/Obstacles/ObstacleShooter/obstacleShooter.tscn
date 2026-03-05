@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cmgaqupfiit6b"]
+
+[ext_resource type="Script" path="res://Prefabs/Obstacles/ObstacleShooter/obstacleShooter.gd" id="1_5e0ls"]
+
+[node name="ObstacleShooter" type="Node2D"]
+script = ExtResource("1_5e0ls")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(0, -40)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,156 @@
+[gd_scene load_steps=17 format=3 uid="uid://sr0n3ny7n0hd"]
+
+[ext_resource type="Script" path="res://Scenes/Main/UI/NewGame/newGame.gd" id="1_g26kl"]
+[ext_resource type="Texture2D" uid="uid://jnlyqfufc6wj" path="res://Assets/UIElements/NewGameBackgroundv2.png" id="2_do8am"]
+[ext_resource type="FontFile" uid="uid://dpvdgwpnrcqb5" path="res://Assets/Font/hobostd.otf" id="2_n6d43"]
+[ext_resource type="Texture2D" uid="uid://dnwm1pr0mkbix" path="res://Assets/UIElements/NameCreationBackground.png" id="3_dv5se"]
+[ext_resource type="Texture2D" uid="uid://b3kpxr6yax51x" path="res://Assets/UIElements/ButtonHoveredFrame1.png" id="4_1o5pj"]
+[ext_resource type="Texture2D" uid="uid://bta3lgofwk7x0" path="res://Assets/UIElements/ButtonHoveredFrame0.png" id="4_e7aau"]
+[ext_resource type="Texture2D" uid="uid://c6tpeymqylhh8" path="res://Assets/UIElements/ButtonPressed.png" id="5_2oiiu"]
+[ext_resource type="Texture2D" uid="uid://drya6xvm5ktps" path="res://Assets/UIElements/ButtonHoveredFrame2.png" id="5_kiss2"]
+[ext_resource type="Texture2D" uid="uid://bjqafakfiljsh" path="res://Assets/UIElements/ButtonHoveredFrame3.png" id="6_f6ccy"]
+[ext_resource type="Texture2D" uid="uid://o63yuk6dc1b0" path="res://Assets/UIElements/Button.png" id="10_j3gi2"]
+[ext_resource type="AudioStream" uid="uid://b5fkklq1nyp2q" path="res://Assets/Audio/UISounds.wav" id="10_pyki1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ftcv4"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_sxss5"]
+frames = 4
+speed_scale = 8.0
+frame_0/texture = ExtResource("4_e7aau")
+frame_1/texture = ExtResource("4_1o5pj")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("5_kiss2")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("6_f6ccy")
+frame_3/duration = 1.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fnphi"]
+texture = SubResource("AnimatedTexture_sxss5")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dujuf"]
+texture = ExtResource("5_2oiiu")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xna8x"]
+texture = ExtResource("10_j3gi2")
+
+[node name="CustomizeNewGame" type="Control" node_paths=PackedStringArray("nameSetter", "warningLabel", "warningDisapearTimer", "audioStreamPlayer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -27.0
+offset_top = -5.0
+offset_right = -27.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g26kl")
+nameSetter = NodePath("LineEdit")
+warningLabel = NodePath("WarningLabel")
+warningDisapearTimer = NodePath("WarningDisapearTimer")
+audioStreamPlayer = NodePath("AudioStreamPlayer")
+
+[node name="NewGameBackgroundv2" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(497, 545)
+texture = ExtResource("2_do8am")
+
+[node name="NameCreationBackground" type="Sprite2D" parent="."]
+position = Vector2(497, 545)
+texture = ExtResource("3_dv5se")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 257.0
+offset_top = 301.0
+offset_right = 736.0
+offset_bottom = 372.0
+theme_override_colors/font_color = Color(0.992157, 0.627451, 0.141176, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.392157)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 15
+theme_override_fonts/font = ExtResource("2_n6d43")
+theme_override_font_sizes/font_size = 65
+text = "create your file"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 228.0
+offset_top = 454.0
+offset_right = 765.0
+offset_bottom = 603.0
+theme_override_colors/clear_button_color = Color(0.992157, 0.627451, 0.141176, 1)
+theme_override_colors/font_placeholder_color = Color(0.992157, 0.686275, 0.305882, 1)
+theme_override_colors/font_color = Color(0.992157, 0.627451, 0.141176, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_n6d43")
+theme_override_font_sizes/font_size = 65
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ftcv4")
+placeholder_text = "Enter Name "
+alignment = 1
+max_length = 10
+
+[node name="Create" type="Button" parent="."]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 664.0
+offset_right = 693.0
+offset_bottom = 780.0
+theme_override_colors/font_hover_color = Color(0.992157, 0.627451, 0.141176, 1)
+theme_override_colors/font_pressed_color = Color(0.746682, 0.457245, 0.0186984, 1)
+theme_override_colors/font_focus_color = Color(0.992157, 0.627451, 0.141176, 1)
+theme_override_colors/font_color = Color(0.992157, 0.627451, 0.141176, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_n6d43")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/hover = SubResource("StyleBoxTexture_fnphi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dujuf")
+theme_override_styles/normal = SubResource("StyleBoxTexture_xna8x")
+text = "Done"
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 856.0
+offset_right = 693.0
+offset_bottom = 972.0
+theme_override_colors/font_hover_color = Color(0.992157, 0.627451, 0.141176, 1)
+theme_override_colors/font_pressed_color = Color(0.745098, 0.458824, 0.0196078, 1)
+theme_override_colors/font_focus_color = Color(0.992157, 0.627451, 0.141176, 1)
+theme_override_colors/font_color = Color(0.992157, 0.627451, 0.141176, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_n6d43")
+theme_override_font_sizes/font_size = 55
+theme_override_styles/hover = SubResource("StyleBoxTexture_fnphi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_dujuf")
+theme_override_styles/normal = SubResource("StyleBoxTexture_xna8x")
+text = "Back"
+
+[node name="WarningLabel" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 303.0
+offset_top = 417.0
+offset_right = 690.0
+offset_bottom = 443.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("2_n6d43")
+theme_override_font_sizes/font_size = 25
+text = "File with this name already Exists!"
+
+[node name="WarningDisapearTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_pyki1")
+volume_db = 16.0
+bus = &"UI"
+
+[connection signal="pressed" from="Create" to="." method="CreatePressed"]
+[connection signal="pressed" from="Back" to="." method="BackPressed"]
+[connection signal="timeout" from="WarningDisapearTimer" to="." method="warningTimerTimeout"]

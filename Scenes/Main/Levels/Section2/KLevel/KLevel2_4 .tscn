@@ -1,0 +1,2057 @@
+[gd_scene load_steps=16 format=4 uid="uid://0bncaqhcaq7h"]
+
+[ext_resource type="Texture2D" uid="uid://cimu1086xoh8e" path="res://Assets/Background/BG_section2.png" id="1_iuopl"]
+[ext_resource type="PackedScene" uid="uid://5owuibn0h6rf" path="res://Prefabs/Player/player.tscn" id="1_kpnxv"]
+[ext_resource type="Script" path="res://Utilities/Tools/assetReplacementTool.gd" id="1_l5s64"]
+[ext_resource type="PackedScene" uid="uid://demnkur8y8los" path="res://Prefabs/Camera/camera.tscn" id="2_8vtnj"]
+[ext_resource type="Texture2D" uid="uid://d25mhfdii3fyp" path="res://Assets/TileMap/TM_section2.png" id="4_hk15i"]
+[ext_resource type="PackedScene" uid="uid://crdnjf0bn0bc7" path="res://Prefabs/Platforms/InvisiblePlatform/invisiblePlatform.tscn" id="5_5o58x"]
+[ext_resource type="PackedScene" uid="uid://cyqjwkxxvuo4e" path="res://Prefabs/Zones/WinZone/win_zone.tscn" id="6_iq0fi"]
+[ext_resource type="PackedScene" uid="uid://cx7h66i3nev7l" path="res://Prefabs/Obstacles/DeathObstacle/LaserPrefabs/Laser_corners.tscn" id="6_r7vqa"]
+[ext_resource type="PackedScene" uid="uid://cfrel2huof6jd" path="res://Prefabs/Obstacles/DeathObstacle/LaserPrefabs/LaserStraight.tscn" id="7_xo56d"]
+[ext_resource type="PackedScene" uid="uid://b8pib8c7j5s7f" path="res://Prefabs/Obstacles/DeathObstacle/Laser/laserObstacle.tscn" id="8_w5484"]
+[ext_resource type="PackedScene" uid="uid://c8lgtpblh4bto" path="res://Prefabs/Obstacles/DeathObstacle/Laser/teslaObstacle.tscn" id="9_dxs21"]
+[ext_resource type="PackedScene" uid="uid://8opais2u4rhd" path="res://Prefabs/Obstacles/DeathObstacle/Laser/ConnectorObstacle.tscn" id="10_usf64"]
+[ext_resource type="PackedScene" uid="uid://b2v0t3ykc6run" path="res://Prefabs/Platforms/ChargePlatform/chargePlatform.tscn" id="11_bxww2"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_unj6c"]
+texture = ExtResource("4_hk15i")
+texture_region_size = Vector2i(256, 256)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -108, 30, -72, 128, 106, -128, 108)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+4:3/0 = 0
+3:3/0 = 0
+3:4/0 = 0
+2:3/0 = 0
+1:3/0 = 0
+0:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+2:5/0 = 0
+1:5/0 = 0
+0:5/0 = 0
+3:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+4:2/0 = 0
+3:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+4:0/0 = 0
+4:1/0 = 0
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 128, 128, -128, 128)
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+9:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+2:7/0 = 0
+1:7/0 = 0
+0:7/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-128, -128, 128, -128, 1, 2, -128, 128)
+4:4/0 = 0
+4:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_mb4da"]
+tile_size = Vector2i(256, 256)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_unj6c")
+
+[node name="Node2D4" type="Node2D"]
+position = Vector2(640, 0)
+script = ExtResource("1_l5s64")
+section = 1
+
+[node name="Background5" type="Sprite2D" parent="."]
+position = Vector2(-1664, -896)
+scale = Vector2(7.42037, 7.42037)
+texture = ExtResource("1_iuopl")
+
+[node name="Background6" type="Sprite2D" parent="."]
+position = Vector2(12544, -896)
+scale = Vector2(7.42037, 7.42037)
+texture = ExtResource("1_iuopl")
+
+[node name="Win zone" parent="." instance=ExtResource("6_iq0fi")]
+position = Vector2(6528, 1664)
+levelName = 15.0
+
+[node name="player" parent="." instance=ExtResource("1_kpnxv")]
+position = Vector2(-7552, -3840)
+
+[node name="Camera" parent="player" instance=ExtResource("2_8vtnj")]
+limit_left = -8310
+limit_top = -5110
+limit_right = 9800
+limit_bottom = 3315
+
+[node name="Layer0" type="TileMapLayer" parent="."]
+use_parent_material = true
+position = Vector2(0, -1)
+tile_map_data = PackedByteArray("AAAOAAwAAAABAAAAAAAPAAwAAAABAAAAAAAQAAwAAAABAAAAAAARAAwAAAABAAAAAAASAAwAAAABAAAAAAATAAwAAAABAAAAAAAUAAwAAAABAAAAAAAVAAwAAAABAAAAAAAWAAwAAAABAAAAAAAXAAwAAAABAAAAAAAYAAwAAAABAAAAAAAZAAwAAAABAAAAAAAaAAwAAAABAAAAAAAbAAwAAAABAAAAAAAcAAwAAAABAAAAAAAdAAwAAAABAAAAAAAeAAwAAAABAAAAAAAfAAwAAAABAAAAAAAgAAwAAAABAAAAAAAhAAwAAAABAAAAAAAiAAwAAAABAAAAAAAjAAsAAAAAAAEAAAAjAAoAAAAAAAEAAAAjAAkAAAAAAAEAAAAjAAgAAAAAAAEAAAAjAAcAAAAAAAEAAAAjAAYAAAAAAAEAAAAjAAUAAAAAAAEAAAAjAAQAAAAAAAEAAAAjAAMAAAAAAAEAAAAjAAIAAAAAAAEAAAAjAAEAAAAAAAEAAAAjAAAAAAAAAAEAAAAjAP//AAAAAAEAAAAjAP7/AAAAAAEAAAAjAP3/AAAAAAEAAAAjAPz/AAAAAAEAAAAjAPv/AAAAAAEAAAAjAPb/AAAAAAEAAAAjAPX/AAAAAAEAAAAjAPT/AAAAAAEAAAAjAPP/AAAAAAEAAAAjAPf/AAAAAAEAAAAjAPj/AAAAAAEAAAAjAPn/AAAAAAEAAAAjAPr/AAAAAAEAAAAjAPL/AAAAAAEAAAAjAPH/AAAAAAEAAAAjAPD/AAAAAAEAAAAjAO//AAAAAAEAAAAjAO7/AAAAAAEAAAAjAO3/AAAAAAEAAAAiAOz/AAABAAIAAAAhAOz/AAABAAIAAAAgAOz/AAABAAIAAAAfAOz/AAABAAIAAAAeAOz/AAABAAIAAAAdAOz/AAABAAIAAAAcAOz/AAABAAIAAAAbAOz/AAABAAIAAAAaAOz/AAABAAIAAAAZAOz/AAABAAIAAAAYAOz/AAABAAIAAAAXAOz/AAABAAIAAAAWAOz/AAABAAIAAAAVAOz/AAABAAIAAAAUAOz/AAABAAIAAAATAOz/AAABAAIAAAASAOz/AAABAAIAAAARAOz/AAABAAIAAAAQAOz/AAABAAIAAAAPAOz/AAABAAIAAAAOAOz/AAABAAIAAAANAOz/AAABAAIAAAAMAOz/AAABAAIAAAALAOz/AAABAAIAAAAKAOz/AAABAAIAAAAJAOz/AAABAAIAAAAIAOz/AAABAAIAAAAHAOz/AAABAAIAAAAGAOz/AAABAAIAAAAFAOz/AAABAAIAAAAEAOz/AAABAAIAAAADAOz/AAABAAIAAAACAOz/AAABAAIAAAABAOz/AAABAAIAAAAAAOz/AAABAAIAAAD//+z/AAABAAIAAAD+/+z/AAABAAIAAAD9/+z/AAABAAIAAAD2/+z/AAABAAIAAAD8/+z/AAABAAIAAAD7/+z/AAABAAIAAAD6/+z/AAABAAIAAAD5/+z/AAABAAIAAAD4/+z/AAABAAIAAAD3/+z/AAABAAIAAAD1/+z/AAABAAIAAAD0/+z/AAABAAIAAADz/+z/AAABAAIAAADy/+z/AAABAAIAAADx/+z/AAABAAIAAADw/+z/AAABAAIAAADv/+z/AAABAAIAAADu/+z/AAABAAIAAADt/+z/AAABAAIAAADs/+z/AAABAAIAAADr/+z/AAABAAIAAADq/+z/AAABAAIAAADp/+z/AAABAAIAAAAjAOz/AAADAAAAAFAjAAwAAAADAAAAADDi/wwAAAABAAAAAADh/wwAAAABAAAAAADg/wwAAAABAAAAAADf/wwAAAABAAAAAADe/wwAAAABAAAAAADd/wsAAAACAAEAAADd/woAAAACAAEAAADd/wkAAAACAAEAAADd/wgAAAACAAEAAADd/wcAAAACAAEAAADd/wYAAAACAAEAAADd/wIAAAACAAEAAADd/wEAAAACAAEAAADd/wAAAAACAAEAAADd////AAACAAEAAADd//7/AAACAAEAAADd//3/AAACAAEAAADd//z/AAACAAEAAADd//v/AAACAAEAAADd//r/AAACAAEAAADd//n/AAACAAEAAADd//j/AAACAAEAAADd//f/AAACAAEAAADd//b/AAACAAEAAADd//X/AAACAAEAAADd//T/AAACAAEAAADd//L/AAACAAEAAADd//H/AAACAAEAAADd//D/AAACAAEAAADd/+//AAACAAEAAADo/+z/AAABAAIAAADn/+z/AAABAAIAAADm/+z/AAABAAIAAADe/+z/AAABAAIAAADf/+z/AAABAAIAAADg/+z/AAABAAIAAADh/+z/AAABAAIAAADi/+z/AAABAAIAAADj/+z/AAABAAIAAADd/+3/AAACAAEAAADd/+7/AAACAAEAAADd/+z/AAADAAAAAADd/wwAAAADAAAAAGDd/wUAAAACAAEAAADd/wQAAAACAAEAAADd/wMAAAACAAEAAAANAAwAAAABAAAAAAAMAAwAAAABAAAAAAALAAwAAAABAAAAAAAKAAwAAAABAAAAAAAJAAwAAAABAAAAAAAIAAwAAAABAAAAAAAHAAwAAAABAAAAAAAGAAwAAAABAAAAAAAFAAwAAAABAAAAAAAEAAwAAAABAAAAAAADAAwAAAABAAAAAAACAAwAAAABAAAAAAABAAwAAAABAAAAAAAAAAwAAAABAAAAAAD//wwAAAABAAAAAAD+/wwAAAABAAAAAAD9/wwAAAABAAAAAAD8/wwAAAABAAAAAAD7/wwAAAABAAAAAAD6/wwAAAABAAAAAAD5/wwAAAABAAAAAAD4/wwAAAABAAAAAAD3/wwAAAABAAAAAAD2/wwAAAABAAAAAAD1/wwAAAABAAAAAAD0/wwAAAABAAAAAADz/wwAAAABAAAAAADy/wwAAAABAAAAAADx/wwAAAABAAAAAADw/wwAAAABAAAAAADv/wwAAAABAAAAAADu/wwAAAABAAAAAADt/wwAAAABAAAAAADs/wwAAAABAAAAAADr/wwAAAABAAAAAADq/wwAAAABAAAAAADp/wwAAAABAAAAAADo/wwAAAABAAAAAADn/wwAAAABAAAAAADm/wwAAAABAAAAAADl/wwAAAABAAAAAADk/wwAAAABAAAAAADj/wwAAAABAAAAAADd//P/AAACAAEAAADk/+3/AAAAAAEAAADk/+7/AAAAAAEAAADk/+//AAAAAAEAAADk//D/AAAAAAEAAADk//H/AAAAAAEAAADl/+3/AAACAAEAAADl/+7/AAACAAEAAADl/+//AAACAAEAAADl//D/AAACAAEAAADl//H/AAACAAEAAADl//L/AAACAAEAAADj//P/AAABAAIAAADi//P/AAABAAIAAADh//P/AAAAAAIAAADl//P/AAACAAEAAADj//L/AAABAAAAAADi//L/AAABAAAAAADh//L/AAAAAAAAAADk//T/AAAAAAEAAADk//X/AAAAAAEAAADk//b/AAAAAAEAAADk//f/AAAAAAEAAADk//j/AAAAAAEAAADk//n/AAAAAAEAAADk//r/AAAAAAEAAADk//v/AAAAAAEAAADk//z/AAAAAAEAAADk//3/AAAAAAEAAADk//7/AAAAAAEAAADk////AAAAAAEAAADk/wAAAAAAAAEAAADk/wEAAAAAAAEAAADk/wIAAAAAAAEAAADk/wMAAAAAAAEAAADk/wQAAAAAAAEAAADk/wUAAAAAAAEAAADk/wYAAAAAAAIAAADl/wUAAAACAAEAAADl/wYAAAACAAIAAADl/wQAAAACAAEAAADl/wMAAAACAAEAAADl/wIAAAACAAEAAADl/wEAAAACAAEAAADl/wAAAAACAAEAAADl////AAACAAEAAADl//7/AAACAAEAAADl//3/AAACAAEAAADl//z/AAACAAEAAADl//v/AAACAAEAAADl//r/AAACAAEAAADl//n/AAACAAEAAADl//j/AAACAAEAAADl//f/AAACAAEAAADl//b/AAACAAEAAADl//X/AAACAAEAAADl//T/AAACAAEAAAAXAAgAAAAAAAAAAAAYAAgAAAABAAAAAAAZAAgAAAABAAAAAAAaAAgAAAABAAAAAAAbAAgAAAACAAAAAAAbAAkAAAACAAIAAAAaAAkAAAABAAIAAAAZAAkAAAABAAIAAAAYAAkAAAABAAIAAAAXAAkAAAAAAAIAAADe/+3/AAAHAAMAAADj/+3/AAAHAAMAAFDe/wsAAAAHAAMAAGDl/+z/AAADAAAAAADk//P/AAADAAAAAFDk/+z/AAADAAAAAFDk//L/AAADAAAAADDj//T/AAAHAAMAAFA=")
+tile_set = SubResource("TileSet_mb4da")
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Platform" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(256, -7808)
+scale = Vector2(8, 8)
+
+[node name="Platform2" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(512, -7808)
+scale = Vector2(8, 8)
+
+[node name="Platform55" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-4096, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform56" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-3840, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform3" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(768, -7808)
+scale = Vector2(8, 8)
+
+[node name="Platform4" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(1024, -7808)
+scale = Vector2(8, 8)
+
+[node name="Platform82" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-2048, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform83" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-1792, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform84" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-1536, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform85" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-1280, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform86" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-1024, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform87" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-768, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform88" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-512, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform89" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-256, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform99" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-1536, -2944)
+scale = Vector2(8, 8)
+
+[node name="Platform100" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-1280, -2944)
+scale = Vector2(8, 8)
+
+[node name="Platform101" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-1024, -2944)
+scale = Vector2(8, 8)
+
+[node name="Platform102" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-768, -2944)
+scale = Vector2(8, 8)
+
+[node name="Platform103" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-512, -2944)
+scale = Vector2(8, 8)
+
+[node name="Platform104" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-256, -2944)
+scale = Vector2(8, 8)
+
+[node name="Platform105" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(0, -2944)
+scale = Vector2(8, 8)
+
+[node name="Platform106" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(256, -2944)
+scale = Vector2(8, 8)
+
+[node name="Platform107" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(512, -2944)
+scale = Vector2(8, 8)
+
+[node name="Platform108" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(768, -2944)
+scale = Vector2(8, 8)
+
+[node name="Platform109" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(1024, -2944)
+scale = Vector2(8, 8)
+
+[node name="Platform110" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(1280, -2944)
+scale = Vector2(8, 8)
+
+[node name="Platform133" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(1536, -2944)
+scale = Vector2(8, 8)
+
+[node name="Platform134" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(1792, -2944)
+scale = Vector2(8, 8)
+
+[node name="Platform135" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(2048, -2944)
+scale = Vector2(8, 8)
+
+[node name="Platform136" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(2304, -2944)
+scale = Vector2(8, 8)
+
+[node name="Platform137" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(2560, -2944)
+scale = Vector2(8, 8)
+
+[node name="Platform138" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(512, 2688)
+scale = Vector2(8, 8)
+
+[node name="Platform139" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(768, 2688)
+scale = Vector2(8, 8)
+
+[node name="Platform140" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(1024, 2688)
+scale = Vector2(8, 8)
+
+[node name="Platform141" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(1280, 2688)
+scale = Vector2(8, 8)
+
+[node name="Platform142" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(1536, 2688)
+scale = Vector2(8, 8)
+
+[node name="Platform143" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(1792, 2688)
+scale = Vector2(8, 8)
+
+[node name="Platform144" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(2048, 2688)
+scale = Vector2(8, 8)
+
+[node name="Platform145" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(2304, 2688)
+scale = Vector2(8, 8)
+
+[node name="Platform146" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(2560, 2688)
+scale = Vector2(8, 8)
+
+[node name="Platform147" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(2816, 2688)
+scale = Vector2(8, 8)
+
+[node name="Platform90" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(1024, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform91" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(1280, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform92" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(1536, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform93" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(1792, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform119" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(0, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform120" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(256, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform121" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(512, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform122" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(768, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform115" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-3328, 2688)
+scale = Vector2(8, 8)
+
+[node name="Platform116" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-3072, 2688)
+scale = Vector2(8, 8)
+
+[node name="Platform117" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-2816, 2688)
+scale = Vector2(8, 8)
+
+[node name="Platform118" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-2560, 2688)
+scale = Vector2(8, 8)
+
+[node name="Platform123" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-2304, 2688)
+scale = Vector2(8, 8)
+
+[node name="Platform124" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-2048, 2688)
+scale = Vector2(8, 8)
+
+[node name="Platform125" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-1792, 2688)
+scale = Vector2(8, 8)
+
+[node name="Platform126" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-1536, 2688)
+scale = Vector2(8, 8)
+
+[node name="Platform127" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-1280, 2688)
+scale = Vector2(8, 8)
+
+[node name="Platform128" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-1024, 2688)
+scale = Vector2(8, 8)
+
+[node name="Platform129" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-768, 2688)
+scale = Vector2(8, 8)
+
+[node name="Platform130" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-512, 2688)
+scale = Vector2(8, 8)
+
+[node name="Platform131" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-256, 2688)
+scale = Vector2(8, 8)
+
+[node name="Platform132" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(0, 2688)
+scale = Vector2(8, 8)
+
+[node name="Platform94" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(2048, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform95" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(2304, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform96" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(2560, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform97" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(2816, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform148" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(3584, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform149" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(3840, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform150" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(4096, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform151" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(4352, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform152" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(3072, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform153" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(3328, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform154" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(4608, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform155" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(4864, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform156" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(5120, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform157" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(5376, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform158" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(6144, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform159" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(6400, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform160" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(6656, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform161" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(6912, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform162" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(5632, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform163" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(5888, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform164" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(7168, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform165" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(7424, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform166" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(7680, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform167" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(7936, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform8" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-7936, -2304)
+scale = Vector2(8, 8)
+
+[node name="Platform9" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-7680, -2304)
+scale = Vector2(8, 8)
+
+[node name="Platform10" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-7424, -2304)
+scale = Vector2(8, 8)
+
+[node name="Platform11" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-7168, -2304)
+scale = Vector2(8, 8)
+
+[node name="Platform12" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-7424, -1024)
+scale = Vector2(8, 8)
+
+[node name="Platform13" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-7168, -1024)
+scale = Vector2(8, 8)
+
+[node name="Platform14" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-6912, -1024)
+scale = Vector2(8, 8)
+
+[node name="Platform15" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-6656, -1024)
+scale = Vector2(8, 8)
+
+[node name="Platform16" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-7936, 1408)
+scale = Vector2(8, 8)
+
+[node name="Platform20" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-7680, 1408)
+scale = Vector2(8, 8)
+
+[node name="Platform21" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-7424, 1408)
+scale = Vector2(8, 8)
+
+[node name="Platform22" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-7168, 1408)
+scale = Vector2(8, 8)
+
+[node name="Platform23" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-6400, 1920)
+scale = Vector2(8, 8)
+
+[node name="Platform24" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-6400, 2176)
+scale = Vector2(8, 8)
+
+[node name="Platform25" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-6144, 2176)
+scale = Vector2(8, 8)
+
+[node name="Platform26" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-5888, 2176)
+scale = Vector2(8, 8)
+
+[node name="Platform17" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-7552, 128)
+scale = Vector2(8, 8)
+
+[node name="Platform18" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-7296, 128)
+scale = Vector2(8, 8)
+
+[node name="Platform19" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-7040, 128)
+scale = Vector2(8, 8)
+
+[node name="Platform5" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(1024, -8064)
+scale = Vector2(8, 8)
+
+[node name="Platform6" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(1024, -8320)
+scale = Vector2(8, 8)
+
+[node name="Platform7" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(1024, -8576)
+scale = Vector2(8, 8)
+
+[node name="Platform60" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-3584, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform98" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-2304, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform81" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-3584, 2688)
+scale = Vector2(8, 8)
+
+[node name="Platform53" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-4352, -3200)
+scale = Vector2(8, 8)
+
+[node name="Platform54" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-4352, -3456)
+scale = Vector2(8, 8)
+
+[node name="Platform111" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-5376, -4480)
+scale = Vector2(8, 8)
+
+[node name="Platform112" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-5120, -4480)
+scale = Vector2(8, 8)
+
+[node name="Platform113" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-4864, -4480)
+scale = Vector2(8, 8)
+
+[node name="Platform114" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-5632, -4480)
+scale = Vector2(8, 8)
+
+[node name="Platform27" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-4352, 2944)
+scale = Vector2(8, 8)
+
+[node name="Platform28" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-4352, 2688)
+scale = Vector2(8, 8)
+
+[node name="Platform29" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-4352, 2432)
+scale = Vector2(8, 8)
+
+[node name="Platform30" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-4352, 2176)
+scale = Vector2(8, 8)
+
+[node name="Platform31" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-4352, 1920)
+scale = Vector2(8, 8)
+
+[node name="Platform32" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-4352, 1664)
+scale = Vector2(8, 8)
+
+[node name="Platform33" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-4352, 1408)
+scale = Vector2(8, 8)
+
+[node name="Platform34" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-4352, 1152)
+scale = Vector2(8, 8)
+
+[node name="Platform35" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-4352, 896)
+scale = Vector2(8, 8)
+
+[node name="Platform36" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-4352, 640)
+scale = Vector2(8, 8)
+
+[node name="Platform37" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-4352, 384)
+scale = Vector2(8, 8)
+
+[node name="Platform38" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-4352, 128)
+scale = Vector2(8, 8)
+
+[node name="Platform39" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-4352, -128)
+scale = Vector2(8, 8)
+
+[node name="Platform40" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-4352, -384)
+scale = Vector2(8, 8)
+
+[node name="Platform41" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-4352, -640)
+scale = Vector2(8, 8)
+
+[node name="Platform42" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-4352, -896)
+scale = Vector2(8, 8)
+
+[node name="Platform43" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-4352, -1152)
+scale = Vector2(8, 8)
+
+[node name="Platform44" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-4352, -1408)
+scale = Vector2(8, 8)
+
+[node name="Platform57" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(6400, 2688)
+scale = Vector2(8, 8)
+
+[node name="Platform58" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(6400, 2432)
+scale = Vector2(8, 8)
+
+[node name="Platform59" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(6400, 2176)
+scale = Vector2(8, 8)
+
+[node name="Platform61" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(6400, 1920)
+scale = Vector2(8, 8)
+
+[node name="Platform65" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(6272, 896)
+scale = Vector2(8, 8)
+
+[node name="Platform66" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(6272, 640)
+scale = Vector2(8, 8)
+
+[node name="Platform67" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(6272, 384)
+scale = Vector2(8, 8)
+
+[node name="Platform173" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(4352, 2048)
+scale = Vector2(8, 8)
+
+[node name="Platform174" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(4352, 1792)
+scale = Vector2(8, 8)
+
+[node name="Platform175" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(4352, 1536)
+scale = Vector2(8, 8)
+
+[node name="Platform176" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(4352, 2816)
+scale = Vector2(8, 8)
+
+[node name="Platform177" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(4352, 2560)
+scale = Vector2(8, 8)
+
+[node name="Platform178" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(4352, 2304)
+scale = Vector2(8, 8)
+
+[node name="Platform68" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(5120, -128)
+scale = Vector2(8, 8)
+
+[node name="Platform69" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(5120, -384)
+scale = Vector2(8, 8)
+
+[node name="Platform70" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(5120, -640)
+scale = Vector2(8, 8)
+
+[node name="Platform71" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(7168, -1152)
+scale = Vector2(8, 8)
+
+[node name="Platform72" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(7168, -1408)
+scale = Vector2(8, 8)
+
+[node name="Platform171" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(7936, 128)
+scale = Vector2(8, 8)
+
+[node name="Platform172" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(7936, -128)
+scale = Vector2(8, 8)
+
+[node name="Platform73" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(7168, -1664)
+scale = Vector2(8, 8)
+
+[node name="Platform74" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(7808, -2176)
+scale = Vector2(8, 8)
+
+[node name="Platform75" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(7808, -2432)
+scale = Vector2(8, 8)
+
+[node name="Platform76" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(4608, -2688)
+scale = Vector2(8, 8)
+
+[node name="Platform77" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(4608, -2944)
+scale = Vector2(8, 8)
+
+[node name="Platform78" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(3072, -2304)
+scale = Vector2(8, 8)
+
+[node name="Platform79" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(3072, -2560)
+scale = Vector2(8, 8)
+
+[node name="Platform80" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(3328, -128)
+scale = Vector2(8, 8)
+
+[node name="Platform168" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(3584, -128)
+scale = Vector2(8, 8)
+
+[node name="Platform169" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(7424, -128)
+scale = Vector2(8, 8)
+
+[node name="Platform170" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(7680, -128)
+scale = Vector2(8, 8)
+
+[node name="Platform45" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-4352, -1664)
+scale = Vector2(8, 8)
+
+[node name="Platform46" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-4352, -1920)
+scale = Vector2(8, 8)
+
+[node name="Platform49" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-4352, -2176)
+scale = Vector2(8, 8)
+
+[node name="Platform50" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-4352, -2432)
+scale = Vector2(8, 8)
+
+[node name="Platform51" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-4352, -2688)
+scale = Vector2(8, 8)
+
+[node name="Platform52" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-4352, -2944)
+scale = Vector2(8, 8)
+
+[node name="Platform47" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-5888, 1920)
+scale = Vector2(8, 8)
+
+[node name="Platform48" parent="Node" instance=ExtResource("5_5o58x")]
+position = Vector2(-6144, 1920)
+scale = Vector2(8, 8)
+
+[node name="Node2" type="Node" parent="."]
+
+[node name="LaserCornerLeft" parent="Node2" instance=ExtResource("6_r7vqa")]
+position = Vector2(768, -9088)
+
+[node name="LaserCornerLeft3" parent="Node2" instance=ExtResource("6_r7vqa")]
+position = Vector2(9472, -4736)
+rotation = -3.14159
+
+[node name="LaserCornerLeft2" parent="Node2" instance=ExtResource("6_r7vqa")]
+position = Vector2(-5888, -4736)
+rotation = 1.5708
+
+[node name="LaserCornerStraight" parent="Node2" instance=ExtResource("7_xo56d")]
+position = Vector2(-128, -9216)
+
+[node name="LaserCornerStraight3" parent="Node2" instance=ExtResource("7_xo56d")]
+position = Vector2(9472, -1920)
+
+[node name="LaserCornerStraight4" parent="Node2" instance=ExtResource("7_xo56d")]
+position = Vector2(2816, 128)
+
+[node name="LaserCornerStraight2" parent="Node2" instance=ExtResource("7_xo56d")]
+position = Vector2(256, 2944)
+rotation = 1.5708
+
+[node name="laserObstacle" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(256, -9344)
+
+[node name="laserObstacle237" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-1536, -3200)
+
+[node name="laserObstacle29" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-5376, -4736)
+
+[node name="laserObstacle30" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-5120, -4736)
+
+[node name="laserObstacle31" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-4864, -4736)
+
+[node name="laserObstacle32" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-4608, -4736)
+
+[node name="laserObstacle33" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-4352, -4736)
+
+[node name="laserObstacle34" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-4096, -4736)
+
+[node name="laserObstacle35" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-3840, -4736)
+
+[node name="laserObstacle36" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-3584, -4736)
+
+[node name="laserObstacle37" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-3328, -4736)
+
+[node name="laserObstacle38" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-3072, -4736)
+
+[node name="laserObstacle39" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-2816, -4736)
+
+[node name="laserObstacle40" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-2560, -4736)
+
+[node name="laserObstacle41" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-2304, -4736)
+
+[node name="laserObstacle42" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-2048, -4736)
+
+[node name="laserObstacle43" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-1792, -4736)
+
+[node name="laserObstacle44" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-1536, -4736)
+
+[node name="laserObstacle45" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-1280, -4736)
+
+[node name="laserObstacle46" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-1024, -4736)
+
+[node name="laserObstacle47" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-768, -4736)
+
+[node name="laserObstacle48" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-512, -4736)
+
+[node name="laserObstacle49" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-256, -4736)
+
+[node name="laserObstacle50" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(0, -4736)
+
+[node name="laserObstacle51" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(256, -4736)
+
+[node name="laserObstacle52" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(512, -4736)
+
+[node name="laserObstacle53" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(768, -4736)
+
+[node name="laserObstacle54" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(1024, -4736)
+
+[node name="laserObstacle55" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(1280, -4736)
+
+[node name="laserObstacle56" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(1536, -4736)
+
+[node name="laserObstacle57" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(1792, -4736)
+
+[node name="laserObstacle58" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(2048, -4736)
+
+[node name="laserObstacle246" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(768, -3200)
+
+[node name="laserObstacle247" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(1024, -3200)
+
+[node name="laserObstacle248" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(1280, -3200)
+
+[node name="laserObstacle249" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(1536, -3200)
+
+[node name="laserObstacle250" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(1792, -3200)
+
+[node name="laserObstacle251" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(2048, -3200)
+
+[node name="laserObstacle252" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(2304, -3200)
+
+[node name="laserObstacle59" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(2304, -4736)
+
+[node name="laserObstacle238" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-1280, -3200)
+
+[node name="laserObstacle239" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-1024, -3200)
+
+[node name="laserObstacle240" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-768, -3200)
+
+[node name="laserObstacle241" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-512, -3200)
+
+[node name="laserObstacle242" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-256, -3200)
+
+[node name="laserObstacle243" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(0, -3200)
+
+[node name="laserObstacle244" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(256, -3200)
+
+[node name="laserObstacle245" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(512, -3200)
+
+[node name="laserObstacle60" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(2560, -4736)
+
+[node name="laserObstacle61" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(2816, -4736)
+
+[node name="laserObstacle62" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(3072, -4736)
+
+[node name="laserObstacle63" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(3328, -4736)
+
+[node name="laserObstacle64" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(3584, -4736)
+
+[node name="laserObstacle65" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(3840, -4736)
+
+[node name="laserObstacle66" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(4096, -4736)
+
+[node name="laserObstacle67" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(4352, -4736)
+
+[node name="laserObstacle68" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(4608, -4736)
+
+[node name="laserObstacle69" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(4864, -4736)
+
+[node name="laserObstacle70" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(5120, -4736)
+
+[node name="laserObstacle71" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(5376, -4736)
+
+[node name="laserObstacle72" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(5632, -4736)
+
+[node name="laserObstacle73" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(5888, -4736)
+
+[node name="laserObstacle74" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(6144, -4736)
+
+[node name="laserObstacle75" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(6400, -4736)
+
+[node name="laserObstacle76" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(6656, -4736)
+
+[node name="laserObstacle77" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(6912, -4736)
+
+[node name="laserObstacle78" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(7168, -4736)
+
+[node name="laserObstacle79" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(7424, -4736)
+
+[node name="laserObstacle80" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(7680, -4736)
+
+[node name="laserObstacle81" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(7936, -4736)
+
+[node name="laserObstacle82" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(8192, -4736)
+
+[node name="laserObstacle83" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(8448, -4736)
+
+[node name="laserObstacle84" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(8704, -4736)
+
+[node name="laserObstacle85" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(8960, -4736)
+
+[node name="laserObstacle119" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-3328, 2944)
+
+[node name="laserObstacle120" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-3072, 2944)
+
+[node name="laserObstacle121" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-2816, 2944)
+
+[node name="laserObstacle122" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-2560, 2944)
+
+[node name="laserObstacle123" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-2304, 2944)
+
+[node name="laserObstacle124" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-2048, 2944)
+
+[node name="laserObstacle125" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-1792, 2944)
+
+[node name="laserObstacle126" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-1536, 2944)
+
+[node name="laserObstacle127" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-1280, 2944)
+
+[node name="laserObstacle128" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-1024, 2944)
+
+[node name="laserObstacle129" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-768, 2944)
+
+[node name="laserObstacle130" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-512, 2944)
+
+[node name="laserObstacle131" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-256, 2944)
+
+[node name="laserObstacle135" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(768, 2944)
+
+[node name="laserObstacle136" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(1024, 2944)
+
+[node name="laserObstacle137" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(1280, 2944)
+
+[node name="laserObstacle138" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(1536, 2944)
+
+[node name="laserObstacle139" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(1792, 2944)
+
+[node name="laserObstacle140" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(2048, 2944)
+
+[node name="laserObstacle141" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(2304, 2944)
+
+[node name="laserObstacle142" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(2560, 2944)
+
+[node name="laserObstacle143" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(2816, 2944)
+
+[node name="laserObstacle144" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(3072, 2944)
+
+[node name="laserObstacle145" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(3328, 2944)
+
+[node name="laserObstacle146" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(3584, 2944)
+
+[node name="laserObstacle147" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(3840, 2944)
+
+[node name="laserObstacle148" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(4096, 2944)
+
+[node name="laserObstacle149" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(4352, 2944)
+
+[node name="laserObstacle150" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(4608, 2944)
+
+[node name="laserObstacle151" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(4864, 2944)
+
+[node name="laserObstacle152" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(5120, 2944)
+
+[node name="laserObstacle153" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(5376, 2944)
+
+[node name="laserObstacle154" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(5632, 2944)
+
+[node name="laserObstacle155" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(5888, 2944)
+
+[node name="laserObstacle156" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(6144, 2944)
+
+[node name="laserObstacle157" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(6400, 2944)
+
+[node name="laserObstacle158" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(6656, 2944)
+
+[node name="laserObstacle159" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(6912, 2944)
+
+[node name="laserObstacle160" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(7168, 2944)
+
+[node name="laserObstacle161" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(7424, 2944)
+
+[node name="laserObstacle162" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(7680, 2944)
+
+[node name="laserObstacle163" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(7936, 2944)
+
+[node name="laserObstacle164" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(8192, 2944)
+
+[node name="laserObstacle165" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(8448, 2944)
+
+[node name="laserObstacle166" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(8704, 2944)
+
+[node name="laserObstacle167" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(8960, 2944)
+
+[node name="laserObstacle4" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(384, -8704)
+rotation = 1.5708
+
+[node name="laserObstacle133" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(256, 2432)
+rotation = 1.5708
+
+[node name="laserObstacle170" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-4096, 2432)
+rotation = 1.5708
+
+[node name="laserObstacle171" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-4096, 2176)
+rotation = 1.5708
+
+[node name="laserObstacle172" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-4096, 1920)
+rotation = 1.5708
+
+[node name="laserObstacle173" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-4096, 1664)
+rotation = 1.5708
+
+[node name="laserObstacle174" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-4096, 1408)
+rotation = 1.5708
+
+[node name="laserObstacle175" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-4096, 1152)
+rotation = 1.5708
+
+[node name="laserObstacle176" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-4096, 896)
+rotation = 1.5708
+
+[node name="laserObstacle177" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-4096, 640)
+rotation = 1.5708
+
+[node name="laserObstacle178" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-4096, 384)
+rotation = 1.5708
+
+[node name="laserObstacle179" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-4096, 128)
+rotation = 1.5708
+
+[node name="laserObstacle180" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-4096, -128)
+rotation = 1.5708
+
+[node name="laserObstacle181" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-4096, -384)
+rotation = 1.5708
+
+[node name="laserObstacle182" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-4096, -640)
+rotation = 1.5708
+
+[node name="laserObstacle183" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-4096, -896)
+rotation = 1.5708
+
+[node name="laserObstacle184" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-4096, -1152)
+rotation = 1.5708
+
+[node name="laserObstacle185" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-4096, -1408)
+rotation = 1.5708
+
+[node name="laserObstacle186" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-4096, -1664)
+rotation = 1.5708
+
+[node name="laserObstacle187" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-4096, -1920)
+rotation = 1.5708
+
+[node name="laserObstacle188" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-4096, -2176)
+rotation = 1.5708
+
+[node name="laserObstacle189" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-4096, -2432)
+rotation = 1.5708
+
+[node name="laserObstacle190" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-4096, -2688)
+rotation = 1.5708
+
+[node name="laserObstacle196" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-3840, 2432)
+rotation = 1.5708
+
+[node name="laserObstacle197" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-3840, 2176)
+rotation = 1.5708
+
+[node name="laserObstacle198" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-3840, 1920)
+rotation = 1.5708
+
+[node name="laserObstacle199" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-3840, 1664)
+rotation = 1.5708
+
+[node name="laserObstacle200" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-3840, 1408)
+rotation = 1.5708
+
+[node name="laserObstacle201" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-3840, 1152)
+rotation = 1.5708
+
+[node name="laserObstacle202" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-3840, 896)
+rotation = 1.5708
+
+[node name="laserObstacle203" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-3840, 640)
+rotation = 1.5708
+
+[node name="laserObstacle204" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-3840, 384)
+rotation = 1.5708
+
+[node name="laserObstacle205" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-3840, 128)
+rotation = 1.5708
+
+[node name="laserObstacle206" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-3840, -128)
+rotation = 1.5708
+
+[node name="laserObstacle207" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-3840, -384)
+rotation = 1.5708
+
+[node name="laserObstacle208" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-3840, -640)
+rotation = 1.5708
+
+[node name="laserObstacle209" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-3840, -896)
+rotation = 1.5708
+
+[node name="laserObstacle210" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-3840, -1152)
+rotation = 1.5708
+
+[node name="laserObstacle211" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-3840, -1408)
+rotation = 1.5708
+
+[node name="laserObstacle212" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-3840, -1664)
+rotation = 1.5708
+
+[node name="laserObstacle213" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-3840, -1920)
+rotation = 1.5708
+
+[node name="laserObstacle214" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-3840, -2176)
+rotation = 1.5708
+
+[node name="laserObstacle215" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-3840, -2432)
+rotation = 1.5708
+
+[node name="laserObstacle216" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-3840, -2688)
+rotation = 1.5708
+
+[node name="laserObstacle223" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-2048, 384)
+rotation = 1.5708
+
+[node name="laserObstacle224" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-2048, 128)
+rotation = 1.5708
+
+[node name="laserObstacle225" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-2048, -128)
+rotation = 1.5708
+
+[node name="laserObstacle226" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-2048, -384)
+rotation = 1.5708
+
+[node name="laserObstacle227" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-2048, -640)
+rotation = 1.5708
+
+[node name="laserObstacle228" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-2048, -896)
+rotation = 1.5708
+
+[node name="laserObstacle229" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-2048, -1152)
+rotation = 1.5708
+
+[node name="laserObstacle230" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-2048, -1408)
+rotation = 1.5708
+
+[node name="laserObstacle231" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-2048, -1664)
+rotation = 1.5708
+
+[node name="laserObstacle253" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(256, 2176)
+rotation = 1.5708
+
+[node name="laserObstacle254" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(256, 1920)
+rotation = 1.5708
+
+[node name="laserObstacle255" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(256, 1664)
+rotation = 1.5708
+
+[node name="laserObstacle256" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(256, 1408)
+rotation = 1.5708
+
+[node name="laserObstacle257" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(256, 1152)
+rotation = 1.5708
+
+[node name="laserObstacle258" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(256, 896)
+rotation = 1.5708
+
+[node name="laserObstacle259" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(256, 640)
+rotation = 1.5708
+
+[node name="laserObstacle260" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(256, 384)
+rotation = 1.5708
+
+[node name="laserObstacle261" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(256, 128)
+rotation = 1.5708
+
+[node name="laserObstacle262" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(256, -128)
+rotation = 1.5708
+
+[node name="laserObstacle263" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(256, -384)
+rotation = 1.5708
+
+[node name="laserObstacle264" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(256, -640)
+rotation = 1.5708
+
+[node name="laserObstacle265" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(256, -896)
+rotation = 1.5708
+
+[node name="laserObstacle266" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(256, -1152)
+rotation = 1.5708
+
+[node name="laserObstacle232" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-2048, -1920)
+rotation = 1.5708
+
+[node name="laserObstacle233" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-2048, -2176)
+rotation = 1.5708
+
+[node name="laserObstacle234" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-2048, -2432)
+rotation = 1.5708
+
+[node name="laserObstacle270" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(2816, -384)
+rotation = 1.5708
+
+[node name="laserObstacle271" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(2816, -640)
+rotation = 1.5708
+
+[node name="laserObstacle272" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(2816, -896)
+rotation = 1.5708
+
+[node name="laserObstacle273" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(2816, -1152)
+rotation = 1.5708
+
+[node name="laserObstacle282" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(2816, 640)
+rotation = 1.5708
+
+[node name="laserObstacle274" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(2816, -1408)
+rotation = 1.5708
+
+[node name="laserObstacle275" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(2816, -1664)
+rotation = 1.5708
+
+[node name="laserObstacle276" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(2816, -1920)
+rotation = 1.5708
+
+[node name="laserObstacle277" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(2816, -2176)
+rotation = 1.5708
+
+[node name="laserObstacle278" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(2816, -2432)
+rotation = 1.5708
+
+[node name="laserObstacle279" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(2816, -2688)
+rotation = 1.5708
+
+[node name="laserObstacle235" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-2048, -2688)
+rotation = 1.5708
+
+[node name="laserObstacle7" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-5888, 1152)
+rotation = 1.5708
+
+[node name="laserObstacle8" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-5888, 896)
+rotation = 1.5708
+
+[node name="laserObstacle9" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-5888, 640)
+rotation = 1.5708
+
+[node name="laserObstacle10" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-5888, 384)
+rotation = 1.5708
+
+[node name="laserObstacle11" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-5888, 128)
+rotation = 1.5708
+
+[node name="laserObstacle12" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-5888, -128)
+rotation = 1.5708
+
+[node name="laserObstacle13" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-5888, -384)
+rotation = 1.5708
+
+[node name="laserObstacle14" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-5888, -640)
+rotation = 1.5708
+
+[node name="laserObstacle15" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-5888, -896)
+rotation = 1.5708
+
+[node name="laserObstacle16" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-5888, -1152)
+rotation = 1.5708
+
+[node name="laserObstacle17" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-5888, -1408)
+rotation = 1.5708
+
+[node name="laserObstacle18" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-5888, -1664)
+rotation = 1.5708
+
+[node name="laserObstacle19" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-5888, -1920)
+rotation = 1.5708
+
+[node name="laserObstacle20" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-5888, -2176)
+rotation = 1.5708
+
+[node name="laserObstacle21" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-5888, -2432)
+rotation = 1.5708
+
+[node name="laserObstacle22" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-5888, -2688)
+rotation = 1.5708
+
+[node name="laserObstacle23" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-5888, -2944)
+rotation = 1.5708
+
+[node name="laserObstacle24" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-5888, -3200)
+rotation = 1.5708
+
+[node name="laserObstacle25" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-5888, -3456)
+rotation = 1.5708
+
+[node name="laserObstacle26" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-5888, -3712)
+rotation = 1.5708
+
+[node name="laserObstacle27" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-5888, -3968)
+rotation = 1.5708
+
+[node name="laserObstacle28" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(-5888, -4224)
+rotation = 1.5708
+
+[node name="laserObstacle86" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(9472, -1152)
+rotation = 1.5708
+
+[node name="laserObstacle87" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(9472, -1408)
+rotation = 1.5708
+
+[node name="laserObstacle91" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(9472, -2432)
+rotation = 1.5708
+
+[node name="laserObstacle92" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(9472, -2688)
+rotation = 1.5708
+
+[node name="laserObstacle93" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(9472, -2944)
+rotation = 1.5708
+
+[node name="laserObstacle94" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(9472, -3200)
+rotation = 1.5708
+
+[node name="laserObstacle95" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(9472, -3456)
+rotation = 1.5708
+
+[node name="laserObstacle96" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(9472, -3712)
+rotation = 1.5708
+
+[node name="laserObstacle97" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(9472, -3968)
+rotation = 1.5708
+
+[node name="laserObstacle98" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(9472, -4224)
+rotation = 1.5708
+
+[node name="laserObstacle99" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(9472, 2176)
+rotation = 1.5708
+
+[node name="laserObstacle114" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(9472, 2432)
+rotation = 1.5708
+
+[node name="laserObstacle100" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(9472, 1920)
+rotation = 1.5708
+
+[node name="laserObstacle101" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(9472, 1664)
+rotation = 1.5708
+
+[node name="laserObstacle102" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(9472, 1408)
+rotation = 1.5708
+
+[node name="laserObstacle103" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(9472, 1152)
+rotation = 1.5708
+
+[node name="laserObstacle104" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(9472, 896)
+rotation = 1.5708
+
+[node name="laserObstacle105" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(9472, 640)
+rotation = 1.5708
+
+[node name="laserObstacle106" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(9472, 384)
+rotation = 1.5708
+
+[node name="laserObstacle107" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(9472, 128)
+rotation = 1.5708
+
+[node name="laserObstacle108" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(9472, -128)
+rotation = 1.5708
+
+[node name="laserObstacle109" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(9472, -384)
+rotation = 1.5708
+
+[node name="laserObstacle110" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(9472, -640)
+rotation = 1.5708
+
+[node name="laserObstacle111" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(9472, -896)
+rotation = 1.5708
+
+[node name="laserObstacle2" parent="Node2" instance=ExtResource("9_dxs21")]
+position = Vector2(384, -9088)
+
+[node name="laserObstacle134" parent="Node2" instance=ExtResource("9_dxs21")]
+position = Vector2(256, -1408)
+rotation = 3.14159
+
+[node name="laserObstacle267" parent="Node2" instance=ExtResource("9_dxs21")]
+position = Vector2(2816, -2944)
+rotation = 3.14159
+
+[node name="laserObstacle132" parent="Node2" instance=ExtResource("9_dxs21")]
+position = Vector2(256, 2688)
+
+[node name="laserObstacle220" parent="Node2" instance=ExtResource("9_dxs21")]
+position = Vector2(-2048, 640)
+
+[node name="laserObstacle195" parent="Node2" instance=ExtResource("9_dxs21")]
+position = Vector2(-3840, 2688)
+
+[node name="laserObstacle169" parent="Node2" instance=ExtResource("9_dxs21")]
+position = Vector2(-4096, 2688)
+
+[node name="laserObstacle115" parent="Node2" instance=ExtResource("9_dxs21")]
+position = Vector2(768, -9600)
+rotation = -1.5708
+
+[node name="laserObstacle236" parent="Node2" instance=ExtResource("9_dxs21")]
+position = Vector2(2560, -3200)
+rotation = -1.5708
+
+[node name="laserObstacle217" parent="Node2" instance=ExtResource("9_dxs21")]
+position = Vector2(-1792, -3200)
+rotation = 1.5708
+
+[node name="laserObstacle285" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(3456, -3200)
+
+[node name="laserObstacle286" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(3712, -3200)
+
+[node name="laserObstacle287" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(3968, -3200)
+
+[node name="laserObstacle288" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(4224, -3200)
+
+[node name="laserObstacle289" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(4480, -3200)
+
+[node name="laserObstacle291" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(4736, -3200)
+
+[node name="laserObstacle292" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(4992, -3200)
+
+[node name="laserObstacle293" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(5248, -3200)
+
+[node name="laserObstacle294" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(5504, -3200)
+
+[node name="laserObstacle295" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(5760, -3200)
+
+[node name="laserObstacle296" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(6016, -3200)
+
+[node name="laserObstacle297" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(6272, -3200)
+
+[node name="laserObstacle298" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(6528, -3200)
+
+[node name="laserObstacle299" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(6784, -3200)
+
+[node name="laserObstacle300" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(7040, -3200)
+
+[node name="laserObstacle301" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(7296, -3200)
+
+[node name="laserObstacle290" parent="Node2" instance=ExtResource("9_dxs21")]
+position = Vector2(3072, -3200)
+rotation = 1.5708
+
+[node name="laserObstacle218" parent="Node2" instance=ExtResource("9_dxs21")]
+position = Vector2(-2048, -2944)
+rotation = 3.14159
+
+[node name="laserObstacle168" parent="Node2" instance=ExtResource("9_dxs21")]
+position = Vector2(-3584, 2944)
+rotation = 1.5708
+
+[node name="laserObstacle193" parent="Node2" instance=ExtResource("9_dxs21")]
+position = Vector2(-4096, -2944)
+rotation = -3.14159
+
+[node name="laserObstacle194" parent="Node2" instance=ExtResource("9_dxs21")]
+position = Vector2(-3840, -2944)
+rotation = -3.14159
+
+[node name="laserObstacle116" parent="Node2" instance=ExtResource("9_dxs21")]
+position = Vector2(9216, 2944)
+rotation = -1.5708
+
+[node name="laserObstacle5" parent="Node2" instance=ExtResource("9_dxs21")]
+position = Vector2(-5888, 1408)
+
+[node name="laserObstacle3" parent="Node2" instance=ExtResource("10_usf64")]
+position = Vector2(256, -9600)
+
+[node name="laserObstacle269" parent="Node2" instance=ExtResource("10_usf64")]
+position = Vector2(256, -1664)
+
+[node name="laserObstacle222" parent="Node2" instance=ExtResource("10_usf64")]
+position = Vector2(2816, -3200)
+
+[node name="laserObstacle302" parent="Node2" instance=ExtResource("9_dxs21")]
+position = Vector2(7552, -3200)
+rotation = -1.5708
+
+[node name="laserObstacle303" parent="Node2" instance=ExtResource("10_usf64")]
+position = Vector2(7808, -3200)
+
+[node name="laserObstacle304" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(5120, -1920)
+
+[node name="laserObstacle305" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(5376, -1920)
+
+[node name="laserObstacle306" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(5632, -1920)
+
+[node name="laserObstacle307" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(5888, -1920)
+
+[node name="laserObstacle308" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(6144, -1920)
+
+[node name="laserObstacle309" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(6400, -1920)
+
+[node name="laserObstacle310" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(6656, -1920)
+
+[node name="laserObstacle311" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(6912, -1920)
+
+[node name="laserObstacle312" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(7168, -1920)
+
+[node name="laserObstacle313" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(7424, -1920)
+
+[node name="laserObstacle314" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(7680, -1920)
+
+[node name="laserObstacle315" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(7936, -1920)
+
+[node name="laserObstacle316" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(8192, -1920)
+
+[node name="laserObstacle317" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(8448, -1920)
+
+[node name="laserObstacle318" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(8704, -1920)
+
+[node name="laserObstacle319" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(8960, -1920)
+
+[node name="laserObstacle320" parent="Node2" instance=ExtResource("9_dxs21")]
+position = Vector2(4864, -1920)
+rotation = 1.5708
+
+[node name="laserObstacle321" parent="Node2" instance=ExtResource("10_usf64")]
+position = Vector2(4608, -1920)
+
+[node name="laserObstacle341" parent="Node2" instance=ExtResource("10_usf64")]
+position = Vector2(7680, 128)
+
+[node name="laserObstacle322" parent="Node2" instance=ExtResource("9_dxs21")]
+position = Vector2(9216, -1920)
+rotation = -1.5708
+
+[node name="laserObstacle323" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(3328, 128)
+
+[node name="laserObstacle324" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(3584, 128)
+
+[node name="laserObstacle325" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(3840, 128)
+
+[node name="laserObstacle326" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(4096, 128)
+
+[node name="laserObstacle327" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(4352, 128)
+
+[node name="laserObstacle328" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(4608, 128)
+
+[node name="laserObstacle329" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(4864, 128)
+
+[node name="laserObstacle330" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(5120, 128)
+
+[node name="laserObstacle331" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(5376, 128)
+
+[node name="laserObstacle332" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(5632, 128)
+
+[node name="laserObstacle333" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(5888, 128)
+
+[node name="laserObstacle334" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(6144, 128)
+
+[node name="laserObstacle335" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(6400, 128)
+
+[node name="laserObstacle336" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(6656, 128)
+
+[node name="laserObstacle337" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(6912, 128)
+
+[node name="laserObstacle338" parent="Node2" instance=ExtResource("8_w5484")]
+position = Vector2(7168, 128)
+
+[node name="laserObstacle339" parent="Node2" instance=ExtResource("9_dxs21")]
+position = Vector2(3072, 128)
+rotation = 1.5708
+
+[node name="laserObstacle340" parent="Node2" instance=ExtResource("9_dxs21")]
+position = Vector2(7424, 128)
+rotation = -1.5708
+
+[node name="laserObstacle221" parent="Node2" instance=ExtResource("10_usf64")]
+position = Vector2(-2048, 896)
+
+[node name="laserObstacle280" parent="Node2" instance=ExtResource("9_dxs21")]
+position = Vector2(2816, 896)
+
+[node name="laserObstacle281" parent="Node2" instance=ExtResource("10_usf64")]
+position = Vector2(2816, 1152)
+
+[node name="laserObstacle219" parent="Node2" instance=ExtResource("10_usf64")]
+position = Vector2(-2048, -3200)
+
+[node name="laserObstacle118" parent="Node2" instance=ExtResource("10_usf64")]
+position = Vector2(-3840, 2944)
+
+[node name="laserObstacle191" parent="Node2" instance=ExtResource("10_usf64")]
+position = Vector2(-4096, -3200)
+
+[node name="laserObstacle192" parent="Node2" instance=ExtResource("10_usf64")]
+position = Vector2(-3840, -3200)
+
+[node name="laserObstacle117" parent="Node2" instance=ExtResource("10_usf64")]
+position = Vector2(-4096, 2944)
+
+[node name="laserObstacle6" parent="Node2" instance=ExtResource("10_usf64")]
+position = Vector2(-5888, 1664)
+
+[node name="laserObstacle112" parent="Node2" instance=ExtResource("9_dxs21")]
+position = Vector2(9472, 2688)
+
+[node name="laserObstacle113" parent="Node2" instance=ExtResource("10_usf64")]
+position = Vector2(9472, 2944)
+
+[node name="Node3" type="Node" parent="."]
+
+[node name="ChargePlatform" parent="Node3" instance=ExtResource("11_bxww2")]
+position = Vector2(-5120, -3968)
+
+[node name="ChargePlatform2" parent="Node3" instance=ExtResource("11_bxww2")]
+position = Vector2(-2944, -3968)
+
+[node name="ChargePlatform3" parent="Node3" instance=ExtResource("11_bxww2")]
+position = Vector2(-2944, 1792)
+
+[node name="ChargePlatform4" parent="Node3" instance=ExtResource("11_bxww2")]
+position = Vector2(-768, 1792)
+
+[node name="ChargePlatform5" parent="Node3" instance=ExtResource("11_bxww2")]
+position = Vector2(-896, -2304)
+
+[node name="ChargePlatform6" parent="Node3" instance=ExtResource("11_bxww2")]
+position = Vector2(1408, -2304)
+
+[node name="ChargePlatform7" parent="Node3" instance=ExtResource("11_bxww2")]
+position = Vector2(1664, 1920)
+
+[node name="ChargePlatform8" parent="Node3" instance=ExtResource("11_bxww2")]
+position = Vector2(4096, 896)
+
+[node name="ChargePlatform15" parent="Node3" instance=ExtResource("11_bxww2")]
+position = Vector2(6016, 1536)
+
+[node name="ChargePlatform9" parent="Node3" instance=ExtResource("11_bxww2")]
+position = Vector2(8704, -4096)
+
+[node name="ChargePlatform10" parent="Node3" instance=ExtResource("11_bxww2")]
+position = Vector2(8704, -2560)
+
+[node name="ChargePlatform11" parent="Node3" instance=ExtResource("11_bxww2")]
+position = Vector2(3840, -2560)
+
+[node name="ChargePlatform12" parent="Node3" instance=ExtResource("11_bxww2")]
+position = Vector2(3840, -896)
+
+[node name="ChargePlatform13" parent="Node3" instance=ExtResource("11_bxww2")]
+position = Vector2(8576, -896)
+
+[node name="ChargePlatform14" parent="Node3" instance=ExtResource("11_bxww2")]
+position = Vector2(8576, 1664)

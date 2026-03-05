@@ -1,0 +1,438 @@
+[gd_scene load_steps=9 format=3 uid="uid://duknhu1ln34hq"]
+
+[ext_resource type="PackedScene" uid="uid://bjwg6v41sskkh" path="res://Prefabs/Platforms/Platform/platform.tscn" id="1_mit7u"]
+[ext_resource type="PackedScene" uid="uid://bebycb1pxw27s" path="res://Prefabs/Classes/deadlyBlockLines.tscn" id="2_ewqp2"]
+[ext_resource type="PackedScene" uid="uid://bem34hsupieur" path="res://Prefabs/Obstacles/DeathObstacle/deathObstacle.tscn" id="3_bkkgo"]
+[ext_resource type="PackedScene" uid="uid://bw5ljouq8a5jk" path="res://Prefabs/Obstacles/MovingDeathObstacle/movingDeathObstacle.tscn" id="4_dhheq"]
+[ext_resource type="PackedScene" uid="uid://bml4lhbetv0rw" path="res://Prefabs/Platforms/point.tscn" id="5_gkpn6"]
+[ext_resource type="PackedScene" uid="uid://d4g6h6x8hw0p2" path="res://Prefabs/Platforms/CollapsingPlatform/collapsingPlatform1x1.tscn" id="6_1rvjo"]
+[ext_resource type="PackedScene" uid="uid://5owuibn0h6rf" path="res://Prefabs/Player/player.tscn" id="7_yddao"]
+[ext_resource type="PackedScene" uid="uid://cj6e5geht36fy" path="res://Prefabs/Platforms/MovingPlatform/movingPlatform.tscn" id="8_emisl"]
+
+[node name="Level003" type="Node2D"]
+
+[node name="DeadlyBlockLines26" parent="." instance=ExtResource("2_ewqp2")]
+position = Vector2(1472, 521)
+
+[node name="DeadlyBlockLines24" parent="." instance=ExtResource("2_ewqp2")]
+position = Vector2(1418, 330)
+rotation = 1.5708
+
+[node name="DeadlyBlockLines25" parent="." instance=ExtResource("2_ewqp2")]
+position = Vector2(1420, 458)
+rotation = 1.5708
+
+[node name="DeadlyBlockLines27" parent="." instance=ExtResource("2_ewqp2")]
+position = Vector2(1603, 515)
+
+[node name="DeadlyBlockLines19" parent="." instance=ExtResource("2_ewqp2")]
+position = Vector2(1417, 182)
+rotation = 1.5708
+
+[node name="DeadlyBlockLines23" parent="." instance=ExtResource("2_ewqp2")]
+position = Vector2(1604, 630)
+rotation = -3.14159
+
+[node name="DeadlyBlockLines11" parent="." instance=ExtResource("2_ewqp2")]
+position = Vector2(1412, 715)
+rotation = 1.5708
+scale = Vector2(1.3, 1)
+
+[node name="CollapsingPlatform5" parent="." instance=ExtResource("6_1rvjo")]
+modulate = Color(1, 0.4885, 0.00999999, 1)
+position = Vector2(2154, 850)
+rotation = 1.5708
+scale = Vector2(2, 0.5)
+collapseTimerInSeconds = 0.75
+shouldRespawn = true
+respawnTimerInSeconds = 1.0
+
+[node name="CollapsingPlatform6" parent="." instance=ExtResource("6_1rvjo")]
+modulate = Color(1, 0.4885, 0.00999999, 1)
+position = Vector2(2154, 787)
+rotation = 1.5708
+scale = Vector2(2, 0.5)
+collapseTimerInSeconds = 0.75
+shouldRespawn = true
+respawnTimerInSeconds = 1.0
+
+[node name="CollapsingPlatform7" parent="." instance=ExtResource("6_1rvjo")]
+modulate = Color(1, 0.4885, 0.00999999, 1)
+position = Vector2(2154, 723)
+rotation = 1.5708
+scale = Vector2(2, 0.5)
+collapseTimerInSeconds = 0.75
+respawnTimerInSeconds = 1.0
+
+[node name="CollapsingPlatform8" parent="." instance=ExtResource("6_1rvjo")]
+modulate = Color(1, 0.4885, 0.00999999, 1)
+position = Vector2(2154, 659)
+rotation = 1.5708
+scale = Vector2(2, 0.5)
+collapseTimerInSeconds = 0.75
+shouldRespawn = true
+respawnTimerInSeconds = 1.0
+
+[node name="CollapsingPlatform9" parent="." instance=ExtResource("6_1rvjo")]
+modulate = Color(1, 0.4885, 0.00999999, 1)
+position = Vector2(2154, 596)
+rotation = 1.5708
+scale = Vector2(2, 0.5)
+collapseTimerInSeconds = 0.75
+shouldRespawn = true
+respawnTimerInSeconds = 1.0
+
+[node name="DeadlyBlockLines12" parent="." instance=ExtResource("2_ewqp2")]
+position = Vector2(1269, 979)
+rotation = -3.14159
+scale = Vector2(0.6, 0.52)
+
+[node name="DeadlyBlockLines13" parent="." instance=ExtResource("2_ewqp2")]
+position = Vector2(1366, 946)
+rotation = -3.14159
+scale = Vector2(0.6, 0.52)
+
+[node name="DeadlyBlockLines10" parent="." instance=ExtResource("2_ewqp2")]
+position = Vector2(1139, 1026)
+
+[node name="DeadlyBlockLines9" parent="." instance=ExtResource("2_ewqp2")]
+position = Vector2(1015, 1028)
+
+[node name="DeadlyBlockLines8" parent="." instance=ExtResource("2_ewqp2")]
+position = Vector2(1245, 1026)
+
+[node name="DeadlyBlockLines6" parent="." instance=ExtResource("2_ewqp2")]
+position = Vector2(1198, 149)
+
+[node name="DeadlyBlockLines7" parent="." instance=ExtResource("2_ewqp2")]
+position = Vector2(945, 149)
+
+[node name="Walls" type="Node2D" parent="."]
+position = Vector2(-267, 571)
+scale = Vector2(1, 5)
+
+[node name="Platform12" parent="Walls" instance=ExtResource("1_mit7u")]
+position = Vector2(268, -17.8)
+scale = Vector2(1, 8)
+
+[node name="Platform13" parent="Walls" instance=ExtResource("1_mit7u")]
+position = Vector2(2184, -9.60001)
+scale = Vector2(1, 8)
+
+[node name="Platform14" parent="Walls" instance=ExtResource("1_mit7u")]
+position = Vector2(1588, 102.4)
+scale = Vector2(75, 0.2)
+
+[node name="Platform15" parent="Walls" instance=ExtResource("1_mit7u")]
+position = Vector2(2022, -111)
+scale = Vector2(75, 0.2)
+
+[node name="Platform15" parent="." instance=ExtResource("1_mit7u")]
+position = Vector2(296, 1112)
+scale = Vector2(3, 12)
+
+[node name="Platform16" parent="." instance=ExtResource("1_mit7u")]
+position = Vector2(201, 259)
+scale = Vector2(15, 20)
+
+[node name="Platform17" parent="." instance=ExtResource("1_mit7u")]
+position = Vector2(-587, 596)
+scale = Vector2(1, 17)
+
+[node name="Platform18" parent="." instance=ExtResource("1_mit7u")]
+position = Vector2(1568, -113.6)
+scale = Vector2(75, 0.2)
+
+[node name="Platform19" parent="." instance=ExtResource("1_mit7u")]
+position = Vector2(657, 578)
+rotation = -1.5708
+scale = Vector2(3, 65)
+
+[node name="Platform20" parent="." instance=ExtResource("1_mit7u")]
+position = Vector2(782, 638)
+scale = Vector2(3, 12)
+
+[node name="Platform21" parent="." instance=ExtResource("1_mit7u")]
+position = Vector2(672, 1105)
+scale = Vector2(3, 12)
+
+[node name="Platform22" parent="." instance=ExtResource("1_mit7u")]
+position = Vector2(577, 998)
+scale = Vector2(3, 12)
+
+[node name="DeadlyBlockLines" parent="." instance=ExtResource("2_ewqp2")]
+position = Vector2(512, 986)
+rotation = -1.5708
+
+[node name="DeadlyBlockLines2" parent="." instance=ExtResource("2_ewqp2")]
+position = Vector2(512, 986)
+rotation = -1.5708
+
+[node name="DeadlyBlockLines3" parent="." instance=ExtResource("2_ewqp2")]
+position = Vector2(515, 886)
+rotation = -1.5708
+
+[node name="DeadlyBlockLines4" parent="." instance=ExtResource("2_ewqp2")]
+position = Vector2(716, 754)
+rotation = -1.5708
+
+[node name="DeadlyBlockLines5" parent="." instance=ExtResource("2_ewqp2")]
+position = Vector2(718, 696)
+rotation = -1.5708
+
+[node name="Platform23" parent="." instance=ExtResource("1_mit7u")]
+position = Vector2(877, 675)
+scale = Vector2(3, 12)
+
+[node name="Platform24" parent="." instance=ExtResource("1_mit7u")]
+position = Vector2(769, 1130)
+scale = Vector2(3, 12)
+
+[node name="Platform25" parent="." instance=ExtResource("1_mit7u")]
+position = Vector2(975, 712)
+scale = Vector2(3, 12)
+
+[node name="Platform26" parent="." instance=ExtResource("1_mit7u")]
+position = Vector2(879, 1185)
+scale = Vector2(4, 12)
+
+[node name="Platform27" parent="." instance=ExtResource("1_mit7u")]
+position = Vector2(1073, 749)
+scale = Vector2(3, 12)
+
+[node name="Platform28" parent="." instance=ExtResource("1_mit7u")]
+position = Vector2(1077, 1233)
+scale = Vector2(9, 12)
+
+[node name="Platform29" parent="." instance=ExtResource("1_mit7u")]
+position = Vector2(1169, 716)
+scale = Vector2(3, 12)
+
+[node name="Platform30" parent="." instance=ExtResource("1_mit7u")]
+position = Vector2(1268, 1177)
+scale = Vector2(3, 12)
+
+[node name="Platform31" parent="." instance=ExtResource("1_mit7u")]
+position = Vector2(1362, 638)
+scale = Vector2(3, 12)
+
+[node name="Platform32" parent="." instance=ExtResource("1_mit7u")]
+position = Vector2(1460, 1110)
+scale = Vector2(3, 12)
+
+[node name="Platform33" parent="." instance=ExtResource("1_mit7u")]
+position = Vector2(1266, 675)
+scale = Vector2(3, 12)
+
+[node name="Platform34" parent="." instance=ExtResource("1_mit7u")]
+position = Vector2(1363, 1141)
+scale = Vector2(3, 12)
+
+[node name="DeathObstacle" parent="." instance=ExtResource("3_bkkgo")]
+position = Vector2(1013, 922)
+
+[node name="DeathObstacle2" parent="." instance=ExtResource("3_bkkgo")]
+position = Vector2(917, 880)
+
+[node name="DeathObstacle3" parent="." instance=ExtResource("3_bkkgo")]
+position = Vector2(825, 848)
+
+[node name="Platform35" parent="." instance=ExtResource("1_mit7u")]
+position = Vector2(781, 275)
+scale = Vector2(3, 12)
+
+[node name="Platform36" parent="." instance=ExtResource("1_mit7u")]
+position = Vector2(876, 312)
+scale = Vector2(3, 12)
+
+[node name="Platform37" parent="." instance=ExtResource("1_mit7u")]
+position = Vector2(974, 349)
+scale = Vector2(3, 12)
+
+[node name="Platform38" parent="." instance=ExtResource("1_mit7u")]
+position = Vector2(1072, 386)
+scale = Vector2(3, 12)
+
+[node name="Platform39" parent="." instance=ExtResource("1_mit7u")]
+position = Vector2(1168, 353)
+scale = Vector2(3, 12)
+
+[node name="Platform40" parent="." instance=ExtResource("1_mit7u")]
+position = Vector2(1361, 275)
+scale = Vector2(3, 12)
+
+[node name="Platform41" parent="." instance=ExtResource("1_mit7u")]
+position = Vector2(1265, 312)
+scale = Vector2(3, 12)
+
+[node name="DeathObstacle4" parent="." instance=ExtResource("4_dhheq")]
+position = Vector2(874, 91)
+speed = 400.0
+
+[node name="Point" parent="DeathObstacle4" instance=ExtResource("5_gkpn6")]
+position = Vector2(-4, 7)
+
+[node name="Point2" parent="DeathObstacle4" instance=ExtResource("5_gkpn6")]
+position = Vector2(423, 0)
+
+[node name="DeathObstacle6" parent="." instance=ExtResource("4_dhheq")]
+position = Vector2(1166, -151)
+speed = 350.0
+
+[node name="Point" parent="DeathObstacle6" instance=ExtResource("5_gkpn6")]
+position = Vector2(1, 85)
+
+[node name="Point2" parent="DeathObstacle6" instance=ExtResource("5_gkpn6")]
+position = Vector2(1, -76)
+
+[node name="DeathObstacle8" parent="." instance=ExtResource("4_dhheq")]
+position = Vector2(975, -151)
+rotation = -3.14159
+speed = 350.0
+
+[node name="Point" parent="DeathObstacle8" instance=ExtResource("5_gkpn6")]
+position = Vector2(1, 85)
+
+[node name="Point2" parent="DeathObstacle8" instance=ExtResource("5_gkpn6")]
+position = Vector2(1, -76)
+
+[node name="DeathObstacle5" parent="." instance=ExtResource("3_bkkgo")]
+position = Vector2(1071, 38)
+rotation = -3.14159
+scale = Vector2(-3.42256, 2.37917)
+
+[node name="player" parent="." instance=ExtResource("7_yddao")]
+position = Vector2(172, 1030)
+speed = 500.0
+acceleration = 2000.0
+terminalVelocity = 1000.0
+jump_velocity = 400.0
+
+[node name="CollapsingPlatform2" parent="." instance=ExtResource("6_1rvjo")]
+modulate = Color(1, 0.4885, 0.00999999, 1)
+position = Vector2(1020, 998)
+scale = Vector2(2, 0.5)
+collapseTimerInSeconds = 0.1
+shouldRespawn = true
+respawnTimerInSeconds = 1.0
+
+[node name="CollapsingPlatform3" parent="." instance=ExtResource("6_1rvjo")]
+modulate = Color(1, 0.4885, 0.00999999, 1)
+position = Vector2(1084, 998)
+scale = Vector2(2, 0.5)
+collapseTimerInSeconds = 0.1
+shouldRespawn = true
+respawnTimerInSeconds = 1.0
+
+[node name="CollapsingPlatform4" parent="." instance=ExtResource("6_1rvjo")]
+modulate = Color(1, 0.4885, 0.00999999, 1)
+position = Vector2(1148, 998)
+scale = Vector2(2, 0.5)
+collapseTimerInSeconds = 0.1
+shouldRespawn = true
+respawnTimerInSeconds = 1.0
+
+[node name="DeadlyBlockLines14" parent="." instance=ExtResource("2_ewqp2")]
+position = Vector2(1885, 987)
+rotation = -1.5708
+
+[node name="DeadlyBlockLines15" parent="." instance=ExtResource("2_ewqp2")]
+position = Vector2(1887, 828)
+rotation = -1.5708
+
+[node name="DeadlyBlockLines16" parent="." instance=ExtResource("2_ewqp2")]
+position = Vector2(1885, 675)
+rotation = -1.5708
+
+[node name="DeadlyBlockLines17" parent="." instance=ExtResource("2_ewqp2")]
+position = Vector2(1884, 573)
+rotation = -1.5708
+
+[node name="MovingPlatform" parent="." instance=ExtResource("8_emisl")]
+position = Vector2(1831, 987)
+scale = Vector2(1, 3)
+speed = 425.0
+
+[node name="Point" parent="MovingPlatform" instance=ExtResource("5_gkpn6")]
+scale = Vector2(1, 0.333333)
+
+[node name="Point2" parent="MovingPlatform" instance=ExtResource("5_gkpn6")]
+position = Vector2(0, -138.333)
+scale = Vector2(1, 0.333333)
+
+[node name="DeadlyBlockLines18" parent="." instance=ExtResource("2_ewqp2")]
+position = Vector2(1885, 675)
+rotation = -1.5708
+
+[node name="DeadlyBlockLines20" parent="." instance=ExtResource("2_ewqp2")]
+position = Vector2(1712, 1054)
+
+[node name="DeadlyBlockLines21" parent="." instance=ExtResource("2_ewqp2")]
+position = Vector2(1582, 1054)
+
+[node name="DeadlyBlockLines22" parent="." instance=ExtResource("2_ewqp2")]
+position = Vector2(1831, 1054)
+
+[node name="CollapsingPlatform10" parent="." instance=ExtResource("6_1rvjo")]
+position = Vector2(1689, 497)
+rotation = 1.5708
+scale = Vector2(2, 0.5)
+collapseTimerInSeconds = 0.1
+shouldRespawn = true
+respawnTimerInSeconds = 1.0
+
+[node name="CollapsingPlatform11" parent="." instance=ExtResource("6_1rvjo")]
+position = Vector2(1689, 434)
+rotation = 1.5708
+scale = Vector2(2, 0.5)
+collapseTimerInSeconds = 0.1
+shouldRespawn = true
+respawnTimerInSeconds = 1.0
+
+[node name="CollapsingPlatform12" parent="." instance=ExtResource("6_1rvjo")]
+position = Vector2(1689, 370)
+rotation = 1.5708
+scale = Vector2(2, 0.5)
+collapseTimerInSeconds = 0.1
+shouldRespawn = true
+respawnTimerInSeconds = 1.0
+
+[node name="CollapsingPlatform13" parent="." instance=ExtResource("6_1rvjo")]
+position = Vector2(1689, 306)
+rotation = 1.5708
+scale = Vector2(2, 0.5)
+collapseTimerInSeconds = 0.1
+shouldRespawn = true
+respawnTimerInSeconds = 1.0
+
+[node name="CollapsingPlatform14" parent="." instance=ExtResource("6_1rvjo")]
+position = Vector2(1689, 243)
+rotation = 1.5708
+scale = Vector2(2, 0.5)
+collapseTimerInSeconds = 0.1
+shouldRespawn = true
+respawnTimerInSeconds = 1.0
+
+[node name="CollapsingPlatform19" parent="." instance=ExtResource("6_1rvjo")]
+modulate = Color(1, 0.4885, 0.00999999, 1)
+position = Vector2(1444, 91)
+rotation = 3.14159
+scale = Vector2(2, 0.5)
+collapseTimerInSeconds = 0.75
+respawnTimerInSeconds = 10.0
+
+[node name="CollapsingPlatform21" parent="." instance=ExtResource("6_1rvjo")]
+modulate = Color(1, 0.4885, 0.00999999, 1)
+position = Vector2(1572, 91)
+rotation = 3.14159
+scale = Vector2(2, 0.5)
+collapseTimerInSeconds = 0.75
+respawnTimerInSeconds = 10.0
+
+[node name="CollapsingPlatform22" parent="." instance=ExtResource("6_1rvjo")]
+modulate = Color(1, 0.4885, 0.00999999, 1)
+position = Vector2(1508, 91)
+rotation = 3.14159
+scale = Vector2(2, 0.5)
+collapseTimerInSeconds = 0.75
+respawnTimerInSeconds = 10.0
