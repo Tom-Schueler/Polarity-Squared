@@ -11,4 +11,4 @@ The game is a steampunk-inspired 2D platformer where you have to make precise an
 
 <img width="960" height="298" alt="image" src="https://github.com/user-attachments/assets/77e3905c-1834-428e-9123-37c2e1cfb22c" />
 
-This was the first project I worked on in a team environment. During development I gained experience collaborating within a small interdisciplinary team, working with version control, and contributing to the implementation of gameplay systems in Godot.
+As my first collaborative project, this experience introduced me to the workflow of developing a game within a small team. I learned how to work within a shared codebase, coordinate tasks with teammates, and iterate on gameplay features based on feedback. The project provided a solid foundation for the technical and collaborative skills I continue to build on in later projects.
