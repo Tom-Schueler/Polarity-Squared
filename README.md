@@ -10,3 +10,5 @@ is the project I worked on during the first semester of my education at the Scho
 It is a steampunk-inspired 2D platformer where you have to make precise and timely jumps using gravity manipulation to avoid obstacles and reach the goal.
 
 <img width="960" height="298" alt="image" src="https://github.com/user-attachments/assets/77e3905c-1834-428e-9123-37c2e1cfb22c" />
+
+This is the first project I have ever worked on in a team. 
